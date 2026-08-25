@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apoiar — À Deriva</title>
+<style>
+  :root {
+    --fundo: #14181f;
+    --madeira: #2a2119;
+    --tinta: #e6e1d6;
+    --fraco: #9b917f;
+    --agua: #6fc4e8;
+    --borda: #3a3227;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--tinta);
+    font: 16px/1.65 ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 8vh 20px 12vh;
+  }
+  main { width: 100%; max-width: 36rem; }
+  h1 { font-size: 2.2rem; margin: 0 0 .2em; letter-spacing: -.02em; }
+  .sub { color: var(--fraco); margin: 0 0 2.5rem; }
+  .porta {
+    display: block;
+    background: var(--madeira);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.porta:hover { border-color: var(--agua); }
+  .porta strong { display: block; font-size: 1.15rem; margin-bottom: .25rem; }
+  .porta span { color: var(--fraco); font-size: .93rem; }
+  .vazia { opacity: .55; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--agua); }
+  footer { color: var(--fraco); font-size: .85rem; margin-top: 2.5rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Obrigado</h1>
+  <p class="sub">O jogo é de graça e vai continuar sendo. Se ele te fez companhia e você quiser ajudar, é por aqui.</p>
+
+  <!-- QUANDO O LIVEPIX EXISTIR: troque a div por um <a class="porta" href="…"> e tire a
+       classe "vazia". Nada de rebuild do jogo — ele aponta pra esta página, não pro destino. -->
+  <div class="porta vazia">
+    <strong>Pix</strong>
+    <span>Em breve. Vai ser o caminho mais direto pra quem é do Brasil — sem taxa de cartão e sem dólar.</span>
+  </div>
+
+  <div class="porta vazia">
+    <strong>Página do itch.io</strong>
+    <span>Em breve. Pra quem prefere cartão, ou está fora do Brasil.</span>
+  </div>
+
+  <footer>
+    Nada aqui é obrigatório e nada fica bloqueado sem pagar — o jogo é o mesmo com ou sem isso.
+    <br><a href="./">Voltar</a>
+  </footer>
+</main>
+</body>
+</html>
