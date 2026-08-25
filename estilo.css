@@ -1,18 +1,31 @@
-/* A identidade vem do GUIA, e não o contrário.
-   O guia já tinha uma paleta escolhida e específica — azul de água profunda, com o realce
-   ciano do reflexo e o dourado das raridades altas. Inventar uma segunda cara pro site faria
-   o jogador atravessar duas identidades pra ler sobre o mesmo jogo. Estes tokens são os
-   mesmos de `guia a deriva.html`; se um dia a paleta do guia mudar, ela muda aqui junto. */
+/* A PALETA VEM DE FERNANDO DE NORONHA, o último mapa do jogo — a água esverdeada e clara,
+   em vez do azul-noite que o guia usava. O jogo é leve: ele roda no canto da tela enquanto
+   você faz outra coisa, e uma página escura prometia um jogo mais pesado do que ele é.
+
+   TODA COR DE TEXTO PASSOU POR MEDIÇÃO DE CONTRASTE sobre o fundo, e várias desceram por
+   causa disso. Sobre claro, as cores de raridade que funcionavam no escuro viravam quase
+   invisíveis — o dourado do lendário dava 3,4:1, e o celestial 3,45:1. Todas foram
+   escurecidas até passar de 4,6:1, que é o piso pra texto normal. */
 :root {
-  --fundo: #08151F;
-  --agua: #102436;
-  --agua2: #16304A;
-  --linha: #1F4260;
-  --texto: #DCE7F0;
-  --fraco: #89A4BB;
-  --realce: #5AB6EA;
-  --realce-2: #7FD4F5;
-  --ouro: #F0C05A;
+  --fundo: #F3FAFB;
+  --papel: #FFFFFF;
+  --agua: #E4F4F6;
+  --agua2: #CFEAEE;
+  --linha: #C3E0E5;
+  --texto: #0E3742;
+  --fraco: #507781;
+  --realce: #0D7B8F;
+  --realce-2: #0A6070;
+  --areia: #E9C88A;
+  --fundo-do-mar: #0F4C5C;
+
+  --comum: #64727D;
+  --incomum: #257E3F;
+  --raro: #2A72BB;
+  --epico: #8A3FC0;
+  --lendario: #906810;
+  --celestial: #0C7A8C;
+
   --mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -23,85 +36,97 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   padding: 0 20px 90px;
-  /* o mesmo halo do guia: a luz que entra na água por cima */
+  /* a luz que entra na água rasa, vindo de cima */
   background:
-    radial-gradient(1100px 420px at 50% -140px, #1B3E5C 0%, transparent 70%),
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
     var(--fundo);
   color: var(--texto);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.62;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap {
-  max-width: 880px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+.wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
 
-/* ---------- a barra que amarra as três páginas ---------- */
+/* ---------- barra ---------- */
 nav.sitio {
-  display: flex;
-  gap: 22px;
-  align-items: baseline;
-  padding: 22px 0 0;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  flex-wrap: wrap;
+  display: flex; gap: 22px; align-items: baseline; padding: 24px 0 0; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
 }
 nav.sitio a { color: var(--fraco); text-decoration: none; }
-nav.sitio a:hover { color: var(--realce-2); }
+nav.sitio a:hover { color: var(--realce); }
 nav.sitio a[aria-current="page"] { color: var(--realce); }
 nav.sitio .casa { color: var(--texto); font-weight: 700; letter-spacing: .1em; }
 
-header.topo { padding-top: 34px; display: flex; flex-direction: column; gap: 14px; }
+/* ---------- topo ---------- */
+header.topo { padding-top: 26px; display: flex; flex-direction: column; gap: 16px; }
 .marca {
   font-family: var(--mono); font-size: 11px; letter-spacing: .28em;
   text-transform: uppercase; color: var(--realce);
 }
 h1 {
-  margin: 0; font-size: clamp(34px, 6vw, 54px); line-height: 1;
-  letter-spacing: -.03em; font-weight: 800; text-wrap: balance;
+  margin: 0; font-size: clamp(38px, 7vw, 62px); line-height: 1.03;
+  letter-spacing: -.035em; font-weight: 800; text-wrap: balance;
 }
 h1 span { color: var(--realce); }
-.chamada { margin: 0; color: var(--fraco); max-width: 62ch; }
+.chamada { margin: 0; color: var(--fraco); font-size: 1.12rem; max-width: 60ch; }
+.chamada strong { color: var(--texto); }
 
-h2 {
-  margin: 0 0 .5em; font-size: 1.15rem; letter-spacing: .01em;
-  color: var(--texto);
-}
+h2 { margin: 0 0 .5em; font-size: 1.35rem; letter-spacing: -.01em; text-wrap: balance; }
+h3 { margin: 0 0 .3em; font-size: 1.02rem; }
 section { display: flex; flex-direction: column; }
-p { margin: 0 0 1rem; max-width: 68ch; }
+p { margin: 0 0 1rem; max-width: 66ch; }
 p:last-child { margin-bottom: 0; }
 a { color: var(--realce); }
 a:hover { color: var(--realce-2); }
-strong { color: var(--texto); }
+strong { color: var(--texto); font-weight: 650; }
 
 code {
-  font-family: var(--mono); font-size: .88em;
+  font-family: var(--mono); font-size: .86em;
   background: var(--agua); border: 1px solid var(--linha);
-  border-radius: 4px; padding: .12em .42em;
+  border-radius: 4px; padding: .1em .4em;
 }
 
-/* ---------- caixa ---------- */
+/* ---------- a vitrine da arte ---------- */
+/* SEM SUAVIZAÇÃO: pixel art escalada com interpolação vira borrão, e a página do jogo não
+   pode ser o lugar onde a arte dele aparece pior do que no jogo. */
+.arte {
+  width: 100%; height: auto; display: block;
+  image-rendering: pixelated;
+}
+.moldura {
+  background: linear-gradient(180deg, var(--papel), var(--agua));
+  border: 1px solid var(--linha); border-radius: 14px;
+  padding: 22px 24px; overflow-x: auto;
+}
+.moldura.mar {
+  background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 62%, #9FD8E1 100%);
+}
+.legenda {
+  margin: .8rem 0 0; color: var(--fraco); font-size: .92rem; text-align: center;
+}
+
+/* ---------- cartões ---------- */
+.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.cartao {
+  background: var(--papel); border: 1px solid var(--linha);
+  border-radius: 12px; padding: 1.1rem 1.2rem;
+}
+.cartao h3 { color: var(--texto); }
+.cartao p { color: var(--fraco); font-size: .96rem; margin: 0; }
+
 .caixa {
-  background: var(--agua);
-  border: 1px solid var(--linha);
-  border-radius: 12px;
-  padding: 1.3rem 1.5rem;
+  background: var(--papel); border: 1px solid var(--linha);
+  border-radius: 14px; padding: 1.4rem 1.6rem;
 }
 .rotulo {
   font-family: var(--mono); text-transform: uppercase; letter-spacing: .18em;
   font-size: .7rem; color: var(--fraco); margin: 0 0 .55rem;
 }
 .versao {
-  margin: 0; font-size: 1.9rem; font-weight: 700; line-height: 1.1;
-  font-variant-numeric: tabular-nums; color: var(--realce-2);
+  margin: 0; font-size: 2rem; font-weight: 700; line-height: 1.1;
+  font-variant-numeric: tabular-nums; color: var(--realce);
 }
 .quando { margin: .35rem 0 0; color: var(--fraco); font-size: .9rem; }
 .recado { margin: .9rem 0 0; }
@@ -110,16 +135,23 @@ code {
 .portas { display: flex; flex-direction: column; gap: 12px; }
 .porta {
   display: block; text-decoration: none; color: inherit;
-  background: var(--agua); border: 1px solid var(--linha);
+  background: var(--papel); border: 1px solid var(--linha);
   border-radius: 12px; padding: 1.15rem 1.4rem;
 }
-a.porta:hover { border-color: var(--realce); background: var(--agua2); }
-.porta strong { display: block; font-size: 1.1rem; margin-bottom: .2rem; color: var(--texto); }
-.porta span { color: var(--fraco); font-size: .93rem; }
-/* porta sem destino ainda: existe pra dizer que vem, e não finge ser clicável */
-.porta.vazia { opacity: .5; }
+a.porta:hover { border-color: var(--realce); background: var(--agua); }
+.porta strong { display: block; font-size: 1.12rem; margin-bottom: .2rem; color: var(--texto); }
+.porta span { color: var(--fraco); font-size: .95rem; }
+.porta.vazia { opacity: .55; }
+
+/* ---------- botão ---------- */
+.acao {
+  display: inline-block; text-decoration: none;
+  background: var(--realce); color: #fff; font-weight: 650;
+  border-radius: 10px; padding: .8rem 1.5rem;
+}
+.acao:hover { background: var(--realce-2); color: #fff; }
 
 footer {
-  color: var(--fraco); font-size: .87rem;
-  border-top: 1px solid var(--linha); padding-top: 20px;
+  color: var(--fraco); font-size: .88rem;
+  border-top: 1px solid var(--linha); padding-top: 22px;
 }

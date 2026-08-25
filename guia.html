@@ -6,10 +6,14 @@
 <title>À Deriva — guia rápido</title>
 <style>
 :root{
-  --fundo:#08151F; --agua:#102436; --agua2:#16304A; --linha:#1F4260;
-  --texto:#DCE7F0; --fraco:#89A4BB; --realce:#5AB6EA; --realce-2:#7FD4F5;
-  --comum:#B8BFC9; --incomum:#6FCE7E; --raro:#5BA8F0;
-  --epico:#C07AF0; --lendario:#F0C05A; --celestial:#8DF5FF;
+  /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
+     TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
+     raridade desceram por causa disso -- no escuro o dourado do lendario funcionava, no
+     claro ele dava 3,4:1 e sumia. Todas passam de 4,6:1 agora, que e o piso pra texto. */
+  --fundo:#F3FAFB; --agua:#E4F4F6; --agua2:#CFEAEE; --linha:#C3E0E5;
+  --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
+  --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
+  --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
   --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
@@ -18,7 +22,7 @@ html{scroll-behavior:smooth}
 body{
   margin:0; padding:0 20px 90px;
   background:
-    radial-gradient(1100px 420px at 50% -140px, #1B3E5C 0%, transparent 70%),
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
     var(--fundo);
   color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.62;
   -webkit-font-smoothing:antialiased;
@@ -144,7 +148,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 </nav>
 
 <header>
-  <div class="marca">Guia rápido <span id="versao">· v0.1.0.53</span></div>
+  <div class="marca">Guia rápido <span id="versao">· v0.1.0.56</span></div>
   <h1>À <span>Deriva</span></h1>
   <div class="onda"></div>
   <p class="chamada">Um jogo de pesca que mora numa faixa transparente no rodapé da tela —
@@ -152,8 +156,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
   rende mais, mas ficar de olho nunca foi obrigatório.</p>
   <p class="chamada">Cinco lugares do Brasil, do Araguaia a Fernando de Noronha. Sessenta
   peixes pra colecionar, um bicho de estimação em cada mapa, e o clima virando sozinho por
-  cima de tudo. Abrir os cinco mapas leva por volta de <strong>45 horas</strong>; fechar
-  tudo, com os cinco troféus, umas <strong>95</strong>.</p>
+  cima de tudo.</p>
   <p class="chamada">Esta página é o que está por trás dos números — se você só quer pescar,
   não precisa dela.</p>
 </header>
@@ -234,9 +237,8 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
   mesmos cinco níveis. Isso é a chance de o peixe que mordeu chegar no barco. Sua vara e seus bichinhos ainda mexem nela, pros dois lados.</p>
   <p><strong>Isca boa se paga.</strong> Além de segurar mais, cada nível carrega um bônus
   próprio — velocidade no incomum, valor de venda nos três de cima. A exceção é a
-  <strong>lendária</strong>, e ela é exceção de propósito: custa mais do que devolve, porque
-  ela não é isca de faturar, é o <em>bilhete pro celestial</em>. Queimar dinheiro nela é o
-  jeito de fechar a coleção.</p>
+  <strong>lendária</strong>: ela custa mais do que devolve. Não é isca de faturar — é
+  a única que faz o <em>celestial</em> aparecer, e é assim que se fecha uma coleção.</p>
   <p><strong>O preço sobe de mapa em mapa.</strong> A mesma isca lendária custa 10.000 no
   Araguaia e 32.000 em Noronha — mais ou menos o triplo do primeiro ao último. É o que impede
   que o dinheiro do fim de jogo compre o começo de novo.</p>
@@ -340,8 +342,8 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 <section>
   <h2>Pets</h2>
   <p>Cada mapa tem um bicho. Ele aparece sozinho, com <strong>0,1% de chance por peixe
-  pescado</strong> — é raro de propósito. Dá pra manter <strong>3 ativos</strong> ao mesmo
-  tempo, e os bônus somam.</p>
+  pescado</strong>. Você vai pescar bastante antes de ver o primeiro. Dá pra manter
+  <strong>3 ativos</strong> ao mesmo tempo, e os bônus somam.</p>
   <div class="rolagem">
     <table>
       <thead><tr><th>Pet</th><th>Mapa</th><th>Bônus</th></tr></thead>
@@ -393,8 +395,8 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       <thead><tr><th>Recolhedor</th><th class="num">Custa</th><th class="num">Paga</th><th>Quando vale</th></tr></thead>
       <tbody>
         <tr><td class="nome">🪵 Jangada</td><td class="num">3.000</td><td class="num">20%</td>
-          <td>Ainda no Araguaia. Paga mal de propósito — ela existe pra você conhecer o
-          recolhedor cedo, não pra ficar com ela</td></tr>
+          <td>Ainda no Araguaia, quando 3.000 é dinheiro. Paga pouco, mas é a que
+          te mostra pra que serve um recolhedor</td></tr>
         <tr><td class="nome">🛶 Bote</td><td class="num">40.000</td><td class="num">50%</td>
           <td>Logo depois do Barco Fábrica, quando o porão começa a encher sem você olhando</td></tr>
         <tr><td class="nome">🚤 Barco</td><td class="num">120.000</td><td class="num">70%</td>
@@ -402,8 +404,8 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       </tbody>
     </table>
   </div>
-  <p class="dica-tabela">Nenhum deles paga bem, e é de propósito: vender na mão sempre rende
-  mais. O recolhedor é conveniência, não atalho.</p>
+  <p class="dica-tabela">Nenhum deles paga tão bem quanto vender na mão. Você troca
+  dinheiro por não precisar estar lá — e às vezes vale.</p>
 </section>
 
 <section>

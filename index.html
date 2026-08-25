@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>À Deriva</title>
-<meta name="description" content="Um jogo de pesca ociosa que mora numa faixa no rodapé da tela, ou atrás dos ícones da área de trabalho.">
+<meta name="description" content="Um jogo de pesca que fica pescando no rodapé da sua tela enquanto você trabalha. Cinco lugares do Brasil, 60 peixes, arte feita à mão.">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -17,15 +17,64 @@
   </nav>
 
   <header class="topo">
-    <div class="marca">Beta aberto</div>
-    <h1>À <span>Deriva</span></h1>
-    <p class="chamada">Um jogo de pesca que mora numa faixa transparente no rodapé da tela —
-    ou atrás dos ícones da área de trabalho. Ele pesca sozinho enquanto você trabalha; clicar
-    rende mais, mas ficar de olho nunca foi obrigatório.</p>
-    <p class="chamada">Cinco lugares do Brasil, do Araguaia a Fernando de Noronha. Sessenta
-    peixes pra colecionar, um bicho de estimação em cada mapa, e o clima virando sozinho por
-    cima de tudo.</p>
+    <div class="marca">Beta aberto · Windows</div>
+    <h1>Um rio no rodapé<br>da sua <span>tela</span></h1>
+    <p class="chamada">À Deriva fica pescando enquanto você trabalha. Ele mora numa faixa
+    transparente em cima da barra de tarefas — ou atrás dos ícones da área de trabalho, como
+    papel de parede. Você olha quando quer, clica quando dá, e o rio segue correndo sozinho.</p>
+    <p><a class="acao" href="apoiar.html">Baixar e apoiar</a></p>
   </header>
+
+  <section>
+    <div class="moldura mar">
+      <img class="arte" src="arte-frota.png" alt="Os sete barcos do jogo, da canoa de madeira ao Holandês Voador">
+    </div>
+    <p class="legenda">Sete barcos, e a canoa cabe duas vezes dentro do último.</p>
+  </section>
+
+  <section>
+    <h2>Como é jogar</h2>
+    <div class="cartoes">
+      <div class="cartao">
+        <h3>Pesca sozinho</h3>
+        <p>O peixe morde no seu tempo. Clicar na hora certa rende mais, mas sair pra fazer
+        outra coisa nunca foi punido.</p>
+      </div>
+      <div class="cartao">
+        <h3>Cinco lugares do Brasil</h3>
+        <p>Do Araguaia ao mar de Fernando de Noronha, passando pelo Rio Negro, por Furnas e
+        pela costa catarinense. Cada um com os peixes e as iscas de lá.</p>
+      </div>
+      <div class="cartao">
+        <h3>O clima manda</h3>
+        <p>Chuva, tempestade, pororoca, lua de sangue. Chega devagar, muda o que está mordendo,
+        e vai embora do mesmo jeito.</p>
+      </div>
+      <div class="cartao">
+        <h3>Um bicho em cada mapa</h3>
+        <p>Jacaré, ariranha, tuiuiú, boto e tartaruga. Aparecem raramente, ficam com você, e
+        cada um ajuda de um jeito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sessenta peixes, um a um</h2>
+    <p>Nenhum é recolorido de outro. Cada espécie tem o desenho dela — do mandi do barranco
+    ao marlim de mar aberto.</p>
+    <div class="moldura">
+      <img class="arte" src="arte-peixes.png" alt="Os sessenta peixes do jogo, cada um com desenho próprio">
+    </div>
+  </section>
+
+  <section>
+    <h2>E o rio tem mais gente</h2>
+    <p>Ariranha, sapo, arara e borboleta atravessam a cena sem avisar. Não valem ponto, não
+    dão bônus, não pedem clique. Estão ali porque rio tem bicho.</p>
+    <div class="moldura mar">
+      <img class="arte" src="arte-bichos.png" alt="Ariranha, sapo, araras e borboletas que atravessam a cena">
+    </div>
+  </section>
 
   <section>
     <div class="caixa">
@@ -37,55 +86,35 @@
   </section>
 
   <section>
-    <h2>Como baixar</h2>
-    <p id="download">O link ainda não está aqui — por enquanto o jogo passa de mão em mão.
-    Quando a página do itch.io existir, ela entra neste lugar.</p>
+    <h2>Como pegar</h2>
+    <p id="download">O link do download ainda não está aqui — por enquanto o jogo passa de
+    mão em mão. Se você quiser entrar no beta, fale comigo.</p>
+    <p>É Windows, roda solto numa pasta e não instala nada. O jogo salvo fica nos seus dados
+    do Windows, então trocar a pasta de lugar não perde partida.</p>
   </section>
 
   <section>
-    <h2>O guia</h2>
-    <p>As tabelas de isca, evento, barco e recolhedor, com os números do jogo:
-    <a href="guia.html">guia a deriva</a>. Dentro do jogo ele está no menu ▲, em
-    <strong>Guia</strong>.</p>
-    <p>Ele diz de qual versão os números são. Se a marca dele não bater com a do seu jogo, é
-    porque saiu build nova depois da sua — o balanceamento muda, e o guia acompanha.</p>
-  </section>
-
-  <section>
-    <h2>Como atualizar</h2>
-    <p>Descompacte a pasta nova por cima da antiga, ou num lugar qualquer.
-    <strong>O seu jogo salvo não fica na pasta do jogo</strong> — ele mora nos seus dados do
-    Windows, então trocar de pasta não perde nada.</p>
-    <p>O próprio jogo avisa quando sai versão nova: ele consulta esta página quando abre, e
-    de novo a cada seis horas. Não baixa nada sozinho.</p>
-  </section>
-
-  <section>
-    <h2>Achou um problema?</h2>
-    <p>Mande junto a pasta <code>logs</code>, que fica em
-    <code>%APPDATA%\Godot\app_userdata\À Deriva\</code> (cole no Executar, com Win+R).
-    Cada arquivo começa dizendo a versão, o Windows, a placa de vídeo e o modo de janela —
-    é o que responde metade das perguntas antes de eu precisar fazê-las.</p>
-  </section>
-
-  <section>
-    <h2>Apoiar</h2>
-    <p>Este beta é aberto porque eu preciso ouvir gente de verdade — e porque o plano é
-    <strong>chegar na Steam</strong>, que tem custo. Se o jogo te fez companhia e você
-    quiser empurrar isso pra frente, é <a href="apoiar.html">por aqui</a>.</p>
+    <h2>Está em beta, e é de propósito</h2>
+    <p>Eu faço esse jogo sozinho, nas horas que sobram. Ele está aberto agora porque preciso
+    ouvir gente de verdade antes de fechar as coisas — e o plano é
+    <strong>chegar na Steam</strong>. Se quiser empurrar isso pra frente, tem
+    <a href="apoiar.html">como ajudar</a>.</p>
+    <p>E se achar algo quebrado: mande a pasta <code>logs</code>, que fica em
+    <code>%APPDATA%\Godot\app_userdata\À Deriva\</code>. Ela já vem dizendo a versão, o
+    Windows e a placa de vídeo.</p>
   </section>
 
   <footer>
-    Esta página serve também ao jogo: ele lê <a href="versao.json">versao.json</a> pra saber
-    se saiu versão nova. A consulta não manda nada — nem quem é, nem qual versão tem.
+    Feito com Godot, no Brasil. Esta página serve também ao jogo: ele lê
+    <a href="versao.json">versao.json</a> pra avisar quando sai versão nova — e a consulta
+    não manda nada, nem quem é, nem qual versão tem.
   </footer>
 
 </div>
 
 <script>
-// A CAIXA DA VERSAO SE PREENCHE SOZINHA a partir do mesmo arquivo que o jogo consulta.
-// Escrever a versao na mao aqui criaria uma segunda copia do numero, e duas copias sempre
-// acabam divergindo — foi exatamente isso que aconteceu com o guia dentro do zip.
+// A CAIXA DA VERSAO SE PREENCHE SOZINHA do mesmo arquivo que o jogo consulta. Escrever a
+// versao a mao aqui criaria uma segunda copia do numero, e duas copias sempre divergem.
 fetch('versao.json?' + Date.now())
   .then(function (r) { return r.json(); })
   .then(function (v) {
