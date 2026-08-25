@@ -4,94 +4,85 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>À Deriva</title>
-<style>
-  :root {
-    --fundo: #14181f;
-    --madeira: #2a2119;
-    --tinta: #e6e1d6;
-    --fraco: #9b917f;
-    --agua: #6fc4e8;
-    --borda: #3a3227;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--fundo);
-    color: var(--tinta);
-    font: 16px/1.65 ui-sans-serif, system-ui, "Segoe UI", sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 8vh 20px 12vh;
-  }
-  main { width: 100%; max-width: 40rem; }
-  h1 { font-size: 2.6rem; margin: 0 0 .2em; letter-spacing: -.02em; }
-  .sub { color: var(--fraco); margin: 0 0 2.5rem; font-size: 1.05rem; }
-  .caixa {
-    background: var(--madeira);
-    border: 1px solid var(--borda);
-    border-radius: 10px;
-    padding: 1.4rem 1.6rem;
-    margin-bottom: 1.5rem;
-  }
-  .rotulo {
-    text-transform: uppercase;
-    letter-spacing: .09em;
-    font-size: .72rem;
-    color: var(--fraco);
-    margin: 0 0 .5rem;
-  }
-  .versao { font-size: 1.5rem; margin: 0; font-variant-numeric: tabular-nums; }
-  .quando { color: var(--fraco); font-size: .9rem; margin: .3rem 0 0; }
-  .recado { margin: .9rem 0 0; color: var(--tinta); }
-  h2 { font-size: 1.05rem; margin: 2.2rem 0 .6rem; }
-  p { margin: 0 0 1rem; }
-  a { color: var(--agua); }
-  code {
-    background: #0e1116;
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    padding: .12em .4em;
-    font-size: .88em;
-  }
-  footer { color: var(--fraco); font-size: .85rem; margin-top: 3rem; }
-</style>
+<meta name="description" content="Um jogo de pesca ociosa que mora numa faixa no rodapé da tela, ou atrás dos ícones da área de trabalho.">
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-<main>
-  <h1>À Deriva</h1>
-  <p class="sub">Um joguinho de pesca pra deixar rodando — na barra de tarefas ou como papel de parede.</p>
+<div class="wrap">
 
-  <div class="caixa">
-    <p class="rotulo">Versão mais recente</p>
-    <p class="versao" id="marca">—</p>
-    <p class="quando" id="quando"></p>
-    <p class="recado" id="recado"></p>
-  </div>
+  <nav class="sitio">
+    <a class="casa" href="./" aria-current="page">À Deriva</a>
+    <a href="guia.html">Guia</a>
+    <a href="apoiar.html">Apoiar</a>
+  </nav>
 
-  <h2>Como baixar</h2>
-  <p id="download">O link do download ainda não está aqui. Por enquanto o jogo passa de mão em mão.</p>
+  <header class="topo">
+    <div class="marca">Pesca ociosa</div>
+    <h1>À <span>Deriva</span></h1>
+    <p class="chamada">Um jogo de pesca que mora numa faixa transparente no rodapé da tela —
+    ou atrás dos ícones da área de trabalho. Ele pesca sozinho enquanto você trabalha; clicar
+    é opcional, mas rende mais. Cinco lugares do Brasil, 60 peixes, e um bicho de estimação
+    em cada mapa.</p>
+  </header>
 
-  <h2>O guia</h2>
-  <p>As tabelas de isca, evento, barco e recolhedor, com os números do jogo: <a href="guia.html">guia a deriva</a>. Dentro do jogo ele está no menu ▲, em <strong>Guia</strong>.</p>
-  <p>Ele diz de qual versão os números são. Se a marca dele não bater com a do seu jogo, é porque saiu build nova depois da sua.</p>
+  <section>
+    <div class="caixa">
+      <p class="rotulo">Versão mais recente</p>
+      <p class="versao" id="marca">—</p>
+      <p class="quando" id="quando"></p>
+      <p class="recado" id="recado"></p>
+    </div>
+  </section>
 
-  <h2>Apoiar</h2>
-  <p>O jogo é de graça e vai continuar sendo. Se ele te fez companhia e você quiser ajudar, é <a href="apoiar.html">por aqui</a>.</p>
+  <section>
+    <h2>Como baixar</h2>
+    <p id="download">O link ainda não está aqui — por enquanto o jogo passa de mão em mão.
+    Quando a página do itch.io existir, ela entra neste lugar.</p>
+  </section>
 
-  <h2>Como atualizar</h2>
-  <p>Descompacte a pasta nova por cima da antiga, ou num lugar qualquer. <strong>O seu jogo salvo não fica na pasta do jogo</strong> — ele mora nos seus dados do Windows, então trocar de pasta não perde nada.</p>
+  <section>
+    <h2>O guia</h2>
+    <p>As tabelas de isca, evento, barco e recolhedor, com os números do jogo:
+    <a href="guia.html">guia a deriva</a>. Dentro do jogo ele está no menu ▲, em
+    <strong>Guia</strong>.</p>
+    <p>Ele diz de qual versão os números são. Se a marca dele não bater com a do seu jogo, é
+    porque saiu build nova depois da sua — o balanceamento muda, e o guia acompanha.</p>
+  </section>
 
-  <h2>Achou um problema?</h2>
-  <p>Mande junto a pasta <code>logs</code>, que fica em <code>%APPDATA%\Godot\app_userdata\À Deriva\</code>. Ela diz a versão, a placa de vídeo e o que o jogo estava fazendo — é o que resolve metade das perguntas antes de eu precisar fazê-las.</p>
+  <section>
+    <h2>Como atualizar</h2>
+    <p>Descompacte a pasta nova por cima da antiga, ou num lugar qualquer.
+    <strong>O seu jogo salvo não fica na pasta do jogo</strong> — ele mora nos seus dados do
+    Windows, então trocar de pasta não perde nada.</p>
+    <p>O próprio jogo avisa quando sai versão nova: ele consulta esta página quando abre, e
+    de novo a cada seis horas. Não baixa nada sozinho.</p>
+  </section>
+
+  <section>
+    <h2>Achou um problema?</h2>
+    <p>Mande junto a pasta <code>logs</code>, que fica em
+    <code>%APPDATA%\Godot\app_userdata\À Deriva\</code> (cole no Executar, com Win+R).
+    Cada arquivo começa dizendo a versão, o Windows, a placa de vídeo e o modo de janela —
+    é o que responde metade das perguntas antes de eu precisar fazê-las.</p>
+  </section>
+
+  <section>
+    <h2>Apoiar</h2>
+    <p>O jogo é de graça e vai continuar sendo. Se ele te fez companhia e você quiser
+    ajudar, é <a href="apoiar.html">por aqui</a>.</p>
+  </section>
 
   <footer>
-    Esta página existe também para o jogo: ele consulta
-    <a href="versao.json">versao.json</a> quando abre, pra avisar que saiu versão nova.
-    A consulta não manda nada — nem quem é, nem qual versão tem.
+    Esta página serve também ao jogo: ele lê <a href="versao.json">versao.json</a> pra saber
+    se saiu versão nova. A consulta não manda nada — nem quem é, nem qual versão tem.
   </footer>
-</main>
+
+</div>
 
 <script>
+// A CAIXA DA VERSAO SE PREENCHE SOZINHA a partir do mesmo arquivo que o jogo consulta.
+// Escrever a versao na mao aqui criaria uma segunda copia do numero, e duas copias sempre
+// acabam divergindo — foi exatamente isso que aconteceu com o guia dentro do zip.
 fetch('versao.json?' + Date.now())
   .then(function (r) { return r.json(); })
   .then(function (v) {

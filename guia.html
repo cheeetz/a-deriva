@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — guia rápido</title>
+<style>
+:root{
+  --fundo:#08151F; --agua:#102436; --agua2:#16304A; --linha:#1F4260;
+  --texto:#DCE7F0; --fraco:#89A4BB; --realce:#5AB6EA; --realce-2:#7FD4F5;
+  --comum:#B8BFC9; --incomum:#6FCE7E; --raro:#5BA8F0;
+  --epico:#C07AF0; --lendario:#F0C05A; --celestial:#8DF5FF;
+  --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0 20px 90px;
+  background:
+    radial-gradient(1100px 420px at 50% -140px, #1B3E5C 0%, transparent 70%),
+    var(--fundo);
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+
+/* ---------- barra do site (as tres paginas) ---------- */
+nav.sitio{
+  display:flex; gap:22px; align-items:baseline; padding:22px 0 0; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+}
+nav.sitio a{color:var(--fraco); text-decoration:none}
+nav.sitio a:hover{color:var(--realce-2)}
+nav.sitio a[aria-current="page"]{color:var(--realce)}
+nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
+
+/* ---------- topo ---------- */
+header{padding-top:34px; display:flex; flex-direction:column; gap:14px}
+.marca{
+  font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--realce);
+}
+h1{
+  margin:0; font-size:clamp(38px,7vw,60px); line-height:1; letter-spacing:-.03em;
+  font-weight:800; text-wrap:balance;
+}
+h1 span{color:var(--realce-2)}
+.chamada{margin:0; font-size:19px; color:var(--fraco); max-width:60ch; text-wrap:pretty}
+.onda{height:2px; background:linear-gradient(90deg,var(--realce),transparent); border-radius:2px}
+
+/* ---------- seções ---------- */
+section{display:flex; flex-direction:column; gap:16px}
+h2{
+  margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  font-family:var(--mono); color:var(--realce); font-weight:700;
+  display:flex; align-items:center; gap:12px;
+}
+h2::after{content:""; flex:1; height:1px; background:var(--linha)}
+h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
+p{margin:0; max-width:70ch}
+strong{color:#fff; font-weight:650}
+em{font-style:normal; color:var(--realce-2)}
+
+/* ---------- cartões ---------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px}
+.cartao{
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px;
+  padding:15px 17px; display:flex; flex-direction:column; gap:5px;
+}
+.cartao .k{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fraco);
+}
+.cartao .v{font-family:var(--mono); font-size:24px; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--realce-2)}
+.cartao .n{font-size:13.5px; color:var(--fraco); line-height:1.5}
+
+/* ---------- passos ---------- */
+.passos{counter-reset:p; display:flex; flex-direction:column; gap:10px}
+.passo{
+  display:grid; grid-template-columns:30px 1fr; gap:14px; align-items:start;
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px; padding:14px 16px;
+}
+.passo::before{
+  counter-increment:p; content:counter(p);
+  font-family:var(--mono); font-size:12px; font-weight:700; color:var(--fundo);
+  background:var(--realce); border-radius:50%;
+  width:24px; height:24px; display:grid; place-items:center; margin-top:2px;
+}
+.passo p{font-size:15px}
+
+/* ---------- tabelas ---------- */
+.rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:10px; background:var(--agua)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+caption{
+  text-align:left; padding:13px 16px 0; font-size:13px; color:var(--fraco);
+  caption-side:top;
+}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--linha)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--fraco); font-weight:700; background:var(--agua2); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(90,182,234,.07)}
+td.num, th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+td.nome{font-weight:600; white-space:nowrap}
+.dica-tabela{font-size:13px; color:var(--fraco)}
+
+/* raridades */
+.r{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700}
+.r-comum{color:var(--comum)} .r-incomum{color:var(--incomum)} .r-raro{color:var(--raro)}
+.r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)} .r-celestial{color:var(--celestial)}
+
+/* ---------- destaque ---------- */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
+
+footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; color:var(--fraco)}
+
+@media (max-width:560px){
+  body{font-size:15px; padding:0 14px 64px}
+  header{padding-top:40px}
+  .passo{grid-template-columns:24px 1fr; gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A BARRA DO SITE. O guia deixou de viajar dentro do zip em 25/08/2026 e passou a ser uma
+     pagina publicada (ver empacota.ps1), entao ele precisa de volta pras outras: sem isto ele
+     seria um beco -- a pessoa chega pelo menu do jogo, le, e nao tem pra onde ir. -->
+<nav class="sitio">
+  <a class="casa" href="./">À Deriva</a>
+  <a href="guia.html" aria-current="page">Guia</a>
+  <a href="apoiar.html">Apoiar</a>
+</nav>
+
+<header>
+  <div class="marca">Guia rápido <span id="versao">· v0.1.0.53</span></div>
+  <h1>À <span>Deriva</span></h1>
+  <div class="onda"></div>
+  <p class="chamada">Um jogo de pesca ociosa que mora numa faixa transparente no rodapé da
+  tela. Ele pesca sozinho enquanto você trabalha — clicar é opcional, mas rende mais.
+  Cinco lugares do Brasil, 60 peixes, e um bicho de estimação em cada mapa. Abrir os cinco
+  mapas leva por volta de <strong>45 horas</strong>; fechar tudo, com os cinco troféus, umas
+  <strong>95</strong>.</p>
+</header>
+
+<section>
+  <h2>O ciclo</h2>
+  <div class="passos">
+    <div class="passo"><p>O peixe morde sozinho. Em média a cada <strong>18 s</strong>, com
+      variação de 0,7× a 1,3× — e mais rápido conforme sua vara, barco e pets.</p></div>
+    <div class="passo"><p>Aparece um <strong>“!”</strong> na faixa. Você tem
+      <strong>2 segundos</strong> pra clicar.</p></div>
+    <div class="passo"><p>Clicou dentro da janela: <em>fisgada perfeita</em> — o peixe vale
+      <strong>+50%</strong> e não tem como escapar.</p></div>
+    <div class="passo"><p>Não clicou: o jogo rola a chance de falha da sua isca. Se falhar o
+      peixe some; se não, entra no barco normalmente.</p></div>
+    <div class="passo"><p>Barco cheio, a pesca <strong>para</strong>. Venda tudo pela barra
+      ou compre uma caixa maior.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Dia e noite</h2>
+  <div class="grade">
+    <div class="cartao"><span class="k">Dia</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Noite</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Transição</span><span class="v">3 min</span></div>
+  </div>
+  <p>De noite os peixes bons aparecem mais: <span class="r r-raro">raro</span> <strong>+20%</strong>,
+  <span class="r r-epico">épico</span> <strong>+40%</strong> e
+  <span class="r r-lendario">lendário</span> <strong>+60%</strong> no auge da madrugada
+  (o efeito entra e sai junto com a transição). A <strong>Vara da Meia-Noite</strong> só
+  funciona nesse período — e a <strong>Lua de Sangue</strong> só acontece nele.</p>
+</section>
+
+<section>
+  <h2>Raridade e iscas</h2>
+  <p>A isca é a decisão mais importante do jogo: ela muda <em>tudo</em> ao mesmo tempo — a
+  chance de peixe bom e a chance de perder o peixe. Isca melhor erra menos.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Chance de cada raridade, por isca. A Jujuba é grátis e infinita.</caption>
+      <thead>
+        <tr>
+          <th>Isca</th><th class="num">Falha</th><th>Efeito extra</th>
+          <th class="num"><span class="r r-comum">Comum</span></th>
+          <th class="num"><span class="r r-incomum">Incomum</span></th>
+          <th class="num"><span class="r r-raro">Raro</span></th>
+          <th class="num"><span class="r r-epico">Épico</span></th>
+          <th class="num"><span class="r r-lendario">Lendário</span></th>
+          <th class="num"><span class="r r-celestial">Celestial</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🍬 Jujuba <span style="color:var(--fraco)">(grátis)</span></td>
+          <td class="num">35%</td><td>—</td><td class="num">70,0%</td><td class="num">22,0%</td>
+          <td class="num">6,4%</td><td class="num">1,30%</td><td class="num">0,28%</td>
+          <td class="num">0,010%</td></tr>
+        <tr><td class="nome">Incomum</td>
+          <td class="num">22%</td><td>+20% de <strong>velocidade</strong></td><td class="num">54,1%</td><td class="num">30,0%</td>
+          <td class="num">11,5%</td><td class="num">3,40%</td><td class="num">1,00%</td>
+          <td class="num">0,050%</td></tr>
+        <tr><td class="nome">Rara</td>
+          <td class="num">15%</td><td>+25% na <strong>venda</strong></td><td class="num">37,1%</td><td class="num">32,1%</td>
+          <td class="num">20,1%</td><td class="num">8,02%</td><td class="num">2,71%</td>
+          <td class="num">0,150%</td></tr>
+        <tr><td class="nome">Épica</td>
+          <td class="num">8%</td><td>+35% na <strong>venda</strong></td><td class="num">23,3%</td><td class="num">29,3%</td>
+          <td class="num">26,3%</td><td class="num">14,7%</td><td class="num">6,37%</td>
+          <td class="num">0,403%</td></tr>
+        <tr><td class="nome">Lendária</td>
+          <td class="num">4%</td><td>+20% na <strong>venda</strong></td><td class="num">13,5%</td><td class="num">22,8%</td>
+          <td class="num">29,0%</td><td class="num">21,7%</td><td class="num">12,9%</td>
+          <td class="num">1,026%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Cada mapa vende as suas próprias iscas, com nomes diferentes mas os
+  mesmos cinco níveis. A falha ainda passa pela sua vara e pelos pets, e nunca ultrapassa 70%.</p>
+  <p><strong>Isca boa se paga.</strong> Além de errar menos, cada nível carrega um bônus
+  próprio — velocidade no incomum, valor de venda nos três de cima. A exceção é a
+  <strong>lendária</strong>, e ela é exceção de propósito: custa mais do que devolve, porque
+  ela não é isca de faturar, é o <em>bilhete pro celestial</em>. Queimar dinheiro nela é o
+  jeito de fechar a coleção.</p>
+  <p><strong>O preço sobe de mapa em mapa.</strong> A mesma isca lendária custa 10.000 no
+  Araguaia e 32.000 em Noronha — mais ou menos o triplo do primeiro ao último. É o que impede
+  que o dinheiro do fim de jogo compre o começo de novo.</p>
+</section>
+
+<section>
+  <h2>Eventos climáticos</h2>
+  <p>A cada <strong>1 min</strong> o jogo sorteia; a chance de começar um evento é de
+  <strong>5%</strong> (o primeiro só depois de 30 s de jogo) — na média, um evento a cada
+  <strong>20 min</strong>. Ele avisa <strong>10 s antes</strong> de cair e dura de
+  <strong>5 a 7 min</strong>, sorteados na hora. Todo evento tem uma <em>mordida garantida</em>
+  — em algum ponto entre 20% e 80% da duração, vem um peixe daquela raridade, sem sorteio.</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Evento</th><th class="num">Peso</th>
+        <th>Garante</th><th>Efeito</th><th>Onde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🌧️ Chuva</td><td class="num">50</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>Morde 30% mais rápido</td><td>qualquer</td></tr>
+        <tr><td class="nome">✨ Águas Brilhantes</td><td class="num">16</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td><strong>×20</strong> na chance de celestial</td><td>qualquer</td></tr>
+        <tr><td class="nome">⛈️ Tempestade</td><td class="num">12</td>
+          <td><span class="r r-lendario">Lendário</span></td>
+          <td>×1,8 nas raridades altas · +10 p.p. de falha</td><td>qualquer</td></tr>
+        <tr><td class="nome">🩸 Lua de Sangue</td><td class="num">8</td>
+          <td><span class="r r-lendario">Lendário</span></td>
+          <td><strong>×5</strong> na chance de lendário</td><td>só de noite</td></tr>
+        <tr><td class="nome">🌊 Pororoca</td><td class="num">8</td>
+          <td><span class="r r-lendario">Lendário</span></td>
+          <td>×2,4 nas altas · +15 p.p. de falha</td><td>Araguaia e Rio Negro</td></tr>
+        <tr><td class="nome">🫧 Virada das Águas</td><td class="num">8</td>
+          <td><span class="r r-lendario">Lendário</span></td>
+          <td>×2 nas altas · comuns caem pra ¼</td><td>Furnas</td></tr>
+        <tr><td class="nome">🌀 Furacão</td><td class="num">8</td>
+          <td><span class="r r-lendario">Lendário</span></td>
+          <td>×2,4 nas altas · +15 p.p. de falha</td><td>Costa de SC</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela"><strong>Peso</strong> é o quanto o evento pesa no sorteio, não uma
+  porcentagem: a Chuva sozinha responde por mais da metade dos sorteios. Os eventos de mapa só
+  entram no sorteio quando você está lá — e a <strong>Pororoca</strong> é a onda de maré
+  subindo o rio, então vale nos dois rios e em mais lugar nenhum.</p>
+  <div class="nota"><strong>Tempestade, Pororoca e Furacão cobram caro.</strong> Eles enchem
+  a água de peixe bom mas aumentam a falha — é exatamente a hora de trocar pra uma isca
+  melhor e ficar de olho no “!”.</div>
+</section>
+
+<section>
+  <h2>Varas</h2>
+  <p>Todas custam <strong>700</strong> de base, mas cada vara comprada encarece a próxima em
+  <strong>50%</strong>. Só uma fica equipada.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Vara</th><th>O que faz</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🎋 Bambu</td><td>A inicial, sem bônus.</td></tr>
+        <tr><td class="nome">🎣 Fibra</td><td>+40% de velocidade, mas erra 25% mais.</td></tr>
+        <tr><td class="nome">🪝 Aço</td><td>−40% de falha. O peixe raramente escapa.</td></tr>
+        <tr><td class="nome">✨ Carbono</td><td>+30% de qualidade (mais peixe raro), −20% de velocidade e erra 25% mais.</td></tr>
+        <tr><td class="nome">💰 Mercador</td><td>Peixes valem +20% na venda.</td></tr>
+        <tr><td class="nome">🌙 Meia-Noite</td><td>À noite: +40% de velocidade e +25% de qualidade. De dia é uma vara comum.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Barcos e caixas</h2>
+  <p>O barco define quantos peixes cabem antes da pesca parar. Cada barco comprado encarece o
+  próximo em 15%. Os dois últimos <strong>exigem troféu</strong>, e não só dinheiro: é o que
+  obriga a fechar coleção antes de subir de frota.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Barco</th><th class="num">Espaços</th><th class="num">Preço</th><th>Extra</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🛶 Canoa</td><td class="num">12</td><td class="num">—</td><td>a inicial</td></tr>
+        <tr><td class="nome">⛵ Bote Reforçado</td><td class="num">24</td><td class="num">2.000</td><td>equilibrado</td></tr>
+        <tr><td class="nome">💨 Lancha</td><td class="num">28</td><td class="num">6.000</td><td>+25% de velocidade</td></tr>
+        <tr><td class="nome">🎣 Traineira</td><td class="num">48</td><td class="num">14.000</td><td>−15% de velocidade — pra deixar rodando</td></tr>
+        <tr><td class="nome">🐟 Barco Fábrica</td><td class="num">36</td><td class="num">55.000</td><td>+25% na venda · exige <strong>2 🏆</strong></td></tr>
+        <tr><td class="nome">🔱 Traineira Oceânica</td><td class="num">36</td><td class="num">90.000</td><td>+20% de qualidade · exige <strong>3 🏆</strong> — o topo da frota</td></tr>
+        <tr><td class="nome">☠️ Holandês Voador</td><td class="num">56</td><td class="num">DLC</td><td>+15% velocidade e venda · conteúdo à parte, não se compra com moeda do jogo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>As <strong>caixas</strong> multiplicam a capacidade do barco e são cumulativas — cada uma
+  exige a anterior: Isopor <em>×1,5</em> (25.000), Térmica <em>×2</em> (80.000),
+  Porão <em>×2,5</em> (250.000 <strong>+ 1 troféu</strong>),
+  Câmara <em>×3</em> (600.000 <strong>+ 2 troféus</strong>).</p>
+  <p>As duas últimas pedem troféu pelo mesmo motivo que o Barco Fábrica e a Oceânica pedem:
+  capacidade é o que mais encurta o tempo de jogo, e a maior de todas não sai só de esperar
+  moeda acumular. Troféu é coleção completa de um mapa, e toda coleção passa pelo peixe
+  celestial — ou seja, pela isca cara.</p>
+</section>
+
+<section>
+  <h2>Pets</h2>
+  <p>Cada mapa tem um bicho. Ele aparece sozinho, com <strong>0,1% de chance por peixe
+  pescado</strong> — é raro de propósito. Dá pra manter <strong>3 ativos</strong> ao mesmo
+  tempo, e os bônus somam.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Pet</th><th>Mapa</th><th>Bônus</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🐊 Jacaré</td><td>Rio Araguaia</td><td>−8% de chance de falha</td></tr>
+        <tr><td class="nome">🦦 Ariranha</td><td>Rio Negro</td><td>+6% no valor de venda</td></tr>
+        <tr><td class="nome">🦢 Tuiuiú</td><td>Lago de Furnas</td><td>+7% de qualidade</td></tr>
+        <tr><td class="nome">🐬 Boto</td><td>Costa de Santa Catarina</td><td>−10% no tempo entre mordidas</td></tr>
+        <tr><td class="nome">🐢 Tartaruga</td><td>Fernando de Noronha</td><td>+8% de qualidade nas raridades altas</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">Se o pet cair de novo depois de você já ter ele, vem um
+  <strong>duplicado</strong> — não serve de bônus, mas vale entre
+  <strong>5.000 e 9.999</strong> no inventário.</div>
+</section>
+
+<section>
+  <h2>Mapas e troféus</h2>
+  <p>Você começa no Araguaia. Cada mapa novo se abre pagando — <em>ou de graça</em>, se você
+  tiver o troféu do anterior. O troféu vem de <strong>completar a coleção</strong> do lugar:
+  os 12 peixes, pelo menos um de cada.</p>
+  <p>A coluna <strong>Celestial</strong> é o que mudou o jogo inteiro: o peixe mais raro de
+  cada mapa fica progressivamente mais difícil de tirar. No Araguaia ele sai na chance cheia;
+  em Noronha, com <strong>um décimo</strong> dela. Como o troféu exige a coleção completa, e
+  a coleção inclui o celestial, é isso que faz o fim de jogo existir — e é onde o dinheiro
+  grande é queimado, em isca cara.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Mapa</th><th>UF</th><th class="num">Custo</th><th class="num">Celestial</th><th>Evento próprio</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Rio Araguaia (praias)</td><td>TO/GO</td><td class="num">inicial</td><td class="num">×1</td><td>🌊 Pororoca</td></tr>
+        <tr><td class="nome">Rio Negro</td><td>AM</td><td class="num">55.000</td><td class="num">×0,60</td><td>—</td></tr>
+        <tr><td class="nome">Lago de Furnas</td><td>MG</td><td class="num">200.000</td><td class="num">×0,35</td><td>🫧 Virada das Águas</td></tr>
+        <tr><td class="nome">Costa de Santa Catarina</td><td>SC</td><td class="num">330.000</td><td class="num">×0,20</td><td>🌀 Furacão</td></tr>
+        <tr><td class="nome">Fernando de Noronha</td><td>PE</td><td class="num">900.000</td><td class="num">×0,10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>O Recolhedor</h2>
+  <p>Um barco que passa <strong>de hora em hora</strong>, esvazia o seu porão e paga uma parte
+  do valor. Você só tem um de cada vez, e comprar o melhor troca o antigo. É o que faz o jogo
+  render sozinho de verdade — pagando pedágio por isso.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Recolhedor</th><th class="num">Custa</th><th class="num">Paga</th><th>Quando vale</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🪵 Jangada</td><td class="num">3.000</td><td class="num">20%</td>
+          <td>Ainda no Araguaia. Paga mal de propósito — ela existe pra você conhecer o
+          recolhedor cedo, não pra ficar com ela</td></tr>
+        <tr><td class="nome">🛶 Bote</td><td class="num">40.000</td><td class="num">50%</td>
+          <td>Logo depois do Barco Fábrica, quando o porão começa a encher sem você olhando</td></tr>
+        <tr><td class="nome">🚤 Barco</td><td class="num">120.000</td><td class="num">70%</td>
+          <td>Depois da Oceânica, quando cada lance já vale muito</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Nenhum deles paga bem, e é de propósito: vender na mão sempre rende
+  mais. O recolhedor é conveniência, não atalho.</p>
+</section>
+
+<section>
+  <h2>Onde o jogo mora</h2>
+  <p>Ele roda de dois jeitos, e a troca está no menu (botão ▲) em
+  <strong>Configurações</strong>. Trocar de modo <strong>reinicia o jogo</strong> — é de
+  propósito: os dois usam renderizadores diferentes, e isso só se escolhe no arranque. A
+  escolha fica guardada pro próximo dia.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Faixa</h3>
+      <span class="n">Uma tira em cima da barra de tarefas, sempre à vista. O clique atravessa
+      onde não há jogo, então ela não atrapalha o que está embaixo.</span>
+    </div>
+    <div class="cartao">
+      <h3>Fundo de tela</h3>
+      <span class="n">A paisagem inteira <em>atrás</em> dos ícones da área de trabalho. Os ícones
+      continuam clicáveis e qualquer janela passa por cima. Só no Windows.</span>
+    </div>
+  </div>
+  <p class="dica-tabela">No fundo de tela a barra do HUD vai pro canto inferior direito (os
+  ícones moram à esquerda), e os painéis abrem numa janelinha própria — fecha com Esc, clicando
+  fora, ou pelo ícone do peixe na bandeja do sistema, ao lado do relógio.</p>
+  <p>Ainda em <strong>Configurações</strong>: com mais de um monitor dá pra escolher
+  <strong>em qual tela</strong> o jogo mora (trocar também relança), e há um
+  <strong>Iniciar com o Windows</strong>, que faz o jogo abrir sozinho quando o computador
+  liga.</p>
+</section>
+
+<section>
+  <h2>O som</h2>
+  <p>O jogo tem trilha, efeitos e clima — e as três coisas se ligam e se desligam
+  separadamente, com volume próprio, em <strong>Configurações › Som</strong>. São separadas
+  porque incomodam por motivos diferentes: a trilha cansa quem deixa o jogo ligado o dia
+  inteiro, o efeito atrapalha quem está numa chamada, e a chuva é justamente o que muita gente
+  quer de fundo enquanto trabalha.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Trilha</h3>
+      <span class="n">Treze faixas que se revezam sozinhas e nunca repetem a mesma duas vezes
+      seguidas. Sete tocam de dia e seis de noite — e a troca só acontece no fim de uma faixa,
+      nunca cortando no meio.</span>
+    </div>
+    <div class="cartao">
+      <h3>Efeitos</h3>
+      <span class="n">Só o que acontece no rio: a mordida, a bóia, o peixe na cesta, a fisgada
+      perfeita, o troféu, o pet. Botão não faz barulho — clique não é novidade.</span>
+    </div>
+    <div class="cartao">
+      <h3>Clima</h3>
+      <span class="n">Chuva, tempestade e vento por baixo da música, enquanto o evento dura. Na
+      tempestade e no furacão cai raio, e o <strong>trovão sai no mesmo quadro do clarão</strong>
+      — o estouro dura meio segundo a mais que o desenho, como quando cai perto.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Três coisas que aceleram tudo</h2>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Clique no “!”</h3>
+      <span class="n">+50% no peixe e falha zero. É o único momento em que sua atenção
+      vale dinheiro.</span>
+    </div>
+    <div class="cartao">
+      <h3>Suba a isca antes da vara</h3>
+      <span class="n">A isca mexe na raridade <em>e</em> na falha ao mesmo tempo. Ir da
+      Jujuba pra Lendária derruba a falha de 35% pra 4%.</span>
+    </div>
+    <div class="cartao">
+      <h3>Guarde as boas pra noite</h3>
+      <span class="n">Lendário aparece 60% mais à noite, e é quando a Lua de Sangue pode
+      cair — ela multiplica isso por 5.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  À Deriva · guia rápido · os números vêm direto do código do jogo e mudam quando o
+  balanceamento mudar. A versão está lá em cima, e é a mesma que a tela de início mostra —
+  se as duas não baterem, o guia é de outra build.
+</footer>
+
+</div>
+</body>
+</html>

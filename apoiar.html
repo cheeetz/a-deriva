@@ -4,68 +4,65 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apoiar — À Deriva</title>
-<style>
-  :root {
-    --fundo: #14181f;
-    --madeira: #2a2119;
-    --tinta: #e6e1d6;
-    --fraco: #9b917f;
-    --agua: #6fc4e8;
-    --borda: #3a3227;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--fundo);
-    color: var(--tinta);
-    font: 16px/1.65 ui-sans-serif, system-ui, "Segoe UI", sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 8vh 20px 12vh;
-  }
-  main { width: 100%; max-width: 36rem; }
-  h1 { font-size: 2.2rem; margin: 0 0 .2em; letter-spacing: -.02em; }
-  .sub { color: var(--fraco); margin: 0 0 2.5rem; }
-  .porta {
-    display: block;
-    background: var(--madeira);
-    border: 1px solid var(--borda);
-    border-radius: 10px;
-    padding: 1.2rem 1.4rem;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: inherit;
-  }
-  a.porta:hover { border-color: var(--agua); }
-  .porta strong { display: block; font-size: 1.15rem; margin-bottom: .25rem; }
-  .porta span { color: var(--fraco); font-size: .93rem; }
-  .vazia { opacity: .55; }
-  p { margin: 0 0 1rem; }
-  a { color: var(--agua); }
-  footer { color: var(--fraco); font-size: .85rem; margin-top: 2.5rem; }
-</style>
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-<main>
-  <h1>Obrigado</h1>
-  <p class="sub">O jogo é de graça e vai continuar sendo. Se ele te fez companhia e você quiser ajudar, é por aqui.</p>
+<div class="wrap">
 
-  <!-- QUANDO O LIVEPIX EXISTIR: troque a div por um <a class="porta" href="…"> e tire a
-       classe "vazia". Nada de rebuild do jogo — ele aponta pra esta página, não pro destino. -->
-  <div class="porta vazia">
-    <strong>Pix</strong>
-    <span>Em breve. Vai ser o caminho mais direto pra quem é do Brasil — sem taxa de cartão e sem dólar.</span>
-  </div>
+  <nav class="sitio">
+    <a class="casa" href="./">À Deriva</a>
+    <a href="guia.html">Guia</a>
+    <a href="apoiar.html" aria-current="page">Apoiar</a>
+  </nav>
 
-  <div class="porta vazia">
-    <strong>Página do itch.io</strong>
-    <span>Em breve. Pra quem prefere cartão, ou está fora do Brasil.</span>
-  </div>
+  <header class="topo">
+    <div class="marca">Obrigado</div>
+    <h1>Se você quiser <span>ajudar</span></h1>
+    <p class="chamada">O jogo é de graça e vai continuar sendo. Nada aqui desbloqueia coisa
+    nenhuma — não há item pago, não há atalho comprado, e quem não apoiar joga exatamente o
+    mesmo jogo de quem apoiar.</p>
+  </header>
+
+  <section>
+    <div class="portas">
+      <!-- QUANDO O LIVEPIX EXISTIR: troque a <div> por
+           <a class="porta" href="ENDERECO"> e tire a classe "vazia".
+           O jogo aponta pra ESTA PÁGINA, nunca pro destino — então isto vale
+           retroativamente pra quem já tem o jogo instalado, sem build nova. -->
+      <div class="porta vazia">
+        <strong>Pix</strong>
+        <span>Em breve. É o caminho mais direto pra quem é do Brasil: sem taxa de cartão,
+        sem dólar e sem cadastro.</span>
+      </div>
+
+      <!-- Idem: vira <a class="porta" href="https://SEUNOME.itch.io/a-deriva"> -->
+      <div class="porta vazia">
+        <strong>Página do itch.io</strong>
+        <span>Em breve. Pra quem prefere cartão, ou está fora do Brasil.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Onde o dinheiro vai</h2>
+    <p>Pra manter o jogo sendo feito: arte, som e as ferramentas que entram nele. Não há
+    empresa, não há equipe e não há meta — é um projeto de uma pessoa só, e o que chega
+    ajuda a ele continuar existindo.</p>
+  </section>
+
+  <section>
+    <h2>Ajudar sem gastar nada</h2>
+    <p>Vale tanto quanto, e às vezes mais: <strong>conte o que te incomodou</strong>. Um
+    relato de onde o jogo travou, ficou chato ou ficou confuso muda o jogo de um jeito que
+    dinheiro nenhum muda.</p>
+    <p>Se for relatar algo quebrado, mande junto a pasta <code>logs</code> — o
+    <a href="./">começo desta página</a> explica onde ela fica.</p>
+  </section>
 
   <footer>
-    Nada aqui é obrigatório e nada fica bloqueado sem pagar — o jogo é o mesmo com ou sem isso.
-    <br><a href="./">Voltar</a>
+    <a href="./">Voltar</a>
   </footer>
-</main>
+
+</div>
 </body>
 </html>
