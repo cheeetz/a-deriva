@@ -1,7 +1,7 @@
 {
-  "marca": "v0.1.0.51",
-  "conta": 51,
-  "quando": "2026-08-25",
+  "marca": "v0.1.0.65-demo",
+  "conta": 65,
+  "quando": "2026-08-26",
   "url": "https://cheeetz.github.io/a-deriva/",
-  "recado": "O jogo passa a avisar quando sai versão nova"
+  "recado": "A demo está no itch.io: dois mapas, quatro barcos e todas as varas"
 }

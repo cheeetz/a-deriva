@@ -195,6 +195,18 @@ footer {
 }
 .tela figcaption { color: var(--fraco); font-size: .92rem; line-height: 1.5; }
 .tela.grande figcaption { text-align: center; font-size: .95rem; }
+/* O VÍDEO usa a mesma moldura das capturas — é a mesma coisa, só que andando.
+   `aspect-ratio` no lugar do truque antigo de padding-bottom: o quadro do YouTube é sempre
+   16:9, e reservar a altura antes de ele carregar evita que a página inteira pule pra baixo
+   quando ele chega. */
+.video {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--linha); border-radius: 12px;
+  background: var(--agua);
+  overflow: hidden;
+}
+.video iframe { display: block; width: 100%; height: 100%; border: 0; }
+
 .telas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
 
 /* ---------- a bandeira do idioma ---------- */
