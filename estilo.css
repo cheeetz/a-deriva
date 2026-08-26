@@ -203,3 +203,8 @@ footer {
    nome do jogo pra resolver problema de quem nao tem. */
 nav.sitio .bandeira { margin-left: auto; letter-spacing: .08em; }
 nav.sitio .bandeira:hover { color: var(--realce); }
+
+/* O paragrafo que fecha o pedido, logo abaixo dos botoes de doacao. Existe como classe e nao
+   como style no HTML porque ele carrega o unico respiro daquela secao, e respiro escrito no
+   atributo e o tipo de coisa que some no proximo copiar e colar. */
+.depois-portas { margin-top: 1.2rem; }
