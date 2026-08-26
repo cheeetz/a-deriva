@@ -196,3 +196,10 @@ footer {
 .tela figcaption { color: var(--fraco); font-size: .92rem; line-height: 1.5; }
 .tela.grande figcaption { text-align: center; font-size: .95rem; }
 .telas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+
+/* ---------- a bandeira do idioma ---------- */
+/* Ela e o ULTIMO item da barra e nao o primeiro: quem chega ja esta na lingua que escolheu, e
+   o unico que precisa dela e a minoria que caiu na outra. Primeiro item roubaria o lugar do
+   nome do jogo pra resolver problema de quem nao tem. */
+nav.sitio .bandeira { margin-left: auto; letter-spacing: .08em; }
+nav.sitio .bandeira:hover { color: var(--realce); }
