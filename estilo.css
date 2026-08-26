@@ -155,3 +155,17 @@ footer {
   color: var(--fraco); font-size: .88rem;
   border-top: 1px solid var(--linha); padding-top: 22px;
 }
+
+/* ---------- telas do jogo ---------- */
+/* AQUI A SUAVIZAÇÃO É O CERTO, ao contrário das vitrines de sprite: estas imagens chegam
+   MAIORES que o espaço e são reduzidas pelo navegador. "pixelated" só ajuda quando se
+   amplia — na redução ele come linha de pixel e serrilha a cena inteira. */
+.tela { margin: 0; display: flex; flex-direction: column; gap: .6rem; }
+.tela .arte {
+  image-rendering: auto;
+  border: 1px solid var(--linha); border-radius: 12px;
+  background: var(--agua);
+}
+.tela figcaption { color: var(--fraco); font-size: .92rem; line-height: 1.5; }
+.tela.grande figcaption { text-align: center; font-size: .95rem; }
+.telas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
