@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>À Deriva — guia rápido</title>
 <style>
+@font-face{
+  font-family:"Geist Pixel";
+  src:url("GeistPixel-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
 :root{
   /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
      TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
@@ -14,8 +19,8 @@
   --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
   --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
   --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
-  --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Geist Pixel",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"Geist Pixel",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -24,8 +29,9 @@ body{
   background:
     radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
     var(--fundo);
-  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.62;
-  -webkit-font-smoothing:antialiased;
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.78;
+  /* fonte de pixel: desenhada na grade, antialias so borra */
+  -webkit-font-smoothing:none; font-smooth:never;
 }
 .wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
 
@@ -63,7 +69,8 @@ h2{
 h2::after{content:""; flex:1; height:1px; background:var(--linha)}
 h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
 p{margin:0; max-width:70ch}
-strong{color:var(--texto); font-weight:650}
+strong,b{color:var(--texto); font-weight:400; text-shadow:1px 0 0 currentColor}
+h1,h2,h3,th{font-weight:400; text-shadow:1px 0 0 currentColor}
 em{font-style:normal; color:var(--realce-2)}
 
 /* ---------- cartões ---------- */

@@ -1,3 +1,22 @@
+/* A FONTE É A MESMA DO JOGO: Geist Pixel, a que desenha cada preço e cada nome de peixe lá
+   dentro. Vem hospedada aqui, e não do Google: a licença (OFL 1.1, cópia em
+   GeistPixel-OFL.txt) permite, o site para de depender de terceiro pra carregar, e ninguém
+   que abre esta página vira registro no servidor de outra empresa.
+
+   787 KB viraram 16,8 KB cortando o que a página nunca escreve — sobrou latim, latim-1 e
+   latim estendido A, que cobre português e inglês com folga.
+
+   NEGRITO NÃO EXISTE NESTE ARQUIVO: só há o peso Regular, e mandar o navegador engrossar uma
+   fonte de pixel borra a letra inteira. Onde precisa de ênfase, `strong` ganha um text-shadow
+   de 1 px na horizontal — que é exatamente como fonte de pixel faz negrito de verdade. */
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("GeistPixel-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* A PALETA VEM DE FERNANDO DE NORONHA, o último mapa do jogo — a água esverdeada e clara,
    em vez do azul-noite que o guia usava. O jogo é leve: ele roda no canto da tela enquanto
    você faz outra coisa, e uma página escura prometia um jogo mais pesado do que ele é.
@@ -26,8 +45,8 @@
   --lendario: #906810;
   --celestial: #0C7A8C;
 
-  --mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Geist Pixel", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --sans: "Geist Pixel", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -43,8 +62,10 @@ body {
   color: var(--texto);
   font-family: var(--sans);
   font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.8;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never;
 }
 
 .wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
@@ -67,20 +88,26 @@ header.topo { padding-top: 26px; display: flex; flex-direction: column; gap: 16p
 }
 h1 {
   margin: 0; font-size: clamp(38px, 7vw, 62px); line-height: 1.03;
-  letter-spacing: -.035em; font-weight: 800; text-wrap: balance;
+  letter-spacing: -.01em; text-wrap: balance;
 }
 h1 span { color: var(--realce); }
+
+/* O NEGRITO DA FONTE DE PIXEL. Ver a nota do @font-face: só existe o peso Regular, então
+   font-weight aqui é sempre 400 e a espessura vem da sombra de 1 px. */
+strong, b, .cartao h3, h1, h2, h3, .versao, .porta strong, .acao { font-weight: 400; }
+strong, b { text-shadow: 1px 0 0 currentColor; }
+h1, h2, h3, .acao, .versao, .porta strong { text-shadow: 1px 0 0 currentColor; }
 .chamada { margin: 0; color: var(--fraco); font-size: 1.12rem; max-width: 60ch; }
 .chamada strong { color: var(--texto); }
 
-h2 { margin: 0 0 .5em; font-size: 1.35rem; letter-spacing: -.01em; text-wrap: balance; }
+h2 { margin: 0 0 .6em; font-size: 1.3rem; letter-spacing: 0; text-wrap: balance; }
 h3 { margin: 0 0 .3em; font-size: 1.02rem; }
 section { display: flex; flex-direction: column; }
 p { margin: 0 0 1rem; max-width: 66ch; }
 p:last-child { margin-bottom: 0; }
 a { color: var(--realce); }
 a:hover { color: var(--realce-2); }
-strong { color: var(--texto); font-weight: 650; }
+strong { color: var(--texto); }
 
 code {
   font-family: var(--mono); font-size: .86em;
@@ -125,7 +152,7 @@ code {
   font-size: .7rem; color: var(--fraco); margin: 0 0 .55rem;
 }
 .versao {
-  margin: 0; font-size: 2rem; font-weight: 700; line-height: 1.1;
+  margin: 0; font-size: 1.9rem; line-height: 1.2;
   font-variant-numeric: tabular-nums; color: var(--realce);
 }
 .quando { margin: .35rem 0 0; color: var(--fraco); font-size: .9rem; }
@@ -139,14 +166,14 @@ code {
   border-radius: 12px; padding: 1.15rem 1.4rem;
 }
 a.porta:hover { border-color: var(--realce); background: var(--agua); }
-.porta strong { display: block; font-size: 1.12rem; margin-bottom: .2rem; color: var(--texto); }
+.porta strong { display: block; font-size: 1.12rem; margin-bottom: .3rem; color: var(--texto); }
 .porta span { color: var(--fraco); font-size: .95rem; }
 .porta.vazia { opacity: .55; }
 
 /* ---------- botão ---------- */
 .acao {
   display: inline-block; text-decoration: none;
-  background: var(--realce); color: #fff; font-weight: 650;
+  background: var(--realce); color: #fff;
   border-radius: 10px; padding: .8rem 1.5rem;
 }
 .acao:hover { background: var(--realce-2); color: #fff; }
