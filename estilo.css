@@ -220,3 +220,24 @@ nav.sitio .bandeira:hover { color: var(--realce); }
    como style no HTML porque ele carrega o unico respiro daquela secao, e respiro escrito no
    atributo e o tipo de coisa que some no proximo copiar e colar. */
 .depois-portas { margin-top: 1.2rem; }
+
+/* ---------- o que ainda nao existe ---------- */
+/* O SELO E' UMA PROMESSA COM DATA EM BRANCO, e ele existe porque a alternativa e' pior: uma
+   secao sobre chapeus no meio do guia faz a pessoa abrir o jogo, procurar e nao achar. Ela sai
+   achando que o jogo esta quebrado, quando o que esta e' incompleto -- e as duas coisas doem
+   diferente. Selo em cima do titulo resolve antes do primeiro paragrafo.
+
+   Fica ao lado do <h2> e nao acima dele pra nao virar um segundo titulo: e' uma etiqueta do
+   assunto, nao um assunto. */
+.futuro-selo {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--realce); background: var(--agua); border: 1px solid var(--linha);
+  border-radius: 999px; padding: 3px 10px; vertical-align: middle; margin-left: 10px;
+  font-weight: 700;
+}
+
+/* A celula do desenho na tabela de chapeus. `pixelated` nao e' capricho: sem ele o navegador
+   suaviza uma arte de 12 px ampliada 4x e o chapeu vira uma mancha -- exatamente o defeito que
+   a arte foi desenhada pra nao ter. */
+td.chapeu { width: 64px; padding: 4px 8px; text-align: center; }
+td.chapeu img { image-rendering: pixelated; display: block; margin: 0 auto; }
