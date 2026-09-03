@@ -241,3 +241,17 @@ nav.sitio .bandeira:hover { color: var(--realce); }
    a arte foi desenhada pra nao ter. */
 td.chapeu { width: 64px; padding: 4px 8px; text-align: center; }
 td.chapeu img { image-rendering: pixelated; display: block; margin: 0 auto; }
+
+/* ---------- destaque ---------- */
+/* A MESMA `.nota` DO GUIA, trazida pra ca em 03/09/2026. Ela existia so' dentro do <style> do
+   guia.html; o index passou a precisar dela pro aviso de que a partida nao continua na Steam --
+   e uma classe sem regra nenhuma nao da erro, da um paragrafo comum no meio do texto, que e
+   exatamente o que um aviso nao pode ser.
+
+   Os valores sao copia do guia de proposito: se as duas notas do site nao forem identicas, a
+   diferenca aparece em quem le as duas paginas seguidas. */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
