@@ -157,7 +157,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 </nav>
 
 <header>
-  <div class="marca">Guia rápido <span id="versao">· v0.1.0.72-demo</span></div>
+  <div class="marca">Guia rápido</div>
   <h1>À <span>Deriva</span></h1>
   <div class="onda"></div>
   <p class="chamada">Um jogo de pesca que mora numa faixa transparente no rodapé da tela —
@@ -260,9 +260,22 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
   <p>No alto da aba de Iscas tem um <strong>baú</strong>, e ele custa <strong>metade do pacote
   da isca lendária</strong> daquele mapa — 5.000 no Araguaia, 16.000 em Noronha. Abrir sorteia
   <strong>uma isca do mapa</strong>, na quantidade de uma compra normal.</p>
-  <p class="nota"><strong>Em isca, o baú devolve mais ou menos um terço do que custa</strong> —
-  quem só quer isca gasta menos na prateleira. O que ele tem e a prateleira não tem é o
-  <strong>0,5%</strong>: uma vez em duzentas, o baú abre em <strong>dez iscas celestiais</strong>.</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0,5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7,9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>O que sai de cada abertura do baú.</caption>
+      <thead><tr><th>Isca</th><th>Vem</th><th class="num">Chance</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Incomum</td><td>um pacote</td><td class="num">44,8%</td></tr>
+        <tr><td class="nome">Rara</td><td>um pacote</td><td class="num">29,9%</td></tr>
+        <tr><td class="nome">Épica</td><td>um pacote</td><td class="num">16,9%</td></tr>
+        <tr><td class="nome">Lendária</td><td>um pacote</td><td class="num">7,9%</td></tr>
+        <tr><td class="nome">Celestial</td><td>10 iscas</td><td class="num">0,5%</td></tr>
+      </tbody>
+    </table>
+  </div>
   <p>A celestial é a única isca que não tem preço: ela só sai do baú. E é a única boa em tudo ao
   mesmo tempo — mais peixe raro, peixe maior, mais rápido e mais caro. Cada mapa tem a sua: o
   <em>Muçum de Ouro</em> no Araguaia, o
@@ -350,7 +363,6 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
         <tr><td class="nome">🎣 Traineira</td><td class="num">48</td><td class="num">14.000</td><td>−15% de velocidade — pra deixar rodando</td></tr>
         <tr><td class="nome">🐟 Barco Fábrica</td><td class="num">36</td><td class="num">55.000</td><td>+25% na venda · exige <strong>2 🏆</strong></td></tr>
         <tr><td class="nome">🔱 Traineira Oceânica</td><td class="num">36</td><td class="num">90.000</td><td>+20% de qualidade · exige <strong>3 🏆</strong> — o topo da frota em número</td></tr>
-        <tr><td class="nome">☠️ Holandês Voador</td><td class="num">32</td><td class="num">200.000</td><td>+25% de velocidade · a nau fantasma, que também vem no Pirate's Pack</td></tr>
       </tbody>
     </table>
   </div>
@@ -460,8 +472,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
   <h3>Centímetro ou polegada</h3>
   <p>A escolha fica em Configurações, entre <strong>métrico</strong> (cm e kg) e
-  <strong>imperial</strong> (in e lb). É a única opção das Configurações que muda na hora, sem
-  relançar o jogo.</p>
+  <strong>imperial</strong> (in e lb).</p>
 </section>
 
 <section>
@@ -594,8 +605,9 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
   perde nada: o tempo de pescaria fica guardado e ela volta depois.</p>
 
   <h3>O que existe, e o que cada um faz</h3>
-  <p>O bônus de um chapéu é pequeno: <strong>o melhor chapéu vale menos que o pet mais
-  fraco</strong>.</p>
+  <p>Cada chapéu tem o seu bônus: ele ajuda na sua pescaria e ainda conta pra sua coleção.
+  <strong>Quanto mais raro, maior o empurrão</strong> — de 1% num comum a 5% num lendário, e a
+  condição nova soma mais meio ponto.</p>
   <div class="rolagem">
     <table>
       <caption>A chance é a de uma cegonha trazer aquele chapéu, somando as três condições. O de
@@ -855,9 +867,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 <!-- CHAPEUS:FIM -->
 
 <footer>
-  À Deriva · guia rápido · os números vêm direto do código do jogo e mudam quando o
-  balanceamento mudar. A versão está lá em cima, e é a mesma que a tela de início mostra —
-  se as duas não baterem, o guia é de outra build.
+  © 2026 G. Studios. Todos os direitos reservados.
 </footer>
 
 </div>
