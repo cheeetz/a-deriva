@@ -255,3 +255,60 @@ td.chapeu img { image-rendering: pixelated; display: block; margin: 0 auto; }
   padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
 }
 .nota strong{color:var(--texto)}
+
+/* ---------- o botão que espera ---------- */
+/* CINZA E SEM LINK, porque a página da Steam ainda não existe (11/09/2026). É um <span> e não
+   um <a> sem destino: link que não leva a lugar nenhum ainda recebe foco e clique, e o leitor
+   de tela anuncia uma porta que não abre. Quando a página existir, sai o <span class="espera">
+   e entra o <a class="acao"> de sempre. */
+.acao.espera {
+  background: #D6DDDF; color: #5E6E73; cursor: not-allowed;
+  text-shadow: 1px 0 0 currentColor; user-select: none;
+}
+.acao.espera:hover { background: #D6DDDF; color: #5E6E73; }
+
+/* ---------- os chapéus ---------- */
+/* A ARTE É A DO MERCADO (200 px) mostrada a 100 px: metade exata, então cada pixel da arte
+   vira um bloco de 5 px e continua quadrado. Qualquer tamanho quebrado come linha de pixel. */
+.contas { display: flex; flex-wrap: wrap; gap: 10px 40px; margin: .6rem 0 1.4rem; }
+.contas div { display: flex; flex-direction: column; }
+.contas b {
+  font-size: 2.2rem; line-height: 1.1; color: var(--realce);
+  font-weight: 400; font-variant-numeric: tabular-nums;
+}
+.contas span {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--fraco);
+}
+
+.vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; }
+.escada  { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 480px; margin: .2rem 0 1.2rem; }
+.dupla   { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 340px; margin: .2rem 0 1.2rem; }
+
+/* A COR DA RARIDADE MORA NUMA VARIÁVEL SÓ, e o cartão inteiro se tinge a partir dela: o fundo
+   quase branco puxado pra cor e o rótulo na cor cheia. As cores são as já medidas lá em cima
+   (todas acima de 4,6:1 sobre claro). */
+.peca {
+  --cor: var(--comum);
+  margin: 0; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 8px 10px; text-align: center;
+  background: color-mix(in srgb, var(--cor) 7%, var(--papel));
+  border: 1px solid color-mix(in srgb, var(--cor) 28%, var(--linha));
+  border-radius: 12px;
+}
+.peca img { width: 100px; height: 100px; max-width: 100%; image-rendering: pixelated; display: block; }
+.peca figcaption { display: flex; flex-direction: column; gap: 2px; }
+.peca .nome { font-size: .84rem; line-height: 1.3; color: var(--texto); }
+.peca .grau {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--cor);
+}
+.peca.incomum   { --cor: var(--incomum); }
+.peca.raro      { --cor: var(--raro); }
+.peca.epico     { --cor: var(--epico); }
+.peca.lendario  { --cor: var(--lendario); }
+.peca.celestial { --cor: var(--celestial); }
+
+/* os títulos de dentro de uma seção longa precisam de ar em cima, senão grudam no parágrafo
+   anterior e a seção lê como um bloco só */
+h3.subtitulo { margin-top: 1.6rem; font-size: 1.12rem; }

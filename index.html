@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>À Deriva</title>
-<meta name="description" content="Um jogo de pesca que fica pescando no rodapé da sua tela enquanto você trabalha. Cinco lugares do Brasil, 60 peixes, arte feita à mão.">
+<meta name="description" content="Um jogo de pesca que mora no rodapé da sua tela e pesca sozinho enquanto você trabalha. Cinco lugares do Brasil, 60 peixes e chapéus que viram item de verdade no seu inventário da Steam.">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -17,13 +17,22 @@
     <a class="bandeira" href="en/" hreflang="en" title="Read in English">🇺🇸 English</a>
   </nav>
 
+  <!-- A DEMO SAIU DESTA PÁGINA em 11/09/2026, e com ela o botão de download, a caixa da versão
+       e o "antes de você baixar". O jogo vai pra Steam, e uma página que manda baixar outra
+       coisa divide a atenção de quem chegou justo na hora de decidir.
+
+       O BOTÃO DA STEAM NASCE CINZA porque a página da loja ainda não existe. Ele fica no lugar
+       mesmo assim: quando a página abrir, é trocar o <span> por um <a> com o endereço, nos dois
+       pontos onde ele aparece — no topo e no fim. -->
   <header class="topo">
-    <div class="marca">Demo grátis · Windows · itch.io</div>
+    <div class="marca">Windows · em breve na Steam</div>
     <h1>Um rio no rodapé<br>da sua <span>tela</span></h1>
-    <p class="chamada">À Deriva fica pescando enquanto você trabalha. Ele mora numa faixa
-    transparente em cima da barra de tarefas — ou atrás dos ícones da área de trabalho, como
-    papel de parede. Você olha quando quer, clica quando dá, e o rio segue correndo sozinho.</p>
-    <p><a class="acao" href="https://cheeetz234.itch.io/aderiva">Baixar no itch.io</a></p>
+    <p class="chamada">Você passa oito horas por dia olhando pra essa tela. Ela podia ter um
+    rio.</p>
+    <p class="chamada">À Deriva mora numa faixa transparente em cima da barra de tarefas — ou
+    atrás dos ícones, como papel de parede — e pesca sozinho enquanto você trabalha. Você não
+    precisa jogar. <strong>O difícil vai ser não olhar.</strong></p>
+    <p><span class="acao espera" aria-disabled="true">Página na Steam · em breve</span></p>
   </header>
 
   <!-- O ARGUMENTO INTEIRO DO JOGO É COMO ELE APARECE, então a primeira coisa depois do
@@ -42,33 +51,34 @@
                 loading="lazy" allowfullscreen
                 allow="accelerometer; encrypted-media; picture-in-picture; fullscreen"></iframe>
       </div>
-      <figcaption>Do Araguaia a Fernando de Noronha em um minuto.
+      <figcaption>Do Araguaia a Fernando de Noronha em um minuto. Nada de trailer: é o jogo
+      rodando, do jeito que ele fica no seu rodapé.
       <a href="https://youtu.be/C1LKK-X-GU0">Ver no YouTube</a></figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Como é jogar</h2>
+    <h2>Feito pra quem não tem tempo de jogar</h2>
     <div class="cartoes">
       <div class="cartao">
         <h3>Pesca sozinho</h3>
-        <p>O peixe morde no seu tempo. Clicar na hora certa rende mais, mas sair pra fazer
-        outra coisa nunca foi punido.</p>
+        <p>Não pisca, não apita, não implora clique. O peixe morde no tempo dele. Clicar na
+        hora certa rende mais — mas sumir numa reunião de duas horas nunca custou nada.</p>
       </div>
       <div class="cartao">
         <h3>Cinco lugares do Brasil</h3>
-        <p>Do Araguaia ao mar de Fernando de Noronha, passando pelo Rio Negro, por Furnas e
-        pela costa catarinense. Cada um com os peixes e as iscas de lá.</p>
+        <p>Araguaia, Rio Negro, Furnas, a costa catarinense e o mar de Fernando de Noronha.
+        Nada de lago genérico: cada lugar tem os peixes e as iscas de lá.</p>
       </div>
       <div class="cartao">
         <h3>O clima manda</h3>
-        <p>Chuva, tempestade, pororoca, lua de sangue. Chega devagar, muda o que está mordendo,
-        e vai embora do mesmo jeito.</p>
+        <p>Chuva, tempestade, pororoca, lua de sangue. O tempo vira devagar — e o que está
+        mordendo vira junto.</p>
       </div>
       <div class="cartao">
         <h3>Um bicho em cada mapa</h3>
-        <p>Jacaré, ariranha, tuiuiú, boto e tartaruga. Aparecem raramente, ficam com você, e
-        cada um ajuda de um jeito.</p>
+        <p>Jacaré, ariranha, tuiuiú, boto e tartaruga. Aparecem raramente e, quando aparecem,
+        ficam. Cada um ajuda de um jeito.</p>
       </div>
     </div>
   </section>
@@ -99,10 +109,95 @@
     </div>
   </section>
 
+  <!-- OS CHAPÉUS SÃO O QUE NENHUM OUTRO JOGO DE PESCA OCIOSO TEM, e por isso a seção é a mais
+       longa da página. As artes são as mesmas 200 px que vão pro Mercado da Steam (pasta
+       steam/), mostradas a 100 px — metade exata, pra cada pixel da arte continuar quadrado.
+
+       Os números saem do jogo e não são arredondados pra ficar bonitos: 22 sorteáveis, pesos de
+       condição 55/35/10, e um lendário em 301 de peso no saco. "Uma Coroa nova a cada três mil
+       cegonhas" é 1/301 × 10%. Mexeu no saco em dados_jogo.gd, confere esta frase. -->
+  <section id="chapeus">
+    <h2>O chapéu que você pesca é seu. De verdade.</h2>
+    <p>Quase todo jogo te dá chapéu. Quase nenhum deixa você fazer alguma coisa com ele.</p>
+    <p>Aqui, de vez em quando, uma <strong>cegonha</strong> atravessa a sua tela carregando um
+    saco. Você clica nela antes que ela vá embora — e o que vem dentro não fica preso no jogo.
+    Vai pro seu <strong>inventário da Steam</strong>.</p>
+    <p>Dali pra frente o chapéu é seu. Vestir no pescador, trocar com um amigo ou
+    <strong>vender no Mercado da Steam</strong> pra quem chegou depois. O tempo que o rio
+    passou correndo no seu rodapé vira uma coisa que outra pessoa quer.</p>
+
+    <div class="contas">
+      <div><b>22</b><span>chapéus pra cair</span></div>
+      <div><b>3</b><span>condições de cada</span></div>
+      <div><b>66</b><span>peças pra fechar a coleção</span></div>
+    </div>
+
+    <div class="vitrine">
+      <figure class="peca comum"><img src="steam/bone.png" alt="Boné" width="100" height="100"><figcaption><span class="nome">Boné</span><span class="grau">Comum</span></figcaption></figure>
+      <figure class="peca comum"><img src="steam/tiroles.png" alt="Chapéu tirolês" width="100" height="100"><figcaption><span class="nome">Chapéu tirolês</span><span class="grau">Comum</span></figcaption></figure>
+      <figure class="peca comum"><img src="steam/bandana.png" alt="Bandana pirata" width="100" height="100"><figcaption><span class="nome">Bandana pirata</span><span class="grau">Comum</span></figcaption></figure>
+      <figure class="peca comum"><img src="steam/souwester.png" alt="Chapéu de chuva" width="100" height="100"><figcaption><span class="nome">Chapéu de chuva</span><span class="grau">Comum</span></figcaption></figure>
+      <figure class="peca incomum"><img src="steam/xerife.png" alt="Chapéu de xerife" width="100" height="100"><figcaption><span class="nome">Chapéu de xerife</span><span class="grau">Incomum</span></figcaption></figure>
+      <figure class="peca incomum"><img src="steam/quepe.png" alt="Quepe de capitão" width="100" height="100"><figcaption><span class="nome">Quepe de capitão</span><span class="grau">Incomum</span></figcaption></figure>
+      <figure class="peca incomum"><img src="steam/minerador.png" alt="Capacete de minerador" width="100" height="100"><figcaption><span class="nome">Capacete de minerador</span><span class="grau">Incomum</span></figcaption></figure>
+      <figure class="peca incomum"><img src="steam/aviador.png" alt="Capacete de aviador" width="100" height="100"><figcaption><span class="nome">Capacete de aviador</span><span class="grau">Incomum</span></figcaption></figure>
+      <figure class="peca incomum"><img src="steam/natal.png" alt="Gorro de Natal" width="100" height="100"><figcaption><span class="nome">Gorro de Natal</span><span class="grau">Incomum</span></figcaption></figure>
+      <figure class="peca raro"><img src="steam/pirata.png" alt="Tricórnio pirata" width="100" height="100"><figcaption><span class="nome">Tricórnio pirata</span><span class="grau">Raro</span></figcaption></figure>
+      <figure class="peca raro"><img src="steam/cartola.png" alt="Cartola" width="100" height="100"><figcaption><span class="nome">Cartola</span><span class="grau">Raro</span></figcaption></figure>
+      <figure class="peca raro"><img src="steam/bruxo.png" alt="Chapéu de bruxo" width="100" height="100"><figcaption><span class="nome">Chapéu de bruxo</span><span class="grau">Raro</span></figcaption></figure>
+      <figure class="peca raro"><img src="steam/bambu.png" alt="Chapéu de bambu" width="100" height="100"><figcaption><span class="nome">Chapéu de bambu</span><span class="grau">Raro</span></figcaption></figure>
+      <figure class="peca epico"><img src="steam/peixe.png" alt="Peixe esfomeado" width="100" height="100"><figcaption><span class="nome">Peixe esfomeado</span><span class="grau">Épico</span></figcaption></figure>
+      <figure class="peca epico"><img src="steam/gaivota.png" alt="Gaivota bicando" width="100" height="100"><figcaption><span class="nome">Gaivota bicando</span><span class="grau">Épico</span></figcaption></figure>
+      <figure class="peca epico"><img src="steam/viking.png" alt="Elmo viking" width="100" height="100"><figcaption><span class="nome">Elmo viking</span><span class="grau">Épico</span></figcaption></figure>
+      <figure class="peca epico"><img src="steam/urso.png" alt="Capuz de urso" width="100" height="100"><figcaption><span class="nome">Capuz de urso</span><span class="grau">Épico</span></figcaption></figure>
+      <figure class="peca epico"><img src="steam/tubarao.png" alt="Cabeça de tubarão" width="100" height="100"><figcaption><span class="nome">Cabeça de tubarão</span><span class="grau">Épico</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/coroa.png" alt="Coroa imperial" width="100" height="100"><figcaption><span class="nome">Coroa imperial</span><span class="grau">Lendário</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/mosqueteiro.png" alt="Chapéu de mosqueteiro" width="100" height="100"><figcaption><span class="nome">Chapéu de mosqueteiro</span><span class="grau">Lendário</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/aureola.png" alt="Auréola" width="100" height="100"><figcaption><span class="nome">Auréola</span><span class="grau">Lendário</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/louros.png" alt="Coroa de louros" width="100" height="100"><figcaption><span class="nome">Coroa de louros</span><span class="grau">Lendário</span></figcaption></figure>
+    </div>
+    <p class="legenda">Todo mundo começa com o chapéu de palha. Os outros 22, só a cegonha traz.</p>
+
+    <h3 class="subtitulo">Rasgado, usado, novo</h3>
+    <p>Cada chapéu cai numa de três condições — e cada condição é <strong>um item diferente na
+    Steam</strong>, com o seu próprio preço no Mercado.</p>
+    <div class="escada">
+      <figure class="peca lendario"><img src="steam/coroa-rasgado.png" alt="Coroa imperial rasgada" width="100" height="100"><figcaption><span class="nome">Rasgada</span><span class="grau">55% das vezes</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/coroa-usado.png" alt="Coroa imperial usada" width="100" height="100"><figcaption><span class="nome">Usada</span><span class="grau">35% das vezes</span></figcaption></figure>
+      <figure class="peca lendario"><img src="steam/coroa.png" alt="Coroa imperial nova" width="100" height="100"><figcaption><span class="nome">Nova</span><span class="grau">10% das vezes</span></figcaption></figure>
+    </div>
+    <p>Agora faz a conta. A Coroa imperial é um de quatro lendários, e lendário já é o mais raro
+    do sorteio. <strong>Uma Coroa imperial nova sai mais ou menos uma vez a cada três mil
+    cegonhas.</strong> Quem tiver uma vai saber muito bem o que tem.</p>
+    <p>E antes que alguém pergunte: não, não é pagar pra ganhar. O bônus de um chapéu é pequeno
+    de propósito — <strong>o melhor deles vale menos que o pet mais fraco</strong>. Quem compra
+    no Mercado compra estilo. Quem pescou continua na frente.</p>
+
+    <h3 class="subtitulo">O Guarda-roupa</h3>
+    <p>Os chapéus moram no Guarda-roupa, que é coleção e armário ao mesmo tempo. O que você tem,
+    você veste. O que falta aparece como <strong>???</strong>, só com a cor da raridade.</p>
+    <p>Você sabe que existe. Só não sabe qual é.</p>
+    <p>E vender não apaga história: o chapéu que passou pela sua mão continua marcado na
+    coleção, mesmo depois de ir embora.</p>
+
+    <h3 class="subtitulo">Dois chapéus não caem</h3>
+    <div class="dupla">
+      <figure class="peca celestial"><img src="steam/bobo.png" alt="Chapéu de bobo da corte" width="100" height="100"><figcaption><span class="nome">Chapéu de bobo da corte</span><span class="grau">Celestial</span></figcaption></figure>
+      <figure class="peca celestial"><img src="steam/caveira.png" alt="Boi-bumbá" width="100" height="100"><figcaption><span class="nome">Boi-bumbá</span><span class="grau">Celestial</span></figcaption></figure>
+    </div>
+    <p>O <strong>Chapéu de bobo da corte</strong> e o <strong>Boi-bumbá</strong> são celestiais,
+    e nenhuma cegonha carrega nenhum dos dois. O efeito deles nem é um número a mais: é a isca
+    que não se gasta, ou o peixe que vem em dobro.</p>
+    <p>Tem um jeito só de ter um: <strong>ganhar o campeonato mensal</strong>. Primeiro lugar leva
+    o celestial novo, segundo leva o usado, terceiro leva o rasgado. A primeira edição vale o
+    Bobo.</p>
+    <p>Ninguém compra da gente. Se aparecer um desses no Mercado, é porque alguém ganhou.</p>
+  </section>
+
   <section>
     <h2>Sessenta peixes, um a um</h2>
-    <p>Nenhum é recolorido de outro. Cada espécie tem o desenho dela — do mandi do barranco
-    ao marlim de mar aberto.</p>
+    <p>Nenhum é recolorido de outro. Cada espécie tem o desenho dela — do mandi do barranco ao
+    marlim de mar aberto. E cada mapa guarda um monstro que não aparece pra qualquer isca.</p>
     <div class="moldura">
       <img class="arte" src="arte-peixes.png" alt="Os sessenta peixes do jogo, cada um com desenho próprio">
     </div>
@@ -113,7 +208,8 @@
     <div class="moldura mar">
       <img class="arte" src="arte-frota.png" alt="Os seis barcos do jogo, da canoa de madeira à traineira oceânica">
     </div>
-    <p class="legenda">A última é quase três vezes mais alta que a canoa.</p>
+    <p class="legenda">Da canoa de 12 espaços à Traineira Oceânica, que é quase três vezes mais
+    alta.</p>
   </section>
 
   <section>
@@ -128,93 +224,36 @@
     </div>
   </section>
 
-  <section>
-    <div class="caixa">
-      <p class="rotulo">Versão mais recente</p>
-      <p class="versao" id="marca">—</p>
-      <p class="quando" id="quando"></p>
-      <p class="recado" id="recado"></p>
-    </div>
-  </section>
+  <!-- O QUE VEM POR AÍ — e a regra desta seção continua uma só: NADA AQUI TEM DATA. Prazo em
+       página de projeto de uma pessoa só é dívida com estranho.
 
-  <section>
-    <h2>Como pegar</h2>
-    <p id="download"><a class="acao" href="https://cheeetz234.itch.io/aderiva">Baixar no itch.io</a></p>
-    <p>A demo é de graça e tem os <strong>dois primeiros mapas</strong> — o Rio Araguaia e o
-    Rio Negro —, quatro dos sete barcos e <strong>todas as varas</strong>. O resto continua
-    aparecendo na loja e no mapa, com <strong>Indisponível</strong> no lugar do preço: dá pra
-    ver o que existe, só não dá pra comprar ainda.</p>
-    <p>É Windows, roda solto numa pasta e não instala nada. O jogo salvo fica nos seus dados
-    do Windows, então trocar a pasta de lugar não perde partida.</p>
-    <!-- ESTE AVISO CORRIGE UMA PROMESSA QUE ESTAVA AQUI. Até 03/09/2026 esta seção terminava
-         dizendo que "a versão completa, quando sair, continua de onde você parou" — e a
-         decisão do Jean naquele dia foi o contrário: na Steam todo mundo começa do zero.
-         Prometer o que não vai acontecer é pior do que não prometer nada, e quem leu a versão
-         antiga precisa achar a correção no mesmo lugar onde leu a promessa. -->
-    <p class="nota"><strong>A demo não continua na Steam.</strong> Quando o jogo chegar lá, a
-    partida começa do zero — e isso vale pra todo mundo, inclusive pra quem jogou aqui desde o
-    começo. É por causa dos <a href="guia.html#chapeus">chapéus</a>: eles são itens de verdade,
-    negociáveis no Mercado da Steam, e o tempo de pescaria que rende um deles não pode ter
-    acontecido antes de a Steam existir. Se você quiser guardar a partida daqui de lembrança,
-    copie a pasta <code>%APPDATA%\Godot\app_userdata\À Deriva</code> antes de abrir o jogo
-    pela Steam.</p>
-  </section>
-
-  <!-- O QUE VEM POR AÍ — e a seção existe pra RESOLVER UM PROBLEMA, não pra anunciar.
-       O guia passou a falar de chapéus, e chapéu é a primeira coisa do jogo que está pronta
-       por dentro e inalcançável por fora: ela depende do inventário da Steam, que depende da
-       página na Steam. Sem um lugar que diga isso, quem lê o guia abre o jogo, procura o
-       chapéu, não acha, e sai achando que quebrou.
-
-       A regra desta seção é uma só: NADA AQUI TEM DATA. Prazo em página de projeto de uma
-       pessoa só é dívida com estranho — e o que está escrito abaixo é o que existe pronto
-       esperando uma porta, não o que se pretende fazer um dia. -->
+       O TRICÓRNIO ENTROU NA LISTA em 11/09/2026. Ele estava fora desde que o pacote foi
+       fechado, com papagaio e Holandês; o corte decidido em 05/09 é pela CONDIÇÃO — o pacote dá
+       o tricórnio novo, e a cegonha continua dando o rasgado e o usado pra todo mundo. -->
   <section>
     <h2>O que vem por aí <span class="futuro-selo">ainda não</span></h2>
-    <p>Duas coisas já estão feitas dentro do jogo e não dá pra alcançar de fora — as duas
-    esperam a mesma coisa, que é o jogo chegar na Steam.</p>
-
-    <h3>Chapéus pro pescador</h3>
-    <p>Vinte e cinco chapéus desenhados, do de palha ao boi-bumbá. Cada um muda um pouquinho
-    o jeito que você pesca, e o melhor deles vale menos que o pet mais fraco — é enfeite com
-    um empurrãozinho, e não atalho.</p>
-    <p>Eles caem enquanto você pesca: de vez em quando uma <strong>cegonha</strong> atravessa
-    a faixa levando um saco, e é preciso <strong>clicar nela</strong> antes que passe. O que
-    vem dentro vira item de verdade no seu inventário da Steam — dá pra trocar e vender no
-    Mercado. <a href="guia.html#chapeus">O guia conta como funciona, com a tabela de
-    efeitos.</a></p>
-
     <h3>Pirate's Pack</h3>
-    <p>Uma edição de fundador, pra quem quiser bancar o projeto e levar alguma coisa junto.
-    São dois itens, e nenhum dos dois é peça que já se compra com moeda:</p>
+    <p>A edição de fundador. É pra quem quer apostar no rio desde o primeiro dia — e ficar com a
+    prova disso no inventário. São três itens:</p>
     <ul>
-      <li><strong>O papagaio pirata</strong> — enfeite de barco, com bandana e caveira no
-      chapéu. Ele nasceu justamente pra ser exclusivo: a gaivota <em>não</em> entra no pacote,
-      porque ela continua a 500 moedas pra qualquer um, e tirar de volta o que gente já
-      comprou seria trair quem comprou.</li>
-      <li><strong>O Holandês Voador</strong> — a nau fantasma, que é a arte mais bonita do
-      jogo. Caro pro que faz, e de propósito: quem quer número compra a traineira Oceânica.
-      Este se compra pra ver.</li>
+      <li><strong>O papagaio pirata</strong> — enfeite de barco, de bandana e caveira no chapéu.
+      Nasceu pra ser do pacote.</li>
+      <li><strong>O Holandês Voador</strong> — a nau fantasma, a arte mais bonita do jogo. Não é
+      o barco mais forte, e nem tenta ser: quem quer número compra a Traineira Oceânica. Este
+      aqui se compra pra ver passar.</li>
+      <li><strong>O Tricórnio pirata novo</strong> — a única condição que a cegonha nunca traz.
+      Ela entrega o rasgado e o usado pra todo mundo; o novo só sai do pacote. No Mercado, isso
+      tem nome: escassez.</li>
     </ul>
-    <p class="legenda">Enquanto o pacote não existe, os dois estão à venda por moeda dentro
-    do jogo, como todo o resto. Nada foi trancado esperando ele.</p>
   </section>
 
-  <!-- A VOZ DESTA SEÇÃO ACOMPANHA A DA PÁGINA DE APOIO, e as duas já foram reescritas juntas
-       duas vezes. A primeira versão anunciava o que o jogo não vende; a segunda tinha o autor
-       no meio de cada parágrafo. O assunto é o jogo e o que a pessoa vai encontrar nele. -->
-  <section>
-    <h2>Antes de você baixar</h2>
-    <p>É de graça. Não tem loja dentro, não tem anúncio e não tem "assista um vídeo pra
-    continuar". Você baixa, abre, e o rio começa a correr.</p>
-    <p>Também não é o jogo pronto: faltam mapas, tem coisa pela metade e quase certamente
-    algum bug que eu não vi. É um teste — e o que você achar estranho é o que ajuda a
-    arrumar.</p>
-    <p>Se achar alguma coisa quebrada, manda a pasta <code>logs</code> junto. Ela fica em
-    <code>%APPDATA%\Godot\app_userdata\À Deriva\</code> e já vem dizendo a versão, o Windows
-    e a placa de vídeo.</p>
-    <p>O plano é chegar na Steam, com os mapas novos e o resto do que ainda está sendo feito.
-    <a href="apoiar.html">Se quiser ajudar o projeto a chegar lá, é por aqui.</a></p>
+  <section id="steam">
+    <h2>Na Steam</h2>
+    <p>A página está sendo montada. Quando ela abrir, este botão acende.</p>
+    <p><span class="acao espera" aria-disabled="true">Página na Steam · em breve</span></p>
+    <p>Quando acender, põe na lista de desejos: é isso que faz a Steam mostrar o jogo pra mais
+    gente. E até lá, conta pra alguém que passa o dia inteiro na frente do computador. Você
+    conhece pelo menos um.</p>
   </section>
 
   <footer>
@@ -224,20 +263,5 @@
   </footer>
 
 </div>
-
-<script>
-// A CAIXA DA VERSAO SE PREENCHE SOZINHA do mesmo arquivo que o jogo consulta. Escrever a
-// versao a mao aqui criaria uma segunda copia do numero, e duas copias sempre divergem.
-fetch('versao.json?' + Date.now())
-  .then(function (r) { return r.json(); })
-  .then(function (v) {
-    document.getElementById('marca').textContent = v.marca || '—';
-    if (v.quando) document.getElementById('quando').textContent = 'de ' + v.quando;
-    if (v.recado) document.getElementById('recado').textContent = v.recado;
-  })
-  .catch(function () {
-    document.getElementById('marca').textContent = 'não deu pra ler o manifesto';
-  });
-</script>
 </body>
 </html>
