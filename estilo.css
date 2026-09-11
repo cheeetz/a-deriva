@@ -209,12 +209,20 @@ footer {
 
 .telas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
 
-/* ---------- a bandeira do idioma ---------- */
-/* Ela e o ULTIMO item da barra e nao o primeiro: quem chega ja esta na lingua que escolheu, e
-   o unico que precisa dela e a minoria que caiu na outra. Primeiro item roubaria o lugar do
-   nome do jogo pra resolver problema de quem nao tem. */
-nav.sitio .bandeira { margin-left: auto; letter-spacing: .08em; }
-nav.sitio .bandeira:hover { color: var(--realce); }
+/* ---------- as seis línguas ---------- */
+/* Elas são o ULTIMO item da barra e nao o primeiro: quem chega ja esta na lingua que escolheu, e
+   o unico que precisa delas e a minoria que caiu na outra. Primeiro item roubaria o lugar do
+   nome do jogo pra resolver problema de quem nao tem.
+
+   SIGLA E NAO BANDEIRA, desde 11/09/2026, quando o site passou a ter as seis linguas do jogo.
+   Bandeira e pais: o espanhol nao e da Espanha, nem o ingles dos Estados Unidos. E a sigla e
+   curta o bastante pras seis caberem na barra de um celular. */
+nav.sitio .idiomas {
+  margin-left: auto; display: flex; flex-wrap: wrap; gap: .2rem .85rem; letter-spacing: .08em;
+}
+nav.sitio .idiomas a[aria-current="true"] {
+  color: var(--texto); text-decoration: underline; text-underline-offset: .35em;
+}
 
 /* O paragrafo que fecha o pedido, logo abaixo dos botoes de doacao. Existe como classe e nao
    como style no HTML porque ele carrega o unico respiro daquela secao, e respiro escrito no

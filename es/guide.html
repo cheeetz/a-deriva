@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — guía rápida</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<style>
+@font-face{
+  font-family:"Geist Pixel";
+  src:url("../GeistPixel-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+:root{
+  /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
+     TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
+     raridade desceram por causa disso -- no escuro o dourado do lendario funcionava, no
+     claro ele dava 3,4:1 e sumia. Todas passam de 4,6:1 agora, que e o piso pra texto. */
+  --fundo:#F3FAFB; --agua:#E4F4F6; --agua2:#CFEAEE; --linha:#C3E0E5;
+  --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
+  --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
+  --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
+  --mono:"Geist Pixel",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"Geist Pixel",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0 20px 90px;
+  background:
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
+    var(--fundo);
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.78;
+  /* fonte de pixel: desenhada na grade, antialias so borra */
+  -webkit-font-smoothing:none; font-smooth:never;
+}
+.wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+
+/* ---------- barra do site (as tres paginas) ---------- */
+nav.sitio{
+  display:flex; gap:22px; align-items:baseline; padding:22px 0 0; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+}
+nav.sitio a{color:var(--fraco); text-decoration:none}
+nav.sitio a:hover{color:var(--realce-2)}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
+nav.sitio a[aria-current="page"]{color:var(--realce)}
+nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
+
+/* ---------- topo ---------- */
+header{padding-top:34px; display:flex; flex-direction:column; gap:14px}
+.marca{
+  font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--realce);
+}
+h1{
+  margin:0; font-size:clamp(38px,7vw,60px); line-height:1; letter-spacing:-.03em;
+  font-weight:800; text-wrap:balance;
+}
+h1 span{color:var(--realce-2)}
+.chamada{margin:0; font-size:19px; color:var(--fraco); max-width:60ch; text-wrap:pretty}
+.onda{height:2px; background:linear-gradient(90deg,var(--realce),transparent); border-radius:2px}
+
+/* ---------- seções ---------- */
+section{display:flex; flex-direction:column; gap:16px}
+h2{
+  margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  font-family:var(--mono); color:var(--realce); font-weight:700;
+  display:flex; align-items:center; gap:12px;
+}
+h2::after{content:""; flex:1; height:1px; background:var(--linha)}
+h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
+p{margin:0; max-width:70ch}
+strong,b{color:var(--texto); font-weight:400; text-shadow:1px 0 0 currentColor}
+h1,h2,h3,th{font-weight:400; text-shadow:1px 0 0 currentColor}
+em{font-style:normal; color:var(--realce-2)}
+
+/* ---------- cartões ---------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px}
+.cartao{
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px;
+  padding:15px 17px; display:flex; flex-direction:column; gap:5px;
+}
+.cartao .k{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fraco);
+}
+.cartao .v{font-family:var(--mono); font-size:24px; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--realce-2)}
+.cartao .n{font-size:13.5px; color:var(--fraco); line-height:1.5}
+
+/* ---------- passos ---------- */
+.passos{counter-reset:p; display:flex; flex-direction:column; gap:10px}
+.passo{
+  display:grid; grid-template-columns:30px 1fr; gap:14px; align-items:start;
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px; padding:14px 16px;
+}
+.passo::before{
+  counter-increment:p; content:counter(p);
+  font-family:var(--mono); font-size:12px; font-weight:700; color:var(--fundo);
+  background:var(--realce); border-radius:50%;
+  width:24px; height:24px; display:grid; place-items:center; margin-top:2px;
+}
+.passo p{font-size:15px}
+
+/* ---------- tabelas ---------- */
+.rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:10px; background:var(--agua)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+caption{
+  text-align:left; padding:13px 16px 0; font-size:13px; color:var(--fraco);
+  caption-side:top;
+}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--linha)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--fraco); font-weight:700; background:var(--agua2); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(90,182,234,.07)}
+td.num, th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+td.nome{font-weight:600; white-space:nowrap}
+.dica-tabela{font-size:13px; color:var(--fraco)}
+
+/* raridades */
+.r{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700}
+.r-comum{color:var(--comum)} .r-incomum{color:var(--incomum)} .r-raro{color:var(--raro)}
+.r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)} .r-celestial{color:var(--celestial)}
+
+/* ---------- destaque ---------- */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
+
+footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; color:var(--fraco)}
+
+@media (max-width:560px){
+  body{font-size:15px; padding:0 14px 64px}
+  header{padding-top:40px}
+  .passo{grid-template-columns:24px 1fr; gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A BARRA DO SITE. O guia deixou de viajar dentro do zip em 25/08/2026 e passou a ser uma
+     pagina publicada (ver empacota.ps1), entao ele precisa de volta pras outras: sem isto ele
+     seria um beco -- a pessoa chega pelo menu do jogo, le, e nao tem pra onde ir. -->
+<nav class="sitio">
+  <a class="casa" href="./">À Deriva</a>
+  <a href="guide.html" aria-current="page">Guía</a>
+  <span class="idiomas">
+    <a href="../guia.html" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a>
+    <a href="../en/guide.html" hreflang="en" lang="en" title="English">EN</a>
+    <a href="../de/guide.html" hreflang="de" lang="de" title="Deutsch">DE</a>
+    <a href="guide.html" hreflang="es" lang="es" title="Español" aria-current="true">ES</a>
+    <a href="../ru/guide.html" hreflang="ru" lang="ru" title="Русский">RU</a>
+    <a href="../zh_CN/guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+  </span>
+</nav>
+
+<header>
+  <div class="marca">Guía rápida</div>
+  <h1>À <span>Deriva</span></h1>
+  <div class="onda"></div>
+  <p class="chamada">Un juego de pesca que vive en una franja transparente al pie de la pantalla — o detrás de los iconos del escritorio. Pesca solo mientras trabajas; hacer clic rinde más, pero estar pendiente nunca ha sido obligatorio.</p>
+  <p class="chamada">Cinco lugares de Brasil, del Araguaia a Fernando de Noronha. Sesenta peces para coleccionar, una mascota en cada mapa y el clima cambiando solo por encima de todo.</p>
+  <p class="chamada">Esta página es lo que hay detrás de los números — si solo quieres pescar, no la necesitas.</p>
+</header>
+
+<section>
+  <h2>El ciclo</h2>
+  <div class="passos">
+    <div class="passo"><p>El pez pica solo. De media, cada <strong>18 s</strong>, con una variación de 0,7× a 1,3× — y más rápido según tu caña, tu barco y tus mascotas.</p></div>
+    <div class="passo"><p>Aparece un <strong>“!”</strong> en la franja. Tienes <strong>2 segundos</strong> para hacer clic.</p></div>
+    <div class="passo"><p>Clic dentro de la ventana: <em>picada perfecta</em> — el pez vale <strong>+50%</strong> y no puede escaparse.</p></div>
+    <div class="passo"><p>Sin clic: el juego tira la probabilidad de fallo de tu cebo. Si falla, el pez se va; si no, entra en el barco con normalidad.</p></div>
+    <div class="passo"><p>Barco lleno: la pesca <strong>se detiene</strong>. Vende todo desde la barra o compra una caja más grande.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Día y noche</h2>
+  <div class="grade">
+    <div class="cartao"><span class="k">Día</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Noche</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Transición</span><span class="v">3 min</span></div>
+  </div>
+  <p>De noche los peces buenos aparecen más: <span class="r r-raro">raro</span> <strong>+20%</strong>,
+  <span class="r r-epico">épico</span> <strong>+40%</strong>,
+  <span class="r r-lendario">legendario</span> <strong>+60%</strong> en lo más hondo de la madrugada (el efecto entra y sale con la transición). La <strong>Caña de medianoche</strong> solo funciona en ese periodo — y la <strong>Luna de sangre</strong> solo ocurre en él.</p>
+</section>
+
+<section>
+  <h2>Rareza y cebos</h2>
+  <p>El cebo es la decisión más importante del juego: lo cambia <em>todo</em> a la vez — la probabilidad de un pez bueno y la de perder el pez. Un cebo mejor falla menos.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Probabilidad de cada rareza, por cebo. La Jujuba es gratis e infinita.</caption>
+      <thead>
+        <tr>
+          <th>Cebo</th><th class="num">Sujeta</th><th>Efecto extra</th>
+          <th class="num"><span class="r r-comum">Común</span></th>
+          <th class="num"><span class="r r-incomum">Poco común</span></th>
+          <th class="num"><span class="r r-raro">Raro</span></th>
+          <th class="num"><span class="r r-epico">Épico</span></th>
+          <th class="num"><span class="r r-lendario">Legendario</span></th>
+          <th class="num"><span class="r r-celestial">Celestial</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🍬 Jujuba <span style="color:var(--fraco)">(gratis)</span></td>
+          <td class="num">65%</td><td>—</td><td class="num">70,0%</td><td class="num">22,0%</td>
+          <td class="num">6,4%</td><td class="num">1,30%</td><td class="num">0,28%</td>
+          <td class="num">0,010%</td></tr>
+        <tr><td class="nome">Poco común</td>
+          <td class="num">78%</td><td>+20% de <strong>velocidad</strong> · +8% de <strong>estrella de oro</strong></td><td class="num">54,1%</td><td class="num">30,0%</td>
+          <td class="num">11,5%</td><td class="num">3,40%</td><td class="num">1,00%</td>
+          <td class="num">0,050%</td></tr>
+        <tr><td class="nome">Raro</td>
+          <td class="num">85%</td><td>+25% en la <strong>venta</strong> · +18% de <strong>estrella de oro</strong></td><td class="num">37,1%</td><td class="num">32,1%</td>
+          <td class="num">20,1%</td><td class="num">8,02%</td><td class="num">2,71%</td>
+          <td class="num">0,150%</td></tr>
+        <tr><td class="nome">Épico</td>
+          <td class="num">92%</td><td>+35% en la <strong>venta</strong> · +29% de <strong>estrella de oro</strong></td><td class="num">23,3%</td><td class="num">29,3%</td>
+          <td class="num">26,3%</td><td class="num">14,7%</td><td class="num">6,37%</td>
+          <td class="num">0,403%</td></tr>
+        <tr><td class="nome">Legendario</td>
+          <td class="num">96%</td><td>+20% en la <strong>venta</strong> · +43% de <strong>estrella de oro</strong></td><td class="num">13,5%</td><td class="num">22,8%</td>
+          <td class="num">29,0%</td><td class="num">21,7%</td><td class="num">12,9%</td>
+          <td class="num">1,026%</td></tr>
+        <tr><td class="nome">Celestial <span style="color:var(--fraco)">(solo del cofre)</span></td>
+          <td class="num">98%</td><td>+15% de <strong>velocidad</strong>, +40% en la <strong>venta</strong> y +61% de <strong>estrella de oro</strong></td><td class="num">6,0%</td><td class="num">14,0%</td>
+          <td class="num">25,0%</td><td class="num">28,00%</td><td class="num">24,0%</td>
+          <td class="num">3,000%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Cada mapa vende sus propios cebos, con nombres distintos pero los mismos cinco niveles. «Sujeta» es la probabilidad de que el pez que picó llegue al barco. Tu caña y tus mascotas todavía la mueven, en los dos sentidos.</p>
+  <p><strong>El buen cebo se paga solo.</strong> Además de sujetar más, cada nivel trae un bono propio — velocidad en el poco común, valor de venta en los tres de arriba. La excepción es el <strong>legendario</strong>: cuesta más de lo que devuelve. No es cebo para ganar dinero — es, de los que se compran, el que más atrae lo <em>celestial</em> — y sin celestial no se completa ninguna colección.</p>
+  <p><strong>El precio sube de mapa en mapa.</strong> El mismo cebo legendario cuesta 10.000 en el Araguaia y 32.000 en Noronha — más o menos el triple del primero al último.</p>
+
+  <h3>El cofre de cebos</h3>
+  <p>Arriba de la pestaña de Cebos hay un <strong>cofre</strong>, y cuesta <strong>la mitad del paquete de cebo legendario</strong> de ese mapa — 5.000 en el Araguaia, 16.000 en Noronha. Abrirlo sortea <strong>un cebo del mapa</strong>, en la cantidad de una compra normal.</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0,5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7,9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>Lo que sale cada vez que abres el cofre.</caption>
+      <thead><tr><th>Cebo</th><th>Trae</th><th class="num">Probabilidad</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Poco común</td><td>un paquete</td><td class="num">44,8%</td></tr>
+        <tr><td class="nome">Raro</td><td>un paquete</td><td class="num">29,9%</td></tr>
+        <tr><td class="nome">Épico</td><td>un paquete</td><td class="num">16,9%</td></tr>
+        <tr><td class="nome">Legendario</td><td>un paquete</td><td class="num">7,9%</td></tr>
+        <tr><td class="nome">Celestial</td><td>10 cebos</td><td class="num">0,5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>El celestial es el único cebo sin precio: solo sale del cofre. Y es el único bueno en todo a la vez — más peces raros, peces más grandes, más rápido y más caro. Cada mapa tiene el suyo: el <em>Muçum de Ouro</em> en el Araguaia, el <em>Tucunaré de Prata</em> en el Rio Negro, el <em>Camarão Gigante Dourado</em> en Furnas, el <em>Corrico de Cristal</em> en la Costa y la <em>Isca Abissal</em> en Noronha.</p>
+</section>
+
+<section>
+  <h2>Eventos climáticos</h2>
+  <p>Cada <strong>1 min</strong> el juego sortea; la probabilidad de que empiece un evento es del <strong>5%</strong> (el primero, solo tras 30 s de juego) — de media, un evento cada <strong>20 min</strong>. Avisa <strong>10 s antes</strong> de llegar y dura de <strong>5 a 7 min</strong>, sorteados en el momento. Todo evento tiene una <em>picada garantizada</em> — en algún punto entre el 20% y el 80% de su duración llega un pez de esa rareza, sin sorteo.</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Evento</th><th class="num">Peso</th>
+        <th>Garantiza</th><th>Efecto</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🌧️ Lluvia</td><td class="num">50</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>Pica un 30% más rápido</td><td>cualquiera</td></tr>
+        <tr><td class="nome">✨ Aguas Brillantes</td><td class="num">16</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td><strong>×20</strong> en la probabilidad de celestial</td><td>cualquiera</td></tr>
+        <tr><td class="nome">⛈️ Tormenta</td><td class="num">12</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>×1,8 en las rarezas altas · +10 p.p. de fallo</td><td>cualquiera</td></tr>
+        <tr><td class="nome">🩸 Luna de sangre</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td><strong>×5</strong> en la probabilidad de legendario</td><td>solo de noche</td></tr>
+        <tr><td class="nome">🌊 Pororoca</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>×2,4 en las altas · +15 p.p. de fallo</td><td>Araguaia e Rio Negro</td></tr>
+        <tr><td class="nome">🫧 Vuelco de las Aguas</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>×2 en las altas · los comunes caen a ¼</td><td>Furnas</td></tr>
+        <tr><td class="nome">🌀 Huracán</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>×2,4 en las altas · +15 p.p. de fallo</td><td>Costa de SC</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela"><strong>Peso</strong> es cuánto pesa el evento en el sorteo, no un porcentaje: la Lluvia sola se lleva más de la mitad de los sorteos. Los eventos de mapa solo entran en el sorteo cuando estás allí — la <strong>Pororoca</strong>, por ejemplo, solo ocurre en los dos ríos.</p>
+  <div class="nota"><strong>Tormenta, Pororoca y Huracán cobran caro.</strong> Llenan el agua de peces buenos pero aumentan el fallo — justo el momento de cambiar a un cebo mejor y estar pendiente del «!».</div>
+</section>
+
+<section>
+  <h2>Cañas</h2>
+  <p>Todas cuestan <strong>700</strong> de base, pero cada caña comprada encarece la siguiente un <strong>50%</strong>. Solo una va equipada.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Caña</th><th>Qué hace</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🎋 Bambú</td><td>La inicial, sin bono.</td></tr>
+        <tr><td class="nome">🎣 Fibra</td><td>+40% de velocidad, pero falla un 25% más.</td></tr>
+        <tr><td class="nome">🪝 Acero</td><td>Sujeta un 40% mejor. Lo que engancha, lo trae.</td></tr>
+        <tr><td class="nome">✨ Carbono</td><td>+30% de calidad (más peces raros), −20% de velocidad y falla un 25% más.</td></tr>
+        <tr><td class="nome">💰 Mercader</td><td>Los peces valen un +20% en la venta.</td></tr>
+        <tr><td class="nome">🌙 Medianoche</td><td>De noche: +40% de velocidad y +25% de calidad. De día es una caña normal.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Barcos y cajas</h2>
+  <p>El barco define cuántos peces caben antes de que la pesca se detenga. Cada barco comprado encarece el siguiente un 15%. Los dos últimos <strong>exigen trofeo</strong>, además del dinero.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Barco</th><th class="num">Espacios</th><th class="num">Precio</th><th>Extra</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🛶 Canoa</td><td class="num">12</td><td class="num">—</td><td>la inicial</td></tr>
+        <tr><td class="nome">⛵ Bote reforzado</td><td class="num">24</td><td class="num">2.000</td><td>equilibrado</td></tr>
+        <tr><td class="nome">💨 Lancha</td><td class="num">28</td><td class="num">6.000</td><td>+25% de velocidad</td></tr>
+        <tr><td class="nome">🎣 Arrastrero</td><td class="num">48</td><td class="num">14.000</td><td>−15% de velocidad — para dejarlo en marcha</td></tr>
+        <tr><td class="nome">🐟 Barco factoría</td><td class="num">36</td><td class="num">55.000</td><td>+25% en la venta · exige <strong>2 🏆</strong></td></tr>
+        <tr><td class="nome">🔱 Arrastrero oceánico</td><td class="num">36</td><td class="num">90.000</td><td>+20% de calidad · exige <strong>3 🏆</strong> — la cima de la flota en números</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Las <strong>cajas</strong> multiplican la capacidad del barco y son acumulativas — cada una exige la anterior: Poliestireno <em>×1,5</em> (25.000), Nevera <em>×2</em> (80.000), Bodega <em>×2,5</em> (250.000 <strong>+ 1 trofeo</strong>), Cámara <em>×3</em> (600.000 <strong>+ 2 trofeos</strong>).</p>
+  <p>Un trofeo es la colección completa de un mapa — ver <em>Mapas y trofeos</em>.</p>
+</section>
+
+<section>
+  <h2>Mascotas</h2>
+  <p>Cada mapa tiene un animal. Aparece solo, con un <strong>0,1% de probabilidad por pez pescado</strong>. Vas a pescar bastante antes de ver el primero. Puedes tener <strong>3 activas</strong> a la vez, y los bonos se suman.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Mascota</th><th>Mapa</th><th>Bono</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🐊 Yacaré</td><td>Rio Araguaia</td><td>Sujeta un 8% mejor lo que pica</td></tr>
+        <tr><td class="nome">🦦 Nutria gigante</td><td>Rio Negro</td><td>+6% en el valor de venta</td></tr>
+        <tr><td class="nome">🦢 Jabirú</td><td>Lago de Furnas</td><td>+7% de calidad</td></tr>
+        <tr><td class="nome">🐬 Delfín rosado</td><td>Costa de Santa Catarina</td><td>−10% en el tiempo entre picadas</td></tr>
+        <tr><td class="nome">🐢 Tortuga marina</td><td>Fernando de Noronha</td><td>+8% de calidad en las rarezas altas</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">Si la mascota vuelve a caer cuando ya la tienes, llega una <strong>repetida</strong> — no da bono, pero vale entre <strong>5.000 y 9.999</strong> en el inventario.</div>
+</section>
+
+<section>
+  <h2>Mapas y trofeos</h2>
+  <p>Empiezas en el Araguaia. Cada mapa nuevo se abre pagando — <em>o gratis</em>, si tienes el trofeo del anterior. El trofeo se consigue al <strong>completar la colección</strong> del lugar: los 12 peces, al menos uno de cada.</p>
+  <p>La columna <strong>Celestial</strong> es cuánto aparece el pez celestial de ese mapa comparado con el Araguaia: allí sale con la probabilidad completa; en Noronha, con <strong>una décima parte</strong> de ella. Como la colección incluye el celestial, ahí es donde suele atascarse el trofeo de cada mapa.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Mapa</th><th>Estado</th><th class="num">Coste</th><th class="num">Celestial</th><th>Evento propio</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Rio Araguaia</td><td>TO/GO</td><td class="num">inicial</td><td class="num">×1</td><td>🌊 Pororoca</td></tr>
+        <tr><td class="nome">Rio Negro</td><td>AM</td><td class="num">55.000</td><td class="num">×0,60</td><td>—</td></tr>
+        <tr><td class="nome">Lago de Furnas</td><td>MG</td><td class="num">200.000</td><td class="num">×0,35</td><td>🫧 Vuelco de las Aguas</td></tr>
+        <tr><td class="nome">Costa de Santa Catarina</td><td>SC</td><td class="num">330.000</td><td class="num">×0,20</td><td>🌀 Huracán</td></tr>
+        <tr><td class="nome">Fernando de Noronha</td><td>PE</td><td class="num">900.000</td><td class="num">×0,10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Tamaño, peso y estrellas</h2>
+  <p>Todo pez que entra en el barco tiene <strong>longitud y peso</strong>, y los dos aparecen en la tarjeta de la picada: <em>«Dourado · 75,3 cm · 8,1 kg»</em>. El mayor de cada especie queda guardado como <strong>récord</strong>, y es el que muestra la Colección.</p>
+
+  <h3>El peso sale de la longitud</h3>
+  <p>El peso no se sortea aparte: acompaña a la longitud, como en un pez de verdad. Los rangos de cada especie siguen medidas de la pesca deportiva brasileña, con el techo en un ejemplar <em>excepcional</em> — y no en el récord mundial.</p>
+
+  <h3>Qué hace crecer al pez</h3>
+  <p>Un pez grande es raro. Tres elecciones empujan el tamaño hacia arriba — y el cebo es la que más empuja:</p>
+  <div class="rolagem">
+    <table>
+      <caption>Longitud media de un dourado.</caption>
+      <thead><tr><th>Con qué</th><th class="num">Media</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Nada — jujuba, sin clic, de día</td><td class="num">56,5 cm</td></tr>
+        <tr><td class="nome">Solo la noche</td><td class="num">58,0 cm</td></tr>
+        <tr><td class="nome">Solo la picada perfecta</td><td class="num">58,3 cm</td></tr>
+        <tr><td class="nome">Solo el cebo legendario</td><td class="num">61,8 cm</td></tr>
+        <tr><td class="nome">Solo el cebo celestial</td><td class="num">63,8 cm</td></tr>
+        <tr><td class="nome">Todo junto, con el legendario</td><td class="num">68,1 cm</td></tr>
+        <tr><td class="nome">Todo junto, con el celestial</td><td class="num">71,1 cm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>El celestial empuja aún más que el legendario: los <strong>tres centímetros</strong> entre las dos últimas filas son solo suyos. <strong>La caña no toca el tamaño</strong>, y el tiempo con el juego abierto tampoco.</p>
+
+  <h3>Las cuatro estrellas</h3>
+  <p>En la Colección, cada pez muestra su récord y una estrella — la franja en la que cayó tu mayor ejemplar. La estrella es del <strong>récord</strong>, no del último pez.</p>
+  <div class="rolagem">
+    <table>
+      <caption>La franja es cuánto de la longitud posible de esa especie alcanzó tu récord.</caption>
+      <thead><tr><th>Estrella</th><th class="num">Desde</th><th>Qué significa</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🥉 Bronce</td><td class="num">—</td><td>Pescado una vez.</td></tr>
+        <tr><td class="nome">🥈 Plata</td><td class="num">45%</td><td>Un ejemplar por encima de la media.</td></tr>
+        <tr><td class="nome">🥇 Oro</td><td class="num">80%</td><td>Un pez grande de verdad.</td></tr>
+        <tr><td class="nome">💎 Platino</td><td class="num">97%</td><td>Cerca del máximo de la especie.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Cada captura da oro el <strong>6,6%</strong> de las veces sin ningún equipo, el <strong>13,8%</strong> con cebo legendario, clic a tiempo y de noche, y el <strong>16,5%</strong> cambiando el legendario por el celestial. El platino hace el mismo camino: <strong>del 0,9% al 2,5%</strong>.</p>
+
+  <h3>Centímetro o pulgada</h3>
+  <p>La elección está en Ajustes, entre <strong>métrico</strong> (cm y kg) e <strong>imperial</strong> (in y lb).</p>
+</section>
+
+<section>
+  <h2>El Comprador</h2>
+  <p>Un barco que pasa <strong>cada hora</strong>, vacía tu bodega y paga una parte del valor. Solo tienes uno a la vez, y comprar uno mejor sustituye al anterior. Es lo que hace que el juego rinda solo de verdad — pagando peaje por ello.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Comprador</th><th class="num">Cuesta</th><th class="num">Paga</th><th>Cuándo compensa</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🪵 Balsa</td><td class="num">3.000</td><td class="num">20%</td>
+          <td>Aún en el Araguaia, cuando 3.000 es dinero. Paga poco, pero es el que te enseña para qué sirve un comprador</td></tr>
+        <tr><td class="nome">🛶 Bote</td><td class="num">40.000</td><td class="num">50%</td>
+          <td>Justo después del Barco factoría, cuando la bodega empieza a llenarse sin que mires</td></tr>
+        <tr><td class="nome">🚤 Buque</td><td class="num">120.000</td><td class="num">70%</td>
+          <td>Después del Arrastrero oceánico, cuando cada lance ya vale mucho</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Ninguno paga tan bien como vender a mano. Cambias dinero por no tener que estar ahí — y a veces compensa.</p>
+</section>
+
+<section>
+  <h2>Lo que pasa por la pantalla</h2>
+  <p>Aparte del pez, la franja tiene vida propia: animales cruzando, el cielo cambiando y alguna que otra cosa que preferimos no contar. <strong>Nada de eso se puede pulsar ni cambia ningún número</strong> — es escenario, y lo que aparece en cada lugar te toca descubrirlo a ti.</p>
+  <p>No lo confundas con las mascotas: esas las desbloqueas, las activas y dan bonos. Ver la sección de Mascotas.</p>
+</section>
+
+<section>
+  <h2>Dónde vive el juego</h2>
+  <p>Funciona de dos maneras, y el cambio está en el menú (botón ▲), en <strong>Ajustes</strong>. Cambiar de modo <strong>reinicia el juego</strong>, y la elección queda guardada.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Franja</h3>
+      <span class="n">Una tira encima de la barra de tareas, siempre a la vista. El clic la atraviesa donde no hay juego, así que no molesta a lo que hay debajo.</span>
+    </div>
+    <div class="cartao">
+      <h3>Fondo de escritorio</h3>
+      <span class="n">El paisaje entero <em>detrás</em> de los iconos del escritorio. Los iconos siguen funcionando y cualquier ventana pasa por encima. Solo en Windows.</span>
+    </div>
+  </div>
+  <p class="dica-tabela">En el fondo de escritorio la barra del HUD se va a la esquina inferior derecha (los iconos viven a la izquierda), y los paneles se abren en una ventanita propia — se cierra con Esc, haciendo clic fuera o desde el icono del pez en la bandeja del sistema, junto al reloj.</p>
+  <p>En la franja hay un <strong>Siempre encima</strong>. Activado, la tira queda por encima de todo, incluida la barra de tareas; desactivado, se esconde detrás de cualquier ventana — incluida la propia barra. Es la diferencia entre tener el juego siempre a la vista y tenerlo solo cuando el escritorio está despejado.</p>
+  <p>También en <strong>Ajustes</strong>: con más de un monitor puedes elegir <strong>en qué pantalla</strong> vive el juego (cambiarlo también lo reinicia), y hay un <strong>Iniciar con Windows</strong>, que hace que el juego se abra solo al encender el ordenador.</p>
+</section>
+
+<section>
+  <h2>El sonido</h2>
+  <p>El juego tiene música, efectos y clima — y las tres cosas se activan y desactivan por separado, con volumen propio, en <strong>Ajustes › Sonido</strong>.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Música</h3>
+      <span class="n">Trece pistas que se turnan solas — unas para el día, otras para la noche.</span>
+    </div>
+    <div class="cartao">
+      <h3>Efectos</h3>
+      <span class="n">Solo lo que pasa en el río: la picada, el corcho, el pez en la cesta, la picada perfecta, el trofeo, la mascota.</span>
+    </div>
+    <div class="cartao">
+      <h3>Clima</h3>
+      <span class="n">Lluvia, tormenta y viento por debajo de la música, mientras dura el evento.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tres cosas que lo aceleran todo</h2>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Clic en el «!»</h3>
+      <span class="n">+50% en el pez y cero fallos. Es el único momento en que tu atención vale dinero.</span>
+    </div>
+    <div class="cartao">
+      <h3>Mejora el cebo antes que la caña</h3>
+      <span class="n">El cebo mueve la rareza y el fallo <em>a la vez</em>. Pasar de la Jujuba al Legendario lleva lo que sujetas del 65% al 96%.</span>
+    </div>
+    <div class="cartao">
+      <h3>Guarda los buenos para la noche</h3>
+      <span class="n">Lo legendario aparece un 60% más de noche, y es cuando puede caer la Luna de sangre — que lo multiplica por 5.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPEUS:INICIO gerado por ferramentas/monta_site_chapeus.py -->
+<section id="chapeus">
+  <h2>Sombreros</h2>
+
+  <p>El pescador empieza con el sombrero de paja. Los demás caen mientras pescas, y son <strong>objetos de verdad</strong> en tu inventario de Steam: puedes ponértelos, intercambiarlos y venderlos en el Mercado.</p>
+
+  <h3>Cómo cae un sombrero</h3>
+  <div class="passos">
+    <div class="passo"><p>Pescas. El juego cuenta el tiempo de pesca <em>de verdad</em> — no el tiempo con la ventana abierta.</p></div>
+    <div class="passo"><p>Pasadas unas <strong>3 horas</strong> de eso, en un momento al azar, una <strong>cigüeña</strong> cruza la franja con un saco.</p></div>
+    <div class="passo"><p>Lleva un <strong>“!”</strong> saltando encima. Tienes que <strong>hacer clic en la cigüeña</strong> antes de que salga de la pantalla.</p></div>
+    <div class="passo"><p>Con el clic, la petición va a Steam, y quien entrega el objeto es <strong>Steam</strong>, no el juego. Lo que llegó aparece en el <strong>Armario</strong>, dentro del juego.</p></div>
+  </div>
+
+  <p>Como máximo <strong>2 al día</strong>, con al menos <strong>6 horas</strong> entre una cigüeña y otra. Si no estás delante del ordenador cuando pasa la cigüeña, no pierdes nada: el tiempo de pesca queda guardado y vuelve más tarde.</p>
+
+  <h3>Qué hay, y qué hace cada uno</h3>
+  <p>Cada sombrero tiene su bono: te ayuda a pescar y además cuenta para tu colección. <strong>Cuanto más raro, mayor el empujón</strong> — del 1% en uno común al 5% en uno legendario, y el estado nuevo suma medio punto más.</p>
+  <div class="rolagem">
+    <table>
+      <caption>La probabilidad es la de que una cigüeña traiga ese sombrero, sumando los tres estados. El de paja no cae porque todo el mundo ya lo tiene; los celestiales solo salen del campeonato.</caption>
+      <thead>
+        <tr><th></th><th>Sombrero</th><th>Rareza</th><th>Efecto</th><th class="num">Probabilidad</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/palha.png" alt="Sombrero de paja" width="64" height="64"></td>
+          <td>Sombrero de paja</td>
+          <td><span class="r r-comum">Común</span></td>
+          <td>+1% de probabilidad de pez bueno</td>
+          <td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Gorra" width="64" height="64"></td>
+          <td>Gorra</td>
+          <td><span class="r r-comum">Común</span></td>
+          <td>+1% de valor</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tiroles.png" alt="Sombrero tirolés" width="64" height="64"></td>
+          <td>Sombrero tirolés</td>
+          <td><span class="r r-comum">Común</span></td>
+          <td>sujeta un 1% mejor lo que pica</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bandana.png" alt="Bandana pirata" width="64" height="64"></td>
+          <td>Bandana pirata</td>
+          <td><span class="r r-comum">Común</span></td>
+          <td>+1% de velocidad</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/souwester.png" alt="Sombrero de lluvia" width="64" height="64"></td>
+          <td>Sombrero de lluvia</td>
+          <td><span class="r r-comum">Común</span></td>
+          <td>sujeta un 1% mejor lo que pica</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/xerife.png" alt="Sombrero de sheriff" width="64" height="64"></td>
+          <td>Sombrero de sheriff</td>
+          <td><span class="r r-incomum">Poco común</span></td>
+          <td>+2% de valor</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/quepe.png" alt="Gorra de capitán" width="64" height="64"></td>
+          <td>Gorra de capitán</td>
+          <td><span class="r r-incomum">Poco común</span></td>
+          <td>+2% de velocidad</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/minerador.png" alt="Casco de minero" width="64" height="64"></td>
+          <td>Casco de minero</td>
+          <td><span class="r r-incomum">Poco común</span></td>
+          <td>+2% de probabilidad de pez bueno</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aviador.png" alt="Gorro de aviador" width="64" height="64"></td>
+          <td>Gorro de aviador</td>
+          <td><span class="r r-incomum">Poco común</span></td>
+          <td>+2% de probabilidad de pez bueno</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/natal.png" alt="Gorro de Navidad" width="64" height="64"></td>
+          <td>Gorro de Navidad</td>
+          <td><span class="r r-incomum">Poco común</span></td>
+          <td>+2% de valor</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/pirata.png" alt="Tricornio pirata" width="64" height="64"></td>
+          <td>Tricornio pirata</td>
+          <td><span class="r r-raro">Raro</span></td>
+          <td>+3% de velocidad</td>
+          <td class="num">2,7%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/cartola.png" alt="Chistera" width="64" height="64"></td>
+          <td>Chistera</td>
+          <td><span class="r r-raro">Raro</span></td>
+          <td>+3% de valor</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bruxo.png" alt="Sombrero de mago" width="64" height="64"></td>
+          <td>Sombrero de mago</td>
+          <td><span class="r r-raro">Raro</span></td>
+          <td>+3% de probabilidad de pez bueno</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bambu.png" alt="Sombrero de bambú" width="64" height="64"></td>
+          <td>Sombrero de bambú</td>
+          <td><span class="r r-raro">Raro</span></td>
+          <td>+3% de probabilidad de pez bueno</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/peixe.png" alt="Pez hambriento" width="64" height="64"></td>
+          <td>Pez hambriento</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>+4% de velocidad</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/gaivota.png" alt="Gaviota picoteando" width="64" height="64"></td>
+          <td>Gaviota picoteando</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>+4% de probabilidad de pez bueno</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/viking.png" alt="Casco vikingo" width="64" height="64"></td>
+          <td>Casco vikingo</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>sujeta un 4% mejor lo que pica</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/urso.png" alt="Capucha de oso" width="64" height="64"></td>
+          <td>Capucha de oso</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>sujeta un 4% mejor lo que pica</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tubarao.png" alt="Cabeza de tiburón" width="64" height="64"></td>
+          <td>Cabeza de tiburón</td>
+          <td><span class="r r-epico">Épico</span></td>
+          <td>+4% de velocidad</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/coroa.png" alt="Corona imperial" width="64" height="64"></td>
+          <td>Corona imperial</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>+5% de valor</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/mosqueteiro.png" alt="Sombrero de mosquetero" width="64" height="64"></td>
+          <td>Sombrero de mosquetero</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>+5% de velocidad</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aureola.png" alt="Aureola" width="64" height="64"></td>
+          <td>Aureola</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>+5% de probabilidad de pez bueno</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/louros.png" alt="Corona de laurel" width="64" height="64"></td>
+          <td>Corona de laurel</td>
+          <td><span class="r r-lendario">Legendario</span></td>
+          <td>sujeta un 5% mejor lo que pica</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/caveira.png" alt="Boi-bumbá" width="64" height="64"></td>
+          <td>Boi-bumbá</td>
+          <td><span class="r r-celestial">Celestial</span></td>
+          <td>del 1% al 3% de probabilidad de pescar dos</td>
+          <td class="num">solo en el campeonato</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bobo.png" alt="Gorro de bufón" width="64" height="64"></td>
+          <td>Gorro de bufón</td>
+          <td><span class="r r-celestial">Celestial</span></td>
+          <td>del 1% al 3% de probabilidad de no gastar el cebo</td>
+          <td class="num">solo en el campeonato</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Tres estados del mismo sombrero</h3>
+  <p>Todo sombrero cae en uno de tres estados, y el estado mueve el bono <strong>medio punto</strong> hacia cada lado. El <em>usado</em> es el valor de la tabla de arriba; el <em>roto</em> resta medio punto, y el <em>nuevo</em> suma medio.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Los tres estados. La probabilidad es el peso en el sorteo de la cigüeña, y el dibujo cambia con él. El tricornio pirata es la excepción: su estado nuevo no sale de la cigüeña, solo del Pirate's Pack.</caption>
+      <thead>
+        <tr><th></th><th>Estado</th><th class="num">En el bono</th><th class="num">Probabilidad</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="Gorra rota" width="64" height="64"></td>
+          <td>Roto</td>
+          <td class="num">-0,5 p.p.</td>
+          <td class="num">55%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="Gorra usada" width="64" height="64"></td>
+          <td>Usado</td>
+          <td class="num">—</td>
+          <td class="num">35%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Gorra nueva" width="64" height="64"></td>
+          <td>Nuevo</td>
+          <td class="num">+0,5 p.p.</td>
+          <td class="num">10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Son tres objetos distintos en Steam.</strong> Cada estado tiene su propio número en el inventario, así que se compran y se venden por separado en el Mercado — y como el <em>nuevo</em> es el más raro de los tres, es el que más vale.</p>
+  <p>En los dos sombreros <span class="r r-celestial">celestiales</span> el estado pesa más, porque su efecto no es una barra sino un acontecimiento — el cebo que no se gasta, el pez que llega doble. En ellos la escalera es <strong>1%, 2% y 3%</strong>.</p>
+  <p class="legenda">El sombrero de paja es el único que se queda fuera: todo el mundo empieza con él, así que solo tiene la versión de siempre.</p>
+
+  <h3>El campeonato</h3>
+  <p>Los celestiales — el Boi-bumbá y el Gorro de bufón — no caen de la cigüeña. Son el premio del <strong>campeonato mensual</strong>, y el podio se lleva el mismo sombrero en tres estados:</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Puesto</th><th>Se lleva</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">1º</td><td>el celestial <strong>nuevo</strong></td></tr>
+        <tr><td class="nome">2º</td><td>el celestial <strong>usado</strong></td></tr>
+        <tr><td class="nome">3º</td><td>el celestial <strong>roto</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Cada edición vale uno de los celestiales. La primera vale el <strong>Gorro de bufón</strong>. El premio es un objeto como cualquier otro sombrero: puedes ponértelo, intercambiarlo y venderlo.</p>
+
+  <h3>El Armario</h3>
+  <p>Es la pantalla donde viven los sombreros — desde el menú (botón ▲). Muestra lo que falta y te deja ponerte lo que tienes.</p>
+  <p>Cada sombrero es una fila, y los tres estados son tres columnas con la cantidad de cada uno. Hacer clic en una celda te lo pone; hacer clic en el que ya llevas puesto te lo quita. El hueco que nunca tuviste queda con una raya; el que tuviste y vendiste, con un cero.</p>
+  <p>Lo que todavía no has visto aparece como <strong>???</strong>, solo con la rareza.</p>
+</section>
+<!-- CHAPEUS:FIM -->
+
+<footer> © 2026 G. Studios. Todos los derechos reservados. </footer>
+
+</div>
+</body>
+</html>

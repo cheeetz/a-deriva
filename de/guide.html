@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — Kurzanleitung</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<style>
+@font-face{
+  font-family:"Geist Pixel";
+  src:url("../GeistPixel-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+:root{
+  /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
+     TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
+     raridade desceram por causa disso -- no escuro o dourado do lendario funcionava, no
+     claro ele dava 3,4:1 e sumia. Todas passam de 4,6:1 agora, que e o piso pra texto. */
+  --fundo:#F3FAFB; --agua:#E4F4F6; --agua2:#CFEAEE; --linha:#C3E0E5;
+  --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
+  --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
+  --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
+  --mono:"Geist Pixel",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"Geist Pixel",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0 20px 90px;
+  background:
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
+    var(--fundo);
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.78;
+  /* fonte de pixel: desenhada na grade, antialias so borra */
+  -webkit-font-smoothing:none; font-smooth:never;
+}
+.wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+
+/* ---------- barra do site (as tres paginas) ---------- */
+nav.sitio{
+  display:flex; gap:22px; align-items:baseline; padding:22px 0 0; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+}
+nav.sitio a{color:var(--fraco); text-decoration:none}
+nav.sitio a:hover{color:var(--realce-2)}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
+nav.sitio a[aria-current="page"]{color:var(--realce)}
+nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
+
+/* ---------- topo ---------- */
+header{padding-top:34px; display:flex; flex-direction:column; gap:14px}
+.marca{
+  font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--realce);
+}
+h1{
+  margin:0; font-size:clamp(38px,7vw,60px); line-height:1; letter-spacing:-.03em;
+  font-weight:800; text-wrap:balance;
+}
+h1 span{color:var(--realce-2)}
+.chamada{margin:0; font-size:19px; color:var(--fraco); max-width:60ch; text-wrap:pretty}
+.onda{height:2px; background:linear-gradient(90deg,var(--realce),transparent); border-radius:2px}
+
+/* ---------- seções ---------- */
+section{display:flex; flex-direction:column; gap:16px}
+h2{
+  margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  font-family:var(--mono); color:var(--realce); font-weight:700;
+  display:flex; align-items:center; gap:12px;
+}
+h2::after{content:""; flex:1; height:1px; background:var(--linha)}
+h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
+p{margin:0; max-width:70ch}
+strong,b{color:var(--texto); font-weight:400; text-shadow:1px 0 0 currentColor}
+h1,h2,h3,th{font-weight:400; text-shadow:1px 0 0 currentColor}
+em{font-style:normal; color:var(--realce-2)}
+
+/* ---------- cartões ---------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px}
+.cartao{
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px;
+  padding:15px 17px; display:flex; flex-direction:column; gap:5px;
+}
+.cartao .k{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fraco);
+}
+.cartao .v{font-family:var(--mono); font-size:24px; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--realce-2)}
+.cartao .n{font-size:13.5px; color:var(--fraco); line-height:1.5}
+
+/* ---------- passos ---------- */
+.passos{counter-reset:p; display:flex; flex-direction:column; gap:10px}
+.passo{
+  display:grid; grid-template-columns:30px 1fr; gap:14px; align-items:start;
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px; padding:14px 16px;
+}
+.passo::before{
+  counter-increment:p; content:counter(p);
+  font-family:var(--mono); font-size:12px; font-weight:700; color:var(--fundo);
+  background:var(--realce); border-radius:50%;
+  width:24px; height:24px; display:grid; place-items:center; margin-top:2px;
+}
+.passo p{font-size:15px}
+
+/* ---------- tabelas ---------- */
+.rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:10px; background:var(--agua)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+caption{
+  text-align:left; padding:13px 16px 0; font-size:13px; color:var(--fraco);
+  caption-side:top;
+}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--linha)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--fraco); font-weight:700; background:var(--agua2); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(90,182,234,.07)}
+td.num, th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+td.nome{font-weight:600; white-space:nowrap}
+.dica-tabela{font-size:13px; color:var(--fraco)}
+
+/* raridades */
+.r{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700}
+.r-comum{color:var(--comum)} .r-incomum{color:var(--incomum)} .r-raro{color:var(--raro)}
+.r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)} .r-celestial{color:var(--celestial)}
+
+/* ---------- destaque ---------- */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
+
+footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; color:var(--fraco)}
+
+@media (max-width:560px){
+  body{font-size:15px; padding:0 14px 64px}
+  header{padding-top:40px}
+  .passo{grid-template-columns:24px 1fr; gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A BARRA DO SITE. O guia deixou de viajar dentro do zip em 25/08/2026 e passou a ser uma
+     pagina publicada (ver empacota.ps1), entao ele precisa de volta pras outras: sem isto ele
+     seria um beco -- a pessoa chega pelo menu do jogo, le, e nao tem pra onde ir. -->
+<nav class="sitio">
+  <a class="casa" href="./">À Deriva</a>
+  <a href="guide.html" aria-current="page">Anleitung</a>
+  <span class="idiomas">
+    <a href="../guia.html" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a>
+    <a href="../en/guide.html" hreflang="en" lang="en" title="English">EN</a>
+    <a href="guide.html" hreflang="de" lang="de" title="Deutsch" aria-current="true">DE</a>
+    <a href="../es/guide.html" hreflang="es" lang="es" title="Español">ES</a>
+    <a href="../ru/guide.html" hreflang="ru" lang="ru" title="Русский">RU</a>
+    <a href="../zh_CN/guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+  </span>
+</nav>
+
+<header>
+  <div class="marca">Kurzanleitung</div>
+  <h1>À <span>Deriva</span></h1>
+  <div class="onda"></div>
+  <p class="chamada">Ein Angelspiel, das in einem durchsichtigen Streifen am unteren Bildschirmrand wohnt — oder hinter den Symbolen auf dem Desktop. Es angelt von allein, während du arbeitest; Klicken bringt mehr, aber zuschauen musst du nie.</p>
+  <p class="chamada">Fünf Orte in Brasilien, vom Araguaia bis Fernando de Noronha. Sechzig Fische zum Sammeln, ein Tier auf jeder Karte, und über allem das Wetter, das von selbst umschlägt.</p>
+  <p class="chamada">Diese Seite zeigt, was hinter den Zahlen steckt — wer nur angeln will, braucht sie nicht.</p>
+</header>
+
+<section>
+  <h2>Der Ablauf</h2>
+  <div class="passos">
+    <div class="passo"><p>Der Fisch beißt von allein an. Im Schnitt alle <strong>18 s</strong>, mit einer Schwankung von 0,7× bis 1,3× — und schneller, je nach Rute, Boot und Tieren.</p></div>
+    <div class="passo"><p>Ein <strong>“!”</strong> erscheint im Streifen. Du hast <strong>2 Sekunden</strong> zum Klicken.</p></div>
+    <div class="passo"><p>Innerhalb des Zeitfensters geklickt: <em>perfekter Anhieb</em> — der Fisch ist <strong>+50%</strong> mehr wert und kann nicht entkommen.</p></div>
+    <div class="passo"><p>Nicht geklickt: Das Spiel würfelt die Fehlerchance deines Köders aus. Trifft sie, ist der Fisch weg; sonst landet er ganz normal im Boot.</p></div>
+    <div class="passo"><p>Boot voll: Das Angeln <strong>stoppt</strong>. Verkauf alles über die Leiste oder kauf eine größere Kiste.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Tag und Nacht</h2>
+  <div class="grade">
+    <div class="cartao"><span class="k">Tag</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Nacht</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Übergang</span><span class="v">3 Min.</span></div>
+  </div>
+  <p>Nachts zeigen sich die guten Fische öfter: <span class="r r-raro">selten</span> <strong>+20%</strong>,
+  <span class="r r-epico">episch</span> <strong>+40%</strong>,
+  <span class="r r-lendario">legendär</span> <strong>+60%</strong> in der tiefsten Nacht (der Effekt kommt und geht mit dem Übergang). Die <strong>Mitternachtsrute</strong> funktioniert nur in dieser Zeit — und der <strong>Blutmond</strong> kommt nur dann.</p>
+</section>
+
+<section>
+  <h2>Seltenheit und Köder</h2>
+  <p>Der Köder ist die wichtigste Entscheidung im Spiel: Er verändert <em>alles</em> gleichzeitig — die Chance auf einen guten Fisch und die Chance, ihn zu verlieren. Besserer Köder verfehlt seltener.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Chance jeder Seltenheit, je Köder. Die Jujuba ist gratis und unbegrenzt.</caption>
+      <thead>
+        <tr>
+          <th>Köder</th><th class="num">Hält</th><th>Extra-Effekt</th>
+          <th class="num"><span class="r r-comum">Gewöhnlich</span></th>
+          <th class="num"><span class="r r-incomum">Ungewöhnlich</span></th>
+          <th class="num"><span class="r r-raro">Selten</span></th>
+          <th class="num"><span class="r r-epico">Episch</span></th>
+          <th class="num"><span class="r r-lendario">Legendär</span></th>
+          <th class="num"><span class="r r-celestial">Himmlisch</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🍬 Jujuba <span style="color:var(--fraco)">(gratis)</span></td>
+          <td class="num">65%</td><td>—</td><td class="num">70,0%</td><td class="num">22,0%</td>
+          <td class="num">6,4%</td><td class="num">1,30%</td><td class="num">0,28%</td>
+          <td class="num">0,010%</td></tr>
+        <tr><td class="nome">Ungewöhnlich</td>
+          <td class="num">78%</td><td>+20% <strong>Geschwindigkeit</strong> · +8% <strong>Goldstern</strong></td><td class="num">54,1%</td><td class="num">30,0%</td>
+          <td class="num">11,5%</td><td class="num">3,40%</td><td class="num">1,00%</td>
+          <td class="num">0,050%</td></tr>
+        <tr><td class="nome">Selten</td>
+          <td class="num">85%</td><td>+25% <strong>Verkauf</strong> · +18% <strong>Goldstern</strong></td><td class="num">37,1%</td><td class="num">32,1%</td>
+          <td class="num">20,1%</td><td class="num">8,02%</td><td class="num">2,71%</td>
+          <td class="num">0,150%</td></tr>
+        <tr><td class="nome">Episch</td>
+          <td class="num">92%</td><td>+35% <strong>Verkauf</strong> · +29% <strong>Goldstern</strong></td><td class="num">23,3%</td><td class="num">29,3%</td>
+          <td class="num">26,3%</td><td class="num">14,7%</td><td class="num">6,37%</td>
+          <td class="num">0,403%</td></tr>
+        <tr><td class="nome">Legendär</td>
+          <td class="num">96%</td><td>+20% <strong>Verkauf</strong> · +43% <strong>Goldstern</strong></td><td class="num">13,5%</td><td class="num">22,8%</td>
+          <td class="num">29,0%</td><td class="num">21,7%</td><td class="num">12,9%</td>
+          <td class="num">1,026%</td></tr>
+        <tr><td class="nome">Himmlisch <span style="color:var(--fraco)">(nur aus der Truhe)</span></td>
+          <td class="num">98%</td><td>+15% <strong>Geschwindigkeit</strong>, +40% <strong>Verkauf</strong> und +61% <strong>Goldstern</strong></td><td class="num">6,0%</td><td class="num">14,0%</td>
+          <td class="num">25,0%</td><td class="num">28,00%</td><td class="num">24,0%</td>
+          <td class="num">3,000%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Jede Karte verkauft ihre eigenen Köder, mit anderen Namen, aber denselben fünf Stufen. „Hält“ ist die Chance, dass ein Fisch, der angebissen hat, auch im Boot ankommt. Rute und Tiere verschieben sie noch, in beide Richtungen.</p>
+  <p><strong>Guter Köder zahlt sich aus.</strong> Er hält nicht nur mehr, jede Stufe hat auch einen eigenen Bonus — Geschwindigkeit beim ungewöhnlichen, Verkaufswert bei den drei oberen. Die Ausnahme ist der <strong>legendäre</strong>: Er kostet mehr, als er einbringt. Er ist kein Köder zum Geldverdienen — unter den kaufbaren ist er der, der am stärksten das <em>Himmlische</em> anzieht, und ohne himmlischen Fisch wird keine Sammlung vollständig.</p>
+  <p><strong>Der Preis steigt von Karte zu Karte.</strong> Derselbe legendäre Köder kostet 10.000 am Araguaia und 32.000 auf Noronha — ungefähr das Dreifache von der ersten bis zur letzten Karte.</p>
+
+  <h3>Die Ködertruhe</h3>
+  <p>Oben im Köder-Reiter steht eine <strong>Truhe</strong>, und sie kostet <strong>die Hälfte eines Pakets legendärer Köder</strong> der jeweiligen Karte — 5.000 am Araguaia, 16.000 auf Noronha. Öffnen lost <strong>einen Köder der Karte</strong> aus, in der Menge eines normalen Kaufs.</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0,5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7,9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>Was jede Öffnung der Truhe bringt.</caption>
+      <thead><tr><th>Köder</th><th>Inhalt</th><th class="num">Chance</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Ungewöhnlich</td><td>ein Paket</td><td class="num">44,8%</td></tr>
+        <tr><td class="nome">Selten</td><td>ein Paket</td><td class="num">29,9%</td></tr>
+        <tr><td class="nome">Episch</td><td>ein Paket</td><td class="num">16,9%</td></tr>
+        <tr><td class="nome">Legendär</td><td>ein Paket</td><td class="num">7,9%</td></tr>
+        <tr><td class="nome">Himmlisch</td><td>10 Köder</td><td class="num">0,5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Der himmlische Köder ist der einzige ohne Preis: Er kommt nur aus der Truhe. Und er ist der einzige, der in allem gleichzeitig gut ist — mehr seltene Fische, größere Fische, schneller und wertvoller. Jede Karte hat ihren eigenen: der <em>Muçum de Ouro</em> am Araguaia, der <em>Tucunaré de Prata</em> am Rio Negro, der <em>Camarão Gigante Dourado</em> in Furnas, der <em>Corrico de Cristal</em> an der Küste und die <em>Isca Abissal</em> auf Noronha.</p>
+</section>
+
+<section>
+  <h2>Wetterereignisse</h2>
+  <p>Alle <strong>1 Min.</strong> würfelt das Spiel; die Chance, dass ein Ereignis beginnt, liegt bei <strong>5%</strong> (das erste frühestens nach 30 s Spielzeit) — im Schnitt ein Ereignis alle <strong>20 Min.</strong>. Es kündigt sich <strong>10 s vorher</strong> an und dauert <strong>5 bis 7 Min.</strong>, spontan ausgelost. Jedes Ereignis hat einen <em>garantierten Biss</em> — irgendwann zwischen 20% und 80% der Dauer kommt ein Fisch dieser Seltenheit, ohne Auslosung.</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Ereignis</th><th class="num">Gewicht</th>
+        <th>Garantiert</th><th>Effekt</th><th>Wo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🌧️ Regen</td><td class="num">50</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>Beißt 30% schneller</td><td>überall</td></tr>
+        <tr><td class="nome">✨ Leuchtende Wasser</td><td class="num">16</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td><strong>×20</strong> auf die Himmlisch-Chance</td><td>überall</td></tr>
+        <tr><td class="nome">⛈️ Sturm</td><td class="num">12</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>×1,8 auf die hohen Seltenheiten · +10 Pp. Fehler</td><td>überall</td></tr>
+        <tr><td class="nome">🩸 Blutmond</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td><strong>×5</strong> auf die Legendär-Chance</td><td>nur nachts</td></tr>
+        <tr><td class="nome">🌊 Pororoca</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>×2,4 auf die hohen · +15 Pp. Fehler</td><td>Araguaia e Rio Negro</td></tr>
+        <tr><td class="nome">🫧 Wende der Wasser</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>×2 auf die hohen · gewöhnliche fallen auf ¼</td><td>Furnas</td></tr>
+        <tr><td class="nome">🌀 Hurrikan</td><td class="num">8</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>×2,4 auf die hohen · +15 Pp. Fehler</td><td>Costa de SC</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela"><strong>Gewicht</strong> gibt an, wie stark das Ereignis bei der Auslosung zählt, und ist kein Prozentwert: Regen allein macht mehr als die Hälfte aller Auslosungen aus. Karten-Ereignisse kommen nur in die Auslosung, wenn du dort bist — die <strong>Pororoca</strong> zum Beispiel gibt es nur auf den beiden Flüssen.</p>
+  <div class="nota"><strong>Sturm, Pororoca und Hurrikan haben ihren Preis.</strong> Sie füllen das Wasser mit guten Fischen, erhöhen aber die Fehlerquote — genau der Moment, auf einen besseren Köder zu wechseln und das „!“ im Auge zu behalten.</div>
+</section>
+
+<section>
+  <h2>Ruten</h2>
+  <p>Alle kosten <strong>700</strong> als Grundpreis, aber jede gekaufte Rute macht die nächste um <strong>50%</strong> teurer. Ausgerüstet ist immer nur eine.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Rute</th><th>Was sie macht</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🎋 Bambus</td><td>Die Startrute, ohne Bonus.</td></tr>
+        <tr><td class="nome">🎣 Fiberglas</td><td>+40% Geschwindigkeit, verfehlt aber 25% öfter.</td></tr>
+        <tr><td class="nome">🪝 Stahl</td><td>Hält 40% besser. Was sie hakt, holt sie auch rein.</td></tr>
+        <tr><td class="nome">✨ Carbon</td><td>+30% Qualität (mehr seltene Fische), −20% Geschwindigkeit und verfehlt 25% öfter.</td></tr>
+        <tr><td class="nome">💰 Händler</td><td>Fische bringen beim Verkauf +20%.</td></tr>
+        <tr><td class="nome">🌙 Mitternacht</td><td>Nachts: +40% Geschwindigkeit und +25% Qualität. Tagsüber eine ganz normale Rute.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Boote und Kisten</h2>
+  <p>Das Boot bestimmt, wie viele Fische hineinpassen, bevor das Angeln stoppt. Jedes gekaufte Boot macht das nächste 15% teurer. Die letzten beiden <strong>erfordern Trophäen</strong>, zusätzlich zum Geld.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Boot</th><th class="num">Plätze</th><th class="num">Preis</th><th>Extra</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🛶 Kanu</td><td class="num">12</td><td class="num">—</td><td>das Startboot</td></tr>
+        <tr><td class="nome">⛵ Verstärktes Boot</td><td class="num">24</td><td class="num">2.000</td><td>ausgewogen</td></tr>
+        <tr><td class="nome">💨 Schnellboot</td><td class="num">28</td><td class="num">6.000</td><td>+25% Geschwindigkeit</td></tr>
+        <tr><td class="nome">🎣 Trawler</td><td class="num">48</td><td class="num">14.000</td><td>−15% Geschwindigkeit — zum Laufenlassen</td></tr>
+        <tr><td class="nome">🐟 Fabrikschiff</td><td class="num">36</td><td class="num">55.000</td><td>+25% Verkauf · erfordert <strong>2 🏆</strong></td></tr>
+        <tr><td class="nome">🔱 Hochsee-Trawler</td><td class="num">36</td><td class="num">90.000</td><td>+20% Qualität · erfordert <strong>3 🏆</strong> — zahlenmäßig die Spitze der Flotte</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Die <strong>Kisten</strong> vervielfachen die Kapazität des Boots und bauen aufeinander auf — jede erfordert die vorherige: Styropor <em>×1,5</em> (25.000), Kühlbox <em>×2</em> (80.000), Laderaum <em>×2,5</em> (250.000 <strong>+ 1 Trophäe</strong>), Kühlkammer <em>×3</em> (600.000 <strong>+ 2 Trophäen</strong>).</p>
+  <p>Eine Trophäe ist die vollständige Sammlung einer Karte — siehe <em>Karten und Trophäen</em>.</p>
+</section>
+
+<section>
+  <h2>Tiere</h2>
+  <p>Jede Karte hat ein Tier. Es taucht von selbst auf, mit <strong>0,1% Chance pro gefangenem Fisch</strong>. Du wirst eine ganze Weile angeln, bevor du das erste siehst. Du kannst <strong>3 aktive</strong> gleichzeitig haben, und die Boni addieren sich.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Tier</th><th>Karte</th><th>Bonus</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🐊 Kaiman</td><td>Rio Araguaia</td><td>Hält 8% besser, was anbeißt</td></tr>
+        <tr><td class="nome">🦦 Riesenotter</td><td>Rio Negro</td><td>+6% Verkaufswert</td></tr>
+        <tr><td class="nome">🦢 Jabiru</td><td>Lago de Furnas</td><td>+7% Qualität</td></tr>
+        <tr><td class="nome">🐬 Amazonasdelfin</td><td>Costa de Santa Catarina</td><td>−10% Zeit zwischen den Bissen</td></tr>
+        <tr><td class="nome">🐢 Meeresschildkröte</td><td>Fernando de Noronha</td><td>+8% Qualität bei den hohen Seltenheiten</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">Taucht das Tier noch einmal auf, obwohl du es schon hast, bekommst du ein <strong>Doppel</strong> — ohne Bonus, aber im Inventar zwischen <strong>5.000 und 9.999</strong> wert.</div>
+</section>
+
+<section>
+  <h2>Karten und Trophäen</h2>
+  <p>Du beginnst am Araguaia. Jede neue Karte öffnet sich gegen Bezahlung — <em>oder gratis</em>, wenn du die Trophäe der vorherigen hast. Die Trophäe gibt es fürs <strong>Vervollständigen der Sammlung</strong> eines Ortes: alle 12 Fische, von jedem mindestens einer.</p>
+  <p>Die Spalte <strong>Himmlisch</strong> zeigt, wie oft der himmlische Fisch dieser Karte erscheint, verglichen mit dem Araguaia: Dort kommt er mit voller Chance; auf Noronha mit <strong>einem Zehntel</strong> davon. Da die Sammlung den himmlischen Fisch einschließt, hängt die Trophäe jeder Karte meistens an ihm.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Karte</th><th>Bundesstaat</th><th class="num">Kosten</th><th class="num">Himmlisch</th><th>Eigenes Ereignis</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Rio Araguaia</td><td>TO/GO</td><td class="num">Start</td><td class="num">×1</td><td>🌊 Pororoca</td></tr>
+        <tr><td class="nome">Rio Negro</td><td>AM</td><td class="num">55.000</td><td class="num">×0,60</td><td>—</td></tr>
+        <tr><td class="nome">Lago de Furnas</td><td>MG</td><td class="num">200.000</td><td class="num">×0,35</td><td>🫧 Wende der Wasser</td></tr>
+        <tr><td class="nome">Costa de Santa Catarina</td><td>SC</td><td class="num">330.000</td><td class="num">×0,20</td><td>🌀 Hurrikan</td></tr>
+        <tr><td class="nome">Fernando de Noronha</td><td>PE</td><td class="num">900.000</td><td class="num">×0,10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Größe, Gewicht und Sterne</h2>
+  <p>Jeder Fisch, der ins Boot kommt, hat <strong>Länge und Gewicht</strong>, und beides steht auf der Fangkarte: <em>„Dourado · 75,3 cm · 8,1 kg“</em>. Der größte jeder Art wird als <strong>Rekord</strong> gespeichert, und genau den zeigt die Sammlung.</p>
+
+  <h3>Das Gewicht folgt der Länge</h3>
+  <p>Das Gewicht wird nicht getrennt ausgelost: Es folgt der Länge, wie bei einem echten Fisch. Die Spannen jeder Art richten sich nach Maßen aus dem brasilianischen Sportangeln, mit der Obergrenze bei einem <em>außergewöhnlichen</em> Exemplar — und nicht beim Weltrekord.</p>
+
+  <h3>Was einen Fisch größer macht</h3>
+  <p>Große Fische sind selten. Drei Entscheidungen treiben die Größe nach oben — und der Köder treibt am stärksten:</p>
+  <div class="rolagem">
+    <table>
+      <caption>Durchschnittliche Länge eines Dourado.</caption>
+      <thead><tr><th>Womit</th><th class="num">Schnitt</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Nichts — Jujuba, kein Klick, tagsüber</td><td class="num">56,5 cm</td></tr>
+        <tr><td class="nome">Nur die Nacht</td><td class="num">58,0 cm</td></tr>
+        <tr><td class="nome">Nur der perfekte Anhieb</td><td class="num">58,3 cm</td></tr>
+        <tr><td class="nome">Nur der legendäre Köder</td><td class="num">61,8 cm</td></tr>
+        <tr><td class="nome">Nur der himmlische Köder</td><td class="num">63,8 cm</td></tr>
+        <tr><td class="nome">Alles zusammen, mit dem legendären</td><td class="num">68,1 cm</td></tr>
+        <tr><td class="nome">Alles zusammen, mit dem himmlischen</td><td class="num">71,1 cm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Der himmlische treibt noch stärker als der legendäre: Die <strong>drei Zentimeter</strong> zwischen den letzten beiden Zeilen gehen allein auf ihn. <strong>Die Rute ändert nichts an der Größe</strong>, und die Zeit mit offenem Spiel auch nicht.</p>
+
+  <h3>Die vier Sterne</h3>
+  <p>In der Sammlung zeigt jeder Fisch den Rekord und einen Stern — die Stufe, in die dein größtes Exemplar gefallen ist. Der Stern gehört zum <strong>Rekord</strong>, nicht zum letzten Fisch.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Die Stufe gibt an, wie viel von der möglichen Länge dieser Art dein Rekord erreicht hat.</caption>
+      <thead><tr><th>Stern</th><th class="num">Ab</th><th>Was es bedeutet</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🥉 Bronze</td><td class="num">—</td><td>Einmal gefangen.</td></tr>
+        <tr><td class="nome">🥈 Silber</td><td class="num">45%</td><td>Ein überdurchschnittliches Exemplar.</td></tr>
+        <tr><td class="nome">🥇 Gold</td><td class="num">80%</td><td>Ein wirklich großer Fisch.</td></tr>
+        <tr><td class="nome">💎 Platin</td><td class="num">97%</td><td>Nahe am Maximum der Art.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Jeder Fang bringt Gold in <strong>6,6%</strong> der Fälle ganz ohne Ausrüstung, <strong>13,8%</strong> mit legendärem Köder, sauberem Klick und nachts, und <strong>16,5%</strong> wenn du den legendären gegen den himmlischen tauschst. Platin geht denselben Weg: <strong>von 0,9% bis 2,5%</strong>.</p>
+
+  <h3>Zentimeter oder Zoll</h3>
+  <p>Die Wahl steht in den Einstellungen, zwischen <strong>metrisch</strong> (cm und kg) und <strong>imperial</strong> (in und lb).</p>
+</section>
+
+<section>
+  <h2>Der Aufkäufer</h2>
+  <p>Ein Boot, das <strong>jede Stunde</strong> vorbeikommt, deinen Laderaum leert und einen Teil des Werts zahlt. Du hast immer nur einen, und ein besserer ersetzt den alten. So verdient das Spiel wirklich von allein — gegen eine Gebühr.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Aufkäufer</th><th class="num">Kostet</th><th class="num">Zahlt</th><th>Wann er sich lohnt</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🪵 Floß</td><td class="num">3.000</td><td class="num">20%</td>
+          <td>Noch am Araguaia, wenn 3.000 viel Geld sind. Zahlt wenig, zeigt dir aber, wofür ein Aufkäufer gut ist</td></tr>
+        <tr><td class="nome">🛶 Boot</td><td class="num">40.000</td><td class="num">50%</td>
+          <td>Gleich nach dem Fabrikschiff, wenn sich der Laderaum füllt, ohne dass du hinsiehst</td></tr>
+        <tr><td class="nome">🚤 Schiff</td><td class="num">120.000</td><td class="num">70%</td>
+          <td>Nach dem Hochsee-Trawler, wenn jeder Fang schon viel wert ist</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Keiner zahlt so gut wie der Verkauf von Hand. Du tauschst Geld dagegen, nicht dabei sein zu müssen — und manchmal lohnt sich das.</p>
+</section>
+
+<section>
+  <h2>Was über den Bildschirm zieht</h2>
+  <p>Abgesehen vom Fisch hat der Streifen ein Eigenleben: Tiere ziehen vorbei, der Himmel verändert sich, und das eine oder andere verraten wir lieber nicht. <strong>Nichts davon ist anklickbar oder ändert eine Zahl</strong> — es ist Kulisse, und was an welchem Ort auftaucht, entdeckst du selbst.</p>
+  <p>Nicht zu verwechseln mit den Tieren: Die schaltest du frei, aktivierst sie, und sie geben Boni. Siehe den Abschnitt Tiere.</p>
+</section>
+
+<section>
+  <h2>Wo das Spiel wohnt</h2>
+  <p>Es läuft auf zwei Arten, und umgeschaltet wird im Menü (Taste ▲) unter <strong>Einstellungen</strong>. Ein Moduswechsel <strong>startet das Spiel neu</strong>, und die Wahl bleibt gespeichert.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Streifen</h3>
+      <span class="n">Ein Band über der Taskleiste, immer im Blick. Klicks gehen dort durch, wo kein Spiel ist, also stört es nicht, was darunter liegt.</span>
+    </div>
+    <div class="cartao">
+      <h3>Hintergrundbild</h3>
+      <span class="n">Die ganze Landschaft <em>hinter</em> den Desktop-Symbolen. Die Symbole bleiben anklickbar, und jedes Fenster legt sich darüber. Nur unter Windows.</span>
+    </div>
+  </div>
+  <p class="dica-tabela">Im Hintergrundbild-Modus wandert die HUD-Leiste in die untere rechte Ecke (links wohnen die Symbole), und die Menüs öffnen sich in einem eigenen kleinen Fenster — geschlossen wird mit Esc, per Klick daneben oder über das Fisch-Symbol im Infobereich neben der Uhr.</p>
+  <p>Im Streifen gibt es die Option <strong>Immer im Vordergrund</strong>. Eingeschaltet liegt der Streifen über allem, auch über der Taskleiste; ausgeschaltet verschwindet er hinter jedem Fenster — auch hinter der Leiste selbst. Das ist der Unterschied zwischen einem Spiel, das immer sichtbar ist, und einem, das nur da ist, wenn der Desktop frei ist.</p>
+  <p>Außerdem in den <strong>Einstellungen</strong>: Mit mehr als einem Bildschirm kannst du wählen, <strong>auf welchem Bildschirm</strong> das Spiel wohnt (auch das startet neu), und es gibt <strong>Mit Windows starten</strong>, damit das Spiel von selbst aufgeht, wenn der Computer startet.</p>
+</section>
+
+<section>
+  <h2>Der Ton</h2>
+  <p>Das Spiel hat Musik, Effekte und Wetter — alle drei lassen sich einzeln ein- und ausschalten, mit eigener Lautstärke, unter <strong>Einstellungen › Ton</strong>.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Musik</h3>
+      <span class="n">Dreizehn Stücke, die sich von selbst abwechseln — manche für den Tag, andere für die Nacht.</span>
+    </div>
+    <div class="cartao">
+      <h3>Effekte</h3>
+      <span class="n">Nur, was auf dem Fluss passiert: der Biss, der Schwimmer, der Fisch im Korb, der perfekte Anhieb, die Trophäe, das Tier.</span>
+    </div>
+    <div class="cartao">
+      <h3>Wetter</h3>
+      <span class="n">Regen, Sturm und Wind unter der Musik, solange das Ereignis dauert.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Drei Dinge, die alles beschleunigen</h2>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Klick auf das „!“</h3>
+      <span class="n">+50% auf den Fisch und null Fehler. Der einzige Moment, in dem deine Aufmerksamkeit Geld wert ist.</span>
+    </div>
+    <div class="cartao">
+      <h3>Erst den Köder verbessern, dann die Rute</h3>
+      <span class="n">Der Köder verändert Seltenheit und Fehlerquote <em>gleichzeitig</em>. Von der Jujuba zum Legendären steigt, was du hältst, von 65% auf 96%.</span>
+    </div>
+    <div class="cartao">
+      <h3>Heb dir die guten für die Nacht auf</h3>
+      <span class="n">Legendäres taucht nachts 60% öfter auf, und genau dann kann der Blutmond kommen — er multipliziert das mit 5.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPEUS:INICIO gerado por ferramentas/monta_site_chapeus.py -->
+<section id="chapeus">
+  <h2>Hüte</h2>
+
+  <p>Der Angler beginnt mit dem Strohhut. Die anderen fallen beim Angeln, und sie sind <strong>echte Items</strong> in deinem Steam-Inventar: Du kannst sie tragen, tauschen und auf dem Markt verkaufen.</p>
+
+  <h3>Wie ein Hut fällt</h3>
+  <div class="passos">
+    <div class="passo"><p>Du angelst. Das Spiel zählt die <em>echte Angelzeit</em> — nicht die Zeit mit offenem Fenster.</p></div>
+    <div class="passo"><p>Nach etwa <strong>3 Stunden</strong> davon fliegt zu einem zufälligen Zeitpunkt ein <strong>Storch</strong> mit einem Sack durch den Streifen.</p></div>
+    <div class="passo"><p>Über ihm hüpft ein <strong>“!”</strong> — und du musst <strong>den Storch anklicken</strong> — bevor er den Bildschirm verlässt.</p></div>
+    <div class="passo"><p>Geklickt: Die Anfrage geht an Steam, und das Item liefert <strong>Steam</strong>, nicht das Spiel. Was gekommen ist, erscheint im <strong>Kleiderschrank</strong>, im Spiel.</p></div>
+  </div>
+
+  <p>Höchstens <strong>2 pro Tag</strong>, mit mindestens <strong>6 Stunden</strong> zwischen zwei Störchen. Wenn du nicht am Computer sitzt und der Storch vorbeifliegt, verlierst du nichts: Die Angelzeit bleibt gespeichert, und er kommt später wieder.</p>
+
+  <h3>Was es gibt, und was jeder kann</h3>
+  <p>Jeder Hut hat seinen Bonus: Er hilft dir beim Angeln und zählt obendrein für deine Sammlung. <strong>Je seltener der Hut, desto größer der Schub</strong> — von 1% bei einem gewöhnlichen bis 5% bei einem legendären, und der Zustand neu legt noch einen halben Punkt drauf.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Die Chance ist die, dass ein Storch diesen Hut bringt, alle drei Zustände zusammengerechnet. Der Strohhut fällt nicht, weil ihn alle schon haben; die himmlischen gibt es nur in der Meisterschaft.</caption>
+      <thead>
+        <tr><th></th><th>Hut</th><th>Seltenheit</th><th>Effekt</th><th class="num">Chance</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/palha.png" alt="Strohhut" width="64" height="64"></td>
+          <td>Strohhut</td>
+          <td><span class="r r-comum">Gewöhnlich</span></td>
+          <td>+1% Chance auf einen guten Fisch</td>
+          <td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Basecap" width="64" height="64"></td>
+          <td>Basecap</td>
+          <td><span class="r r-comum">Gewöhnlich</span></td>
+          <td>+1% Wert</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tiroles.png" alt="Tirolerhut" width="64" height="64"></td>
+          <td>Tirolerhut</td>
+          <td><span class="r r-comum">Gewöhnlich</span></td>
+          <td>hält 1% besser, was anbeißt</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bandana.png" alt="Piraten-Kopftuch" width="64" height="64"></td>
+          <td>Piraten-Kopftuch</td>
+          <td><span class="r r-comum">Gewöhnlich</span></td>
+          <td>+1% Geschwindigkeit</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/souwester.png" alt="Regenhut" width="64" height="64"></td>
+          <td>Regenhut</td>
+          <td><span class="r r-comum">Gewöhnlich</span></td>
+          <td>hält 1% besser, was anbeißt</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/xerife.png" alt="Sheriffhut" width="64" height="64"></td>
+          <td>Sheriffhut</td>
+          <td><span class="r r-incomum">Ungewöhnlich</span></td>
+          <td>+2% Wert</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/quepe.png" alt="Kapitänsmütze" width="64" height="64"></td>
+          <td>Kapitänsmütze</td>
+          <td><span class="r r-incomum">Ungewöhnlich</span></td>
+          <td>+2% Geschwindigkeit</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/minerador.png" alt="Bergmannshelm" width="64" height="64"></td>
+          <td>Bergmannshelm</td>
+          <td><span class="r r-incomum">Ungewöhnlich</span></td>
+          <td>+2% Chance auf einen guten Fisch</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aviador.png" alt="Fliegerhaube" width="64" height="64"></td>
+          <td>Fliegerhaube</td>
+          <td><span class="r r-incomum">Ungewöhnlich</span></td>
+          <td>+2% Chance auf einen guten Fisch</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/natal.png" alt="Weihnachtsmütze" width="64" height="64"></td>
+          <td>Weihnachtsmütze</td>
+          <td><span class="r r-incomum">Ungewöhnlich</span></td>
+          <td>+2% Wert</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/pirata.png" alt="Piraten-Dreispitz" width="64" height="64"></td>
+          <td>Piraten-Dreispitz</td>
+          <td><span class="r r-raro">Selten</span></td>
+          <td>+3% Geschwindigkeit</td>
+          <td class="num">2,7%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/cartola.png" alt="Zylinder" width="64" height="64"></td>
+          <td>Zylinder</td>
+          <td><span class="r r-raro">Selten</span></td>
+          <td>+3% Wert</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bruxo.png" alt="Zaubererhut" width="64" height="64"></td>
+          <td>Zaubererhut</td>
+          <td><span class="r r-raro">Selten</span></td>
+          <td>+3% Chance auf einen guten Fisch</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bambu.png" alt="Bambushut" width="64" height="64"></td>
+          <td>Bambushut</td>
+          <td><span class="r r-raro">Selten</span></td>
+          <td>+3% Chance auf einen guten Fisch</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/peixe.png" alt="Hungriger Fisch" width="64" height="64"></td>
+          <td>Hungriger Fisch</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>+4% Geschwindigkeit</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/gaivota.png" alt="Pickende Möwe" width="64" height="64"></td>
+          <td>Pickende Möwe</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>+4% Chance auf einen guten Fisch</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/viking.png" alt="Wikingerhelm" width="64" height="64"></td>
+          <td>Wikingerhelm</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>hält 4% besser, was anbeißt</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/urso.png" alt="Bärenkapuze" width="64" height="64"></td>
+          <td>Bärenkapuze</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>hält 4% besser, was anbeißt</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tubarao.png" alt="Haikopf" width="64" height="64"></td>
+          <td>Haikopf</td>
+          <td><span class="r r-epico">Episch</span></td>
+          <td>+4% Geschwindigkeit</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/coroa.png" alt="Kaiserkrone" width="64" height="64"></td>
+          <td>Kaiserkrone</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>+5% Wert</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/mosqueteiro.png" alt="Musketierhut" width="64" height="64"></td>
+          <td>Musketierhut</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>+5% Geschwindigkeit</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aureola.png" alt="Heiligenschein" width="64" height="64"></td>
+          <td>Heiligenschein</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>+5% Chance auf einen guten Fisch</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/louros.png" alt="Lorbeerkranz" width="64" height="64"></td>
+          <td>Lorbeerkranz</td>
+          <td><span class="r r-lendario">Legendär</span></td>
+          <td>hält 5% besser, was anbeißt</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/caveira.png" alt="Boi-bumbá" width="64" height="64"></td>
+          <td>Boi-bumbá</td>
+          <td><span class="r r-celestial">Himmlisch</span></td>
+          <td>1% bis 3% Chance auf einen Doppelfang</td>
+          <td class="num">nur in der Meisterschaft</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bobo.png" alt="Narrenkappe" width="64" height="64"></td>
+          <td>Narrenkappe</td>
+          <td><span class="r r-celestial">Himmlisch</span></td>
+          <td>1% bis 3% Chance, dass der Köder nicht verbraucht wird</td>
+          <td class="num">nur in der Meisterschaft</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Drei Zustände desselben Huts</h3>
+  <p>Jeder Hut fällt in einem von drei Zuständen, und der Zustand verschiebt den Bonus um <strong>einen halben Punkt</strong> in beide Richtungen. Der Zustand <em>getragen</em> ist der Wert aus der Tabelle oben; <em>abgetragen</em> zieht einen halben Punkt ab, <em>neu</em> legt einen halben drauf.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Die drei Zustände. Die Chance ist das Gewicht bei der Auslosung des Storchs, und die Zeichnung ändert sich mit. Der Piraten-Dreispitz ist die Ausnahme: Seinen neuen Zustand bringt nie der Storch, nur das Pirate's Pack.</caption>
+      <thead>
+        <tr><th></th><th>Zustand</th><th class="num">Auf den Bonus</th><th class="num">Chance</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="Basecap, abgetragen" width="64" height="64"></td>
+          <td>Abgetragen</td>
+          <td class="num">-0,5 Pp.</td>
+          <td class="num">55%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="Basecap, getragen" width="64" height="64"></td>
+          <td>Getragen</td>
+          <td class="num">—</td>
+          <td class="num">35%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Basecap, neu" width="64" height="64"></td>
+          <td>Neu</td>
+          <td class="num">+0,5 Pp.</td>
+          <td class="num">10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Auf Steam sind das drei verschiedene Items.</strong> Jeder Zustand hat im Inventar eine eigene Nummer, also werden sie auf dem Markt getrennt gekauft und verkauft — und weil <em>neu</em> der seltenste der drei ist, ist er am meisten wert.</p>
+  <p>Bei den zwei <span class="r r-celestial">himmlischen</span> Hüten wiegt der Zustand mehr, weil ihr Effekt kein Balken ist, sondern ein Ereignis — der Köder, der nicht verbraucht wird, der Fisch, der doppelt kommt. Bei ihnen ist die Leiter <strong>1%, 2% und 3%</strong>.</p>
+  <p class="legenda">Der Strohhut ist als einziger außen vor: Alle beginnen mit ihm, also gibt es ihn nur in der gewohnten Version.</p>
+
+  <h3>Die Meisterschaft</h3>
+  <p>Die himmlischen — der Boi-bumbá und die Narrenkappe — bringt nie der Storch. Sie sind der Preis der <strong>monatlichen Meisterschaft</strong>, und das Podest bekommt denselben Hut in drei Zuständen:</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Platz</th><th>Bekommt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">1º</td><td>den himmlischen Hut im Zustand <strong>neu</strong></td></tr>
+        <tr><td class="nome">2º</td><td>den himmlischen Hut im Zustand <strong>getragen</strong></td></tr>
+        <tr><td class="nome">3º</td><td>den himmlischen Hut im Zustand <strong>abgetragen</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Jede Ausgabe gilt einem der himmlischen Hüte. Die erste gilt der <strong>Narrenkappe</strong>. Der Preis ist ein Item wie jeder andere Hut: Du kannst ihn tragen, tauschen und verkaufen.</p>
+
+  <h3>Der Kleiderschrank</h3>
+  <p>Der Bildschirm, in dem die Hüte wohnen — über das Menü (Taste ▲). Er zeigt, was fehlt, und lässt dich tragen, was du hast.</p>
+  <p>Jeder Hut ist eine Zeile, und die drei Zustände sind drei Spalten mit der jeweiligen Anzahl. Ein Klick auf eine Zelle setzt den Hut auf; ein Klick auf den, der schon auf dem Kopf sitzt, nimmt ihn ab. Ein Platz, den du nie hattest, zeigt einen Strich; einer, den du hattest und verkauft hast, eine Null.</p>
+  <p>Was du noch nicht gesehen hast, erscheint als <strong>???</strong>, nur mit der Seltenheit.</p>
+</section>
+<!-- CHAPEUS:FIM -->
+
+<footer> © 2026 G. Studios. Alle Rechte vorbehalten. </footer>
+
+</div>
+</body>
+</html>

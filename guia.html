@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>À Deriva — guia rápido</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
 <style>
 @font-face{
   font-family:"Geist Pixel";
@@ -42,7 +49,8 @@ nav.sitio{
 }
 nav.sitio a{color:var(--fraco); text-decoration:none}
 nav.sitio a:hover{color:var(--realce-2)}
-nav.sitio .bandeira{margin-left:auto; letter-spacing:.08em}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
 nav.sitio a[aria-current="page"]{color:var(--realce)}
 nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
 
@@ -152,7 +160,14 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 <nav class="sitio">
   <a class="casa" href="./">À Deriva</a>
   <a href="guia.html" aria-current="page">Guia</a>
-    <a class="bandeira" href="en/guide.html" hreflang="en" title="Read in English">🇺🇸 English</a>
+  <span class="idiomas">
+    <a href="guia.html" hreflang="pt-BR" lang="pt-BR" title="Português" aria-current="true">PT</a>
+    <a href="en/guide.html" hreflang="en" lang="en" title="English">EN</a>
+    <a href="de/guide.html" hreflang="de" lang="de" title="Deutsch">DE</a>
+    <a href="es/guide.html" hreflang="es" lang="es" title="Español">ES</a>
+    <a href="ru/guide.html" hreflang="ru" lang="ru" title="Русский">RU</a>
+    <a href="zh_CN/guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+  </span>
 </nav>
 
 <header>

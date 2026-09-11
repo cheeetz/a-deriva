@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>À Deriva — guia rápido</title>
+<title>À Deriva — quick guide</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
 <style>
 @font-face{
   font-family:"Geist Pixel";
@@ -42,7 +49,8 @@ nav.sitio{
 }
 nav.sitio a{color:var(--fraco); text-decoration:none}
 nav.sitio a:hover{color:var(--realce-2)}
-nav.sitio .bandeira{margin-left:auto; letter-spacing:.08em}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
 nav.sitio a[aria-current="page"]{color:var(--realce)}
 nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
 
@@ -152,12 +160,18 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 <nav class="sitio">
   <a class="casa" href="./">À Deriva</a>
   <a href="guide.html" aria-current="page">Guide</a>
-  <a href="donate.html">Donate</a>
-    <a class="bandeira" href="../guia.html" hreflang="pt-BR" title="Ver em português">🇧🇷 Português</a>
+  <span class="idiomas">
+    <a href="../guia.html" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a>
+    <a href="guide.html" hreflang="en" lang="en" title="English" aria-current="true">EN</a>
+    <a href="../de/guide.html" hreflang="de" lang="de" title="Deutsch">DE</a>
+    <a href="../es/guide.html" hreflang="es" lang="es" title="Español">ES</a>
+    <a href="../ru/guide.html" hreflang="ru" lang="ru" title="Русский">RU</a>
+    <a href="../zh_CN/guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+  </span>
 </nav>
 
 <header>
-  <div class="marca">Quick guide <span id="versao">· v0.1.0.72-demo</span></div>
+  <div class="marca">Quick guide</div>
   <h1>À <span>Deriva</span></h1>
   <div class="onda"></div>
   <p class="chamada">A fishing game that lives in a transparent strip at the bottom of the screen — or behind your desktop icons. It fishes on its own while you work; clicking pays more, but keeping watch was never required.</p>
@@ -229,19 +243,33 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
         <tr><td class="nome">Celestial <span style="color:var(--fraco)">(chest only)</span></td>
           <td class="num">98%</td><td>+15% <strong>speed</strong>, +40% <strong>sale value</strong> and +61% <strong>gold stars</strong></td><td class="num">6.0%</td><td class="num">14.0%</td>
           <td class="num">25.0%</td><td class="num">28.00%</td><td class="num">24.0%</td>
-          <td class="num">3,000%</td></tr>
+          <td class="num">3.000%</td></tr>
       </tbody>
     </table>
   </div>
   <p class="dica-tabela">Every map sells its own bait, with different names but the same five tiers. This is the chance that a fish which bit actually reaches the boat. Your rod and your pets still move it, in both directions.</p>
-  <p><strong>Good bait pays for itself.</strong> Besides landing more, each tier carries a bonus of its own — speed on the uncommon, sale value on the top three. The exception is the <strong>legendary</strong>: it costs more than it returns. It is not bait for profit — it is the only one that makes the <em>celestial</em> appear, and that is how a collection gets finished.</p>
-  <p><strong>The price climbs from map to map.</strong> The same legendary bait costs 10,000 in the Araguaia and 32,000 in Noronha — roughly triple, first to last. It is what stops endgame money from buying the early game all over again.</p>
+  <p><strong>Good bait pays for itself.</strong> Besides landing more, each tier carries a bonus of its own — speed on the uncommon, sale value on the top three. The exception is the <strong>legendary</strong>: it costs more than it returns. It is not bait for making money — it is the one that pulls the <em>celestial</em> hardest among the baits you can buy, and without a celestial no collection is complete.</p>
+  <p><strong>The price climbs from map to map.</strong> The same legendary bait costs 10,000 on the Araguaia and 32,000 at Noronha — roughly triple from the first map to the last.</p>
 
   <h3>The bait chest</h3>
-  <p>At the top of the Baits tab there is a <strong>chest</strong>, and it costs <strong>half the price of the legendary bait pack</strong> for that map — 5,000 on the Araguaia, 16,000 at Noronha. Opening it draws <strong>one bait from the map</strong>, in the amount of a normal purchase.</p>
-  <p class="nota"><strong>It costs more than it gives back, and that is on purpose.</strong> By the draw odds, what comes out in bait is worth roughly a third of what the chest costs — anyone who just wants bait buys it off the shelf and spends less. What you are buying here is the <strong>0.5%</strong>: once in two hundred, the chest opens on <strong>ten celestial baits</strong>.</p>
-  <p>The celestial is the only bait with no price: it comes out of the chest and nowhere else. And it is the only one that is good at everything at once — rarer fish, bigger fish, faster and worth more — because there is no price balancing it, there is scarcity. Each map has its own: the <em>Muçum de Ouro</em> on the Araguaia, the <em>Tucunaré de Prata</em> on the Rio Negro, the <em>Camarão Gigante Dourado</em> at Furnas, the <em>Corrico de Cristal</em> on the Coast, and the <em>Isca Abissal</em> at Noronha.</p>
-  <p><strong>Why the chest exists.</strong> After the last boat, money stops having anywhere to go, and an idle game with nothing to spend coin on loses the one axis that was still climbing. The chest is the drain — and a drain only works when there is something on the other side you cannot get any other way.</p>
+  <p>At the top of the Bait tab there is a <strong>chest</strong>, and it costs <strong>half the price of the legendary bait pack</strong> for that map — 5,000 on the Araguaia, 16,000 at Noronha. Opening it draws <strong>one bait from the map</strong>, in the amount of a normal purchase.</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0.5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7.9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>What each opening of the chest gives.</caption>
+      <thead><tr><th>Bait</th><th>Gives</th><th class="num">Chance</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Uncommon</td><td>one pack</td><td class="num">44.8%</td></tr>
+        <tr><td class="nome">Rare</td><td>one pack</td><td class="num">29.9%</td></tr>
+        <tr><td class="nome">Epic</td><td>one pack</td><td class="num">16.9%</td></tr>
+        <tr><td class="nome">Legendary</td><td>one pack</td><td class="num">7.9%</td></tr>
+        <tr><td class="nome">Celestial</td><td>10 baits</td><td class="num">0.5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The celestial is the only bait with no price: it only comes out of the chest. And it is the only one good at everything at once — more rare fish, bigger fish, faster and worth more. Every map has its own: the <em>Muçum de Ouro</em> on the Araguaia, the <em>Tucunaré de Prata</em> on the Rio Negro, the <em>Camarão Gigante Dourado</em> at Furnas, the <em>Corrico de Cristal</em> on the Coast, and the <em>Isca Abissal</em> at Noronha.</p>
 </section>
 
 <section>
@@ -278,7 +306,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       </tbody>
     </table>
   </div>
-  <p class="dica-tabela"><strong>Weight</strong> is how much the event weighs in the roll, not a percentage: Rain alone accounts for more than half of all rolls. Map events only enter the roll when you are there — and the <strong>Pororoca</strong> is the tidal wave coming up the river, so it applies to both rivers and nowhere else.</p>
+  <p class="dica-tabela"><strong>Weight</strong> is how much the event counts in the draw, not a percentage: Rain alone accounts for more than half of all draws. Map events only enter the draw while you are there — the <strong>Pororoca</strong>, for example, only happens on the two rivers.</p>
   <div class="nota"><strong>Storm, Pororoca and Hurricane charge for it.</strong> They fill the water with good fish but raise the failure rate — which is exactly when to switch to better bait and keep an eye on the “!”.</div>
 </section>
 
@@ -302,7 +330,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
 <section>
   <h2>Boats and boxes</h2>
-  <p>The boat sets how many fish fit before fishing stops. Every boat bought makes the next one 15% dearer. The last two <strong>require a trophy</strong>, not just money: it is what forces you to finish a collection before upgrading the fleet.</p>
+  <p>The boat sets how many fish fit before fishing stops. Every boat bought makes the next one 15% dearer. The last two <strong>require a trophy</strong>, on top of the money.</p>
   <div class="rolagem">
     <table>
       <thead><tr><th>Boat</th><th class="num">Slots</th><th class="num">Price</th><th>Extra</th></tr></thead>
@@ -313,12 +341,11 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
         <tr><td class="nome">🎣 Trawler</td><td class="num">48</td><td class="num">14,000</td><td>−15% speed — for leaving it running</td></tr>
         <tr><td class="nome">🐟 Factory Ship</td><td class="num">36</td><td class="num">55,000</td><td>+25% sale value · requires <strong>2 🏆</strong></td></tr>
         <tr><td class="nome">🔱 Ocean Trawler</td><td class="num">36</td><td class="num">90,000</td><td>+20% quality · requires <strong>3 🏆</strong> — the top of the fleet by the numbers</td></tr>
-        <tr><td class="nome">☠️ Flying Dutchman</td><td class="num">32</td><td class="num">200,000</td><td>+25% speed · expensive for very little, and it is the ghost ship</td></tr>
       </tbody>
     </table>
   </div>
   <p>The <strong>boxes</strong> multiply the boat's capacity and stack — each one requires the previous: Styrofoam <em>×1.5</em> (25,000), Cooler <em>×2</em> (80,000), Hold <em>×2.5</em> (250,000 <strong>+ 1 trophy</strong>), Cold Room <em>×3</em> (600,000 <strong>+ 2 trophies</strong>).</p>
-  <p>The last two ask for a trophy for the same reason the Factory Ship and the Ocean Trawler do: capacity is what shortens play time the most, and the biggest one does not come from just waiting for coins to pile up. A trophy is a map's complete collection, and every collection goes through the celestial fish — which means through the expensive bait.</p>
+  <p>A trophy is a map's complete collection — see <em>Maps and trophies</em>.</p>
 </section>
 
 <section>
@@ -336,13 +363,13 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       </tbody>
     </table>
   </div>
-  <div class="nota">If the pet drops again once you already have it, you get a <strong>duplicate</strong> — no bonus, but worth between <strong>5,000 e 9,999</strong> in your inventory.</div>
+  <div class="nota">If the pet drops again once you already have it, you get a <strong>duplicate</strong> — no bonus, but worth between <strong>5,000 and 9,999</strong> in your inventory.</div>
 </section>
 
 <section>
   <h2>Maps and trophies</h2>
   <p>You start on the Araguaia. Each new map opens by paying — <em>or free</em>, if you hold the previous one's trophy. The trophy comes from <strong>completing the collection</strong> of that place: all 12 fish, at least one of each.</p>
-  <p>The <strong>Celestial</strong> column is what changed the whole game: the rarest fish of each map gets progressively harder to land. On the Araguaia it comes at full odds; in Noronha, at <strong>a tenth</strong> of that. Because the trophy demands the complete collection, and the collection includes the celestial, this is what makes an endgame exist — and it is where the big money gets burned, on expensive bait.</p>
+  <p>The <strong>Celestial</strong> column is how often that map's celestial fish appears, compared with the Araguaia: there it comes at the full chance; at Noronha, at <strong>a tenth</strong> of it. Since the collection includes the celestial, that is where each map's trophy usually gets stuck.</p>
   <div class="rolagem">
     <table>
       <thead><tr><th>Map</th><th>State</th><th class="num">Cost</th><th class="num">Celestial</th><th>Own event</th></tr></thead>
@@ -361,16 +388,14 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
   <h2>Length, weight and stars</h2>
   <p>Every fish that reaches the boat has a <strong>length and a weight</strong>, and both show up on the catch card: <em>“Dourado · 75.3 cm · 8.1 kg”</em>. The biggest of each species is kept as a <strong>record</strong>, and that is what the Collection shows.</p>
 
-  <h3>Weight is not rolled — it comes from the length</h3>
-  <p>Rolling the two separately is what produces the 30 cm traíra weighing 8 kg. A fish grows in all three dimensions at once, so weight follows length <strong>cubed</strong> — it is the ichthyology relation, <em>P = a·C<sup>b</sup></em>. Each of the 58 species has four numbers: the shortest and longest length, and the weight at each of those two points. The rest falls out of the curve.</p>
-  <p class="nota"><strong>The error this avoids sits in the middle, which is where almost every catch lands.</strong> A 75 cm dourado weighs <strong>7.9 kg</strong> by the curve. Interpolating straight between the extremes would give <strong>13.1 kg</strong> — a fish that does not exist.</p>
-  <p>The numbers come from Brazilian sport fishing and ichthyology, with the ceiling pulled to what an <em>exceptional</em> specimen reaches, and not to the certified world record: a record happens once in history, and a range in a game has to be reachable.</p>
+  <h3>Weight comes from length</h3>
+  <p>Weight is not rolled separately: it follows length, as in a real fish. Each species' ranges follow Brazilian sport-fishing measurements, with the ceiling at an <em>exceptional</em> specimen — not at the world record.</p>
 
-  <h3>The roll is skewed, and what straightens it is choice</h3>
-  <p>A big fish is rare on purpose — a flat roll would make a 110 cm dourado come out as easily as a 50 cm one, and then there is no trophy, there is luck. What straightens the curve is what your own choices do:</p>
+  <h3>What makes a fish bigger</h3>
+  <p>Big fish are rare. Three choices push the size up — and bait pushes hardest:</p>
   <div class="rolagem">
     <table>
-      <caption>Average length of a dourado, measured over forty thousand specimens per row.</caption>
+      <caption>Average length of a dourado.</caption>
       <thead><tr><th>With what</th><th class="num">Average</th></tr></thead>
       <tbody>
         <tr><td class="nome">Nothing — jujuba, no click, daytime</td><td class="num">56.5 cm</td></tr>
@@ -383,8 +408,7 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       </tbody>
     </table>
   </div>
-  <p><strong>Bait pushes harder than the other two</strong>, and the celestial pushes harder still: it is the step above legendary, and the <strong>three centimetres</strong>  between the last two rows are its alone. <strong>The rod stays out of it</strong>, and that is on purpose: it already moves speed and holding on to the fish, and adding length would let a good rod dominate all three axes at once.</p>
-  <p class="legenda">Notice what is not in the table: <em>time with the window open</em>. In a game that fishes on its own, that is the only way for length to measure decisions instead of patience.</p>
+  <p>The celestial pushes even harder than the legendary: the <strong>three centimetres</strong> between the last two rows are its alone. <strong>The rod does not change size</strong>, and neither does time with the game open.</p>
 
   <h3>The four stars</h3>
   <p>In the Collection, every fish shows the record and a star — the band your biggest specimen fell into. It is the star of the <strong>record</strong>, not of the last fish.</p>
@@ -400,12 +424,10 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
       </tbody>
     </table>
   </div>
-  <p>The frequencies were <strong>genuinely measured</strong>, not estimated. Each catch earns gold <strong>6.6%</strong> of the time with no gear at all, <strong>13.8%</strong> with legendary bait, a clean click and at night, and <strong>16.5%</strong> swapping the legendary for the celestial. Platinum walks the same path: <strong>from 0.9% to 2.5%</strong>.</p>
-  <p class="nota">Gold on all 58 species is a goal for someone who plays a lot. <strong>Platinum on all 58 is a collector's chase</strong> — which is exactly what it has to be.</p>
+  <p>Each catch earns gold <strong>6.6%</strong> of the time with no gear at all, <strong>13.8%</strong> with legendary bait, a clean click and at night, and <strong>16.5%</strong> swapping the legendary for the celestial. Platinum walks the same path: <strong>from 0.9% to 2.5%</strong>.</p>
 
   <h3>Centimetre or inch</h3>
-  <p>The choice lives in Settings, between <strong>metric</strong> (cm and kg) and <strong>imperial</strong> (in and lb). It is the only line in Settings that does not restart the game: the unit only changes how the number is written when it is drawn.</p>
-  <p class="legenda">And that really is all it is — what gets stored in your save, and what one day goes up to the Steam leaderboard, stays in centimetres and kilograms, always. Two players measured in different units on the same list would be the most silent defect a ranking can have.</p>
+  <p>The choice lives in Settings, between <strong>metric</strong> (cm and kg) and <strong>imperial</strong> (in and lb).</p>
 </section>
 
 <section>
@@ -429,36 +451,13 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
 <section>
   <h2>What goes by on screen</h2>
-  <p>Besides the fish, the strip has things happening all the time — and <strong>none of it is clickable</strong> nor does it change any number. It is living scenery: it exists so that glancing at the bottom of your screen in the middle of a workday is worth something.</p>
-
-  <h3>The wildlife</h3>
-  <p>Every <strong>25 to 60 seconds</strong> an animal crosses. Which one depends on the map — and on the water, which is the rule that keeps the caiman out of the open sea.</p>
-  <div class="rolagem">
-    <table>
-      <thead><tr><th>Map</th><th>Who lives there</th></tr></thead>
-      <tbody>
-        <tr><td class="nome">Rio Araguaia</td><td>🐊 caiman, 🐍 snake</td></tr>
-        <tr><td class="nome">Rio Negro</td><td>🦋 butterflies, 🐍 snake</td></tr>
-        <tr><td class="nome">Lago de Furnas</td><td>🦜 macaws, 🐈 cat on a float</td></tr>
-        <tr><td class="nome">Costa de Santa Catarina</td><td>🐈 cat on a float, 🐦 pelican</td></tr>
-        <tr><td class="nome">Fernando de Noronha</td><td>🦆 rubber duck, 🐦 pelican</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p>One in five draws comes from a list that applies to any map — the cat on a float, the rubber duck and the frog on a lily pad. A toy floats anywhere.</p>
-  <p class="legenda">Do not confuse these with pets: those you unlock, activate, and they give bonuses. See the Pets section.</p>
-
-  <h3>The rainbow</h3>
-  <p>It only appears in <strong>rain with sunshine</strong>, and not right away: it takes <strong>30 seconds</strong> of daytime rain before it shows up. At night there is no rainbow — a rainbow is sunlight going through a raindrop.</p>
-
-  <h3>The shape down below</h3>
-  <p>Every so often something large crosses under the hull, too far down to make out. The first one goes by in the first few minutes; after that, every <strong>1.5 to 3 minutes</strong>. It does not bite, cannot be caught, and is not the celestial fish — it is just the reminder that the water has a bottom.</p>
-  <p class="legenda">At night, with a clear sky, there is also the odd <strong>shooting star</strong>.</p>
+  <p>Apart from the fish, the strip has a life of its own: animals crossing, the sky changing, and a thing or two we would rather not tell. <strong>None of it is clickable or changes any number</strong> — it is scenery, and what shows up in each place is yours to discover.</p>
+  <p>Do not confuse these with pets: those you unlock, activate, and they give bonuses. See the Pets section.</p>
 </section>
 
 <section>
   <h2>Where the game lives</h2>
-  <p>It runs two ways, and the switch is in the menu (▲ button) under <strong>Settings</strong>. Switching mode <strong>restarts the game</strong> — on purpose: the two use different renderers, and that is chosen only at startup. The choice is remembered for next time.</p>
+  <p>It runs two ways, and the switch is in the menu (▲ button) under <strong>Settings</strong>. Switching mode <strong>restarts the game</strong>, and the choice is remembered.</p>
   <div class="grade">
     <div class="cartao">
       <h3>Strip</h3>
@@ -476,19 +475,19 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
 <section>
   <h2>The sound</h2>
-  <p>The game has music, effects and weather — and all three turn on and off separately, each with its own volume, under <strong>Settings › Sound</strong>. They are separate because they bother people for different reasons: the music tires whoever leaves the game on all day, the effects get in the way of a call, and rain is exactly what a lot of people want in the background while they work.</p>
+  <p>The game has music, effects and weather — and all three turn on and off separately, each with its own volume, under <strong>Settings › Sound</strong>.</p>
   <div class="grade">
     <div class="cartao">
       <h3>Music</h3>
-      <span class="n">Thirteen tracks that take turns on their own and never repeat the same one twice in a row. Seven play by day and six by night — and the switch only happens at the end of a track, never cutting in the middle.</span>
+      <span class="n">Thirteen tracks that take turns on their own — some for the day, others for the night.</span>
     </div>
     <div class="cartao">
       <h3>Effects</h3>
-      <span class="n">Only what happens on the river: the bite, the float, the fish in the basket, the perfect hook, the trophy, the pet. Buttons make no sound — a click is not news.</span>
+      <span class="n">Only what happens on the river: the bite, the float, the fish in the basket, the perfect hook, the trophy, the pet.</span>
     </div>
     <div class="cartao">
       <h3>Weather</h3>
-      <span class="n">Rain, storm and wind underneath the music, for as long as the event lasts. In a storm and a hurricane there is lightning, and the <strong>thunder lands on the same frame as the flash</strong> — the crack runs half a second longer than the drawing, the way it does when it strikes close.</span>
+      <span class="n">Rain, storm and wind under the music, for as long as the event lasts.</span>
     </div>
   </div>
 </section>
@@ -513,11 +512,9 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
 <!-- CHAPEUS:INICIO gerado por ferramentas/monta_site_chapeus.py -->
 <section id="chapeus">
-  <h2>Hats <span class="futuro-selo">not yet</span></h2>
+  <h2>Hats</h2>
 
-  <p class="nota">None of this section exists in the game you can download today. The hats are finished and tested, but the door to <em>earning</em> a hat is the Steam inventory — so they only start dropping once the game is there. This page is here so you know what is coming, not so you go looking for one in the game and find nothing.</p>
-
-  <p>The fisherman has worn a straw hat since forever. The idea is that he starts wearing others — and that the others be <strong>real items</strong>, in your Steam inventory, tradable and sellable on the Market like any other skin.</p>
+  <p>The fisherman starts with the straw hat. The others drop while you fish, and they are <strong>real items</strong> in your Steam inventory: you can wear them, trade them and sell them on the Market.</p>
 
   <h3>How a hat drops</h3>
   <div class="passos">
@@ -529,13 +526,11 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
 
   <p>At most <strong>2 a day</strong>, with at least <strong>6 hours</strong> between one stork and the next. If you are away from the computer when a stork goes by, you lose nothing: the fishing time stays banked and it comes back later.</p>
 
-  <p><strong>Why the click.</strong> À Deriva fishes on its own — that is the whole point of it. Which makes “somebody playing” and “the game left open and forgotten” look exactly alike to any count the program can make. The click is what tells the two apart, and that is the reason it exists.</p>
-
   <h3>What there is, and what each one does</h3>
-  <p>The bonus is small on purpose: <strong>the best hat is worth less than the weakest pet</strong>. A hat is decoration with a little nudge — buying one on the Market does not put you ahead of somebody who played.</p>
+  <p>Every hat has its own bonus: it helps your fishing and counts toward your collection. <strong>The rarer the hat, the bigger the push</strong> — from 1% on a common to 5% on a legendary, and the pristine condition adds another half point.</p>
   <div class="rolagem">
     <table>
-      <caption>The hats in the first wave. The chance is the weight in Steam's draw; the straw hat is out of it because everyone already has one.</caption>
+      <caption>The chance is that of a stork bringing that hat, adding up all three conditions. The straw hat does not drop because everyone already has it; the celestials only come from the championship.</caption>
       <thead>
         <tr><th></th><th>Hat</th><th>Rarity</th><th>Effect</th><th class="num">Chance</th></tr>
       </thead>
@@ -552,183 +547,196 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
           <td>Ball Cap</td>
           <td><span class="r r-comum">Common</span></td>
           <td>+1% value</td>
-          <td class="num">34%</td>
+          <td class="num">11.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/tiroles.png" alt="Tyrolean Hat" width="64" height="64"></td>
           <td>Tyrolean Hat</td>
           <td><span class="r r-comum">Common</span></td>
-          <td>hold on to 1% more of what bites</td>
-          <td class="num">34%</td>
+          <td>lands 1% more of what bites</td>
+          <td class="num">11.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/bandana.png" alt="Pirate Bandana" width="64" height="64"></td>
           <td>Pirate Bandana</td>
           <td><span class="r r-comum">Common</span></td>
           <td>+1% speed</td>
-          <td class="num">34%</td>
+          <td class="num">11.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/souwester.png" alt="Rain Hat" width="64" height="64"></td>
           <td>Rain Hat</td>
           <td><span class="r r-comum">Common</span></td>
-          <td>hold on to 1% more of what bites</td>
-          <td class="num">34%</td>
+          <td>lands 1% more of what bites</td>
+          <td class="num">11.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/xerife.png" alt="Sheriff's Hat" width="64" height="64"></td>
           <td>Sheriff's Hat</td>
           <td><span class="r r-incomum">Uncommon</span></td>
           <td>+2% value</td>
-          <td class="num">22%</td>
+          <td class="num">7.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/quepe.png" alt="Captain's Cap" width="64" height="64"></td>
           <td>Captain's Cap</td>
           <td><span class="r r-incomum">Uncommon</span></td>
           <td>+2% speed</td>
-          <td class="num">22%</td>
+          <td class="num">7.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/minerador.png" alt="Miner's Helmet" width="64" height="64"></td>
           <td>Miner's Helmet</td>
           <td><span class="r r-incomum">Uncommon</span></td>
           <td>+2% chance of a good fish</td>
-          <td class="num">22%</td>
+          <td class="num">7.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/aviador.png" alt="Aviator Helmet" width="64" height="64"></td>
           <td>Aviator Helmet</td>
           <td><span class="r r-incomum">Uncommon</span></td>
           <td>+2% chance of a good fish</td>
-          <td class="num">22%</td>
+          <td class="num">7.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/natal.png" alt="Santa Hat" width="64" height="64"></td>
           <td>Santa Hat</td>
           <td><span class="r r-incomum">Uncommon</span></td>
           <td>+2% value</td>
-          <td class="num">22%</td>
+          <td class="num">7.3%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/pirata.png" alt="Pirate Tricorne" width="64" height="64"></td>
           <td>Pirate Tricorne</td>
           <td><span class="r r-raro">Rare</span></td>
           <td>+3% speed</td>
-          <td class="num">9%</td>
+          <td class="num">2.7%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/cartola.png" alt="Top Hat" width="64" height="64"></td>
           <td>Top Hat</td>
           <td><span class="r r-raro">Rare</span></td>
           <td>+3% value</td>
-          <td class="num">9%</td>
+          <td class="num">3.0%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/bruxo.png" alt="Wizard Hat" width="64" height="64"></td>
           <td>Wizard Hat</td>
           <td><span class="r r-raro">Rare</span></td>
           <td>+3% chance of a good fish</td>
-          <td class="num">9%</td>
+          <td class="num">3.0%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/bambu.png" alt="Bamboo Hat" width="64" height="64"></td>
           <td>Bamboo Hat</td>
           <td><span class="r r-raro">Rare</span></td>
           <td>+3% chance of a good fish</td>
-          <td class="num">9%</td>
+          <td class="num">3.0%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/peixe.png" alt="Starving Fish" width="64" height="64"></td>
           <td>Starving Fish</td>
           <td><span class="r r-epico">Epic</span></td>
           <td>+4% speed</td>
-          <td class="num">3%</td>
+          <td class="num">1.00%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/gaivota.png" alt="Pecking Seagull" width="64" height="64"></td>
           <td>Pecking Seagull</td>
           <td><span class="r r-epico">Epic</span></td>
           <td>+4% chance of a good fish</td>
-          <td class="num">3%</td>
+          <td class="num">1.00%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/viking.png" alt="Viking Helm" width="64" height="64"></td>
           <td>Viking Helm</td>
           <td><span class="r r-epico">Epic</span></td>
-          <td>hold on to 4% more of what bites</td>
-          <td class="num">3%</td>
+          <td>lands 4% more of what bites</td>
+          <td class="num">1.00%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/urso.png" alt="Bear Hood" width="64" height="64"></td>
           <td>Bear Hood</td>
           <td><span class="r r-epico">Epic</span></td>
-          <td>hold on to 4% more of what bites</td>
-          <td class="num">3%</td>
+          <td>lands 4% more of what bites</td>
+          <td class="num">1.00%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/tubarao.png" alt="Shark Head" width="64" height="64"></td>
           <td>Shark Head</td>
           <td><span class="r r-epico">Epic</span></td>
           <td>+4% speed</td>
-          <td class="num">3%</td>
+          <td class="num">1.00%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/coroa.png" alt="Imperial Crown" width="64" height="64"></td>
           <td>Imperial Crown</td>
           <td><span class="r r-lendario">Legendary</span></td>
           <td>+5% value</td>
-          <td class="num">1%</td>
+          <td class="num">0.33%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/mosqueteiro.png" alt="Musketeer Hat" width="64" height="64"></td>
           <td>Musketeer Hat</td>
           <td><span class="r r-lendario">Legendary</span></td>
           <td>+5% speed</td>
-          <td class="num">1%</td>
+          <td class="num">0.33%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/aureola.png" alt="Halo" width="64" height="64"></td>
           <td>Halo</td>
           <td><span class="r r-lendario">Legendary</span></td>
           <td>+5% chance of a good fish</td>
-          <td class="num">1%</td>
+          <td class="num">0.33%</td>
         </tr>
         <tr>
           <td class="chapeu"><img src="../chapeus/louros.png" alt="Laurel Crown" width="64" height="64"></td>
           <td>Laurel Crown</td>
           <td><span class="r r-lendario">Legendary</span></td>
-          <td>hold on to 5% more of what bites</td>
-          <td class="num">1%</td>
+          <td>lands 5% more of what bites</td>
+          <td class="num">0.33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/caveira.png" alt="Boi-bumbá" width="64" height="64"></td>
+          <td>Boi-bumbá</td>
+          <td><span class="r r-celestial">Celestial</span></td>
+          <td>1% to 3% chance of hooking two</td>
+          <td class="num">championship only</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bobo.png" alt="Jester's Hat" width="64" height="64"></td>
+          <td>Jester's Hat</td>
+          <td><span class="r r-celestial">Celestial</span></td>
+          <td>1% to 3% chance the bait is not used up</td>
+          <td class="num">championship only</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p class="legenda">There are more hats finished than this table shows — they come out in waves.</p>
 
   <h3>Three conditions of the same hat</h3>
   <p>Every hat drops in one of three conditions, and it shifts the bonus by <strong>half a point</strong> either way. The <em>worn</em> one is the value in the table above; the <em>battered</em> one takes half a point off, the <em>pristine</em> one adds half.</p>
   <div class="rolagem">
     <table>
-      <caption>The three conditions. The chance is the weight in the stork's draw, and the drawing changes with it. The pirate tricorne is the exception: its new condition never comes from the stork, only from the Pirate's Pack.</caption>
+      <caption>The three conditions. The chance is the weight in the stork's draw, and the drawing changes with it. The pirate tricorne is the exception: its pristine condition never comes from the stork, only from the Pirate's Pack.</caption>
       <thead>
         <tr><th></th><th>Condition</th><th class="num">On the bonus</th><th class="num">Chance</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="Ball Cap battered" width="64" height="64"></td>
+          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="Battered Ball Cap" width="64" height="64"></td>
           <td>Battered</td>
           <td class="num">-0.5 pp</td>
           <td class="num">55%</td>
         </tr>
         <tr>
-          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="Ball Cap worn" width="64" height="64"></td>
+          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="Worn Ball Cap" width="64" height="64"></td>
           <td>Worn</td>
           <td class="num">—</td>
           <td class="num">35%</td>
         </tr>
         <tr>
-          <td class="chapeu"><img src="../chapeus/bone.png" alt="Ball Cap pristine" width="64" height="64"></td>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Pristine Ball Cap" width="64" height="64"></td>
           <td>Pristine</td>
           <td class="num">+0.5 pp</td>
           <td class="num">10%</td>
@@ -737,17 +745,33 @@ footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; colo
     </table>
   </div>
   <p><strong>They are three different items on Steam.</strong> Each condition has its own number in the inventory, so they are bought and sold separately on the Market — and since the <em>pristine</em> one is the rarest of the three, it is the one worth most.</p>
-  <p>On the two <span class="r r-celestial">celestial</span> hats the condition weighs more, because their effect is not a bar but an event — the bait that is not spent, the fish that comes in pairs. There the ladder is <strong>1%, 2% e 3%</strong>.</p>
+  <p>On the two <span class="r r-celestial">celestial</span> hats the condition weighs more, because their effect is not a bar but an event — the bait that is not spent, the fish that comes in pairs. There the ladder is <strong>1%, 2% and 3%</strong>.</p>
   <p class="legenda">The straw hat is the only one left out: everybody starts with it, so it only has the usual version.</p>
 
+  <h3>The championship</h3>
+  <p>The celestials — the Boi-bumbá and the Jester's Hat — never come from the stork. They are the prize of the <strong>monthly championship</strong>, and the podium takes the same hat in three conditions:</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Place</th><th>Takes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">1º</td><td>the celestial hat, <strong>pristine</strong></td></tr>
+        <tr><td class="nome">2º</td><td>the celestial hat, <strong>worn</strong></td></tr>
+        <tr><td class="nome">3º</td><td>the celestial hat, <strong>battered</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Each edition is worth one of the celestials. The first one is worth the <strong>Jester's Hat</strong>. The prize is an item like any other hat: you can wear it, trade it and sell it.</p>
+
   <h3>The Wardrobe</h3>
-  <p>It is the screen where the hats live — from the menu (the ▲ button). It is a collection and a closet at the same time: it shows what is missing and lets you wear what you have.</p>
-  <p>Each hat is a row, and the three conditions are three columns with the count of each. Clicking a cell puts the hat on; clicking the one already on your head takes it off. A slot you never had shows a dash, and one you had and sold shows a zero — because hiding what someone already discovered would be erasing collection to punish a sale.</p>
-  <p>What you have not seen yet appears as <strong>???</strong>, with the rarity and a blank silhouette. It is not laziness: in a 12-pixel drawing <em>the silhouette is the identity</em> of the piece, so showing the outline would already give the whole hat away.</p>
+  <p>It is the screen where the hats live — through the menu (▲ button). It shows what is missing and lets you wear what you have.</p>
+  <p>Every hat is a row, and the three conditions are three columns with how many of each you have. Clicking a cell puts that hat on; clicking the one already on your head takes it off. A slot you never had shows a dash; one you had and sold shows a zero.</p>
+  <p>What you have not seen yet shows up as <strong>???</strong>, with only the rarity.</p>
 </section>
 <!-- CHAPEUS:FIM -->
 
-<footer> À Deriva · quick guide · the numbers come straight from the game's code and change when the balance changes. The version is up at the top, and it is the same one the start screen shows — if the two disagree, this guide belongs to another build. </footer>
+<footer> © 2026 G. Studios. All rights reserved. </footer>
 
 </div>
 </body>

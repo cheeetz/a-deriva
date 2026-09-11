@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — 快速指南</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<style>
+@font-face{
+  font-family:"Geist Pixel";
+  src:url("../GeistPixel-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+:root{
+  /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
+     TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
+     raridade desceram por causa disso -- no escuro o dourado do lendario funcionava, no
+     claro ele dava 3,4:1 e sumia. Todas passam de 4,6:1 agora, que e o piso pra texto. */
+  --fundo:#F3FAFB; --agua:#E4F4F6; --agua2:#CFEAEE; --linha:#C3E0E5;
+  --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
+  --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
+  --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
+  --mono:"Geist Pixel",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"Geist Pixel",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0 20px 90px;
+  background:
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
+    var(--fundo);
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.78;
+  /* fonte de pixel: desenhada na grade, antialias so borra */
+  -webkit-font-smoothing:none; font-smooth:never;
+}
+.wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+
+/* ---------- barra do site (as tres paginas) ---------- */
+nav.sitio{
+  display:flex; gap:22px; align-items:baseline; padding:22px 0 0; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+}
+nav.sitio a{color:var(--fraco); text-decoration:none}
+nav.sitio a:hover{color:var(--realce-2)}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
+nav.sitio a[aria-current="page"]{color:var(--realce)}
+nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
+
+/* ---------- topo ---------- */
+header{padding-top:34px; display:flex; flex-direction:column; gap:14px}
+.marca{
+  font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--realce);
+}
+h1{
+  margin:0; font-size:clamp(38px,7vw,60px); line-height:1; letter-spacing:-.03em;
+  font-weight:800; text-wrap:balance;
+}
+h1 span{color:var(--realce-2)}
+.chamada{margin:0; font-size:19px; color:var(--fraco); max-width:60ch; text-wrap:pretty}
+.onda{height:2px; background:linear-gradient(90deg,var(--realce),transparent); border-radius:2px}
+
+/* ---------- seções ---------- */
+section{display:flex; flex-direction:column; gap:16px}
+h2{
+  margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  font-family:var(--mono); color:var(--realce); font-weight:700;
+  display:flex; align-items:center; gap:12px;
+}
+h2::after{content:""; flex:1; height:1px; background:var(--linha)}
+h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
+p{margin:0; max-width:70ch}
+strong,b{color:var(--texto); font-weight:400; text-shadow:1px 0 0 currentColor}
+h1,h2,h3,th{font-weight:400; text-shadow:1px 0 0 currentColor}
+em{font-style:normal; color:var(--realce-2)}
+
+/* ---------- cartões ---------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px}
+.cartao{
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px;
+  padding:15px 17px; display:flex; flex-direction:column; gap:5px;
+}
+.cartao .k{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fraco);
+}
+.cartao .v{font-family:var(--mono); font-size:24px; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--realce-2)}
+.cartao .n{font-size:13.5px; color:var(--fraco); line-height:1.5}
+
+/* ---------- passos ---------- */
+.passos{counter-reset:p; display:flex; flex-direction:column; gap:10px}
+.passo{
+  display:grid; grid-template-columns:30px 1fr; gap:14px; align-items:start;
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px; padding:14px 16px;
+}
+.passo::before{
+  counter-increment:p; content:counter(p);
+  font-family:var(--mono); font-size:12px; font-weight:700; color:var(--fundo);
+  background:var(--realce); border-radius:50%;
+  width:24px; height:24px; display:grid; place-items:center; margin-top:2px;
+}
+.passo p{font-size:15px}
+
+/* ---------- tabelas ---------- */
+.rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:10px; background:var(--agua)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+caption{
+  text-align:left; padding:13px 16px 0; font-size:13px; color:var(--fraco);
+  caption-side:top;
+}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--linha)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--fraco); font-weight:700; background:var(--agua2); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(90,182,234,.07)}
+td.num, th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+td.nome{font-weight:600; white-space:nowrap}
+.dica-tabela{font-size:13px; color:var(--fraco)}
+
+/* raridades */
+.r{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700}
+.r-comum{color:var(--comum)} .r-incomum{color:var(--incomum)} .r-raro{color:var(--raro)}
+.r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)} .r-celestial{color:var(--celestial)}
+
+/* ---------- destaque ---------- */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
+
+footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; color:var(--fraco)}
+
+@media (max-width:560px){
+  body{font-size:15px; padding:0 14px 64px}
+  header{padding-top:40px}
+  .passo{grid-template-columns:24px 1fr; gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A BARRA DO SITE. O guia deixou de viajar dentro do zip em 25/08/2026 e passou a ser uma
+     pagina publicada (ver empacota.ps1), entao ele precisa de volta pras outras: sem isto ele
+     seria um beco -- a pessoa chega pelo menu do jogo, le, e nao tem pra onde ir. -->
+<nav class="sitio">
+  <a class="casa" href="./">À Deriva</a>
+  <a href="guide.html" aria-current="page">指南</a>
+  <span class="idiomas">
+    <a href="../guia.html" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a>
+    <a href="../en/guide.html" hreflang="en" lang="en" title="English">EN</a>
+    <a href="../de/guide.html" hreflang="de" lang="de" title="Deutsch">DE</a>
+    <a href="../es/guide.html" hreflang="es" lang="es" title="Español">ES</a>
+    <a href="../ru/guide.html" hreflang="ru" lang="ru" title="Русский">RU</a>
+    <a href="guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文" aria-current="true">中文</a>
+  </span>
+</nav>
+
+<header>
+  <div class="marca">快速指南</div>
+  <h1>À <span>Deriva</span></h1>
+  <div class="onda"></div>
+  <p class="chamada">一款住在屏幕底部透明窗带里的钓鱼游戏——也可以待在桌面图标后面。你工作的时候它自己钓鱼；点击收获更多，但从来不需要一直盯着。</p>
+  <p class="chamada">巴西的五个地方，从 Araguaia 到 Fernando de Noronha。六十种鱼等你收集，每张地图一只伙伴，天气还会在这一切之上自己变幻。</p>
+  <p class="chamada">这一页讲的是数字背后的东西——如果你只想钓鱼，用不着它。</p>
+</header>
+
+<section>
+  <h2>循环</h2>
+  <div class="passos">
+    <div class="passo"><p>鱼会自己咬钩。平均每<strong>18 s</strong>一次，波动范围 0.7× 到 1.3×——鱼竿、船和伙伴越好就越快。</p></div>
+    <div class="passo"><p>窗带上会出现一个<strong>“!”</strong>。你有<strong>2 秒</strong>的时间点击。</p></div>
+    <div class="passo"><p>在时间窗内点中：<em>完美咬钩</em>——这条鱼多值<strong>+50%</strong>，而且绝不会逃掉。</p></div>
+    <div class="passo"><p>没点中：游戏会按你鱼饵的失败几率掷一次。失败的话鱼就跑了；否则照常进船。</p></div>
+    <div class="passo"><p>船满了，钓鱼就会<strong>停下</strong>。在工具栏里全部卖掉，或者买个更大的箱子。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>白天与黑夜</h2>
+  <div class="grade">
+    <div class="cartao"><span class="k">白天</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">黑夜</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">过渡</span><span class="v">3 分钟</span></div>
+  </div>
+  <p>夜里好鱼出现得更多：<span class="r r-raro">稀有</span> <strong>+20%</strong>,
+  <span class="r r-epico">史诗</span> <strong>+40%</strong>,
+  <span class="r r-lendario">传说</span> <strong>+60%</strong>，在午夜最深时达到峰值（效果随过渡渐入渐出）。<strong>午夜之竿</strong>只在这段时间生效——而<strong>血月</strong>也只会在这时出现。</p>
+</section>
+
+<section>
+  <h2>稀有度与鱼饵</h2>
+  <p>鱼饵是游戏里最重要的决定：它会同时改变<em>一切</em>——既改变钓到好鱼的几率，也改变丢鱼的几率。鱼饵越好，失手越少。</p>
+  <div class="rolagem">
+    <table>
+      <caption>各鱼饵对应的各稀有度几率。Jujuba 免费且无限。</caption>
+      <thead>
+        <tr>
+          <th>鱼饵</th><th class="num">拉得住</th><th>额外效果</th>
+          <th class="num"><span class="r r-comum">普通</span></th>
+          <th class="num"><span class="r r-incomum">罕见</span></th>
+          <th class="num"><span class="r r-raro">稀有</span></th>
+          <th class="num"><span class="r r-epico">史诗</span></th>
+          <th class="num"><span class="r r-lendario">传说</span></th>
+          <th class="num"><span class="r r-celestial">天界</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🍬 Jujuba <span style="color:var(--fraco)">（免费）</span></td>
+          <td class="num">65%</td><td>—</td><td class="num">70.0%</td><td class="num">22.0%</td>
+          <td class="num">6.4%</td><td class="num">1.30%</td><td class="num">0.28%</td>
+          <td class="num">0.010%</td></tr>
+        <tr><td class="nome">罕见</td>
+          <td class="num">78%</td><td>+20%<strong>速度</strong> · +8%<strong>金星几率</strong></td><td class="num">54.1%</td><td class="num">30.0%</td>
+          <td class="num">11.5%</td><td class="num">3.40%</td><td class="num">1.00%</td>
+          <td class="num">0.050%</td></tr>
+        <tr><td class="nome">稀有</td>
+          <td class="num">85%</td><td>+25%<strong>售价</strong> · +18%<strong>金星几率</strong></td><td class="num">37.1%</td><td class="num">32.1%</td>
+          <td class="num">20.1%</td><td class="num">8.02%</td><td class="num">2.71%</td>
+          <td class="num">0.150%</td></tr>
+        <tr><td class="nome">史诗</td>
+          <td class="num">92%</td><td>+35%<strong>售价</strong> · +29%<strong>金星几率</strong></td><td class="num">23.3%</td><td class="num">29.3%</td>
+          <td class="num">26.3%</td><td class="num">14.7%</td><td class="num">6.37%</td>
+          <td class="num">0.403%</td></tr>
+        <tr><td class="nome">传说</td>
+          <td class="num">96%</td><td>+20%<strong>售价</strong> · +43%<strong>金星几率</strong></td><td class="num">13.5%</td><td class="num">22.8%</td>
+          <td class="num">29.0%</td><td class="num">21.7%</td><td class="num">12.9%</td>
+          <td class="num">1.026%</td></tr>
+        <tr><td class="nome">天界<span style="color:var(--fraco)">（只能从宝箱开出）</span></td>
+          <td class="num">98%</td><td>+15%<strong>速度</strong>、+40%<strong>售价</strong>和 +61%<strong>金星几率</strong></td><td class="num">6.0%</td><td class="num">14.0%</td>
+          <td class="num">25.0%</td><td class="num">28.00%</td><td class="num">24.0%</td>
+          <td class="num">3.000%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">每张地图卖自己的鱼饵，名字不同，但都是同样的五个等级。“拉得住”是咬钩的鱼真正进船的几率。你的鱼竿和伙伴还会让它上下浮动。</p>
+  <p><strong>好鱼饵能回本。</strong>除了拉得住更多，每个等级还有自己的加成——罕见级加速度，上面三级加售价。例外是<strong>传说级</strong>：它花得比赚得多。它不是用来赚钱的饵——在能买到的鱼饵里，它最能引来<em>天界鱼</em>，而没有天界鱼就集不齐图鉴。</p>
+  <p><strong>价格一张地图比一张贵。</strong>同样的传说鱼饵，在 Araguaia 卖 10,000，在 Noronha 卖 32,000——从第一张到最后一张大约翻了三倍。</p>
+
+  <h3>鱼饵宝箱</h3>
+  <p>鱼饵页的顶部有一个<strong>宝箱</strong>，价格是<strong>该地图传说鱼饵一包价格的一半</strong>——Araguaia 5,000，Noronha 16,000。打开会随机给出<strong>一种本地图的鱼饵</strong>，数量和正常购买一包相同。</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0.5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7.9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>每次打开宝箱会得到什么。</caption>
+      <thead><tr><th>鱼饵</th><th>内容</th><th class="num">几率</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">罕见</td><td>一包</td><td class="num">44.8%</td></tr>
+        <tr><td class="nome">稀有</td><td>一包</td><td class="num">29.9%</td></tr>
+        <tr><td class="nome">史诗</td><td>一包</td><td class="num">16.9%</td></tr>
+        <tr><td class="nome">传说</td><td>一包</td><td class="num">7.9%</td></tr>
+        <tr><td class="nome">天界</td><td>10 个</td><td class="num">0.5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>天界鱼饵是唯一没有价格的鱼饵：只能从宝箱里开出。它也是唯一样样都好的——稀有鱼更多、鱼更大、咬钩更快、卖得更贵。每张地图都有自己的一种：<em>Muçum de Ouro</em>（Araguaia）、<em>Tucunaré de Prata</em>（Rio Negro）、<em>Camarão Gigante Dourado</em>（Furnas）、<em>Corrico de Cristal</em>（海岸）和<em>Isca Abissal</em>（Noronha）。</p>
+</section>
+
+<section>
+  <h2>天气事件</h2>
+  <p>每隔<strong>1 分钟</strong>游戏掷一次；开始一个事件的几率是<strong>5%</strong>（第一次至少要在开局 30 秒后）——平均每<strong>20 分钟</strong>一次。事件会提前<strong>10 秒</strong>预告，持续<strong>5 到 7 分钟</strong>，时长现场随机。每个事件都有一次<em>保底咬钩</em>——在持续时间的 20% 到 80% 之间的某个时刻，必定来一条该稀有度的鱼，不用掷骰。</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>事件</th><th class="num">权重</th>
+        <th>保底</th><th>效果</th><th>地点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🌧️ 雨</td><td class="num">50</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>咬钩快 30%</td><td>任意</td></tr>
+        <tr><td class="nome">✨ 闪光之水</td><td class="num">16</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td><strong>×20</strong> 天界几率</td><td>任意</td></tr>
+        <tr><td class="nome">⛈️ 暴风雨</td><td class="num">12</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>高稀有度 ×1.8 · 失败率 +10 个百分点</td><td>任意</td></tr>
+        <tr><td class="nome">🩸 血月</td><td class="num">8</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td><strong>×5</strong> 传说几率</td><td>仅限夜晚</td></tr>
+        <tr><td class="nome">🌊 Pororoca</td><td class="num">8</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>高稀有度 ×2.4 · 失败率 +15 个百分点</td><td>Araguaia e Rio Negro</td></tr>
+        <tr><td class="nome">🫧 水势逆转</td><td class="num">8</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>高稀有度 ×2 · 普通鱼降到 ¼</td><td>Furnas</td></tr>
+        <tr><td class="nome">🌀 飓风</td><td class="num">8</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>高稀有度 ×2.4 · 失败率 +15 个百分点</td><td>Costa de SC</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela"><strong>权重</strong>是事件在抽取中的分量，不是百分比：光是雨就占了一半以上的抽取。地图专属事件只有你在那里时才会进入抽取——比如<strong>Pororoca</strong>就只在两条河上出现。</p>
+  <div class="nota"><strong>暴风雨、Pororoca 和飓风代价高昂。</strong>它们让水里满是好鱼，但也会提高失败率——这正是换上更好的鱼饵、盯紧“!”的时候。</div>
+</section>
+
+<section>
+  <h2>鱼竿</h2>
+  <p>所有鱼竿基础价都是<strong>700</strong>，但每买一根，下一根就贵<strong>50%</strong>。同一时间只能装备一根。</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>鱼竿</th><th>效果</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🎋 竹制</td><td>初始鱼竿，没有加成。</td></tr>
+        <tr><td class="nome">🎣 玻纤</td><td>速度 +40%，但失手多 25%。</td></tr>
+        <tr><td class="nome">🪝 钢制</td><td>拉得住的几率高 40%。钓上的，就拉得回来。</td></tr>
+        <tr><td class="nome">✨ 碳纤</td><td>品质 +30%（稀有鱼更多），速度 −20%，失手多 25%。</td></tr>
+        <tr><td class="nome">💰 商人</td><td>鱼的售价 +20%。</td></tr>
+        <tr><td class="nome">🌙 午夜</td><td>夜里：速度 +40%，品质 +25%。白天就是根普通鱼竿。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>船只与箱子</h2>
+  <p>船决定钓鱼停下之前能装多少鱼。每买一艘船，下一艘就贵 15%。最后两艘<strong>需要奖杯</strong>，而且还要花钱。</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>船</th><th class="num">格数</th><th class="num">价格</th><th>特点</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🛶 独木舟</td><td class="num">12</td><td class="num">—</td><td>初始船</td></tr>
+        <tr><td class="nome">⛵ 加固小艇</td><td class="num">24</td><td class="num">2,000</td><td>均衡</td></tr>
+        <tr><td class="nome">💨 快艇</td><td class="num">28</td><td class="num">6,000</td><td>速度 +25%</td></tr>
+        <tr><td class="nome">🎣 拖网船</td><td class="num">48</td><td class="num">14,000</td><td>速度 −15%——适合挂着一直钓</td></tr>
+        <tr><td class="nome">🐟 加工船</td><td class="num">36</td><td class="num">55,000</td><td>售价 +25% · 需要<strong>2 🏆</strong></td></tr>
+        <tr><td class="nome">🔱 远洋拖网船</td><td class="num">36</td><td class="num">90,000</td><td>品质 +20% · 需要<strong>3 🏆</strong>——按数值算是船队之巅</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>各种<strong>箱子</strong>会成倍提高船的容量，而且可以叠加——每个都要先有上一个：泡沫箱<em>×1.5</em>(25,000)，保温箱<em>×2</em>(80,000)，冷藏货舱<em>×2.5</em> (250,000 <strong> + 1 个奖杯</strong>)，冷藏舱<em>×3</em> (600,000 <strong> + 2 个奖杯</strong>).</p>
+  <p>奖杯就是一张地图的完整图鉴——见<em>地图与奖杯</em>.</p>
+</section>
+
+<section>
+  <h2>伙伴</h2>
+  <p>每张地图都有一只动物。它会自己出现，几率是<strong>每钓一条鱼 0.1%</strong>。你得钓上好一阵子才会见到第一只。最多可以同时保留<strong>3 只启用</strong>，加成可以叠加。</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>伙伴</th><th>地图</th><th>加成</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🐊 凯门鳄</td><td>Rio Araguaia</td><td>咬钩的鱼多 8% 拉得住</td></tr>
+        <tr><td class="nome">🦦 巨獭</td><td>Rio Negro</td><td>售价 +6%</td></tr>
+        <tr><td class="nome">🦢 裸颈鹳</td><td>Lago de Furnas</td><td>品质 +7%</td></tr>
+        <tr><td class="nome">🐬 亚马逊河豚</td><td>Costa de Santa Catarina</td><td>咬钩间隔 −10%</td></tr>
+        <tr><td class="nome">🐢 海龟</td><td>Fernando de Noronha</td><td>高稀有度品质 +8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">如果你已经有了这只伙伴，它又掉落一次，就会得到一只<strong>重复伙伴</strong>——没有加成，但在库存里价值<strong>5,000 到 9,999</strong>。</div>
+</section>
+
+<section>
+  <h2>地图与奖杯</h2>
+  <p>你从 Araguaia 开始。每张新地图都要付钱解锁——<em>或者免费</em>，如果你有上一张地图的奖杯。奖杯来自<strong>集齐图鉴</strong>：这个地方的 12 种鱼，每种至少一条。</p>
+  <p>表中<strong>天界</strong>列表示该地图的天界鱼与 Araguaia 相比出现得有多频繁：在那里是完整几率；在 Noronha 只有<strong>十分之一</strong>。因为图鉴包含天界鱼，每张地图的奖杯通常就卡在它身上。</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>地图</th><th>州</th><th class="num">费用</th><th class="num">天界</th><th>专属事件</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Rio Araguaia</td><td>TO/GO</td><td class="num">初始</td><td class="num">×1</td><td>🌊 Pororoca</td></tr>
+        <tr><td class="nome">Rio Negro</td><td>AM</td><td class="num">55,000</td><td class="num">×0.60</td><td>—</td></tr>
+        <tr><td class="nome">Lago de Furnas</td><td>MG</td><td class="num">200,000</td><td class="num">×0.35</td><td>🫧 水势逆转</td></tr>
+        <tr><td class="nome">Costa de Santa Catarina</td><td>SC</td><td class="num">330,000</td><td class="num">×0.20</td><td>🌀 飓风</td></tr>
+        <tr><td class="nome">Fernando de Noronha</td><td>PE</td><td class="num">900,000</td><td class="num">×0.10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>长度、重量与星级</h2>
+  <p>每条进船的鱼都有<strong>长度和重量</strong>，两者都会显示在上钩卡片上：<em>“Dourado · 75.3 cm · 8.1 kg”</em>。每个鱼种里最大的一条会被记为<strong>纪录</strong>，图鉴里显示的就是它。</p>
+
+  <h3>重量由长度决定</h3>
+  <p>重量不是单独抽取的：它跟着长度走，就像真实的鱼一样。每个鱼种的范围参照巴西运动钓鱼的测量数据，上限定在一条<em>特别出众的</em>个体上——而不是世界纪录。</p>
+
+  <h3>什么让鱼变大</h3>
+  <p>大鱼很稀有。有三种选择能把体型往上推——其中鱼饵推得最狠：</p>
+  <div class="rolagem">
+    <table>
+      <caption>一条 dourado 的平均长度。</caption>
+      <thead><tr><th>条件</th><th class="num">平均</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">什么都没有——jujuba、不点击、白天</td><td class="num">56.5 cm</td></tr>
+        <tr><td class="nome">只有夜晚</td><td class="num">58.0 cm</td></tr>
+        <tr><td class="nome">只有完美咬钩</td><td class="num">58.3 cm</td></tr>
+        <tr><td class="nome">只有传说鱼饵</td><td class="num">61.8 cm</td></tr>
+        <tr><td class="nome">只有天界鱼饵</td><td class="num">63.8 cm</td></tr>
+        <tr><td class="nome">全部叠加，用传说鱼饵</td><td class="num">68.1 cm</td></tr>
+        <tr><td class="nome">全部叠加，用天界鱼饵</td><td class="num">71.1 cm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>天界鱼饵推得比传说鱼饵还狠：最后两行之间的<strong>三厘米</strong>全是它的功劳。<strong>鱼竿不影响体型</strong>，开着游戏的时长也不影响。</p>
+
+  <h3>四种星级</h3>
+  <p>在图鉴里，每种鱼都会显示纪录和一颗星——也就是你最大那条所在的档位。星级跟的是<strong>纪录</strong>，而不是最后钓到的那条。</p>
+  <div class="rolagem">
+    <table>
+      <caption>档位表示你的纪录达到了该鱼种可能长度的多少。</caption>
+      <thead><tr><th>星级</th><th class="num">起点</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🥉 铜</td><td class="num">—</td><td>钓到过一次。</td></tr>
+        <tr><td class="nome">🥈 银</td><td class="num">45%</td><td>高于平均的个体。</td></tr>
+        <tr><td class="nome">🥇 金</td><td class="num">80%</td><td>真正的大鱼。</td></tr>
+        <tr><td class="nome">💎 白金</td><td class="num">97%</td><td>接近该鱼种的最大值。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>每次上钩拿到金星的几率：什么装备都没有时为<strong>6.6%</strong>；用传说鱼饵、点得准、又在夜里时为<strong>13.8%</strong>；把传说换成天界鱼饵则为<strong>16.5%</strong>。白金也是同样的走势：<strong>从 0.9% 到 2.5%</strong>.</p>
+
+  <h3>厘米还是英寸</h3>
+  <p>在设置里可以选择<strong>公制</strong>（cm 和 kg）或<strong>英制</strong>（in 和 lb）。</p>
+</section>
+
+<section>
+  <h2>收购船</h2>
+  <p>一艘<strong>每小时</strong>来一趟的船，会清空你的货舱，并按价值的一部分付钱。你同一时间只能有一艘，买更好的会替换旧的。它让游戏真正做到自己赚钱——代价是抽成。</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>收购船</th><th class="num">价格</th><th class="num">支付</th><th>什么时候划算</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🪵 木筏</td><td class="num">3,000</td><td class="num">20%</td>
+          <td>还在 Araguaia 时，3,000 还算钱。付得少，但它让你明白收购船有什么用</td></tr>
+        <tr><td class="nome">🛶 小艇</td><td class="num">40,000</td><td class="num">50%</td>
+          <td>买下加工船之后，货舱开始在你不看的时候装满</td></tr>
+        <tr><td class="nome">🚤 大船</td><td class="num">120,000</td><td class="num">70%</td>
+          <td>买下远洋拖网船之后，每一竿都已经很值钱</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">它们都没有亲手卖鱼赚得多。你是在用钱换“不必守在旁边”——有时候值得。</p>
+</section>
+
+<section>
+  <h2>屏幕上经过的东西</h2>
+  <p>除了鱼，窗带还有自己的生活：动物路过、天空变化，还有一两样我们宁愿不说的东西。<strong>这些都不能点，也不改变任何数值</strong>——它们是风景，每个地方会出现什么，留给你自己去发现。</p>
+  <p>别和伙伴搞混：伙伴需要解锁、启用，并且提供加成。见“伙伴”一节。</p>
+</section>
+
+<section>
+  <h2>游戏住在哪里</h2>
+  <p>它有两种运行方式，切换在菜单（▲ 按钮）的<strong>设置</strong>里。切换模式会<strong>重新启动游戏</strong>，选择会被记住。</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>窗带</h3>
+      <span class="n">任务栏上方的一条带子，一直在视线里。没有游戏的地方点击会穿透过去，所以不会挡住下面的东西。</span>
+    </div>
+    <div class="cartao">
+      <h3>壁纸</h3>
+      <span class="n">整片风景都在桌面图标<em>后面</em>。图标照样能点，任何窗口都会盖在它上面。仅限 Windows。</span>
+    </div>
+  </div>
+  <p class="dica-tabela">壁纸模式下，HUD 栏会移到右下角（图标在左边），面板在单独的小窗口里打开——按 Esc、点击窗口外面，或者点系统托盘里时钟旁边的鱼图标就能关闭。</p>
+  <p>窗带模式有一个<strong>始终置顶</strong>选项。打开时窗带盖在一切之上，包括任务栏；关闭时它会躲到任何窗口后面——包括任务栏本身。区别就在于：游戏一直在眼前，还是只在桌面空出来时才看得到。</p>
+  <p>也是在<strong>设置</strong>里：有多块显示器时，可以选择游戏住在<strong>哪块屏幕</strong>上（切换同样会重启），另外还有<strong>开机时启动</strong>，让游戏在电脑开机时自己打开。</p>
+</section>
+
+<section>
+  <h2>声音</h2>
+  <p>游戏有音乐、音效和天气声——三者可以分别开关，各有音量，在<strong>设置 › 声音</strong>.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>音乐</h3>
+      <span class="n">十三首曲子自动轮换——有的属于白天，有的属于夜晚。</span>
+    </div>
+    <div class="cartao">
+      <h3>音效</h3>
+      <span class="n">只有河上发生的事：咬钩、浮漂、鱼入篓、完美咬钩、奖杯、伙伴。</span>
+    </div>
+    <div class="cartao">
+      <h3>天气</h3>
+      <span class="n">雨声、暴风雨和风声垫在音乐底下，事件持续多久就响多久。</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>让一切变快的三件事</h2>
+  <div class="grade">
+    <div class="cartao">
+      <h3>点那个“!”</h3>
+      <span class="n">鱼 +50%，零失败。这是你的注意力唯一值钱的时刻。</span>
+    </div>
+    <div class="cartao">
+      <h3>先升鱼饵，再升鱼竿</h3>
+      <span class="n">鱼饵会<em>同时</em>改变稀有度和失败率。从 Jujuba 换到传说鱼饵，拉得住的比例从 65% 升到 96%。</span>
+    </div>
+    <div class="cartao">
+      <h3>好饵留到晚上用</h3>
+      <span class="n">夜里传说鱼的出现几率高 60%，而血月也只在这时降临——它还会再乘以 5。</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPEUS:INICIO gerado por ferramentas/monta_site_chapeus.py -->
+<section id="chapeus">
+  <h2>帽子</h2>
+
+  <p>渔夫一开始戴着草帽。其他帽子会在你钓鱼时掉落，而且都是<strong>真正的物品</strong>，放在你的 Steam 库存里：可以戴、可以交易，也可以在市场上出售。</p>
+
+  <h3>帽子是怎么掉落的</h3>
+  <div class="passos">
+    <div class="passo"><p>你钓鱼。游戏计算的是<em>真正的钓鱼时间</em>——而不是窗口开着的时间。</p></div>
+    <div class="passo"><p>累计大约<strong>3 小时</strong>之后，会在某个随机时刻飞来一只<strong>送子鹳</strong>，叼着一个袋子穿过窗带。</p></div>
+    <div class="passo"><p>它头上跳着一个<strong>“!”</strong>。你得在它飞出屏幕之前<strong>点中送子鹳</strong>。</p></div>
+    <div class="passo"><p>点中后，请求会发往 Steam，发放物品的是<strong>Steam 本身</strong>，而不是游戏。收到的东西会出现在游戏内的<strong>衣柜</strong>里。</p></div>
+  </div>
+
+  <p>每天最多<strong>2 只</strong>，两只之间至少隔<strong>6 小时</strong>。如果送子鹳飞过时你不在电脑前，也不会损失什么：钓鱼时间会存着，它之后还会再来。</p>
+
+  <h3>有哪些帽子，各有什么效果</h3>
+  <p>每顶帽子都有自己的加成：它能帮你钓鱼，还能算进你的收藏。<strong>越稀有，助力越大</strong>——普通帽子 1%，传说帽子 5%，全新状态再加半个百分点。</p>
+  <div class="rolagem">
+    <table>
+      <caption>几率指的是一只送子鹳带来这顶帽子的几率，三种状态合计。草帽不会掉落，因为人人都有；天界帽子只能从锦标赛获得。</caption>
+      <thead>
+        <tr><th></th><th>帽子</th><th>稀有度</th><th>效果</th><th class="num">几率</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/palha.png" alt="草帽" width="64" height="64"></td>
+          <td>草帽</td>
+          <td><span class="r r-comum">普通</span></td>
+          <td>+1% 几率钓到好鱼</td>
+          <td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="棒球帽" width="64" height="64"></td>
+          <td>棒球帽</td>
+          <td><span class="r r-comum">普通</span></td>
+          <td>+1% 售价</td>
+          <td class="num">11.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tiroles.png" alt="蒂罗尔帽" width="64" height="64"></td>
+          <td>蒂罗尔帽</td>
+          <td><span class="r r-comum">普通</span></td>
+          <td>咬钩的鱼多 1% 拉得住</td>
+          <td class="num">11.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bandana.png" alt="海盗头巾" width="64" height="64"></td>
+          <td>海盗头巾</td>
+          <td><span class="r r-comum">普通</span></td>
+          <td>+1% 速度</td>
+          <td class="num">11.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/souwester.png" alt="雨帽" width="64" height="64"></td>
+          <td>雨帽</td>
+          <td><span class="r r-comum">普通</span></td>
+          <td>咬钩的鱼多 1% 拉得住</td>
+          <td class="num">11.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/xerife.png" alt="警长帽" width="64" height="64"></td>
+          <td>警长帽</td>
+          <td><span class="r r-incomum">罕见</span></td>
+          <td>+2% 售价</td>
+          <td class="num">7.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/quepe.png" alt="船长帽" width="64" height="64"></td>
+          <td>船长帽</td>
+          <td><span class="r r-incomum">罕见</span></td>
+          <td>+2% 速度</td>
+          <td class="num">7.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/minerador.png" alt="矿工头盔" width="64" height="64"></td>
+          <td>矿工头盔</td>
+          <td><span class="r r-incomum">罕见</span></td>
+          <td>+2% 几率钓到好鱼</td>
+          <td class="num">7.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aviador.png" alt="飞行帽" width="64" height="64"></td>
+          <td>飞行帽</td>
+          <td><span class="r r-incomum">罕见</span></td>
+          <td>+2% 几率钓到好鱼</td>
+          <td class="num">7.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/natal.png" alt="圣诞帽" width="64" height="64"></td>
+          <td>圣诞帽</td>
+          <td><span class="r r-incomum">罕见</span></td>
+          <td>+2% 售价</td>
+          <td class="num">7.3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/pirata.png" alt="海盗三角帽" width="64" height="64"></td>
+          <td>海盗三角帽</td>
+          <td><span class="r r-raro">稀有</span></td>
+          <td>+3% 速度</td>
+          <td class="num">2.7%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/cartola.png" alt="高礼帽" width="64" height="64"></td>
+          <td>高礼帽</td>
+          <td><span class="r r-raro">稀有</span></td>
+          <td>+3% 售价</td>
+          <td class="num">3.0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bruxo.png" alt="巫师帽" width="64" height="64"></td>
+          <td>巫师帽</td>
+          <td><span class="r r-raro">稀有</span></td>
+          <td>+3% 几率钓到好鱼</td>
+          <td class="num">3.0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bambu.png" alt="竹笠" width="64" height="64"></td>
+          <td>竹笠</td>
+          <td><span class="r r-raro">稀有</span></td>
+          <td>+3% 几率钓到好鱼</td>
+          <td class="num">3.0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/peixe.png" alt="饿鱼头套" width="64" height="64"></td>
+          <td>饿鱼头套</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>+4% 速度</td>
+          <td class="num">1.00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/gaivota.png" alt="啄食的海鸥" width="64" height="64"></td>
+          <td>啄食的海鸥</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>+4% 几率钓到好鱼</td>
+          <td class="num">1.00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/viking.png" alt="维京头盔" width="64" height="64"></td>
+          <td>维京头盔</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>咬钩的鱼多 4% 拉得住</td>
+          <td class="num">1.00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/urso.png" alt="熊头帽" width="64" height="64"></td>
+          <td>熊头帽</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>咬钩的鱼多 4% 拉得住</td>
+          <td class="num">1.00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tubarao.png" alt="鲨鱼头套" width="64" height="64"></td>
+          <td>鲨鱼头套</td>
+          <td><span class="r r-epico">史诗</span></td>
+          <td>+4% 速度</td>
+          <td class="num">1.00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/coroa.png" alt="帝王冠" width="64" height="64"></td>
+          <td>帝王冠</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>+5% 售价</td>
+          <td class="num">0.33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/mosqueteiro.png" alt="火枪手帽" width="64" height="64"></td>
+          <td>火枪手帽</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>+5% 速度</td>
+          <td class="num">0.33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aureola.png" alt="光环" width="64" height="64"></td>
+          <td>光环</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>+5% 几率钓到好鱼</td>
+          <td class="num">0.33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/louros.png" alt="桂冠" width="64" height="64"></td>
+          <td>桂冠</td>
+          <td><span class="r r-lendario">传说</span></td>
+          <td>咬钩的鱼多 5% 拉得住</td>
+          <td class="num">0.33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/caveira.png" alt="Boi-bumbá" width="64" height="64"></td>
+          <td>Boi-bumbá</td>
+          <td><span class="r r-celestial">天界</span></td>
+          <td>1% 到 3% 几率一次钓上两条</td>
+          <td class="num">仅限锦标赛</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bobo.png" alt="小丑帽" width="64" height="64"></td>
+          <td>小丑帽</td>
+          <td><span class="r r-celestial">天界</span></td>
+          <td>1% 到 3% 几率不消耗鱼饵</td>
+          <td class="num">仅限锦标赛</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>同一顶帽子的三种状态</h3>
+  <p>每顶帽子掉落时都处于三种状态之一，状态会让加成上下浮动<strong>半个百分点</strong>。<em>旧</em>状态就是上表中的数值；<em>破旧</em>状态减半个百分点，<em>全新</em>状态加半个百分点。</p>
+  <div class="rolagem">
+    <table>
+      <caption>三种状态。几率是它在送子鹳抽取中的权重，图案也会随之改变。海盗三角帽是例外：它的全新状态不会由送子鹳带来，只来自 Pirate's Pack。</caption>
+      <thead>
+        <tr><th></th><th>状态</th><th class="num">对加成</th><th class="num">几率</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="棒球帽（破旧）" width="64" height="64"></td>
+          <td>破旧</td>
+          <td class="num">-0.5 个百分点</td>
+          <td class="num">55%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="棒球帽（旧）" width="64" height="64"></td>
+          <td>旧</td>
+          <td class="num">—</td>
+          <td class="num">35%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="棒球帽（全新）" width="64" height="64"></td>
+          <td>全新</td>
+          <td class="num">+0.5 个百分点</td>
+          <td class="num">10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>在 Steam 上，这是三件不同的物品。</strong>每种状态在库存里都有自己的编号，所以在市场上是分开买卖的——而由于<em>全新</em>是三者中最稀有的，它也最值钱。</p>
+  <p>两顶<span class="r r-celestial">天界</span>帽子的状态影响更大，因为它们的效果不是数值条，而是一件事——不消耗的鱼饵、成双上钩的鱼。它们的阶梯是<strong>1%、2% 和 3%</strong>.</p>
+  <p class="legenda">草帽是唯一的例外：人人一开始就有，所以它只有平常那一个版本。</p>
+
+  <h3>锦标赛</h3>
+  <p>天界帽子——Boi-bumbá 和小丑帽——不会由送子鹳带来。它们是<strong>每月锦标赛</strong>的奖品，领奖台上的三人拿到同一顶帽子的三种状态：</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>名次</th><th>获得</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">1º</td><td>天界帽子·<strong>全新</strong></td></tr>
+        <tr><td class="nome">2º</td><td>天界帽子·<strong>旧</strong></td></tr>
+        <tr><td class="nome">3º</td><td>天界帽子·<strong>破旧</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>每一届奖励其中一顶天界帽子。第一届奖励的是<strong>小丑帽</strong>。奖品和其他帽子一样是物品：可以戴、交易和出售。</p>
+
+  <h3>衣柜</h3>
+  <p>这是帽子住的界面——从菜单（▲ 按钮）进入。它会显示还缺什么，也让你戴上已经拥有的。</p>
+  <p>每顶帽子占一行，三种状态是三列，分别显示数量。点一个格子就戴上；点头上正戴着的那个就摘下。从来没有过的格子显示一道横线；有过又卖掉的显示零。</p>
+  <p>还没见过的会显示为<strong>???</strong>，只显示稀有度。</p>
+</section>
+<!-- CHAPEUS:FIM -->
+
+<footer>© 2026 G. Studios. 保留所有权利。</footer>
+
+</div>
+</body>
+</html>

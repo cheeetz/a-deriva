@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — краткое руководство</title>
+<link rel="alternate" hreflang="pt-BR" href="https://cheeetz.github.io/a-deriva/guia.html">
+<link rel="alternate" hreflang="en" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<link rel="alternate" hreflang="de" href="https://cheeetz.github.io/a-deriva/de/guide.html">
+<link rel="alternate" hreflang="es" href="https://cheeetz.github.io/a-deriva/es/guide.html">
+<link rel="alternate" hreflang="ru" href="https://cheeetz.github.io/a-deriva/ru/guide.html">
+<link rel="alternate" hreflang="zh-CN" href="https://cheeetz.github.io/a-deriva/zh_CN/guide.html">
+<link rel="alternate" hreflang="x-default" href="https://cheeetz.github.io/a-deriva/en/guide.html">
+<style>
+@font-face{
+  font-family:"Geist Pixel";
+  src:url("../GeistPixel-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+:root{
+  /* Clareou junto com o site em 25/08/2026: a agua de Noronha no lugar do azul-noite.
+     TODA cor de texto passou por medicao de contraste sobre o fundo claro, e as de
+     raridade desceram por causa disso -- no escuro o dourado do lendario funcionava, no
+     claro ele dava 3,4:1 e sumia. Todas passam de 4,6:1 agora, que e o piso pra texto. */
+  --fundo:#F3FAFB; --agua:#E4F4F6; --agua2:#CFEAEE; --linha:#C3E0E5;
+  --texto:#0E3742; --fraco:#507781; --realce:#0D7B8F; --realce-2:#0A6070;
+  --comum:#64727D; --incomum:#257E3F; --raro:#2A72BB;
+  --epico:#8A3FC0; --lendario:#906810; --celestial:#0C7A8C;
+  --mono:"Geist Pixel",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"Geist Pixel",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0 20px 90px;
+  background:
+    radial-gradient(1200px 460px at 50% -180px, #CFEDF1 0%, transparent 72%),
+    var(--fundo);
+  color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.78;
+  /* fonte de pixel: desenhada na grade, antialias so borra */
+  -webkit-font-smoothing:none; font-smooth:never;
+}
+.wrap{max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+
+/* ---------- barra do site (as tres paginas) ---------- */
+nav.sitio{
+  display:flex; gap:22px; align-items:baseline; padding:22px 0 0; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+}
+nav.sitio a{color:var(--fraco); text-decoration:none}
+nav.sitio a:hover{color:var(--realce-2)}
+nav.sitio .idiomas{margin-left:auto; display:flex; flex-wrap:wrap; gap:3px 14px; letter-spacing:.08em}
+nav.sitio .idiomas a[aria-current="true"]{color:var(--texto); text-decoration:underline; text-underline-offset:5px}
+nav.sitio a[aria-current="page"]{color:var(--realce)}
+nav.sitio .casa{color:var(--texto); font-weight:700; letter-spacing:.1em}
+
+/* ---------- topo ---------- */
+header{padding-top:34px; display:flex; flex-direction:column; gap:14px}
+.marca{
+  font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--realce);
+}
+h1{
+  margin:0; font-size:clamp(38px,7vw,60px); line-height:1; letter-spacing:-.03em;
+  font-weight:800; text-wrap:balance;
+}
+h1 span{color:var(--realce-2)}
+.chamada{margin:0; font-size:19px; color:var(--fraco); max-width:60ch; text-wrap:pretty}
+.onda{height:2px; background:linear-gradient(90deg,var(--realce),transparent); border-radius:2px}
+
+/* ---------- seções ---------- */
+section{display:flex; flex-direction:column; gap:16px}
+h2{
+  margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
+  font-family:var(--mono); color:var(--realce); font-weight:700;
+  display:flex; align-items:center; gap:12px;
+}
+h2::after{content:""; flex:1; height:1px; background:var(--linha)}
+h3{margin:0 0 4px; font-size:16px; font-weight:700; letter-spacing:-.01em}
+p{margin:0; max-width:70ch}
+strong,b{color:var(--texto); font-weight:400; text-shadow:1px 0 0 currentColor}
+h1,h2,h3,th{font-weight:400; text-shadow:1px 0 0 currentColor}
+em{font-style:normal; color:var(--realce-2)}
+
+/* ---------- cartões ---------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px}
+.cartao{
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px;
+  padding:15px 17px; display:flex; flex-direction:column; gap:5px;
+}
+.cartao .k{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--fraco);
+}
+.cartao .v{font-family:var(--mono); font-size:24px; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--realce-2)}
+.cartao .n{font-size:13.5px; color:var(--fraco); line-height:1.5}
+
+/* ---------- passos ---------- */
+.passos{counter-reset:p; display:flex; flex-direction:column; gap:10px}
+.passo{
+  display:grid; grid-template-columns:30px 1fr; gap:14px; align-items:start;
+  background:var(--agua); border:1px solid var(--linha); border-radius:10px; padding:14px 16px;
+}
+.passo::before{
+  counter-increment:p; content:counter(p);
+  font-family:var(--mono); font-size:12px; font-weight:700; color:var(--fundo);
+  background:var(--realce); border-radius:50%;
+  width:24px; height:24px; display:grid; place-items:center; margin-top:2px;
+}
+.passo p{font-size:15px}
+
+/* ---------- tabelas ---------- */
+.rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:10px; background:var(--agua)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+caption{
+  text-align:left; padding:13px 16px 0; font-size:13px; color:var(--fraco);
+  caption-side:top;
+}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--linha)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--fraco); font-weight:700; background:var(--agua2); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(90,182,234,.07)}
+td.num, th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+td.nome{font-weight:600; white-space:nowrap}
+.dica-tabela{font-size:13px; color:var(--fraco)}
+
+/* raridades */
+.r{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700}
+.r-comum{color:var(--comum)} .r-incomum{color:var(--incomum)} .r-raro{color:var(--raro)}
+.r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)} .r-celestial{color:var(--celestial)}
+
+/* ---------- destaque ---------- */
+.nota{
+  border-left:3px solid var(--realce); background:var(--agua);
+  padding:13px 17px; border-radius:0 10px 10px 0; font-size:14.5px; color:var(--fraco);
+}
+.nota strong{color:var(--texto)}
+
+footer{border-top:1px solid var(--linha); padding-top:18px; font-size:13px; color:var(--fraco)}
+
+@media (max-width:560px){
+  body{font-size:15px; padding:0 14px 64px}
+  header{padding-top:40px}
+  .passo{grid-template-columns:24px 1fr; gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- A BARRA DO SITE. O guia deixou de viajar dentro do zip em 25/08/2026 e passou a ser uma
+     pagina publicada (ver empacota.ps1), entao ele precisa de volta pras outras: sem isto ele
+     seria um beco -- a pessoa chega pelo menu do jogo, le, e nao tem pra onde ir. -->
+<nav class="sitio">
+  <a class="casa" href="./">À Deriva</a>
+  <a href="guide.html" aria-current="page">Руководство</a>
+  <span class="idiomas">
+    <a href="../guia.html" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a>
+    <a href="../en/guide.html" hreflang="en" lang="en" title="English">EN</a>
+    <a href="../de/guide.html" hreflang="de" lang="de" title="Deutsch">DE</a>
+    <a href="../es/guide.html" hreflang="es" lang="es" title="Español">ES</a>
+    <a href="guide.html" hreflang="ru" lang="ru" title="Русский" aria-current="true">RU</a>
+    <a href="../zh_CN/guide.html" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+  </span>
+</nav>
+
+<header>
+  <div class="marca">Краткое руководство</div>
+  <h1>À <span>Deriva</span></h1>
+  <div class="onda"></div>
+  <p class="chamada">Игра про рыбалку, которая живёт в прозрачной полосе внизу экрана — или за значками рабочего стола. Она рыбачит сама, пока ты работаешь; клики приносят больше, но следить за ней никогда не обязательно.</p>
+  <p class="chamada">Пять мест в Бразилии, от Araguaia до Fernando de Noronha. Шестьдесят рыб для коллекции, по питомцу на каждой карте и погода, которая сама меняется надо всем этим.</p>
+  <p class="chamada">Эта страница — о том, что стоит за цифрами. Если хочешь просто рыбачить, она тебе не нужна.</p>
+</header>
+
+<section>
+  <h2>Цикл</h2>
+  <div class="passos">
+    <div class="passo"><p>Рыба клюёт сама. В среднем каждые <strong>18 s</strong>, с разбросом от 0,7× до 1,3× — и чаще, чем лучше удилище, лодка и питомцы.</p></div>
+    <div class="passo"><p>Над полосой выскакивает <strong>“!”</strong> — и у тебя есть <strong>2 секунды</strong> на клик.</p></div>
+    <div class="passo"><p>Кликнул в это окно: <em>идеальная подсечка</em> — рыба стоит на <strong>+50%</strong> больше и уже не сорвётся.</p></div>
+    <div class="passo"><p>Не кликнул: игра бросает шанс срыва твоей наживки. Если срыв — рыба уходит; если нет — попадает в лодку как обычно.</p></div>
+    <div class="passo"><p>Лодка полна — рыбалка <strong>останавливается</strong>. Продай всё через панель или купи ящик побольше.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>День и ночь</h2>
+  <div class="grade">
+    <div class="cartao"><span class="k">День</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Ночь</span><span class="v">1 h</span></div>
+    <div class="cartao"><span class="k">Переход</span><span class="v">3 мин</span></div>
+  </div>
+  <p>Ночью хорошая рыба попадается чаще: <span class="r r-raro">редкая</span> <strong>+20%</strong>,
+  <span class="r r-epico">эпическая</span> <strong>+40%</strong>,
+  <span class="r r-lendario">легендарная</span> <strong>+60%</strong> в самый глухой час ночи (эффект нарастает и спадает вместе с переходом). <strong>Полуночное удилище</strong> работает только в это время — а <strong>Кровавая луна</strong> бывает только тогда.</p>
+</section>
+
+<section>
+  <h2>Редкость и наживка</h2>
+  <p>Наживка — самое важное решение в игре: она меняет <em>всё</em> сразу — и шанс на хорошую рыбу, и шанс её потерять. Чем лучше наживка, тем реже срыв.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Шанс каждой редкости по наживкам. Jujuba бесплатна и бесконечна.</caption>
+      <thead>
+        <tr>
+          <th>Наживка</th><th class="num">Удержание</th><th>Доп. эффект</th>
+          <th class="num"><span class="r r-comum">Обычный</span></th>
+          <th class="num"><span class="r r-incomum">Необычный</span></th>
+          <th class="num"><span class="r r-raro">Редкий</span></th>
+          <th class="num"><span class="r r-epico">Эпический</span></th>
+          <th class="num"><span class="r r-lendario">Легендарный</span></th>
+          <th class="num"><span class="r r-celestial">Небесный</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🍬 Jujuba <span style="color:var(--fraco)">(бесплатно)</span></td>
+          <td class="num">65%</td><td>—</td><td class="num">70,0%</td><td class="num">22,0%</td>
+          <td class="num">6,4%</td><td class="num">1,30%</td><td class="num">0,28%</td>
+          <td class="num">0,010%</td></tr>
+        <tr><td class="nome">Необычный</td>
+          <td class="num">78%</td><td>+20% к <strong>скорости</strong> · +8% к <strong>золотой звезде</strong></td><td class="num">54,1%</td><td class="num">30,0%</td>
+          <td class="num">11,5%</td><td class="num">3,40%</td><td class="num">1,00%</td>
+          <td class="num">0,050%</td></tr>
+        <tr><td class="nome">Редкая</td>
+          <td class="num">85%</td><td>+25% к <strong>продаже</strong> · +18% к <strong>золотой звезде</strong></td><td class="num">37,1%</td><td class="num">32,1%</td>
+          <td class="num">20,1%</td><td class="num">8,02%</td><td class="num">2,71%</td>
+          <td class="num">0,150%</td></tr>
+        <tr><td class="nome">Эпическая</td>
+          <td class="num">92%</td><td>+35% к <strong>продаже</strong> · +29% к <strong>золотой звезде</strong></td><td class="num">23,3%</td><td class="num">29,3%</td>
+          <td class="num">26,3%</td><td class="num">14,7%</td><td class="num">6,37%</td>
+          <td class="num">0,403%</td></tr>
+        <tr><td class="nome">Легендарная</td>
+          <td class="num">96%</td><td>+20% к <strong>продаже</strong> · +43% к <strong>золотой звезде</strong></td><td class="num">13,5%</td><td class="num">22,8%</td>
+          <td class="num">29,0%</td><td class="num">21,7%</td><td class="num">12,9%</td>
+          <td class="num">1,026%</td></tr>
+        <tr><td class="nome">Небесный <span style="color:var(--fraco)">(только из сундука)</span></td>
+          <td class="num">98%</td><td>+15% к <strong>скорости</strong>, +40% к <strong>продаже</strong> и +61% к <strong>золотой звезде</strong></td><td class="num">6,0%</td><td class="num">14,0%</td>
+          <td class="num">25,0%</td><td class="num">28,00%</td><td class="num">24,0%</td>
+          <td class="num">3,000%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">У каждой карты свои наживки, с другими названиями, но с теми же пятью уровнями. «Удержание» — это шанс, что клюнувшая рыба доберётся до лодки. Удилище и питомцы ещё сдвигают его в обе стороны.</p>
+  <p><strong>Хорошая наживка окупается.</strong> Кроме лучшего удержания, у каждого уровня есть свой бонус — скорость у необычной, цена продажи у трёх верхних. Исключение — <strong>легендарная</strong>: она стоит больше, чем приносит. Это наживка не для заработка — из покупных она сильнее всех притягивает <em>небесных</em> — а без небесной рыбы коллекцию не собрать.</p>
+  <p><strong>Цена растёт от карты к карте.</strong> Одна и та же легендарная наживка стоит 10 000 на Araguaia и 32 000 на Noronha — примерно втрое больше от первой карты к последней.</p>
+
+  <h3>Сундук с наживкой</h3>
+  <p>Вверху вкладки «Наживки» стоит <strong>сундук</strong>, и стоит он <strong>половину пачки легендарной наживки</strong> этой карты — 5 000 на Araguaia, 16 000 на Noronha. Открыв его, получаешь <strong>одну наживку этой карты</strong> в количестве обычной покупки.</p>
+  <!-- A chance final de cada linha: a celestial é sorteada antes e por fora
+       (DadosJogo.BAU_CHANCE_CELESTIAL = 0,5%); as quatro dividem o resto pelos pesos de
+       DadosJogo.BAU_PESOS (45 / 30 / 17 / 7,9). Mexeu num dos dois, refaz a tabela. -->
+  <div class="rolagem">
+    <table>
+      <caption>Что даёт каждое открытие сундука.</caption>
+      <thead><tr><th>Наживка</th><th>Что внутри</th><th class="num">Шанс</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Необычный</td><td>одна пачка</td><td class="num">44,8%</td></tr>
+        <tr><td class="nome">Редкая</td><td>одна пачка</td><td class="num">29,9%</td></tr>
+        <tr><td class="nome">Эпическая</td><td>одна пачка</td><td class="num">16,9%</td></tr>
+        <tr><td class="nome">Легендарная</td><td>одна пачка</td><td class="num">7,9%</td></tr>
+        <tr><td class="nome">Небесный</td><td>10 штук</td><td class="num">0,5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Небесная — единственная наживка без цены: она выпадает только из сундука. И единственная, что хороша во всём сразу — больше редкой рыбы, рыба крупнее, клюёт быстрее и стоит дороже. У каждой карты своя: <em>Muçum de Ouro</em> на Araguaia, <em>Tucunaré de Prata</em> на Rio Negro, <em>Camarão Gigante Dourado</em> в Furnas, <em>Corrico de Cristal</em> на побережье и <em>Isca Abissal</em> на Noronha.</p>
+</section>
+
+<section>
+  <h2>Погодные события</h2>
+  <p>Каждую <strong>1 мин</strong> игра бросает жребий; шанс, что начнётся событие, — <strong>5%</strong> (первое — не раньше чем через 30 с игры) — в среднем одно событие каждые <strong>20 мин</strong>. Оно предупреждает за <strong>10 с</strong> до начала и длится <strong>от 5 до 7 мин</strong>— срок выпадает на месте. У каждого события есть <em>гарантированная поклёвка</em> — где-то между 20% и 80% его длительности приходит рыба этой редкости, без жребия.</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Событие</th><th class="num">Вес</th>
+        <th>Гарантия</th><th>Эффект</th><th>Где</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">🌧️ Дождь</td><td class="num">50</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>Клюёт на 30% быстрее</td><td>везде</td></tr>
+        <tr><td class="nome">✨ Сияющие воды</td><td class="num">16</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td><strong>×20</strong> к шансу небесной</td><td>везде</td></tr>
+        <tr><td class="nome">⛈️ Гроза</td><td class="num">12</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>×1,8 к высоким редкостям · +10 п.п. к срыву</td><td>везде</td></tr>
+        <tr><td class="nome">🩸 Кровавая луна</td><td class="num">8</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td><strong>×5</strong> к шансу легендарной</td><td>только ночью</td></tr>
+        <tr><td class="nome">🌊 Pororoca</td><td class="num">8</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>×2,4 к высоким · +15 п.п. к срыву</td><td>Araguaia e Rio Negro</td></tr>
+        <tr><td class="nome">🫧 Поворот вод</td><td class="num">8</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>×2 к высоким · обычные падают до ¼</td><td>Furnas</td></tr>
+        <tr><td class="nome">🌀 Ураган</td><td class="num">8</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>×2,4 к высоким · +15 п.п. к срыву</td><td>Costa de SC</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela"><strong>Вес</strong> — это то, сколько событие весит в жребии, а не процент: один Дождь забирает больше половины всех жребиев. События карт попадают в жребий, только когда ты там — например, <strong>Pororoca</strong> бывает только на двух реках.</p>
+  <div class="nota"><strong>Гроза, Pororoca и Ураган берут своё.</strong> Они наполняют воду хорошей рыбой, но повышают срыв — самое время сменить наживку на лучшую и следить за «!».</div>
+</section>
+
+<section>
+  <h2>Удилища</h2>
+  <p>У всех одна базовая цена — <strong>700</strong> монет, а каждое купленное удилище делает следующее дороже на <strong>50%</strong>. Экипировано может быть только одно.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Удилище</th><th>Что делает</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🎋 Бамбук</td><td>Стартовое, без бонуса.</td></tr>
+        <tr><td class="nome">🎣 Стеклопластик</td><td>+40% к скорости, но срывается на 25% чаще.</td></tr>
+        <tr><td class="nome">🪝 Сталь</td><td>Удерживает на 40% лучше. Что подсекло — то и вытащит.</td></tr>
+        <tr><td class="nome">✨ Карбон</td><td>+30% к качеству (больше редкой рыбы), −20% к скорости и срывается на 25% чаще.</td></tr>
+        <tr><td class="nome">💰 Купец</td><td>Рыба продаётся на +20% дороже.</td></tr>
+        <tr><td class="nome">🌙 Полночь</td><td>Ночью: +40% к скорости и +25% к качеству. Днём — обычное удилище.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Лодки и ящики</h2>
+  <p>Лодка определяет, сколько рыбы поместится, прежде чем рыбалка остановится. Каждая купленная лодка делает следующую на 15% дороже. Две последние <strong>требуют трофеев</strong>, помимо денег.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Лодка</th><th class="num">Места</th><th class="num">Цена</th><th>Особое</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🛶 Каноэ</td><td class="num">12</td><td class="num">—</td><td>стартовая</td></tr>
+        <tr><td class="nome">⛵ Усиленная лодка</td><td class="num">24</td><td class="num">2 000</td><td>сбалансированная</td></tr>
+        <tr><td class="nome">💨 Катер</td><td class="num">28</td><td class="num">6 000</td><td>+25% к скорости</td></tr>
+        <tr><td class="nome">🎣 Траулер</td><td class="num">48</td><td class="num">14 000</td><td>−15% к скорости — чтобы оставить работать</td></tr>
+        <tr><td class="nome">🐟 Плавбаза</td><td class="num">36</td><td class="num">55 000</td><td>+25% к продаже · требует <strong>2 🏆</strong></td></tr>
+        <tr><td class="nome">🔱 Океанский траулер</td><td class="num">36</td><td class="num">90 000</td><td>+20% к качеству · требует <strong>3 🏆</strong> — вершина флота по цифрам</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>А <strong>ящики</strong> умножают вместимость лодки и складываются — каждый требует предыдущего: Пенопласт <em>×1,5</em> (25 000), Термобокс <em>×2</em> (80 000), Трюм <em>×2,5</em> (250 000 <strong>+ 1 трофей</strong>), Камера <em>×3</em> (600 000 <strong>+ 2 трофея</strong>).</p>
+  <p>Трофей — это полная коллекция карты, см. <em>Карты и трофеи</em>.</p>
+</section>
+
+<section>
+  <h2>Питомцы</h2>
+  <p>На каждой карте есть свой зверь. Он появляется сам, с шансом <strong>0,1% за каждую пойманную рыбу</strong>. Рыбачить придётся долго, прежде чем увидишь первого. Можно держать <strong>3 активных</strong> одновременно, и бонусы складываются.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Питомец</th><th>Карта</th><th>Бонус</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🐊 Кайман</td><td>Rio Araguaia</td><td>Удерживает на 8% лучше то, что клюнуло</td></tr>
+        <tr><td class="nome">🦦 Гигантская выдра</td><td>Rio Negro</td><td>+6% к цене продажи</td></tr>
+        <tr><td class="nome">🦢 Ябиру</td><td>Lago de Furnas</td><td>+7% к качеству</td></tr>
+        <tr><td class="nome">🐬 Амазонский дельфин</td><td>Costa de Santa Catarina</td><td>−10% ко времени между поклёвками</td></tr>
+        <tr><td class="nome">🐢 Морская черепаха</td><td>Fernando de Noronha</td><td>+8% к качеству высоких редкостей</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nota">Если питомец выпадет ещё раз, когда он у тебя уже есть, придёт <strong>дубликат</strong> — бонуса он не даёт, но в инвентаре стоит от <strong>5 000 до 9 999</strong> монет.</div>
+</section>
+
+<section>
+  <h2>Карты и трофеи</h2>
+  <p>Ты начинаешь на Araguaia. Каждая новая карта открывается за деньги — <em>или бесплатно</em>, если у тебя есть трофей предыдущей. Трофей даётся за <strong>полную коллекцию</strong> места: все 12 рыб, хотя бы по одной каждой.</p>
+  <p>Столбец <strong>Небесный</strong> показывает, как часто появляется небесная рыба этой карты по сравнению с Araguaia: там она выпадает с полным шансом; на Noronha — <strong>с десятой долей</strong> от него. Коллекция включает небесную рыбу, поэтому трофей каждой карты обычно упирается именно в неё.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Карта</th><th>Штат</th><th class="num">Стоимость</th><th class="num">Небесный</th><th>Своё событие</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Rio Araguaia</td><td>TO/GO</td><td class="num">стартовая</td><td class="num">×1</td><td>🌊 Pororoca</td></tr>
+        <tr><td class="nome">Rio Negro</td><td>AM</td><td class="num">55 000</td><td class="num">×0,60</td><td>—</td></tr>
+        <tr><td class="nome">Lago de Furnas</td><td>MG</td><td class="num">200 000</td><td class="num">×0,35</td><td>🫧 Поворот вод</td></tr>
+        <tr><td class="nome">Costa de Santa Catarina</td><td>SC</td><td class="num">330 000</td><td class="num">×0,20</td><td>🌀 Ураган</td></tr>
+        <tr><td class="nome">Fernando de Noronha</td><td>PE</td><td class="num">900 000</td><td class="num">×0,10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Длина, вес и звёзды</h2>
+  <p>У каждой рыбы, попавшей в лодку, есть <strong>длина и вес</strong>, и оба видны на карточке улова: <em>«Dourado · 75,3 cm · 8,1 kg»</em>. Самая крупная рыба каждого вида сохраняется как <strong>рекорд</strong> — его и показывает Коллекция.</p>
+
+  <h3>Вес зависит от длины</h3>
+  <p>Вес не разыгрывается отдельно: он следует за длиной, как у настоящей рыбы. Диапазоны каждого вида взяты из мер бразильской спортивной рыбалки, и потолок у них — на <em>исключительном</em> экземпляре, а не на мировом рекорде.</p>
+
+  <h3>Что делает рыбу крупнее</h3>
+  <p>Крупная рыба — редкость. Три решения тянут размер вверх — и сильнее всех тянет наживка:</p>
+  <div class="rolagem">
+    <table>
+      <caption>Средняя длина dourado.</caption>
+      <thead><tr><th>С чем</th><th class="num">Среднее</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">Ничего — jujuba, без клика, днём</td><td class="num">56,5 cm</td></tr>
+        <tr><td class="nome">Только ночь</td><td class="num">58,0 cm</td></tr>
+        <tr><td class="nome">Только идеальная подсечка</td><td class="num">58,3 cm</td></tr>
+        <tr><td class="nome">Только легендарная наживка</td><td class="num">61,8 cm</td></tr>
+        <tr><td class="nome">Только небесная наживка</td><td class="num">63,8 cm</td></tr>
+        <tr><td class="nome">Всё вместе, с легендарной</td><td class="num">68,1 cm</td></tr>
+        <tr><td class="nome">Всё вместе, с небесной</td><td class="num">71,1 cm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Небесная тянет ещё сильнее легендарной: <strong>три сантиметра</strong> между двумя последними строками — целиком её заслуга. <strong>Удилище на размер не влияет</strong>, и время с открытой игрой — тоже.</p>
+
+  <h3>Четыре звезды</h3>
+  <p>В Коллекции у каждой рыбы виден рекорд и звезда — ступень, в которую попал твой самый крупный экземпляр. Звезда показывает <strong>рекорд</strong>, а не последнюю рыбу.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Ступень — это то, какую часть возможной длины этого вида достиг твой рекорд.</caption>
+      <thead><tr><th>Звезда</th><th class="num">От</th><th>Что значит</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🥉 Бронза</td><td class="num">—</td><td>Поймана хотя бы раз.</td></tr>
+        <tr><td class="nome">🥈 Серебро</td><td class="num">45%</td><td>Экземпляр крупнее среднего.</td></tr>
+        <tr><td class="nome">🥇 Золото</td><td class="num">80%</td><td>По-настоящему крупная рыба.</td></tr>
+        <tr><td class="nome">💎 Платина</td><td class="num">97%</td><td>Почти максимум для вида.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Каждый улов даёт золото в <strong>6,6%</strong> случаев совсем без снаряжения, <strong>13,8%</strong> с легендарной наживкой, точным кликом и ночью, и <strong>16,5%</strong> если сменить легендарную на небесную. Платина идёт тем же путём: <strong>от 0,9% до 2,5%</strong>.</p>
+
+  <h3>Сантиметры или дюймы</h3>
+  <p>Выбор — в Настройках: между <strong>метрическими</strong> (cm и kg) и <strong>имперскими</strong> (in и lb) единицами.</p>
+</section>
+
+<section>
+  <h2>Скупщик</h2>
+  <p>Судно, которое заходит <strong>раз в час</strong>, опустошает твой трюм и платит часть стоимости. Скупщик у тебя всегда один, и покупка лучшего заменяет старого. Именно так игра по-настоящему зарабатывает сама — но за это берут пошлину.</p>
+  <div class="rolagem">
+    <table>
+      <thead><tr><th>Скупщик</th><th class="num">Стоит</th><th class="num">Платит</th><th>Когда выгоден</th></tr></thead>
+      <tbody>
+        <tr><td class="nome">🪵 Плот</td><td class="num">3 000</td><td class="num">20%</td>
+          <td>Ещё на Araguaia, когда 3 000 — это деньги. Платит мало, но показывает, зачем нужен скупщик</td></tr>
+        <tr><td class="nome">🛶 Катер</td><td class="num">40 000</td><td class="num">50%</td>
+          <td>Сразу после Плавбазы, когда трюм начинает заполняться без твоего присмотра</td></tr>
+        <tr><td class="nome">🚤 Судно</td><td class="num">120 000</td><td class="num">70%</td>
+          <td>После Океанского траулера, когда каждый заброс уже стоит дорого</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dica-tabela">Никто из них не платит так хорошо, как продажа вручную. Ты меняешь деньги на то, чтобы не быть рядом — и иногда это того стоит.</p>
+</section>
+
+<section>
+  <h2>Что проплывает по экрану</h2>
+  <p>Кроме рыбы, у полосы своя жизнь: пробегают звери, меняется небо, и есть кое-что, о чём мы лучше промолчим. <strong>Ничего из этого не кликается и не меняет цифры</strong> — это декорации, а что появляется в каждом месте, узнаешь сам.</p>
+  <p>Не путай с питомцами: их ты открываешь, включаешь, и они дают бонусы. См. раздел «Питомцы».</p>
+</section>
+
+<section>
+  <h2>Где живёт игра</h2>
+  <p>Она работает в двух режимах, и переключаются они в меню (кнопка ▲), в разделе <strong>Настройки</strong>. Смена режима <strong>перезапускает игру</strong>, а выбор запоминается.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Полоса</h3>
+      <span class="n">Лента над панелью задач, всегда на виду. Клик проходит насквозь там, где нет игры, так что она не мешает тому, что под ней.</span>
+    </div>
+    <div class="cartao">
+      <h3>Обои</h3>
+      <span class="n">Весь пейзаж <em>за</em> значками рабочего стола. Значки остаются кликабельными, и любое окно ложится поверх. Только в Windows.</span>
+    </div>
+  </div>
+  <p class="dica-tabela">В режиме обоев панель HUD уезжает в правый нижний угол (значки живут слева), а панели открываются в отдельном окошке — закрыть его можно клавишей Esc, кликом мимо или через значок рыбы в системном трее, рядом с часами.</p>
+  <p>У полосы есть режим <strong>Поверх всех окон</strong>. Если он включён, лента лежит поверх всего, включая панель задач; если выключен — прячется за любым окном, включая саму панель. Это разница между игрой, которая всегда на виду, и игрой, которая видна, только когда рабочий стол свободен.</p>
+  <p>Там же, в разделе <strong>Настройки</strong>: если мониторов больше одного, можно выбрать, <strong>на каком экране</strong> живёт игра (смена тоже перезапускает её), а ещё есть <strong>Запускать вместе с Windows</strong> — тогда игра сама откроется при включении компьютера.</p>
+</section>
+
+<section>
+  <h2>Звук</h2>
+  <p>В игре есть музыка, эффекты и погода — и все три включаются и выключаются по отдельности, со своей громкостью, в разделе <strong>Настройки › Звук</strong>.</p>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Музыка</h3>
+      <span class="n">Тринадцать композиций, которые сменяют друг друга сами — одни для дня, другие для ночи.</span>
+    </div>
+    <div class="cartao">
+      <h3>Эффекты</h3>
+      <span class="n">Только то, что происходит на реке: поклёвка, поплавок, рыба в корзине, идеальная подсечка, трофей, питомец.</span>
+    </div>
+    <div class="cartao">
+      <h3>Погода</h3>
+      <span class="n">Дождь, гроза и ветер под музыкой, пока длится событие.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Три вещи, которые всё ускоряют</h2>
+  <div class="grade">
+    <div class="cartao">
+      <h3>Кликай на «!»</h3>
+      <span class="n">+50% к рыбе и ноль срывов. Единственный момент, когда твоё внимание стоит денег.</span>
+    </div>
+    <div class="cartao">
+      <h3>Сначала наживка, потом удилище</h3>
+      <span class="n">Наживка меняет редкость и срыв <em>одновременно</em>. Переход с Jujuba на Легендарную поднимает удержание с 65% до 96%.</span>
+    </div>
+    <div class="cartao">
+      <h3>Хорошие — на ночь</h3>
+      <span class="n">Легендарная рыба ночью появляется на 60% чаще, и именно тогда может взойти Кровавая луна — она умножает это на 5.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPEUS:INICIO gerado por ferramentas/monta_site_chapeus.py -->
+<section id="chapeus">
+  <h2>Шляпы</h2>
+
+  <p>Рыбак начинает с соломенной шляпы. Остальные выпадают, пока ты рыбачишь, и это <strong>настоящие предметы</strong> в твоём инвентаре Steam: их можно носить, обменивать и продавать на Торговой площадке.</p>
+
+  <h3>Как выпадает шляпа</h3>
+  <div class="passos">
+    <div class="passo"><p>Ты рыбачишь. Игра считает <em>настоящее время рыбалки</em> — а не время с открытым окном.</p></div>
+    <div class="passo"><p>Примерно через <strong>3 часа</strong> такого времени, в случайный момент, через полосу пролетает <strong>аист</strong> с мешком.</p></div>
+    <div class="passo"><p>Над ним прыгает <strong>“!”</strong> — и тебе нужно <strong>кликнуть по аисту</strong> — пока он не улетел с экрана.</p></div>
+    <div class="passo"><p>Кликнул — запрос уходит в Steam, и предмет выдаёт <strong>сама Steam</strong>, а не игра. Что пришло, появляется в <strong>Гардеробе</strong>, прямо в игре.</p></div>
+  </div>
+
+  <p>Не больше <strong>2 в день</strong>, с перерывом не меньше <strong>6 часов</strong> между аистами. Если тебя нет за компьютером, когда пролетает аист, ты ничего не теряешь: время рыбалки копится, и он прилетит позже.</p>
+
+  <h3>Что есть и что делает каждая</h3>
+  <p>У каждой шляпы свой бонус: она помогает в рыбалке и ещё идёт в твою коллекцию. <strong>Чем реже шляпа, тем сильнее толчок</strong> — от 1% у обычной до 5% у легендарной, а новое состояние добавляет ещё полпункта.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Шанс — это вероятность, что аист принесёт именно эту шляпу, по сумме всех трёх состояний. Соломенная не выпадает, потому что она уже есть у всех; небесные дают только за чемпионат.</caption>
+      <thead>
+        <tr><th></th><th>Шляпа</th><th>Редкость</th><th>Эффект</th><th class="num">Шанс</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/palha.png" alt="Соломенная шляпа" width="64" height="64"></td>
+          <td>Соломенная шляпа</td>
+          <td><span class="r r-comum">Обычный</span></td>
+          <td>+1% к шансу на хорошую рыбу</td>
+          <td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Кепка" width="64" height="64"></td>
+          <td>Кепка</td>
+          <td><span class="r r-comum">Обычный</span></td>
+          <td>+1% к цене</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tiroles.png" alt="Тирольская шляпа" width="64" height="64"></td>
+          <td>Тирольская шляпа</td>
+          <td><span class="r r-comum">Обычный</span></td>
+          <td>на 1% лучше удерживает то, что клюнуло</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bandana.png" alt="Пиратская бандана" width="64" height="64"></td>
+          <td>Пиратская бандана</td>
+          <td><span class="r r-comum">Обычный</span></td>
+          <td>+1% к скорости</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/souwester.png" alt="Дождевая шляпа" width="64" height="64"></td>
+          <td>Дождевая шляпа</td>
+          <td><span class="r r-comum">Обычный</span></td>
+          <td>на 1% лучше удерживает то, что клюнуло</td>
+          <td class="num">11,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/xerife.png" alt="Шляпа шерифа" width="64" height="64"></td>
+          <td>Шляпа шерифа</td>
+          <td><span class="r r-incomum">Необычный</span></td>
+          <td>+2% к цене</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/quepe.png" alt="Капитанская фуражка" width="64" height="64"></td>
+          <td>Капитанская фуражка</td>
+          <td><span class="r r-incomum">Необычный</span></td>
+          <td>+2% к скорости</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/minerador.png" alt="Каска шахтёра" width="64" height="64"></td>
+          <td>Каска шахтёра</td>
+          <td><span class="r r-incomum">Необычный</span></td>
+          <td>+2% к шансу на хорошую рыбу</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aviador.png" alt="Шлем лётчика" width="64" height="64"></td>
+          <td>Шлем лётчика</td>
+          <td><span class="r r-incomum">Необычный</span></td>
+          <td>+2% к шансу на хорошую рыбу</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/natal.png" alt="Новогодний колпак" width="64" height="64"></td>
+          <td>Новогодний колпак</td>
+          <td><span class="r r-incomum">Необычный</span></td>
+          <td>+2% к цене</td>
+          <td class="num">7,3%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/pirata.png" alt="Пиратская треуголка" width="64" height="64"></td>
+          <td>Пиратская треуголка</td>
+          <td><span class="r r-raro">Редкий</span></td>
+          <td>+3% к скорости</td>
+          <td class="num">2,7%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/cartola.png" alt="Цилиндр" width="64" height="64"></td>
+          <td>Цилиндр</td>
+          <td><span class="r r-raro">Редкий</span></td>
+          <td>+3% к цене</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bruxo.png" alt="Шляпа волшебника" width="64" height="64"></td>
+          <td>Шляпа волшебника</td>
+          <td><span class="r r-raro">Редкий</span></td>
+          <td>+3% к шансу на хорошую рыбу</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bambu.png" alt="Бамбуковая шляпа" width="64" height="64"></td>
+          <td>Бамбуковая шляпа</td>
+          <td><span class="r r-raro">Редкий</span></td>
+          <td>+3% к шансу на хорошую рыбу</td>
+          <td class="num">3,0%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/peixe.png" alt="Голодная рыба" width="64" height="64"></td>
+          <td>Голодная рыба</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>+4% к скорости</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/gaivota.png" alt="Клюющая чайка" width="64" height="64"></td>
+          <td>Клюющая чайка</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>+4% к шансу на хорошую рыбу</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/viking.png" alt="Шлем викинга" width="64" height="64"></td>
+          <td>Шлем викинга</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>на 4% лучше удерживает то, что клюнуло</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/urso.png" alt="Медвежий капюшон" width="64" height="64"></td>
+          <td>Медвежий капюшон</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>на 4% лучше удерживает то, что клюнуло</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/tubarao.png" alt="Голова акулы" width="64" height="64"></td>
+          <td>Голова акулы</td>
+          <td><span class="r r-epico">Эпический</span></td>
+          <td>+4% к скорости</td>
+          <td class="num">1,00%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/coroa.png" alt="Императорская корона" width="64" height="64"></td>
+          <td>Императорская корона</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>+5% к цене</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/mosqueteiro.png" alt="Шляпа мушкетёра" width="64" height="64"></td>
+          <td>Шляпа мушкетёра</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>+5% к скорости</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/aureola.png" alt="Нимб" width="64" height="64"></td>
+          <td>Нимб</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>+5% к шансу на хорошую рыбу</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/louros.png" alt="Лавровый венок" width="64" height="64"></td>
+          <td>Лавровый венок</td>
+          <td><span class="r r-lendario">Легендарный</span></td>
+          <td>на 5% лучше удерживает то, что клюнуло</td>
+          <td class="num">0,33%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/caveira.png" alt="Boi-bumbá" width="64" height="64"></td>
+          <td>Boi-bumbá</td>
+          <td><span class="r r-celestial">Небесный</span></td>
+          <td>от 1% до 3% шанс поймать сразу двух</td>
+          <td class="num">только за чемпионат</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bobo.png" alt="Шутовской колпак" width="64" height="64"></td>
+          <td>Шутовской колпак</td>
+          <td><span class="r r-celestial">Небесный</span></td>
+          <td>от 1% до 3% шанс, что наживка не израсходуется</td>
+          <td class="num">только за чемпионат</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Три состояния одной шляпы</h3>
+  <p>Каждая шляпа выпадает в одном из трёх состояний, и оно сдвигает бонус на <strong>полпункта</strong> в ту или другую сторону. Состояние <em>ношеная</em> — это значение из таблицы выше; <em>рваная</em> отнимает полпункта, <em>новая</em> добавляет полпункта.</p>
+  <div class="rolagem">
+    <table>
+      <caption>Три состояния. Шанс — это вес в жребии аиста, и рисунок меняется вместе с состоянием. Пиратская треуголка — исключение: её новое состояние не приносит аист, только Pirate's Pack.</caption>
+      <thead>
+        <tr><th></th><th>Состояние</th><th class="num">К бонусу</th><th class="num">Шанс</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-rasgado.png" alt="Кепка, рваная" width="64" height="64"></td>
+          <td>Рваная</td>
+          <td class="num">-0,5 п.п.</td>
+          <td class="num">55%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone-usado.png" alt="Кепка, ношеная" width="64" height="64"></td>
+          <td>Ношеная</td>
+          <td class="num">—</td>
+          <td class="num">35%</td>
+        </tr>
+        <tr>
+          <td class="chapeu"><img src="../chapeus/bone.png" alt="Кепка, новая" width="64" height="64"></td>
+          <td>Новая</td>
+          <td class="num">+0,5 п.п.</td>
+          <td class="num">10%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>В Steam это три разных предмета.</strong> У каждого состояния свой номер в инвентаре, поэтому на Торговой площадке их покупают и продают отдельно — и раз <em>новая</em> — самая редкая из трёх, она и стоит дороже всех.</p>
+  <p>У двух <span class="r r-celestial">небесных</span> шляп состояние весит больше, потому что их эффект — не шкала, а событие: наживка, которая не тратится, рыба, которая приходит вдвойне. У них лестница такая: <strong>1%, 2% и 3%</strong>.</p>
+  <p class="legenda">Соломенная шляпа — единственная в стороне: она есть у всех с самого начала, поэтому у неё только обычная версия.</p>
+
+  <h3>Чемпионат</h3>
+  <p>Небесные — Boi-bumbá и Шутовской колпак — аист не приносит. Это приз <strong>ежемесячного чемпионата</strong>, и пьедестал получает одну и ту же шляпу в трёх состояниях:</p>
+  <div class="rolagem">
+    <table>
+      <thead>
+        <tr><th>Место</th><th>Получает</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nome">1º</td><td>небесная шляпа, состояние: <strong>новая</strong></td></tr>
+        <tr><td class="nome">2º</td><td>небесная шляпа, состояние: <strong>ношеная</strong></td></tr>
+        <tr><td class="nome">3º</td><td>небесная шляпа, состояние: <strong>рваная</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Каждый выпуск разыгрывает одну из небесных шляп. Первый — за <strong>Шутовской колпак</strong>. Приз — такой же предмет, как любая другая шляпа: её можно носить, обменивать и продавать.</p>
+
+  <h3>Гардероб</h3>
+  <p>Это экран, где живут шляпы, — через меню (кнопка ▲). Он показывает, чего не хватает, и даёт надеть то, что есть.</p>
+  <p>Каждая шляпа — это строка, а три состояния — три столбца с количеством каждого. Клик по ячейке надевает шляпу; клик по той, что уже на голове, снимает её. Место, которого у тебя никогда не было, отмечено прочерком; то, что было и продано, — нулём.</p>
+  <p>То, чего ты ещё не видел, показано как <strong>???</strong>, только с редкостью.</p>
+</section>
+<!-- CHAPEUS:FIM -->
+
+<footer> © 2026 G. Studios. Все права защищены. </footer>
+
+</div>
+</body>
+</html>
