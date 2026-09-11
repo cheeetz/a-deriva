@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À Deriva — ranking</title>
+<meta name="description" content="O campeonato mensal do À Deriva: quem pesca melhor no mês leva um chapéu celestial pro inventário da Steam.">
+<link rel="stylesheet" href="estilo.css">
+<!-- O QUE SÓ ESTA PÁGINA USA mora aqui e não no estilo.css, pela mesma razão do guia: o placar
+     e o pódio não aparecem em nenhuma outra página, e regra solta no arquivo comum é regra que
+     ninguém sabe se ainda pode apagar. -->
+<style>
+/* ---------- a situação da edição ---------- */
+.situacao { display: flex; flex-direction: column; gap: .2rem; }
+.situacao .versao { font-size: 1.6rem; }
+
+/* ---------- o pódio ---------- */
+/* O 1º FICA NO MEIO E MAIS ALTO, como pódio de verdade, e a arte dele sai no tamanho cheio do
+   Mercado (200 px); o 2º e o 3º saem na metade exata (100 px). Nenhum tamanho quebrado: pixel
+   art reduzida por fração come linha de pixel. */
+.podio {
+  display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 12px;
+  align-items: end; max-width: 620px; margin: .4rem 0 0;
+}
+.lugar { margin: 0; display: flex; flex-direction: column; }
+.lugar .peca { border-radius: 12px 12px 0 0; border-bottom: 0; padding-top: 16px; }
+.lugar.primeiro .peca img { width: 200px; height: 200px; }
+.degrau {
+  display: grid; place-items: center;
+  font-family: var(--mono); letter-spacing: .12em; color: var(--papel);
+  background: var(--celestial); border-radius: 0 0 12px 12px;
+  text-shadow: 1px 0 0 currentColor;
+}
+.segundo .degrau  { height: 44px; background: color-mix(in srgb, var(--celestial) 72%, var(--fundo-do-mar)); }
+.primeiro .degrau { height: 64px; font-size: 1.1rem; background: var(--fundo-do-mar); }
+.terceiro .degrau { height: 30px; background: color-mix(in srgb, var(--celestial) 55%, var(--papel)); color: var(--texto); }
+@media (max-width: 560px) {
+  .podio { grid-template-columns: 1fr 1fr; }
+  .lugar.primeiro { grid-column: 1 / -1; order: -1; }
+  .primeiro .degrau { height: 44px; }
+  .segundo .degrau, .terceiro .degrau { height: 32px; }
+}
+
+/* ---------- tabelas (as mesmas do guia) ---------- */
+.rolagem { overflow-x: auto; border: 1px solid var(--linha); border-radius: 10px; background: var(--agua); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--linha); }
+thead th {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--fraco); background: var(--agua2); white-space: nowrap; font-weight: 400;
+}
+tbody tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pontos-tabelas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; align-items: start; }
+.pontos-tabelas caption { caption-side: top; text-align: left; padding: 11px 14px 0; font-size: 13px; color: var(--fraco); }
+
+/* ---------- o placar ---------- */
+.placar { min-width: 520px; }
+.placar td.pos { width: 3.2rem; color: var(--fraco); }
+.placar tr.p1 td, .placar tr.p2 td, .placar tr.p3 td { background: color-mix(in srgb, var(--celestial) 9%, var(--papel)); }
+.placar tr.p1 td.pos, .placar tr.p2 td.pos, .placar tr.p3 td.pos { color: var(--celestial); text-shadow: 1px 0 0 currentColor; }
+.placar .quem { display: flex; align-items: center; gap: 10px; }
+.placar .quem img { width: 28px; height: 28px; border-radius: 6px; flex: none; }
+.placar .lance { color: var(--fraco); font-size: 13.5px; }
+.placar td.total { color: var(--texto); text-shadow: 1px 0 0 currentColor; }
+.placar .vazio td { text-align: center; color: var(--fraco); padding: 26px 14px; }
+/* no celular o melhor lance sai, e a tabela cabe sem rolar: é ele ou os pontos fora da tela */
+@media (max-width: 560px) {
+  .placar { min-width: 0; }
+  .placar th:nth-child(3), .placar td.lance { display: none; }
+}
+.rodape-placar { margin: .6rem 0 0; color: var(--fraco); font-size: .88rem; }
+
+.r-comum { color: var(--comum); } .r-incomum { color: var(--incomum); } .r-raro { color: var(--raro); }
+.r-epico { color: var(--epico); } .r-lendario { color: var(--lendario); } .r-celestial { color: var(--celestial); }
+/* quatro regras em 2×2: na grade de três do estilo.css a quarta ficava sozinha numa linha */
+.cartoes.regras { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.exemplos { display: flex; flex-direction: column; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.exemplos li { font-variant-numeric: tabular-nums; }
+.exemplos span { color: var(--fraco); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="./">À Deriva</a>
+    <a href="guia.html">Guia</a>
+    <a href="ranking.html" aria-current="page">Ranking</a>
+    <!-- O RANKING SÓ EXISTE EM PORTUGUÊS por enquanto (11/09/2026, decisão do Jean). As outras
+         línguas levam pra página inicial de cada uma, que é o que existe lá. -->
+    <span class="idiomas">
+      <a href="ranking.html" hreflang="pt-BR" lang="pt-BR" title="Português" aria-current="true">PT</a>
+      <a href="en/" hreflang="en" lang="en" title="English">EN</a>
+      <a href="de/" hreflang="de" lang="de" title="Deutsch">DE</a>
+      <a href="es/" hreflang="es" lang="es" title="Español">ES</a>
+      <a href="ru/" hreflang="ru" lang="ru" title="Русский">RU</a>
+      <a href="zh_CN/" hreflang="zh-CN" lang="zh-CN" title="简体中文">中文</a>
+    </span>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Campeonato mensal</div>
+    <h1>Quem pescou <span>melhor</span> este mês</h1>
+    <p class="chamada">O que o barco pesca sozinho enquanto você trabalha já conta. E quem aparece
+    na hora do “!” soma mais.</p>
+    <p class="chamada">No fim do mês, os três primeiros levam um <strong>chapéu celestial</strong> —
+    o único jeito de ter um.</p>
+  </header>
+
+  <!-- A SITUAÇÃO E O PÓDIO VÊM DO ranking.json, e o HTML já nasce com o estado de hoje: a 1ª
+       edição, o Bobo e "começa com o jogo". Se o arquivo não carregar, a página continua certa
+       — só não fica atualizada. -->
+  <section>
+    <div class="caixa situacao">
+      <p class="rotulo" id="edicao">1ª edição · Chapéu de bobo da corte</p>
+      <p class="versao" id="estado">Começa junto com o jogo na Steam</p>
+      <p class="quando" id="detalhe">A data sai quando a página da loja abrir.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-premio">
+    <h2 id="t-premio">O prêmio</h2>
+    <p>O mesmo chapéu, em três condições. Cada uma é uma peça diferente na Steam, com o seu
+    próprio preço no Mercado.</p>
+    <div class="podio">
+      <figure class="lugar segundo">
+        <div class="peca celestial"><img class="foto-usado" src="steam/bobo-usado.png" alt="Chapéu de bobo da corte usado" width="100" height="100"><span class="grau">Usado</span></div>
+        <div class="degrau">2º</div>
+      </figure>
+      <figure class="lugar primeiro">
+        <div class="peca celestial"><img class="foto-novo" src="steam/bobo.png" alt="Chapéu de bobo da corte novo" width="200" height="200"><span class="nome nome-chapeu">Chapéu de bobo da corte</span><span class="grau">Novo</span></div>
+        <div class="degrau">1º</div>
+      </figure>
+      <figure class="lugar terceiro">
+        <div class="peca celestial"><img class="foto-rasgado" src="steam/bobo-rasgado.png" alt="Chapéu de bobo da corte rasgado" width="100" height="100"><span class="grau">Rasgado</span></div>
+        <div class="degrau">3º</div>
+      </figure>
+    </div>
+    <p class="legenda" style="text-align:left">Celestial não cai da cegonha nem sai de loja
+    nenhuma. Se aparecer um no Mercado, alguém subiu nesse pódio.</p>
+  </section>
+
+  <section aria-labelledby="t-placar">
+    <h2 id="t-placar">O placar</h2>
+    <div class="rolagem">
+      <table class="placar">
+        <thead>
+          <tr><th class="num">#</th><th>Pescador</th><th>Melhor lance</th><th class="num">Pontos</th></tr>
+        </thead>
+        <tbody id="linhas">
+          <tr class="vazio"><td colspan="4">O placar abre no primeiro dia da edição. Até lá, ninguém pescou nada — nem você.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rodape-placar" id="atualizado">Atualiza de hora em hora.</p>
+  </section>
+
+  <!-- A REGRA DE PONTOS — proposta de 11/09/2026, a pedido do Jean ("por pontos, só celestial
+       vai demorar demais"). Os três cortes resolvem os três jeitos de um ranking de jogo ocioso
+       dar errado:
+
+       O CLIQUE VALE 50% A MAIS, a mesma regra do dinheiro — ideia do Jean. A primeira versão só
+       contava fisgada perfeita, e ele barrou: "temos que pensar em algo pra quem deixa o jogo
+       aberto, afinal ele é um idle". Peixe pescado sozinho pontua; aparecer na hora do "!" soma
+       mais, como na venda.
+
+       OS PONTOS DE RARIDADE SÃO PARES de propósito: com o ×1,5 por cima, número ímpar daria meio
+       ponto.
+
+       OS 10 MELHORES DO DIA. Sem teto, volume ganha de tudo: o computador ligado o mês inteiro e
+       o clicador automático passam na frente de qualquer pessoa.
+
+       O CELESTIAL VALE MAIS ONDE ELE É MAIS RARO. A chance dele cai de ×1 no Araguaia a ×0,10 em
+       Noronha (DadosJogo, coluna Celestial do guia), e o ponto sobe na mesma proporção — senão o
+       campeonato mandaria todo mundo de volta pro primeiro mapa. -->
+  <section aria-labelledby="t-pontos">
+    <h2 id="t-pontos">Como se pontua</h2>
+    <p>Todo peixe que entra no barco vale <strong>raridade × tamanho</strong>. Fisgado no clique,
+    vale <strong>50% a mais</strong> — a mesma regra do dinheiro. Peixe que escapou não conta.</p>
+
+    <div class="pontos-tabelas">
+      <div class="rolagem">
+        <table>
+          <caption>A raridade</caption>
+          <thead><tr><th>Raridade</th><th class="num">Pontos</th></tr></thead>
+          <tbody>
+            <tr><td class="r-comum">Comum</td><td class="num">2</td></tr>
+            <tr><td class="r-incomum">Incomum</td><td class="num">4</td></tr>
+            <tr><td class="r-raro">Raro</td><td class="num">10</td></tr>
+            <tr><td class="r-epico">Épico</td><td class="num">30</td></tr>
+            <tr><td class="r-lendario">Lendário</td><td class="num">80</td></tr>
+            <tr><td class="r-celestial">Celestial</td><td class="num">300 a 3.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rolagem">
+        <table>
+          <caption>O tamanho, pela estrela daquele peixe</caption>
+          <thead><tr><th>Estrela</th><th class="num">A partir de</th><th class="num">Vezes</th></tr></thead>
+          <tbody>
+            <tr><td>Bronze</td><td class="num">—</td><td class="num">×1</td></tr>
+            <tr><td>Prata</td><td class="num">45%</td><td class="num">×2</td></tr>
+            <tr><td>Ouro</td><td class="num">80%</td><td class="num">×3</td></tr>
+            <tr><td>Platina</td><td class="num">97%</td><td class="num">×5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rolagem">
+        <table>
+          <caption>O celestial, por mapa</caption>
+          <thead><tr><th>Mapa</th><th class="num">Pontos</th></tr></thead>
+          <tbody>
+            <tr><td>Rio Araguaia</td><td class="num">300</td></tr>
+            <tr><td>Rio Negro</td><td class="num">500</td></tr>
+            <tr><td>Lago de Furnas</td><td class="num">860</td></tr>
+            <tr><td>Costa de Santa Catarina</td><td class="num">1.500</td></tr>
+            <tr><td>Fernando de Noronha</td><td class="num">3.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="legenda" style="text-align:left">O celestial vale mais onde ele é mais difícil de
+    aparecer. A porcentagem é o quanto do tamanho possível da espécie aquele peixe alcançou, a
+    mesma régua das estrelas da Coleção.</p>
+
+    <h3 class="subtitulo">Na prática</h3>
+    <ul class="exemplos">
+      <li>Um raro de tamanho comum, pescado sozinho <span>· 10 × 1 =</span> 10</li>
+      <li>O mesmo raro, fisgado no clique <span>· 10 × 1 × 1,5 =</span> 15</li>
+      <li>Um lendário platina, pescado sozinho <span>· 80 × 5 =</span> 400</li>
+      <li>O celestial do Araguaia, prata, no clique <span>· 300 × 2 × 1,5 =</span> 900</li>
+      <li>O celestial de Noronha, platina, no clique <span>· 3.000 × 5 × 1,5 =</span> 22.500, o maior lance que existe</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-regras">
+    <h2 id="t-regras">As regras</h2>
+    <div class="cartoes regras">
+      <div class="cartao">
+        <h3>Valem os 10 melhores do dia</h3>
+        <p>Cada dia conta os seus dez peixes de mais pontos, pescados sozinhos ou no clique, e o
+        mês soma os dias. O teto segura quem deixa o computador ligado o mês inteiro.</p>
+      </div>
+      <div class="cartao">
+        <h3>O dia vira às 21h</h3>
+        <p>À meia-noite UTC, que é 21h em Brasília. O mês segue o mesmo relógio, pra valer igual
+        em qualquer país.</p>
+      </div>
+      <div class="cartao">
+        <h3>Empate</h3>
+        <p>Com a mesma pontuação, fica na frente quem chegou nela primeiro.</p>
+      </div>
+      <div class="cartao">
+        <h3>Um celestial por edição</h3>
+        <p>Cada mês vale um dos dois celestiais — o Chapéu de bobo da corte ou o Boi-bumbá. A
+        primeira edição vale o Bobo.</p>
+      </div>
+    </div>
+
+    <h3 class="subtitulo">Pra levar o chapéu</h3>
+    <p>O prêmio vai direto pro seu <strong>inventário da Steam</strong>, sem código e sem
+    formulário. Pra isso, o seu <strong>perfil da Steam precisa estar público</strong> quando a
+    edição fechar.</p>
+    <p>Antes da entrega, o pódio é conferido. Pontuação que o jogo não consegue ter produzido não
+    leva prêmio — e o placar inteiro fica publicado aqui, pra todo mundo ver.</p>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados.
+  </footer>
+
+</div>
+
+<!-- O PLACAR. Quem escreve o ranking.json é uma tarefa agendada do GitHub Actions, de hora em
+     hora, lendo o Leaderboard da Steam — ainda não existe, depende do appid. O formato que esta
+     página espera é o do ranking.json na raiz, e cada entrada pode ter:
+       nome, pontos, avatar (URL), melhor: { raridade, estrela, cm, pontos }
+
+     O NOME DE QUEM PESCA ENTRA POR textContent, nunca por innerHTML: é texto que um estranho
+     escreveu no perfil da Steam, e esta página não pode executar o que ele escreveu. -->
+<script>
+(function () {
+  var CHAPEUS = { bobo: "Chapéu de bobo da corte", caveira: "Boi-bumbá" };
+  var RARIDADES = { comum: "comum", incomum: "incomum", raro: "raro", epico: "épico", lendario: "lendário", celestial: "celestial" };
+  var DIA = 86400000;
+
+  function $(id) { return document.getElementById(id); }
+  function num(n) { return Number(n).toLocaleString("pt-BR"); }
+  function data(d) { return d.toLocaleDateString("pt-BR", { day: "numeric", month: "long" }); }
+  function dataUTC(d) { return d.toLocaleDateString("pt-BR", { day: "numeric", month: "long", timeZone: "UTC" }); }
+  function hora(d) { return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }); }
+  function faltam(ms) {
+    var dias = Math.ceil(ms / DIA);
+    return dias <= 1 ? "menos de um dia" : dias + " dias";
+  }
+  function medida(cm) {
+    return cm >= 100
+      ? (cm / 100).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " m"
+      : cm.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " cm";
+  }
+  function el(tag, classe, texto) {
+    var e = document.createElement(tag);
+    if (classe) e.className = classe;
+    if (texto != null) e.textContent = texto;
+    return e;
+  }
+
+  function situacao(r) {
+    var id = CHAPEUS[r.celestial] ? r.celestial : "bobo";
+    var nome = CHAPEUS[id];
+    $("edicao").textContent = (r.edicao || 1) + "ª edição · " + nome;
+    document.querySelectorAll(".nome-chapeu").forEach(function (e) { e.textContent = nome; });
+    [["foto-novo", "", "novo"], ["foto-usado", "-usado", "usado"], ["foto-rasgado", "-rasgado", "rasgado"]]
+      .forEach(function (f) {
+        var img = document.querySelector("." + f[0]);
+        img.src = "steam/" + id + f[1] + ".png";
+        img.alt = nome + " " + f[2];
+      });
+
+    if (!r.inicio || !r.fim) return;
+    var agora = Date.now(), ini = new Date(r.inicio), fim = new Date(r.fim);
+    // O PERÍODO SAI EM UTC, que é o relógio do campeonato: no fuso de Brasília o dia 1º à
+    // meia-noite UTC seria escrito "31 de agosto", e a edição pareceria começar no mês errado.
+    var periodo = "De " + dataUTC(ini) + " a " + dataUTC(new Date(fim - 1)) + ".";
+    if (agora < ini) {
+      $("estado").textContent = "Começa em " + faltam(ini - agora);
+      $("detalhe").textContent = periodo;
+    } else if (agora < fim) {
+      $("estado").textContent = "Valendo · faltam " + faltam(fim - agora);
+      $("detalhe").textContent = periodo;
+    } else {
+      $("estado").textContent = "Encerrada";
+      $("detalhe").textContent = "O pódio está sendo conferido, e o prêmio sai em seguida.";
+    }
+  }
+
+  function placar(r) {
+    var lista = Array.isArray(r.entradas) ? r.entradas : [];
+    if (r.atualizado) {
+      var a = new Date(r.atualizado);
+      $("atualizado").textContent = "Placar de " + data(a) + ", " + hora(a) + ". Atualiza de hora em hora.";
+    }
+    if (!lista.length) return;
+    var corpo = $("linhas");
+    corpo.textContent = "";
+    lista.forEach(function (p, i) {
+      var tr = el("tr", i < 3 ? "p" + (i + 1) : "");
+      tr.appendChild(el("td", "num pos", (i + 1) + "º"));
+
+      var quem = el("td"), caixa = el("div", "quem");
+      if (p.avatar) {
+        var img = el("img"); img.src = p.avatar; img.alt = ""; img.loading = "lazy";
+        caixa.appendChild(img);
+      }
+      caixa.appendChild(el("span", "", p.nome || "Pescador anônimo"));
+      quem.appendChild(caixa);
+      tr.appendChild(quem);
+
+      var m = p.melhor, lance = "—";
+      if (m) {
+        var partes = [];
+        if (m.raridade) partes.push(RARIDADES[m.raridade] || m.raridade);
+        if (m.estrela) partes.push(m.estrela);
+        if (m.cm) partes.push(medida(m.cm));
+        if (m.pontos) partes.push(num(m.pontos) + " pts");
+        lance = partes.join(" · ");
+      }
+      tr.appendChild(el("td", "lance", lance));
+      tr.appendChild(el("td", "num total", num(p.pontos || 0)));
+      corpo.appendChild(tr);
+    });
+  }
+
+  fetch("ranking.json", { cache: "no-store" })
+    .then(function (resp) { return resp.ok ? resp.json() : null; })
+    .then(function (r) { if (r) { situacao(r); placar(r); } })
+    .catch(function () { /* sem o arquivo, fica o estado que o HTML já traz */ });
+})();
+</script>
+</body>
+</html>
