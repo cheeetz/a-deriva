@@ -270,18 +270,7 @@ td.chapeu img { image-rendering: pixelated; display: block; margin: 0 auto; }
 /* ---------- os chapéus ---------- */
 /* A ARTE É A DO MERCADO (200 px) mostrada a 100 px: metade exata, então cada pixel da arte
    vira um bloco de 5 px e continua quadrado. Qualquer tamanho quebrado come linha de pixel. */
-.contas { display: flex; flex-wrap: wrap; gap: 10px 40px; margin: .6rem 0 1.4rem; }
-.contas div { display: flex; flex-direction: column; }
-.contas b {
-  font-size: 2.2rem; line-height: 1.1; color: var(--realce);
-  font-weight: 400; font-variant-numeric: tabular-nums;
-}
-.contas span {
-  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--fraco);
-}
-
-.vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; }
+.vitrine { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; margin-top: .6rem; }
 .escada  { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 480px; margin: .2rem 0 1.2rem; }
 .dupla   { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 340px; margin: .2rem 0 1.2rem; }
 
