@@ -267,6 +267,28 @@
     <p>O Pirate's Pack é a edição de fundador: <strong>a nau fantasma, o papagaio e o tricórnio
     novo</strong>. Pra quem quer entrar nessa história desde o primeiro dia — e guardar a prova
     no inventário.</p>
+    <!-- AS TRÊS PEÇAS SAEM DA ARTE DO JOGO, ampliadas por número inteiro e sem suavizar: a nau
+         2x (arte/barco/holandes.png), o papagaio 4x (os 12 quadros de arte/bichos/papagaio.png,
+         num PNG animado a 16 quadros por segundo, a velocidade do jogo) e o tricórnio novo 10x
+         (o desenho de 16 px que o guia já usa, em chapeus/pirata.png). Quem pede menos movimento
+         no sistema recebe o papagaio parado. -->
+    <div class="pacote">
+      <figure class="item-pacote nau">
+        <img src="pack-holandes.png" alt="O Holandês Voador: uma nau fantasma escura, de velas rasgadas" width="298" height="274">
+        <figcaption><span class="nome">Holandês Voador</span><span class="grau">Assombrado</span></figcaption>
+      </figure>
+      <figure class="item-pacote">
+        <picture>
+          <source srcset="pack-papagaio-parado.png" media="(prefers-reduced-motion: reduce)">
+          <img src="pack-papagaio.png" alt="O papagaio pirata, de bandana e chapéu de caveira, batendo as asas" width="104" height="132">
+        </picture>
+        <figcaption><span class="nome">Papagaio pirata</span><span class="grau">Sobrou do capitão</span></figcaption>
+      </figure>
+      <figure class="item-pacote">
+        <img src="chapeus/pirata.png" alt="Tricórnio pirata novo" width="160" height="160">
+        <figcaption><span class="nome">Tricórnio pirata</span><span class="grau">Novo, só esse</span></figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="steam">

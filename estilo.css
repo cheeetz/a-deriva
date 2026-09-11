@@ -301,3 +301,32 @@ td.chapeu img { image-rendering: pixelated; display: block; margin: 0 auto; }
 /* os títulos de dentro de uma seção longa precisam de ar em cima, senão grudam no parágrafo
    anterior e a seção lê como um bloco só */
 h3.subtitulo { margin-top: 1.6rem; font-size: 1.12rem; }
+
+/* ---------- o Pirate's Pack ---------- */
+/* A NAU OCUPA O DOBRO porque ela é o dobro: a arte do barco é a maior do jogo, e espremida numa
+   coluna igual à do tricórnio ela sairia do tamanho de um chapéu. O fundo é o mesmo mar das
+   molduras da frota, pra nau e o papagaio aparecerem onde eles vivem. */
+.pacote {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px;
+  margin: .6rem 0 0;
+}
+.item-pacote {
+  margin: 0; display: flex; flex-direction: column; align-items: center;
+  gap: 10px; padding: 18px 12px 12px; text-align: center;
+  background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 62%, #9FD8E1 100%);
+  border: 1px solid var(--linha); border-radius: 12px;
+}
+.item-pacote img { image-rendering: pixelated; display: block; max-width: 100%; height: auto; }
+/* a peça fica no meio do espaço que sobra, e a legenda no pé do cartão: os três alinham pela
+   legenda mesmo com desenhos de alturas tão diferentes */
+.item-pacote > img, .item-pacote > picture { margin-block: auto; }
+.item-pacote figcaption { display: flex; flex-direction: column; gap: 2px; }
+.item-pacote .nome { font-size: .9rem; line-height: 1.3; color: var(--texto); }
+.item-pacote .grau {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--fraco);
+}
+@media (max-width: 560px) {
+  .pacote { grid-template-columns: 1fr 1fr; }
+  .item-pacote.nau { grid-column: 1 / -1; }
+}
