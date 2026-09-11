@@ -1,0 +1,41 @@
+# O PLACAR DO CAMPEONATO, de hora em hora.
+#
+# Lê o placar público da Steam e grava o ranking.json que a ranking.html mostra. Sem servidor e
+# sem chave: o script explica por quê (.github/ranking/atualiza.py). Enquanto o campeonato.json
+# não tiver appid, ele roda e não faz nada.
+#
+# Minuto 17 e não 0: na virada da hora o agendador do GitHub fica lotado e atrasa.
+name: Ranking
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ranking
+  cancel-in-progress: false
+
+jobs:
+  placar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Busca o placar na Steam
+        run: python3 .github/ranking/atualiza.py
+
+      - name: Publica se mudou
+        run: |
+          git add ranking.json
+          if git diff --cached --quiet; then
+            echo "placar igual"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "O placar do campeonato anda"
+          git push
