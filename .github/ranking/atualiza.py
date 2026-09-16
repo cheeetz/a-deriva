@@ -53,7 +53,16 @@ def detalhes(hexa):
 
 
 def acha_placar(appid, nome):
-    raiz = ET.fromstring(baixa("%s/stats/%s/leaderboards/?xml=1" % (COMUNIDADE, appid)))
+    bruto = baixa("%s/stats/%s/leaderboards/?xml=1" % (COMUNIDADE, appid))
+    try:
+        raiz = ET.fromstring(bruto)
+    except ET.ParseError:
+        # APP SEM PÁGINA PÚBLICA responde a página de ERRO da comunidade -- HTML, e com status
+        # 200, então nem o urlopen reclama. Foi o que o 1331519 devolveu em 16/09/2026, antes de
+        # a loja abrir. Não é defeito nosso, e não pode derrubar um robô que roda de hora em
+        # hora: sem placar, a página fica vazia e o mês segue.
+        print("  a comunidade não devolveu XML (app sem página pública?): sem placar por ora")
+        return None
     for lb in raiz.iter("leaderboard"):
         if (lb.findtext("name") or "") == nome:
             return lb.findtext("lbid")

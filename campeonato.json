@@ -1,6 +1,6 @@
 {
-  "appid": null,
+  "appid": 1331519,
   "edicoes": [
-    { "edicao": 1, "mes": null, "celestial": "bobo" }
+    { "edicao": 1, "mes": "2026-11", "celestial": "bobo" }
   ]
 }
