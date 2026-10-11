@@ -1,6 +1,15 @@
 {
   "appid": 5284480,
   "edicoes": [
-    { "edicao": 1, "mes": "2026-11", "celestial": "bobo" }
+    {
+      "edicao": 0,
+      "mes": "2026-10",
+      "teste": true
+    },
+    {
+      "edicao": 1,
+      "mes": "2026-11",
+      "celestial": "bobo"
+    }
   ]
 }

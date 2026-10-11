@@ -10,6 +10,9 @@ O QUE ELE LÊ é o campeonato.json, na raiz do site:
 
     appid     o app do jogo na Steam; null = ainda não existe, e o robô não faz nada
     edicoes   uma por mês: {"edicao": 1, "mes": "2026-10", "celestial": "bobo"}
+              "teste": true marca uma temporada de TESTE, sem prêmio -- a de outubro/2026,
+              do lançamento até a 1ª edição. O placar é o mesmo campeonato_AAAA_MM, e a página
+              mostra que ele zera no mês seguinte.
 
 A edição mostrada é a mais recente cujo mês já começou (em UTC). O placar de cada mês se chama
 "campeonato_2026_10" — é o nome que o jogo cria, em scripts/jogo/campeonato.gd.
@@ -143,6 +146,7 @@ def main():
 
     novo = {
         "edicao": ed.get("edicao", 1),
+        "teste": bool(ed.get("teste", False)),
         "celestial": ed.get("celestial", "bobo"),
         "inicio": ed["mes"] + "-01T00:00:00Z",
         "fim": mes_seguinte(ed["mes"]) + "-01T00:00:00Z",

@@ -321,6 +321,17 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 
     if (!r.inicio || !r.fim) return;
     var agora = Date.now(), ini = new Date(r.inicio), fim = new Date(r.fim);
+    // A TEMPORADA DE TESTE (outubro/2026, decidida pelo Jean em 11/10): o placar corre de verdade,
+    // do lançamento até o fim do mês, pra todo mundo ver os pontos subindo — e ZERA no dia 1º,
+    // quando começa a 1ª edição. Não tem prêmio, e a página diz isso antes de qualquer coisa. O
+    // chapéu mostrado embaixo continua o Bobo: é o prêmio da edição que vem logo depois.
+    if (r.teste) {
+      $("edicao").textContent = "Temporada de teste · sem prêmio";
+      $("estado").textContent = agora < fim ? "Valendo · faltam " + faltam(fim - agora) : "Encerrada";
+      $("detalhe").textContent = "Os pontos zeram em " + dataUTC(fim) +
+        ", quando começa a 1ª edição, valendo o " + nome + ".";
+      return;
+    }
     // O PERÍODO SAI EM UTC, que é o relógio do campeonato: no fuso de Brasília o dia 1º à
     // meia-noite UTC seria escrito "31 de agosto", e a edição pareceria começar no mês errado.
     var periodo = "De " + dataUTC(ini) + " a " + dataUTC(new Date(fim - 1)) + ".";
