@@ -338,3 +338,9 @@ h3.subtitulo { margin-top: 1.6rem; font-size: 1.12rem; }
   .pacote { grid-template-columns: 1fr 1fr; }
   .item-pacote.nau { grid-column: 1 / -1; }
 }
+
+/* ---------- o widget da Steam ---------- */
+/* O QUADRO DA VALVE TEM LARGURA FIXA (646 x 190) e não se adapta sozinho. Em tela estreita ele
+   rola dentro da própria caixa em vez de empurrar a página pro lado. */
+.widget-steam { max-width: 646px; margin: .4rem 0 1.2rem; overflow-x: auto; }
+.widget-steam iframe { display: block; width: 646px; height: 190px; border: 0; }
