@@ -42,6 +42,51 @@ RARIDADES = ["comum", "incomum", "raro", "epico", "lendario", "celestial"]
 ESTRELAS = ["", "bronze", "prata", "ouro", "platina"]
 VERSAO_DETALHES = 1
 
+# A CONFERENCIA DE PLAUSIBILIDADE, e por que ela existe (teste de vulnerabilidade de 11/10/2026).
+# O placar da Steam e gravado pelo cliente: quem tem o jogo consegue mandar qualquer numero, com
+# um programa qualquer ou um jogo modificado. Sem servidor nosso nao ha como impedir -- mas a
+# regra do campeonato poe tetos que um numero inventado dificilmente respeita, e o robo confere:
+#
+#   1. o melhor lance nao passa do maximo da raridade e da estrela dele (no clique, x1,5);
+#   2. o total nao passa de DIAS x 10 x o melhor lance -- cada dia conta 10 peixes, e nenhum
+#      deles vale mais que o melhor do mes;
+#   3. o total nao e menor que o melhor lance, e quem tem pontos tem melhor lance.
+#
+# QUEM FALHA NAO SOME: ganha "conferir" com o motivo, e a pagina mostra "em conferencia". A
+# ranking.html promete que o placar inteiro fica publicado; o que decide o premio e o Jean,
+# olhando o podio antes de conceder. Os numeros sao os de scripts/jogo/campeonato.gd no jogo.
+PONTOS_RARIDADE = {"comum": 2, "incomum": 4, "raro": 10, "epico": 30, "lendario": 80,
+                   "celestial": 3000}   # o celestial varia por mapa; 3.000 e o de Noronha, o maior
+VEZES_ESTRELA = {"bronze": 1, "prata": 2, "ouro": 3, "platina": 5}
+MELHORES_POR_DIA = 10
+
+
+def dias_decorridos(mes, agora):
+    """Quantos dias (UTC) da edicao ja comecaram: o dia de hoje conta, o mes fechado conta inteiro."""
+    ini = datetime.datetime.strptime(mes + "-01", "%Y-%m-%d").replace(tzinfo=datetime.timezone.utc)
+    fim = datetime.datetime.strptime(mes_seguinte(mes) + "-01", "%Y-%m-%d").replace(tzinfo=datetime.timezone.utc)
+    if agora >= fim:
+        return (fim - ini).days
+    return max(1, (agora - ini).days + 1)
+
+
+def conferir(item, dias):
+    """O motivo da suspeita, ou None se a entrada respeita os tetos da regra."""
+    total = item.get("pontos", 0)
+    m = item.get("melhor")
+    if total <= 0:
+        return None
+    if not m or not m.get("pontos"):
+        return "sem o melhor lance"
+    teto_lance = PONTOS_RARIDADE.get(m.get("raridade"), 0) * VEZES_ESTRELA.get(m.get("estrela"), 0) * 1.5
+    if m["pontos"] > teto_lance:
+        return "melhor lance acima do maximo da raridade"
+    if total < m["pontos"]:
+        return "total menor que o melhor lance"
+    if total > dias * MELHORES_POR_DIA * m["pontos"]:
+        return "total acima do possivel em %d dia(s)" % dias
+    return None
+
 
 def baixa(url):
     req = urllib.request.Request(url, headers={"User-Agent": "a-deriva-ranking (github actions)"})
@@ -143,6 +188,12 @@ def main():
     lbid = acha_placar(appid, nome)
     print("edição %s (%s): placar %s -> %s" % (ed.get("edicao"), ed["mes"], nome, lbid or "ainda não existe"))
     lista = entradas(appid, lbid) if lbid else []
+    dias = dias_decorridos(ed["mes"], agora)
+    for item in lista:
+        motivo = conferir(item, dias)
+        if motivo:
+            item["conferir"] = motivo
+            print("  EM CONFERENCIA: %s (%d pts) -- %s" % (item["nome"], item["pontos"], motivo))
 
     novo = {
         "edicao": ed.get("edicao", 1),

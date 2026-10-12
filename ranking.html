@@ -72,6 +72,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .rodape-placar { margin: .6rem 0 0; color: var(--fraco); font-size: .88rem; }
 
 .r-comum { color: var(--comum); } .r-incomum { color: var(--incomum); } .r-raro { color: var(--raro); }
+.quem .conferir { margin-left: .5rem; font-size: .78rem; color: var(--fraco);
+  border: 1px solid var(--linha); border-radius: 6px; padding: 0 .4rem; white-space: nowrap; }
 .r-epico { color: var(--epico); } .r-lendario { color: var(--lendario); } .r-celestial { color: var(--celestial); }
 /* quatro regras em 2×2: na grade de três do estilo.css a quarta ficava sozinha numa linha */
 .cartoes.regras { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
@@ -366,6 +368,14 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
         caixa.appendChild(img);
       }
       caixa.appendChild(el("span", "", p.nome || "Pescador anônimo"));
+      // EM CONFERÊNCIA: o robô achou a pontuação acima do que a regra permite (ver
+      // .github/ranking/atualiza.py). A entrada continua no placar, como a página promete; o
+      // selo só avisa que ela não leva prêmio sem ser conferida.
+      if (p.conferir) {
+        var selo = el("span", "conferir", "em conferência");
+        selo.title = p.conferir;
+        caixa.appendChild(selo);
+      }
       quem.appendChild(caixa);
       tr.appendChild(quem);
 
