@@ -1,8 +1,9 @@
 {
-  "edicao": 1,
+  "edicao": 0,
+  "teste": true,
   "celestial": "bobo",
-  "inicio": null,
-  "fim": null,
-  "atualizado": null,
+  "inicio": "2026-10-01T00:00:00Z",
+  "fim": "2026-11-01T00:00:00Z",
+  "atualizado": "2026-10-12T02:21:34Z",
   "entradas": []
 }
