@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rio Negro — À Deriva</title>
+<meta name="description" content="O Rio Negro de verdade: a água preta, o Encontro das Águas, a floresta alagada, os bichos e as plantas do cenário, o Projeto Piaba e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR (15/10/2026). É o "saiba mais" da janela que o jogo abre ao
+     chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo (chance, preço,
+     tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve fonte saiu.
+     O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Amazonas</div>
+    <h1>Rio <span>Negro</span></h1>
+    <p class="chamada">O segundo rio do jogo é preto de verdade. Aqui está o Rio Negro que existe: por que
+    a água tem essa cor, onde ele encontra o Solimões, quem vive na beira e o que nada lá embaixo.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>O Rio Negro nasce na região pré-andina da Colômbia, onde se chama Guainía, e é o principal
+    afluente da margem esquerda do Amazonas. Corre por quase 2.250 quilômetros, dos quais 1.370 no
+    Brasil, até encontrar o Solimões perto de Manaus. É dali que nasce o rio que a gente chama de
+    Amazonas. Carrega cerca de 15% da água do Amazonas, e o nível dele sobe e desce de nove a doze
+    metros no ano.</p>
+    <p>A água é preta por causa da matéria orgânica: folhas e galhos que apodrecem devagar na mata
+    alagada soltam compostos que tingem a água, e o rio carrega pouquíssimo barro. Por isso ela é
+    escura, mas limpa, e muito ácida, com pH entre 3,8 e 4,9. O chão em volta é de areia pobre em
+    nutrientes, e a floresta que alaga ali, o igapó, fica debaixo d'água por meses e cresce
+    devagar. É um lugar delicado, bem diferente das várzeas dos rios de água barrenta, que são
+    adubadas pelo sedimento que eles trazem.</p>
+    <p>Perto de Manaus acontece o Encontro das Águas: o Rio Negro, mais quente, a cerca de 28 °C, corre ao
+    lado do Solimões, a cerca de 22 °C, sem se misturar de imediato. As reportagens dão mais de seis
+    quilômetros de águas lado a lado e atribuem a demora à diferença de temperatura, velocidade e
+    densidade.</p>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/rio-negro/encontro.jpg" alt="O Encontro das Águas, em Manaus" loading="lazy"><figcaption>O Encontro das Águas, em Manaus: a água preta do Rio Negro ao lado da barrenta do Solimões. Foto: Paulo JC Nogueira, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Rio_Negro_-_Encontro_das_%C3%81guas_-_Manaus_-_Amazonas_-_panoramio.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <p>Rio abaixo, a uns quarenta quilômetros de Manaus, fica o Parque Nacional de Anavilhanas, com
+    mais de 400 ilhas. O ICMBio o chama de segundo maior arquipélago fluvial do mundo. O número de ilhas muda com o nível da água.</p>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/rio-negro/anavilhanas.jpg" alt="Ilhas do Arquipélago de Anavilhanas" loading="lazy"><figcaption>O Arquipélago de Anavilhanas, no baixo Rio Negro. Foto: Karen Mohrstedt Badin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arquip%C3%A9lago_de_Anavilhanas_12.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/igapo.jpg" alt="Floresta alagada no Rio Negro, com vitórias-régias" loading="lazy"><figcaption>Floresta alagada (igapó) no Rio Negro, com vitórias-régias. Foto: José Renato Venâncio Resende, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Mata_de_Igap%C3%B3.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/praia.jpg" alt="Praia de areia clara com a água escura do Rio Negro e a mata alagada ao fundo" loading="lazy"><figcaption>Praia de areia clara com a água escura do Rio Negro, num dia de chuva. Foto: OliveiraJC, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:O_Rio_Negro_tamb%C3%A9m_tem_praia.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <p>Na beira vive muita gente. No Alto Rio Negro, São Gabriel da Cachoeira, a uns 850 quilômetros
+    de Manaus subindo o rio, tem cerca de 23 povos indígenas, e em 2010 o IBGE contou 76,6% da
+    população como indígena. Mais abaixo, em Barcelos, vive-se de um peixinho: é a história do Projeto
+    Piaba, mais adiante.</p>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>O que está desenhado no cenário existe de verdade na beira do Rio Negro. Um aviso sobre o tamanho:
+    no jogo a mata do Rio Negro é desenhada gigante de propósito, com as árvores subindo até o topo
+    da tela. É uma representação quase filosófica do tamanho da floresta, de como ela é grande perto
+    da gente, e não uma medida. As árvores de lá não têm essas proporções.</p>
+
+    <h3 class="grupo">As plantas</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/rio-negro/aninga.jpg" alt="Aningal na beira de um lago" loading="lazy"><figcaption>Aningal de três a quatro metros de altura (Montrichardia linifera), na várzea amazônica. Foto: Chris Krambeck, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Montrichardia_linifera,_Amazon_v%C3%A1rzea.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/camu-camu.jpg" alt="Frutos de camu-camu" loading="lazy"><figcaption>Frutos do camu-camu (Myrciaria dubia). Foto: Fred Almeida2016, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Camu-camu_-_Myrciaria_dubia.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Sapopema</h3>
+        <span class="cientifico">Sloanea monosperma, numa ficha da Embrapa</span>
+        <p>É o nome que os povos indígenas deram às raízes achatadas, em tábua, que se abrem em volta
+        do tronco, às vezes subindo até dois metros do chão. Vem do tupi-guarani e quer dizer "raiz
+        chata". A Embrapa descreve a sapopema como uma árvore, mas o nome também aparece para as
+        raízes de outras árvores grandes.</p>
+      </div>
+      <div class="ficha">
+        <h3>Açaí</h3>
+        <span class="cientifico">Euterpe oleracea</span>
+        <p>Palmeira de touceira, com muitos troncos saindo da mesma raiz, nativa do estuário amazônico,
+        em várzeas e igapós. O fruto vira o vinho de açaí, que a população amazônica consome.</p>
+      </div>
+      <div class="ficha">
+        <h3>Aninga</h3>
+        <span class="cientifico">Montrichardia linifera</span>
+        <p>Planta aquática de até cinco metros, que forma aningais na beira de rios e lagos. A folha e
+        o fruto servem de comida para peixe-boi, tartaruga e peixe.</p>
+      </div>
+      <div class="ficha">
+        <h3>Camu-camu</h3>
+        <span class="cientifico">Myrciaria dubia</span>
+        <p>Arbusto da beira de rios e lagos e da mata alagada, e um dos frutos mais ricos em vitamina C
+        que se conhece. No Rio Negro, perto de Manaus, o fruto é chamado de caçari.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jauari</h3>
+        <span class="cientifico">Astrocaryum jauari</span>
+        <p>Palmeira muito comum nas várzeas de água preta, aguenta meses alagada. O fruto cai uma vez
+        por ano, com a cheia, e pelo menos dezesseis espécies de peixe comem a polpa ou engolem o
+        fruto inteiro, ajudando a espalhar a semente. Foi estudado nas Anavilhanas.</p>
+      </div>
+      <div class="ficha">
+        <h3>Helicônia</h3>
+        <span class="cientifico">Heliconia</span>
+        <p>Planta de folhas grandes e flores de cores vivas.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os bichos</h3>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/rio-negro/macaco-aranha.jpg" alt="Macaco-aranha-de-cara-vermelha" loading="lazy"><figcaption>Macaco-aranha-de-cara-vermelha (Ateles paniscus), no Jardim Zoológico de Curitiba. Foto: Wilfredor, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Ateles_paniscus_in_Jardim_Zool%C3%B3gico_de_Curitiba.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/cobra-papagaio.jpg" alt="Cobra-papagaio enrolada num galho" loading="lazy"><figcaption>Cobra-papagaio (Corallus batesii), no Brasil. Foto: Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/tucano.jpg" alt="Tucano-grande-de-papo-branco num galho" loading="lazy"><figcaption>Tucano-grande-de-papo-branco (Ramphastos tucanus). Foto: Dominic Sherony, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:White-throated_Toucan_(Ramphastos_tucanus)_(9499725570).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Macaco-aranha</h3>
+        <span class="cientifico">Ateles paniscus</span>
+        <p>Vive pendurado nas copas. A cauda serve para segurar e escalar, e ele come sobretudo fruta,
+        o que faz do macaco-aranha um espalhador de sementes. A IUCN o considera vulnerável, por
+        causa da perda da floresta.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cobra-papagaio</h3>
+        <span class="cientifico">Corallus caninus ou Corallus batesii</span>
+        <p>Jiboia verde que vive nas árvores e não é venenosa. A da Amazônia, Corallus batesii,
+        gosta do alto das árvores, de doze a quinze metros, e come bichos pequenos, como marsupiais, roedores, morcegos e algumas aves. Cuidado
+        com o nome: no popular, "cobra-papagaio" já foi dado também a uma cobra venenosa, a
+        jararaca-verde.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tucano</h3>
+        <span class="cientifico">Ramphastos</span>
+        <p>Come principalmente fruta e solta a semente intacta em outro lugar, o que ajuda a floresta a
+        se refazer. O bico serve para alcançar fruto, descascar, alcançar ninho e afastar inimigos.
+        Na Amazônia vive o tucano-grande-de-papo-branco, Ramphastos tucanus.</p>
+      </div>
+      <div class="ficha">
+        <h3>Vaga-lumes</h3>
+        <p>A luz vem de uma reação química entre a luciferina e uma enzima, a luciferase. Na Amazônia,
+        pesquisadores já acharam larvas de vaga-lume brilhando em cavernas de argila, para atrair as
+        presas.</p>
+      </div>
+      <div class="ficha">
+        <h3>Borboletas</h3>
+        <p>O azul das borboletas Morpho não vem de pigmento, mas de escamas minúsculas que refletem a luz,
+        e aparece só na face de cima das asas. Um estudo do Projeto de Dinâmica Biológica de Fragmentos
+        Florestais, do INPA, olhou 60 espécies de borboletas da Amazônia: na floresta preservada
+        dominavam os azuis brilhantes, as asas transparentes e os vermelhos e laranjas, e nas áreas
+        desmatadas, os tons pardos e acinzentados.</p>
+      </div>
+      <div class="ficha">
+        <h3>Araras</h3>
+        <span class="cientifico">como a araracanga, Ara macao</span>
+        <p>A araracanga ocorre em toda a Amazônia brasileira e vive na copa das florestas úmidas, nas
+        matas de galeria e na beira dos rios. Come frutas, sementes, flores e cascas de árvores e
+        visita barreiros de argila, que dão sais minerais e ajudam a neutralizar substâncias tóxicas
+        do alimento. Faz o ninho em ocos de árvores de 10 a 25 metros de altura.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">A vida na beira</h3>
+    <div class="fichas" style="--cols:1">
+      <div class="ficha">
+        <h3>Palafita e flutuante</h3>
+        <p>São duas respostas ao mesmo problema: o rio sobe e desce. A palafita fica sobre pilares e é
+        típica de lugar que alaga. A casa flutuante, ou casa-balsa, acompanha a água.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes do Rio Negro no jogo, do mais comum ao mais raro. Quando o nome popular vale
+    para mais de uma espécie, o cartão avisa.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Acará</h3>
+        <span class="cientifico">Astronotus ocellatus, entre outros</span>
+        <p>Acará-açu é o nome do oscar, que vive em águas rasas, paradas ou lentas, perto de raiz e
+        vegetação, e tem registro no Rio Negro. Os ovos são grudentos e ficam no fundo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jaraqui</h3>
+        <span class="cientifico">Semaprochilodus insignis e S. taeniurus</span>
+        <p>Peixe de menos de quarenta centímetros que come matéria orgânica do fundo e a película que
+        cobre as coisas debaixo d'água. Vive mais em rio de água preta, mas sai dele para desovar em
+        água barrenta, com a cheia. A pesca mais forte é no baixo Rio Negro, perto de Manaus. Como as
+        populações da Amazônia Central foram pescadas demais, os pescadores passaram a limitar a
+        captura aos adultos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Sardinha-comprida</h3>
+        <span class="cientifico">Triportheus, sem espécie certa</span>
+        <p>Sardinhas do gênero Triportheus são peixes pequenos ou médios, de cardume, que sobem para
+        rios de água barrenta para desovar. Em Rondônia, "sardinha comprida" é o nome de Triportheus
+        auritus, mas os nomes mudam de região para região e a confusão entre espécies é grande.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tucunaré-borboleta</h3>
+        <span class="cientifico">provavelmente Cichla orinocensis</span>
+        <p>A espécie que costuma levar esse nome existe no Rio Negro: tem três manchas escuras nos lados do corpo, como olhos, e come peixinhos.
+        Vive perto da margem, em lagoas rasas e canais lentos, passa dos sessenta centímetros e é
+        peixe de pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Traíra</h3>
+        <span class="cientifico">Hoplias malabaricus</span>
+        <p>Descansa de dia no meio da vegetação e caça à noite, e o adulto come peixe. Dentes afiados
+        e corpo escorregadio fazem dela um peixe difícil de segurar. O macho cuida do ninho, uma cova
+        rasa, e continua vigiando depois que os ovos eclodem.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piranha-caju</h3>
+        <span class="cientifico">provavelmente Pygocentrus</span>
+        <p>"Piranha" é nome de vários peixes. A piranha
+        mais bem estudada da bacia, a vermelha, Pygocentrus nattereri, vive no Rio Negro, ouve muito bem e
+        troca os dentes de um lado de cada vez, o que lhe permite comer sem parar. Bota ovo em raiz
+        submersa e vigia o ninho.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tucunaré-açu</h3>
+        <span class="cientifico">Cichla temensis</span>
+        <p>É o maior dos tucunarés, até 99 centímetros e 12 quilos. O adulto vive nas partes fundas da
+        beira das lagoas e nas margens de areia e pedra do rio principal, e come sobretudo peixes
+        pequenos. Tem registro no Rio Negro e no Uatumã. É peixe de pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Bicuda</h3>
+        <span class="cientifico">Boulengerella, mais de uma espécie</span>
+        <p>Peixe de corpo fino e focinho comprido. Fica na beira do rio, na boca dos igarapés e em
+        lagos de água parada, não forma grandes cardumes nem migra para desovar. Pula várias vezes
+        para fora da água antes de se entregar, e por isso é peixe de pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirarara</h3>
+        <span class="cientifico">Phractocephalus hemioliopterus</span>
+        <p>Bagre grande, com mais de um metro. Na cheia entra na mata alagada para comer fruto carnudo,
+        e na seca come mais caranguejo e peixe. Nunca se achou filhote em rio de água preta, então
+        ele deve descer para desovar em rio de água barrenta, mas isso não está confirmado.</p>
+      </div>
+      <div class="ficha">
+        <h3>Surubim</h3>
+        <span class="cientifico">Pseudoplatystoma, várias espécies</span>
+        <p>Nome do grupo de bagres de couro manchado: Pseudoplatystoma fasciatum, P. reticulatum e P.
+        tigrinum são vendidos como surubim. Come peixe, passa de um metro e migra de cem a mil
+        quilômetros para desovar, entre a vazante e o começo da cheia. O caminho exato ainda não foi
+        bem estudado.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirarucu-gigante</h3>
+        <span class="cientifico">Arapaima</span>
+        <p>Respira ar: a bexiga natatória funciona como pulmão, e ele sobe à tona mais ou menos a cada
+        vinte minutos. Passa de três metros e de 150 quilos. Foi talvez o maior predador dos lagos de
+        várzea da Amazônia, e em muitos lugares as populações caíram muito ou sumiram.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Cobra-Grande (Boiúna) <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirada na lenda da cobra-grande, a boiúna</span>
+        <p>Não existe uma cobra-grande catalogada: é lenda. Boiúna quer dizer algo como "cobra preta",
+        e a Cobra-Grande é uma serpente gigante que deixa a floresta e vai morar no fundo dos rios, na
+        casa chamada boiaçuquara. Diz o conto que ela atrai barcos com uma luz e confunde pescadores e
+        viajantes, que a tomam por um barco iluminado. Há quem conte que ela vira outros seres. A
+        lenda corre por milhares de rios da Amazônia, e em cada lugar a história muda. A mais famosa
+        é a dos gêmeos: uma mulher teve filhos da Boiúna, um mau e outro bom, o Honorato ou Cobra
+        Norato, tema do poema de Raul Bopp.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/rio-negro/acara-acu.jpg" alt="Acará-açu num aquário" loading="lazy"><figcaption>Acará-açu (Astronotus ocellatus), num zoológico na Alemanha. Foto: H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Karlsruhe_Zoo_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/jaraqui.jpg" alt="Jaraqui" loading="lazy"><figcaption>Jaraqui (Semaprochilodus insignis). Foto: Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Semaprochilodus_insignis.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/traira.jpg" alt="Traíra" loading="lazy"><figcaption>Traíra (Hoplias malabaricus), no Rio Pelotas (RS). Foto: Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/piranha.jpg" alt="Piranha-vermelha num aquário" loading="lazy"><figcaption>Piranha-vermelha (Pygocentrus nattereri), num aquário. Foto: Gregory Moine, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Gregory_Moine_-_Red_bellied_Piranha_(by).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/tucunare-acu.jpg" alt="Tucunaré-açu" loading="lazy"><figcaption>Tucunaré-açu (Cichla temensis). Foto: Diogo Luiz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cichla_temensis_179491250.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/bicuda.jpg" alt="Bicuda num aquário" loading="lazy"><figcaption>Bicuda (Boulengerella maculata), num zoológico na Alemanha. Foto: H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_-_Karlsruhe_Zoo_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/pirarara.jpg" alt="Pirarara" loading="lazy"><figcaption>Pirarara (Phractocephalus hemioliopterus). Foto: Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Phractocephalus_hemioliopterus_-_1.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/surubim.jpg" alt="Surubim num aquário" loading="lazy"><figcaption>Surubim (Pseudoplatystoma fasciatum), num aquário na Tailândia. Foto: NasserHalaweh, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pimelodidae_Pseudoplatystoma_fasciatum_3.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/pirarucu.jpg" alt="Pirarucu" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), em cativeiro. Foto: T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="piaba">
+    <h2>O Projeto Piaba e os piabeiros</h2>
+    <p>Em Barcelos, no médio Rio Negro, muita gente vive de pescar peixe pequeno para aquário. O
+    principal é o cardinal, o Paracheirodon axelrodi, que se chama de piaba, "peixinho". Quem pesca é
+    o piabeiro. A palavra já foi meio ofensa, e hoje ser piabeiro é motivo de orgulho: a cidade faz uma
+    festa dos peixes ornamentais todo janeiro.</p>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/rio-negro/cardinal.jpg" alt="Cardinais num aquário" loading="lazy"><figcaption>Cardinais (Paracheirodon axelrodi), o peixinho dos piabeiros, num aquário. Foto: Paolo Neo, domínio público, <a href="https://commons.wikimedia.org/wiki/File:Paracheirodon_axelrodi_2.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <p>A pesca é feita à mão, com rede pequena, e o peixe que não serve é solto na hora. Quando a
+    pescaria fica fraca num lugar, as famílias se mudam para outro e deixam a população voltar. O
+    comércio de aquário responde por cerca de 60% da renda em dinheiro de 40 mil pessoas do
+    município de Barcelos. Com esse sustento, a floresta em pé vale mais do que derrubada: a pesca dá
+    a quem mora ali um motivo para cuidar das águas.</p>
+    <h3 class="grupo">Projeto Piaba</h3>
+    <p>O Projeto Piaba nasceu em 1991, pelas mãos do professor Ning Labbish Chao, da Universidade do
+    Amazonas, a partir de um estudo de 1989 feito pela universidade e pelo INPA, o Instituto
+    Nacional de Pesquisas da Amazônia, em Manaus. Desde então, o projeto estuda a pesca de peixes de aquário no Rio Negro e ajuda a manter essa
+    atividade viva, boa para quem vive dela e para o rio. É uma referência de que conservar e dar sustento à gente da beira podem andar juntos.</p>
+    <p>Quer conhecer o trabalho deles? O site do projeto é <a href="https://projectpiaba.org/">projectpiaba.org</a> (em inglês).</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>O igapó do Rio Negro cresce devagar e vive em solo pobre, e por isso é sensível a fogo e a qualquer
+    estrago. Um estudo concluiu que a floresta de igapó é importante para a abundância e a variedade
+    dos peixes de água preta da Amazônia Central.</p>
+    <p>O jaraqui já foi pescado demais na Amazônia Central, e o pirarucu caiu muito ou sumiu de muitos
+    lugares. Pescar só o adulto é um jeito de manter o rio cheio.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+    <p>Todo fato desta página saiu de uma destas fontes.</p>
+
+    <h3>O rio e a gente</h3>
+    <ul>
+      <li>National Geographic Brasil (2023). <a href="https://www.nationalgeographicbrasil.com/meio-ambiente/2023/11/os-3-fatos-que-voce-nao-sabia-sobre-o-rio-negro">Os 3 fatos que você não sabia sobre o Rio Negro</a></li>
+      <li>Estado de Minas (23/07/2026). <a href="https://www.em.com.br/emfoco/2026/07/23/dois-rios-correm-lado-a-lado-diante-de-manaus-sem-se-misturar-de-imediato-e-a-diferenca-esta-na-temperatura-velocidade-e-densidade/">Dois rios correm lado a lado diante de Manaus sem se misturar de imediato</a></li>
+      <li>Museu da Vida, Fiocruz. <a href="https://museudavida.fiocruz.br/images/Publicacoes_Educacao/PDFs/ExpoRios/ApresentacaoEncontroRios.pdf">Encontro dos Rios</a> (PDF)</li>
+      <li>ICMBio. <a href="https://www.gov.br/icmbio/pt-br/centrais-de-conteudo/publicacoes/icmbio-em-foco/pdf/icmbioemfoco511.pdf/@@download/file">ICMBio em Foco, n. 511</a> (sobre o Parque Nacional de Anavilhanas)</li>
+      <li>O Eco. <a href="https://www.oeco.org.br/wp-content/uploads/wp-post-to-pdf-enhanced-cache/1/igapos-amazonicos-mais-frageis-ao-fogo.pdf">Igapós amazônicos mais frágeis ao fogo</a> (PDF)</li>
+      <li>Boletim do Instituto de Pesca. <a href="https://institutodepesca.org/index.php/bip/article/download/1352/1329/4537">Estudo sobre peixes e a floresta de igapó</a> (PDF)</li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/meio-ambiente/voce-sabe-a-diferenca-entre-igapo-e-varzea-confira/">Você sabe a diferença entre igapó e várzea?</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/amazonia/a-cidade-mais-indigena-do-brasil-sao-gabriel-da-cachoeira-comemora-131-anos-de-emancipacao-da-cidade/">A cidade mais indígena do Brasil: São Gabriel da Cachoeira</a></li>
+    </ul>
+
+    <h3>O Projeto Piaba</h3>
+    <ul>
+      <li>Project Piaba. <a href="https://projectpiaba.org/about-us/">About Project Piaba</a> (só o link; nenhum texto ou foto do site foi copiado).</li>
+      <li>Revista Discover. <a href="https://www.discovermagazine.com/buy-a-fish-save-a-tree-13975">Buy a Fish, Save a Tree</a></li>
+      <li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Project_Piaba">Project Piaba</a> (só para começar: a festa de janeiro vem daqui)</li>
+    </ul>
+
+    <h3>O cenário</h3>
+    <ul>
+      <li>Embrapa. <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140786/1/Especies-Arboreas-Brasileiras-vol-2-Sapopema.pdf">Espécies arbóreas brasileiras, v. 2: Sapopema</a></li>
+      <li>Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/676204/1/ComTec29.pdf">Comunicado Técnico 29 (açaizeiro)</a></li>
+      <li>Piedade, M. T. F., Parolin, P. e Junk, W. J. (2006). <a href="https://tropicalstudies.org/rbt/attachments/volumes/vol54-4/14-Piedade-Phenology.pdf">Phenology, fruit production and seed dispersal of Astrocaryum jauari in Amazonian black water floodplains</a>. Revista de Biología Tropical.</li>
+      <li>Acta Amazonica (2010). <a href="https://doaj.org/article/df1aacbbc0e04250b70b0477de98940f">Estudo sobre a aninga (Montrichardia linifera)</a></li>
+      <li>Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1144561/1/Plantas-para-o-Futuro-Norte-369-379.pdf">Plantas para o Futuro, região Norte (camu-camu)</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/saude/serie-superfrutas-camu-camu/">Camu-camu, a campeã da vitamina C</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/meio-ambiente/voce-sabia-que-existe-uma-cobra-com-nome-de-ave-e-que-passa-a-vida-pendurada-em-arvores-2/">Você sabia que existe uma cobra com nome de ave?</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/meio-ambiente/voce-sabia-que-grandes-aves-podem-ajudar-na-regeneracao-da-floresta/">Grandes aves ajudam na regeneração da floresta</a></li>
+      <li>Museu Paraense Emílio Goeldi (1967). <a href="https://repositorio.museu-goeldi.br/bitstream/mgoeldi/1036/1/B%20MPEG%20Zoo%20n66%201967%20CUNHA%20ri.pdf">Boletim, Zoologia n. 66</a> (a cobra-papagaio venenosa)</li>
+      <li>Pesquisa FAPESP. <a href="https://revistapesquisa.fapesp.br/borboletas-morpho-parecem-desaparecer-gracas-ao-azul-iridescente">Borboletas Morpho parecem desaparecer graças ao azul iridescente</a></li>
+      <li>National Geographic Brasil (2025). <a href="https://www.nationalgeographicbrasil.com/animais/2025/11/como-o-desmatamento-da-amazonia-afeta-as-borboletas-elas-estao-perdendo-suas-cores-e-podem-desaparecer">Como o desmatamento da Amazônia afeta as borboletas</a></li>
+      <li>WikiAves. <a href="https://www.wikiaves.com.br/wiki/araracanga">Araracanga (Ara macao)</a></li>
+      <li>FAPESP. <a href="https://agencia.fapesp.br/23496">Vaga-lumes iluminam cavernas e cupinzeiros na Amazônia para atrair presas</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/cultura/boiuna-cobra-grande-lenda-amazonica/">Boiuna, a cobra grande da lenda amazônica</a> e <a href="https://portalamazonia.com/amazonia-de-a-a-z/l/lenda-da-cobra-grande/">Lenda da Cobra Grande</a></li>
+    </ul>
+
+    <h3>Os peixes</h3>
+    <ul>
+      <li>Águas Amazônicas (aliança coordenada pela WCS). <a href="https://en.aguasamazonicas.org/fish/jaraquis">Jaraquis</a>, <a href="https://en.aguasamazonicas.org/fish/pirarucu">Pirarucu</a>, <a href="https://en.aguasamazonicas.org/fish/surubim">Surubim</a> e <a href="https://en.aguasamazonicas.org/fish/pirarara">Pirarara</a></li>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Cichla-orinocensis.html">Cichla orinocensis</a>, <a href="https://www.fishbase.se/summary/Cichla-temensis.html">Cichla temensis</a>, <a href="https://www.fishbase.se/summary/Hoplias-malabaricus.html">Hoplias malabaricus</a> e <a href="https://www.fishbase.se/summary/Pygocentrus-nattereri.html">Pygocentrus nattereri</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/amazonia-de-a-a-z/b/bicuda/">Bicuda</a></li>
+      <li>Neotropical Ichthyology (2021). <a href="https://scielo.br/j/ni/a/YsCSXjbXzZ76tTygF6wC7Zg/?lang=en">Estudo de isótopos estáveis em Semaprochilodus insignis</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Paulo JC Nogueira, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Rio_Negro_-_Encontro_das_%C3%81guas_-_Manaus_-_Amazonas_-_panoramio.jpg">O Encontro das Águas, em Manaus: a água preta do Rio Negro ao lado da barrenta do Solimões.</a></li>
+      <li>Karen Mohrstedt Badin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arquip%C3%A9lago_de_Anavilhanas_12.jpg">O Arquipélago de Anavilhanas, no baixo Rio Negro.</a></li>
+      <li>José Renato Venâncio Resende, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Mata_de_Igap%C3%B3.jpg">Floresta alagada (igapó) no Rio Negro, com vitórias-régias.</a></li>
+      <li>Paolo Neo, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Paracheirodon_axelrodi_2.jpg">Cardinais (Paracheirodon axelrodi), o peixinho dos piabeiros, num aquário.</a></li>
+      <li>Wilfredor, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Ateles_paniscus_in_Jardim_Zool%C3%B3gico_de_Curitiba.jpg">Macaco-aranha-de-cara-vermelha (Ateles paniscus), no Jardim Zoológico de Curitiba.</a></li>
+      <li>Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Cobra-papagaio (Corallus batesii), no Brasil.</a></li>
+      <li>Dominic Sherony, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:White-throated_Toucan_(Ramphastos_tucanus)_(9499725570).jpg">Tucano-grande-de-papo-branco (Ramphastos tucanus).</a></li>
+      <li>Chris Krambeck, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Montrichardia_linifera,_Amazon_v%C3%A1rzea.jpg">Aningal de três a quatro metros de altura (Montrichardia linifera), na várzea amazônica.</a></li>
+      <li>Fred Almeida2016, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Camu-camu_-_Myrciaria_dubia.jpg">Frutos do camu-camu (Myrciaria dubia).</a></li>
+      <li>Diogo Luiz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cichla_temensis_179491250.jpg">Tucunaré-açu (Cichla temensis).</a></li>
+      <li>Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Semaprochilodus_insignis.jpg">Jaraqui (Semaprochilodus insignis).</a></li>
+      <li>Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus.jpg">Traíra (Hoplias malabaricus), no Rio Pelotas (RS).</a></li>
+      <li>NasserHalaweh, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pimelodidae_Pseudoplatystoma_fasciatum_3.jpg">Surubim (Pseudoplatystoma fasciatum), num aquário na Tailândia.</a></li>
+      <li>H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_-_Karlsruhe_Zoo_01.jpg">Bicuda (Boulengerella maculata), num zoológico na Alemanha.</a></li>
+      <li>Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Phractocephalus_hemioliopterus_-_1.jpg">Pirarara (Phractocephalus hemioliopterus).</a></li>
+      <li>T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Pirarucu (Arapaima gigas), em cativeiro.</a></li>
+      <li>OliveiraJC, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:O_Rio_Negro_tamb%C3%A9m_tem_praia.jpg">Praia de areia clara com a água escura do Rio Negro, num dia de chuva.</a></li>
+      <li>H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Karlsruhe_Zoo_01.jpg">Acará-açu (Astronotus ocellatus), num zoológico na Alemanha.</a></li>
+      <li>Gregory Moine, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Gregory_Moine_-_Red_bellied_Piranha_(by).jpg">Piranha-vermelha (Pygocentrus nattereri), num aquário.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

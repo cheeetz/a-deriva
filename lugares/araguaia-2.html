@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rio Araguaia — À Deriva</title>
+<meta name="description" content="O Rio Araguaia de verdade: o lugar, a gente da beira, os bichos e as plantas do cenário e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR (piloto, 15/10/2026). É o "saiba mais" da janela que o jogo abre ao
+     chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo (chance, preço,
+     tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve fonte saiu.
+     O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Goiás, Mato Grosso, Tocantins e Pará</div>
+    <h1>Rio <span>Araguaia</span></h1>
+    <p class="chamada">O primeiro rio do jogo existe, e é ainda maior do que cabe no rodapé da tela.
+    Aqui está o Araguaia de verdade: de onde ele vem, quem vive na beira dele e o que nada lá
+    embaixo.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>O Araguaia nasce em Mineiros, em Goiás, e corre para o norte por mais de dois
+    mil quilômetros, banhando Goiás, Mato Grosso, Tocantins e Pará, até se juntar ao Tocantins.
+    Ele passa bem na fronteira entre o Cerrado e a Amazônia, e por isso tem bicho e planta dos
+    dois. E tem uma raridade: é o último grande rio do Cerrado sem barragem no leito principal.</p>
+    <p>O rio vive de subir e descer. Na cheia, ele alaga as planícies em volta. Na seca, volta para
+    o canal e deixa à mostra praias de areia branca, feitas do sedimento que a água traz do Planalto
+    Central. No meio do caminho fica a Ilha do Bananal, a maior ilha fluvial do mundo, cercada pelo
+    Araguaia e pelo Javaés. E na água vive um boto que pesquisadores descreveram em 2014 como
+    espécie própria, o boto-do-araguaia. Nem todo cientista concorda que ele seja uma espécie à
+    parte, e a discussão continua.</p>
+    <p>Os Iny Karajá vivem na beira do Araguaia há gerações, na Ilha do Bananal e em aldeias como a
+    Buridina, em Aruanã. As mulheres karajá fazem as bonecas de cerâmica ritxòkò, reconhecidas como
+    Patrimônio Cultural do Brasil pelo IPHAN em 2012. A própria cidade de Aruanã tirou o nome do rio:
+    em 1939 ela trocou o nome Leopoldina pelo de um peixe do Araguaia, que também é o de uma dança
+    karajá. E todo julho, na seca, o rio vira a praia de Goiás. Famílias levantam acampamentos na
+    areia, e as cidades da beira recebem perto de um milhão de turistas nas férias do meio do
+    ano.</p>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/araguaia-2/praia.jpg" alt="Praia de areia clara e o Rio Araguaia ao nascer do sol" loading="lazy"><figcaption>A Praia da Gaivota, no Araguaia, em Araguacema (TO), ao nascer do sol. Foto: R. Uchôa, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Nascer_do_sol_na_Praia_da_Gaivota_no_rio_Araguaia,_vista_da_cidade_de_Araguacema,_Tocantins.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/araguaia-2/rio-javaes.jpg" alt="O Rio Javaés e a Ilha do Bananal" loading="lazy"><figcaption>O Rio Javaés e a Ilha do Bananal, vistos da aldeia Txuiri, em Formoso do Araguaia (TO). Foto: Arthur to, domínio público, <a href="https://commons.wikimedia.org/wiki/File:Rio_Java%C3%A9s.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <figure class="tela tela-lugar">
+      <img class="arte" src="../tela-noite-estrelada.png" alt="O Rio Araguaia no jogo, de noite, com chuva fina e araras cruzando o céu">
+      <figcaption>O Araguaia no jogo, numa noite de chuva.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>Quase tudo o que aparece desenhado no cenário existe de verdade na beira do Araguaia.</p>
+
+    <h3 class="grupo">A paisagem</h3>
+    <div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Mata de galeria</h3>
+        <p>É a floresta que acompanha os córregos do Cerrado, com as copas fechando por cima da
+        água como um túnel verde. Na beira de rio largo, como o próprio Araguaia, a faixa de mata
+        não fecha o túnel e ganha outro nome: mata ciliar.</p>
+      </div>
+      <div class="ficha">
+        <h3>Varjão</h3>
+        <p>Campo sem floresta que fica encharcado ou com água rasa de dezembro a março e seca forte
+        de junho a setembro. No meio dele surgem montinhos de terra de até vinte metros de largura,
+        os monchões.</p>
+      </div>
+      <div class="ficha">
+        <h3>Bancos de areia</h3>
+        <p>Aparecem quando o rio baixa. É neles que o tracajá e a tartaruga-da-amazônia enterram os
+        ovos, e é perto deles que o boto encurrala cardumes, num comportamento conhecido como
+        estouro do boto.</p>
+      </div>
+      <div class="ficha">
+        <h3>Acampamento de praia</h3>
+        <p>Acampar na praia do Araguaia é tradição goiana. Na seca, as famílias levantam ranchos de
+        palha e madeira na areia, muitos cobertos com folha de babaçu. O problema é o que fica para
+        trás: lixo e material de construção deixados na praia depois da temporada.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">As plantas</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/araguaia-2/buriti.jpg" alt="Buritis, palmeiras altas" loading="lazy"><figcaption>Buritis (Mauritia flexuosa), fotografados na Colômbia. Foto: Kristof Zyskowski e Yulia Bereshpolova, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arecaceae-_Mauritia_flexuosa_(buriti).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/pequizeiro.jpg" alt="Flor do pequizeiro" loading="lazy"><figcaption>Flor do pequizeiro (Caryocar brasiliense). Foto: Luizdesouza, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caryocar_brasiliense_2015-09-27_(084306).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+        <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Buriti</h3>
+        <span class="cientifico">Mauritia flexuosa</span>
+        <p>Palmeira das terras baixas que alagam, que forma os buritizais na beira de rios e
+        córregos e é abundante ao longo de todo o Araguaia. Há pé macho e pé fêmea. Da folha sai
+        cobertura de casa e fibra para rede, esteira e chapéu, e o fruto alimenta bicho e gente.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jatobá</h3>
+        <span class="cientifico">Hymenaea</span>
+        <p>Árvore das matas do Cerrado, de madeira de alta qualidade e fruto que se come.</p>
+      </div>
+      <div class="ficha">
+        <h3>Embaúba</h3>
+        <span class="cientifico">Cecropia</span>
+        <p>Árvore da mata ciliar, a faixa de floresta na beira do rio. Serve de alimento para
+        aves, peixes e mamíferos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pequizeiro</h3>
+        <span class="cientifico">Caryocar brasiliense</span>
+        <p>Dá o pequi, de uso largo na cozinha goiana. Cresce no cerradão, uma mata de árvores de
+        até quinze metros que fica entre o campo aberto e a floresta úmida.</p>
+      </div>
+      <div class="ficha">
+        <h3>Ipê-amarelo</h3>
+        <span class="cientifico">Handroanthus, mais de uma espécie</span>
+        <p>O ipê-amarelo é símbolo do Cerrado, conhecido pela florada e pela madeira nobre. Ele
+        cresce também na mata ciliar. Floresce de julho a setembro, na seca: um engenheiro florestal
+        explica que, com mais flores no tempo seco, a árvore dá sementes que germinam quando a chuva
+        volta. As flores atraem abelhas e beija-flores.</p>
+      </div>
+      <div class="ficha">
+        <h3>Ipê-roxo</h3>
+        <span class="cientifico">Handroanthus impetiginosus</span>
+        <p>Dá flores roxas, que costumam abrir entre maio e julho, antes dos ipês amarelos. A árvore
+        adulta chega a 30 metros e ocorre em todos os biomas brasileiros, menos nos Pampas, de
+        preferência em floresta que perde folhas na seca. Serve de madeira de lei e de planta
+        medicinal. Foi a primeira espécie nativa do Cerrado a ter o genoma sequenciado.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os bichos</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/araguaia-2/capivara.jpg" alt="Capivaras na beira da água" loading="lazy"><figcaption>Capivaras na beira do Rio Tietê, em São Paulo. A espécie é a mesma do Araguaia. Foto: Clodomiro Esteves Junior, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capivara(Hydrochoerus_hydrochaeris).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/jacare.jpg" alt="Jacaré-tinga na beira da água" loading="lazy"><figcaption>Jacaré-tinga (Caiman crocodilus), fotografado na Bolívia. Foto: Vincent A. Vos, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus_Bolivia.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/taracaja.jpg" alt="Tracajá sobre um tronco" loading="lazy"><figcaption>Tracajá (Podocnemis unifilis), fotografado na Bolívia. Foto: Vincent A. Vos, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Podocnemis_unifilis_-_Vincent_A._Vos_-_446622959.jpeg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/arara-azul.jpg" alt="Arara-azul em voo" loading="lazy"><figcaption>Arara-azul (Anodorhynchus hyacinthinus) em voo, no Pantanal. Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_macaw_(Anodorhynchus_hyacinthinus)_in_flight.JPG">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+        <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Capivara</h3>
+        <span class="cientifico">Hydrochoerus hydrochaeris</span>
+        <p>O maior roedor do mundo, e vive perto da água. Aparece entre os mamíferos registrados
+        pelos pesquisadores nas expedições recentes pela bacia do Araguaia.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jacaré</h3>
+        <span class="cientifico">Caiman crocodilus e Melanosuchus niger</span>
+        <p>O jacaretinga é numeroso nos lagos rasos do médio Araguaia. O jacaré-açu, cujos machos
+        chegam a seis metros, quase sumiu com a caça por couro nos anos 1960 e hoje volta a crescer
+        no rio. O olho aceso de noite é de verdade: pesquisadores contam jacarés pelo brilho dos
+        olhos na luz da lanterna.</p>
+      </div>
+      <div class="ficha">
+        <h3>Onça-pintada</h3>
+        <span class="cientifico">Panthera onca</span>
+        <p>Vulnerável à extinção, ainda aparece nas armadilhas fotográficas dos pesquisadores no
+        Araguaia. Um estudo do Instituto Onça-Pintada apontou o rio, com o Tocantins, como a melhor
+        ligação entre as regiões do Brasil que ainda têm populações viáveis de onça.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tracajá</h3>
+        <span class="cientifico">Podocnemis unifilis</span>
+        <p>Tartaruga de rio que, de julho a outubro, sobe nos bancos de areia para desovar. Cava um
+        ninho raso e põe de dez a vinte e cinco ovos. Em volta da Ilha do Bananal, pesquisadores
+        estudam as praias onde ele e a tartaruga-da-amazônia desovam.</p>
+      </div>
+      <div class="ficha">
+        <h3>Quero-quero</h3>
+        <span class="cientifico">Vanellus chilensis</span>
+        <p>Tem um esporão de osso na dobra da asa e faz o ninho num buraco raso raspado no chão.
+        Para afastar quem chega perto, finge estar ferido, e o macho pode partir para bicar.</p>
+      </div>
+      <div class="ficha">
+        <h3>Araras</h3>
+        <p>No jogo passam a canindé, azul e amarela, a vermelha e a arara-azul, toda azul. A
+        canindé anda em casal ou em trio e faz ninho em buraco de palmeira morta. A
+        arara-vermelha-grande gosta do fruto do buriti. A arara-azul é uma das aves ameaçadas que ainda se observam na
+        região.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes do Araguaia no jogo, do barranco ao fundo do poço. Quando o nome popular vale
+    para mais de uma espécie, o cartão avisa.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Mandi</h3>
+        <span class="cientifico">Pimelodus, chamado de P. blochii</span>
+        <p>Bagre pequeno que vive e come no fundo: larva de inseto, alga, molusco, peixinho e pedaço
+        de planta. Na bacia Araguaia-Tocantins, o nome Pimelodus blochii acaba aplicado a qualquer
+        mandi do gênero, e esses peixes nunca foram estudados a fundo para saber quantas espécies
+        são. É comida importante na mesa ribeirinha.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piau-flamengo</h3>
+        <span class="cientifico">Leporinus, sem espécie certa</span>
+        <p>Piau é nome de vários peixes do gênero Leporinus, e o apelido flamengo aparece em mais
+        de um deles: o flamenguinho, de oito faixas no corpo, e o aracu-flamengo, que come planta,
+        fruto e folha.</p>
+      </div>
+      <div class="ficha">
+        <h3>Curimba</h3>
+        <span class="cientifico">Prochilodus</span>
+        <p>Curimba, curimatã e curimbatá são nomes dos peixes do gênero Prochilodus, e na bacia do
+        Tocantins vive o Prochilodus nigricans. Ele come detrito, a matéria orgânica do fundo.
+        Viaja em grandes cardumes duas vezes por ano e desova quando a cheia começa.</p>
+      </div>
+      <div class="ficha">
+        <h3>Aruanã</h3>
+        <span class="cientifico">Osteoglossum bicirrhosum</span>
+        <p>Peixe comprido de boca virada para cima, que salta fora da água para pegar besouros e
+        outros insetos. Quem cuida da cria é o macho: carrega ovos e filhotes na boca por cerca de
+        seis semanas. É o peixe que deu nome à cidade de Aruanã.</p>
+      </div>
+      <div class="ficha">
+        <h3>Peixe-cachorra</h3>
+        <span class="cientifico">Hydrolycus e parentes</span>
+        <p>Tem um par de presas tão grandes na mandíbula que a maxila tem dois buracos para
+        guardá-las com a boca fechada. Fica de tocaia atrás de galhos e pedras e ataca peixes de
+        até metade do seu tamanho. O nome vale para mais de uma espécie, e no Araguaia a
+        cachorra-facão está entre os peixes mais pescados.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piranha-preta</h3>
+        <span class="cientifico">Serrasalmus rhombeus</span>
+        <p>A adulta tem olho vermelho e caça em canal fundo e corredeira, comendo peixe pequeno e
+        arrancando nadadeira e carne de peixe maior. Em 2012, no rio Xingu, pesquisadores mediram
+        nela a mordida mais forte entre os peixes carnívoros, para o tamanho: trinta vezes o próprio
+        peso. Há quem ache que esse nome científico junta mais de uma espécie.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tucunaré-azul</h3>
+        <span class="cientifico">Cichla piquiti</span>
+        <p>É do Araguaia e do Tocantins de origem, e só foi descrito como espécie em 2006. Come
+        qualquer peixe que caiba na boca, e pai e mãe vigiam os filhotes por meses. Tucunarés
+        levados para outras bacias, como a do Paraná, viraram invasores, e o azul se estabeleceu
+        até no Pantanal.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirarara</h3>
+        <span class="cientifico">Phractocephalus hemioliopterus</span>
+        <p>Bagre grande de cauda e nadadeiras avermelhadas. Na cheia, entra na mata alagada e come
+        muito fruto, e também caranguejo e peixe. Com a piraíba, é o peixe que os pescadores
+        esportivos mais procuram no Araguaia.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pintado</h3>
+        <span class="cientifico">Pseudoplatystoma, várias espécies</span>
+        <p>Pintado, surubim, cachara e caparari são nomes dos bagres de couro manchado do gênero
+        Pseudoplatystoma. Vivem na bacia Araguaia-Tocantins, comem peixe e sobem o rio para desovar
+        entre a seca e o começo das chuvas. As manchas ajudam na camuflagem.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jaú</h3>
+        <span class="cientifico">Zungaro zungaro</span>
+        <p>Bagre gigante que caça à noite, quase só peixe. Mora nos poços fundos e espera perto das
+        cachoeiras os cardumes que sobem o rio. Por muito tempo foi tabu na cozinha
+        amazônica.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirarucu</h3>
+        <span class="cientifico">Arapaima</span>
+        <p>Respira ar: a bexiga natatória funciona como pulmão, e ele sobe à tona mais ou menos a
+        cada vinte minutos. Faz ninho no fundo de areia e vigia ovos e filhotes. O nome vem do tupi,
+        pira, peixe, e urucum, vermelho. A ciência hoje reconhece quatro ou cinco espécies de
+        Arapaima, e o estudo da pesca no Araguaia chama o daqui só de Arapaima sp.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Piraíba Centenária <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirada na piraíba, Brachyplatystoma filamentosum</span>
+        <p>Uma piraíba de cem anos é invenção do jogo. A de verdade é chamada de Rainha do Araguaia,
+        um dos maiores bagres da América do Sul, e enche os olhos de pescador há muito tempo. No
+        século XIX, Couto de Magalhães, o pioneiro dos barcos a vapor no rio, anotou ter pescado uma
+        de cabeça com dois palmos e meio de largura. Em 2021, uma piraíba marcada pelo Projeto
+        Peixara nadou mais de oitocentos quilômetros pelo Araguaia. Os números do rio preocupam: a piraíba média pescada ali encolheu
+        quase trinta centímetros em pouco mais de dez anos. A jovem tem nome próprio: filhote.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/araguaia-2/tucunare.jpg" alt="Tucunaré-azul" loading="lazy"><figcaption>Tucunaré-azul (Cichla piquiti). Foto: Douglas, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cichla_piquiti_29769333.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/pirarucu.jpg" alt="Pirarucu" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), em cativeiro. Foto: T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/piraiba.jpg" alt="Piraíba nadando num aquário" loading="lazy"><figcaption>Piraíba (Brachyplatystoma filamentosum), num aquário no Japão. Foto: タウナギ, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Brachyplatystoma_filamentosum_Totto.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="corredor">
+    <h2>O corredor da onça-pintada</h2>
+    <p>A onça-pintada é o maior felino das Américas e o maior predador terrestre do Brasil. Por
+    ficar no topo da cadeia alimentar, a presença dela diz que o ambiente em volta está saudável, e
+    ela ajuda a controlar as populações das presas.</p>
+    <p>Só que onça não vive em fazenda cercada: precisa de áreas grandes e de caminho entre elas.
+    Segundo a diretora do Instituto Onça-Pintada, Anah Jácomo, oitenta por cento das onças do
+    Brasil vivem fora de reservas do governo. Por isso a conservação depende muito dos donos das
+    terras onde elas passam.</p>
+    <p>É aí que entra o Araguaia. O corredor da onça é um projeto de conservação ao longo do rio, com
+    cerca de três mil quilômetros e treze milhões de hectares, da divisa de Goiás com Mato Grosso,
+    passando pelo Tocantins, até o Pará. Ele liga a Amazônia e o Cerrado. A ideia é que grupos de
+    onças de regiões diferentes possam se encontrar, o que deixa a espécie mais forte. Como já
+    contamos, um estudo do instituto apontou o Araguaia, com o Tocantins, como a melhor ligação
+    entre as regiões do país com populações viáveis de onça.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/araguaia-2/onca-pintada.jpg" alt="Onça-pintada deitada entre arbustos" loading="lazy"><figcaption>Onça-pintada no Pantanal. Foto: Leonardo Ramos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:On%C3%A7a_do_Pantanal.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia-2/onca-pintada-2.jpg" alt="Onça-pintada fêmea na beira de um rio" loading="lazy"><figcaption>Onça-pintada fêmea na beira do Rio Piquiri, no Pantanal. Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_female_Piquiri_River_2.JPG">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <h3 class="grupo">O Instituto Onça-Pintada</h3>
+    <p>Quem toca o corredor é o Instituto Onça-Pintada (IOP), criado em 2002 pelos biólogos Anah
+    Jácomo e Leandro Silveira. É uma das referências no estudo e na conservação da onça: há mais de
+    vinte anos o instituto acompanha os animais em campo, com coleiras de GPS e armadilhas
+    fotográficas, e trabalha junto com os produtores rurais, porque é nas fazendas que boa parte
+    das onças vive.</p>
+    <p>Proteger a onça é proteger tudo o que vive em volta dela: o rio, a mata da beira e os bichos
+    que ela caça. Onde ainda tem onça, o lugar ainda está inteiro.</p>
+    <p>Quer conhecer o trabalho deles? O site do instituto é <a href="https://institutooncapintada.org.br/">institutooncapintada.org.br</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Na bacia Araguaia-Tocantins, a piraíba não pode ser pescada para consumo: é peixe de soltar,
+    e soltar bem faz diferença, porque o peixe manuseado com cuidado tem mais chance de
+    sobreviver.</p>
+    <p>O tambaqui, que aparece cada vez mais nas pescarias do Araguaia, não é daqui. Escapou de
+    criações e já se reproduz no rio. Peixe de tanque não vai para o rio.</p>
+    <p>E o boto-do-araguaia é considerado vulnerável à extinção. A praia cheia de barco na seca é
+    também a casa dele, e o lixo que fica na areia vai parar na água.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+    <p>Todo fato desta página saiu de uma destas fontes. Muitas são da coluna Araguaia em Foco, do
+    Jornal Opção, escrita pelos pesquisadores do programa Araguaia Vivo 2030 e do PPBio Araguaia
+    (UEG, UFG, UFMT, PUC Goiás e parceiros).</p>
+
+    <h3>O rio e a gente</h3>
+    <ul>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/araguaia-o-maior-corredor-ecologico-do-mundo-680773/">Araguaia: o maior corredor ecológico do mundo</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/o-problema-do-tambaqui-no-rio-araguaia-818686/">O problema do tambaqui no rio Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/o-rio-esta-para-peixe-monitoramento-da-pesca-no-rio-araguaia-710002/">O rio está para peixe? Monitoramento da pesca no rio Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/ecorregioes-da-planicie-do-araguaia-843455/">Ecorregiões da planície do Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/os-botos-e-as-florestas-alagadas-do-araguaia-705512/">Os botos e as florestas alagadas do Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/gestao-compartilhada-quer-garantir-praias-limpas-e-turismo-sustentavel-no-araguaia-747587/">Gestão compartilhada quer garantir praias limpas e turismo sustentável no Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/cuidado-e-saude-entre-os-iny-karaja-de-buridina-862554/">Cuidado e saúde entre os Inỹ Karajá de Buridina</a></li>
+      <li>Chamon, C. C. et al. (2022). <a href="https://doi.org/10.1590/1676-0611-BN-2021-1296">Building knowledge to save species: 20 years of ichthyological studies in the Tocantins-Araguaia River basin</a>. Biota Neotropica.</li>
+      <li>Hrbek, T. et al. (2014). <a href="https://doi.org/10.1371/journal.pone.0083623">A New Species of River Dolphin from Brazil or: How Little Do We Know Our Biodiversity</a>. PLOS ONE.</li>
+      <li>Caballero e McGowan (2026). <a href="https://marinemammalscience.org/wp-content/uploads/2026/04/Caballero-McGowan-INIA-Report-SMM.pdf">Relatório ao fundo de conservação da Society for Marine Mammalogy sobre as espécies de Inia</a> (PDF, em inglês).</li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/cultura/turismo/ilha-do-bananal-no-tocantins-e-a-maior-ilha-genuinamente-fluvial-do-mundo">Ilha do Bananal, no Tocantins, é a maior ilha genuinamente fluvial do mundo</a></li>
+      <li>IBGE. <a href="https://biblioteca.ibge.gov.br/visualizacao/dtb/goias/aruana.pdf">Aruanã, Goiás: histórico</a></li>
+      <li>IPHAN, Superintendência no Tocantins. <a href="https://www.gov.br/iphan/pt-br/superintendencias/tocantins/patrimonio-imaterial">Patrimônio imaterial: bonecas Karajá</a></li>
+    </ul>
+
+    <h3>O corredor da onça</h3>
+    <ul>
+      <li>Revista Cultivar (20/12/2021). <a href="https://revistacultivar.com.br/noticias/jbs-e-instituto-onca-pintada-pretendem-criar-um-dos-maiores-corredores-de-biodiversidade-do-mundo">JBS e Instituto Onça-Pintada pretendem criar um dos maiores corredores de biodiversidade do mundo</a></li>
+      <li>CompreRural (16/05/2022). <a href="https://www.comprerural.com/jbs-firma-parceria-com-o-instituto-onca-pintada-para-criar-um-dos-maiores-corredores-de-biodiversidade-do-mundo/">JBS firma parceria com o Instituto Onça-Pintada para criar um dos maiores corredores de biodiversidade do mundo</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/meio-ambiente/3-iniciativas-protegem-onca-br/">Guardiões da Onça: conheça iniciativas que protegem um dos maiores felinos do mundo no Brasil</a></li>
+      <li>TV Senado, EcoSenado (22/03/2025). <a href="https://www12.senado.leg.br/tv/programas/ecosenado/2025/03/proteger-a-onca-pintada-e-proteger-todo-um-ecossistema">Proteger a onça-pintada é proteger todo um ecossistema</a></li>
+      <li>Instituto Onça-Pintada: <a href="https://institutooncapintada.org.br/">institutooncapintada.org.br</a> (só o link; nenhum conteúdo ou foto do site foi copiado).</li>
+    </ul>
+
+    <h3>O cenário</h3>
+    <ul>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/as-florestas-do-cerrado-paisagens-que-surpreendem-725565/">As florestas do Cerrado: paisagens que surpreendem</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/mamiferos-da-bacia-do-rio-araguaia-riqueza-escondida-no-coracao-do-brasil-737263/">Mamíferos da bacia do rio Araguaia</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/observacao-de-aves-no-araguaia-fortalecendo-o-turismo-de-natureza-e-o-desenvolvimento-sustentavel-na-regiao-742738/">Observação de aves no Araguaia</a></li>
+      <li>Eiten, G. (1985). <a href="https://www.repositorio.unb.br/handle/10482/25074">Vegetation near Santa Teresinha, NE Mato Grosso</a>. Acta Amazonica.</li>
+      <li>Castro, P. T. A. &amp; Ferreira Júnior, P. D. (2008). <a href="https://periodicos.ufmg.br/index.php/geografias/article/view/13247">Caracterização ecogeomorfológica das áreas de desova de quelônios de água doce no entorno da Ilha do Bananal, Rio Araguaia</a>. Revista Geografias (UFMG).</li>
+      <li>Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/859495/1/folderburiti.pdf">Buriti (Mauritia flexuosa)</a></li>
+      <li>Museus da Universidade de Lisboa. <a href="https://museus.ulisboa.pt/capivara-objeto-do-mes-de-outubro-2023">Capivara</a></li>
+      <li>ICMBio, Biodiversidade Brasileira. <a href="https://revistaeletronica.icmbio.gov.br/BioBR/article/download/404/311/1642">Avaliação do risco de extinção do jacaré-tinga, Caiman crocodilus, no Brasil</a></li>
+      <li>ICMBio, SALVE. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1148389/1/especie-Melanosuchus-niger-2022.pdf">Melanosuchus niger: avaliação do risco de extinção</a></li>
+      <li>Embrapa Pantanal. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/812060/1/CT58.pdf">Metodologia para contagem e avaliação de ninhos de jacaré-do-pantanal usando o ultraleve</a> (sobre a contagem noturna pelo brilho dos olhos)</li>
+      <li>Correio Braziliense (24/07/2024). <a href="https://www.correiobraziliense.com.br/cidades-df/2024/07/amp/6904782-comeca-a-floracao-dos-ipes-amarelos-um-dos-simbolos-de-brasilia.html">Começa a floração dos ipês amarelos, um dos símbolos de Brasília</a></li>
+      <li>Tribuna do Sertão (10/07/2022). <a href="https://www.tribunadosertao.com.br/geral/2022/07/10/446787-mudancas-climaticas-podem-afetar-a-floracao-dos-ipes-no-brasil">Mudanças climáticas podem afetar a floração dos ipês no Brasil</a></li>
+      <li>Santos, R. S., Lima, A. F. B. e Silva, V. V. L. (2023). <a href="https://doi.org/10.12741/2675-9276.v4.e050">Tripes associados ao Ipê-roxo, em Rio Branco, Acre</a>. Entomology Beginners, v. 4.</li>
+      <li>WikiAves. <a href="https://www.wikiaves.com.br/wiki/quero-quero">Quero-quero</a>, <a href="https://www.wikiaves.com.br/wiki/arara-caninde">Arara-canindé</a> e <a href="https://www.wikiaves.com.br/wiki/arara-vermelha-grande">Arara-vermelha-grande</a></li>
+    </ul>
+
+    <h3>Os peixes</h3>
+    <ul>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/piraiba-a-rainha-do-araguaia-que-ainda-e-pouco-conhecida-823431/">Piraíba, a rainha do Araguaia que ainda é pouco conhecida</a></li>
+      <li>Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/projeto-peixara-como-a-alta-tecnologia-tem-ajudado-a-desvendar-o-comportamento-dos-peixes-do-rio-araguaia-871502/">Projeto Peixara: como a alta tecnologia tem ajudado a desvendar o comportamento dos peixes do Rio Araguaia</a></li>
+      <li>Jornal Opção. <a href="https://www.jornalopcao.com.br/ultimas-noticias/rio-araguaia-resiste-como-ultimo-grande-rio-livre-do-cerrado-e-abriga-peixes-gigantes-ameacados-829390/">Rio Araguaia resiste como último grande rio livre do Cerrado e abriga peixes gigantes ameaçados</a></li>
+      <li>Jornal Opção. <a href="https://www.jornalopcao.com.br/ambiente/ibama-autoriza-pesca-de-pirarucu-em-regioes-do-goias-e-df-811780/">Veja onde o Ibama autoriza a pesca de pirarucu em Goiás e DF</a></li>
+      <li>Maciel, L. G. et al. (2014). <a href="https://periodicos.ufpb.br/index.php/at/article/download/19356/11285/38953">Relação das características morfométricas externas do mandi (Pimelodus blochii)</a>. Agropecuária Técnica (UFPB).</li>
+      <li>Resende, E. K. et al. (2008). <a href="https://doi.org/10.1590/S1519-69842008000400014">A successful case of biological invasion: the fish Cichla piquiti, an Amazonian species introduced into the Pantanal</a>. Brazilian Journal of Biology.</li>
+      <li>Kirsten, I. F. et al. (2012). <a href="https://institutodepesca.org/index.php/bip/article/view/951">The pirarucu (Arapaima sp.) fishery at the Araguaia River basin, state of Mato Grosso</a>. Boletim do Instituto de Pesca.</li>
+      <li>Universidade de Washington (2012). <a href="https://www.washington.edu/news/2012/12/26/piranha-kin-wielded-dental-weaponry-even-t-rex-would-have-admired/">Piranha kin wielded dental weaponry</a>, sobre o estudo Mega-Bites (Grubich et al., Scientific Reports).</li>
+      <li>Seriously Fish. <a href="https://seriouslyfish.com/species/serrasalmus-rhombeus">Serrasalmus rhombeus</a></li>
+      <li>Águas Amazônicas (aliança coordenada pela WCS). <a href="https://en.aguasamazonicas.org/fish/curimata">Curimatã</a>, <a href="https://en.aguasamazonicas.org/fish/aruana">Aruanã</a>, <a href="https://en.aguasamazonicas.org/fish/pirarara">Pirarara</a>, <a href="https://en.aguasamazonicas.org/fish/surubim">Surubim</a>, <a href="https://en.aguasamazonicas.org/fish/jau">Jaú</a>, <a href="https://en.aguasamazonicas.org/fish/pirarucu">Pirarucu</a> e <a href="https://en.aguasamazonicas.org/fish/piraiba-catfish">Piraíba</a></li>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Osteoglossum-bicirrhosum.html">Osteoglossum bicirrhosum</a>, <a href="https://www.fishbase.se/summary/Prochilodus-nigricans.html">Prochilodus nigricans</a>, <a href="https://www.fishbase.se/summary/Leporinus-affinis.html">Leporinus affinis</a>, <a href="https://www.fishbase.se/summary/Hydrolycus-armatus.html">Hydrolycus armatus</a>, <a href="https://www.fishbase.se/summary/Serrasalmus-rhombeus.html">Serrasalmus rhombeus</a>, <a href="https://www.fishbase.se/summary/Cichla-piquiti.html">Cichla piquiti</a>, <a href="https://www.fishbase.se/summary/Phractocephalus-hemioliopterus.html">Phractocephalus hemioliopterus</a>, <a href="https://www.fishbase.se/summary/Zungaro-zungaro.html">Zungaro zungaro</a> e <a href="https://www.fishbase.se/summary/Arapaima-gigas.html">Arapaima gigas</a></li>
+      <li>Portal Amazônia. <a href="https://portalamazonia.com/amazonia/pirandira-conheca-o-peixe-cachorro/">Pirandirá: conheça o peixe-cachorro</a>, <a href="https://portalamazonia.com/amazonia-de-a-a-z/c/cachorra-peixe/">Cachorra (peixe)</a> e <a href="https://portalamazonia.com/amazonia-de-a-a-z/c/cachara/">Cachara</a></li>
+      <li>GBIF, nomes populares do Catálogo Taxonômico da Fauna do Brasil e do Catalogue of Life. <a href="https://www.gbif.org/species/2355332">Leporinus affinis</a>, <a href="https://www.gbif.org/species/2355383">Leporinus octofasciatus</a>, <a href="https://www.gbif.org/species/2352154">Prochilodus lineatus</a> e <a href="https://www.gbif.org/species/5208145">Cichla piquiti</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>R. Uchôa, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Nascer_do_sol_na_Praia_da_Gaivota_no_rio_Araguaia,_vista_da_cidade_de_Araguacema,_Tocantins.jpg">A Praia da Gaivota, no Araguaia, em Araguacema (TO), ao nascer do sol.</a></li>
+      <li>Arthur to, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Rio_Java%C3%A9s.jpg">O Rio Javaés e a Ilha do Bananal, vistos da aldeia Txuiri, em Formoso do Araguaia (TO).</a></li>
+      <li>Clodomiro Esteves Junior, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capivara(Hydrochoerus_hydrochaeris).jpg">Capivaras na beira do Rio Tietê, em São Paulo. A espécie é a mesma do Araguaia.</a></li>
+      <li>Vincent A. Vos, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus_Bolivia.jpg">Jacaré-tinga (Caiman crocodilus), fotografado na Bolívia.</a></li>
+      <li>Vincent A. Vos, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Podocnemis_unifilis_-_Vincent_A._Vos_-_446622959.jpeg">Tracajá (Podocnemis unifilis), fotografado na Bolívia.</a></li>
+      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_macaw_(Anodorhynchus_hyacinthinus)_in_flight.JPG">Arara-azul (Anodorhynchus hyacinthinus) em voo, no Pantanal.</a></li>
+      <li>Kristof Zyskowski e Yulia Bereshpolova, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arecaceae-_Mauritia_flexuosa_(buriti).jpg">Buritis (Mauritia flexuosa), fotografados na Colômbia.</a></li>
+      <li>Luizdesouza, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caryocar_brasiliense_2015-09-27_(084306).jpg">Flor do pequizeiro (Caryocar brasiliense).</a></li>
+      <li>Douglas, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cichla_piquiti_29769333.jpg">Tucunaré-azul (Cichla piquiti).</a></li>
+      <li>T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Pirarucu (Arapaima gigas), em cativeiro.</a></li>
+      <li>タウナギ, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Brachyplatystoma_filamentosum_Totto.jpg">Piraíba (Brachyplatystoma filamentosum), num aquário no Japão.</a></li>
+      <li>Leonardo Ramos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:On%C3%A7a_do_Pantanal.jpg">Onça-pintada no Pantanal.</a></li>
+      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_female_Piquiri_River_2.JPG">Onça-pintada fêmea na beira do Rio Piquiri, no Pantanal.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
