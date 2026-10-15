@@ -156,7 +156,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
         </tbody>
       </table>
     </div>
-    <p class="rodape-placar" id="atualizado">Atualiza de hora em hora.</p>
+    <p class="rodape-placar" id="atualizado">Atualiza umas três vezes por dia.</p>
   </section>
 
   <!-- A REGRA DE PONTOS — proposta de 11/09/2026, a pedido do Jean ("por pontos, só celestial
@@ -275,8 +275,9 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 
 </div>
 
-<!-- O PLACAR. Quem escreve o ranking.json é uma tarefa agendada do GitHub Actions, de hora em
-     hora, lendo o Leaderboard da Steam — ainda não existe, depende do appid. O formato que esta
+<!-- O PLACAR. Quem escreve o ranking.json é uma tarefa agendada do GitHub Actions, umas três vezes
+     por dia (o cron pede de hora em hora, mas o agendador do GitHub descarta a maioria), lendo o
+     Leaderboard da Steam. O formato que esta
      página espera é o do ranking.json na raiz, e cada entrada pode ter:
        nome, pontos, avatar (URL), melhor: { raridade, estrela, cm, pontos }
 
@@ -353,7 +354,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
     var lista = Array.isArray(r.entradas) ? r.entradas : [];
     if (r.atualizado) {
       var a = new Date(r.atualizado);
-      $("atualizado").textContent = "Placar de " + data(a) + ", " + hora(a) + ". Atualiza de hora em hora.";
+      $("atualizado").textContent = "Placar de " + data(a) + ", " + hora(a) + ". Atualiza umas três vezes por dia.";
     }
     if (!lista.length) return;
     var corpo = $("linhas");
