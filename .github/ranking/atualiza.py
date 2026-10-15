@@ -89,6 +89,10 @@ def conferir(item, dias):
 
 
 def baixa(url):
+    # A COMUNIDADE GUARDA CACHE POR URL: em 14/10/2026 o placar já estava público e a mesma URL
+    # ainda devolvia "No public global leaderboards" por um bom tempo. Um parâmetro que muda a
+    # cada passada pula esse cache -- e o das entradas também, que é o que anda.
+    url += ("&" if "?" in url else "?") + "_=%d" % time.time()
     req = urllib.request.Request(url, headers={"User-Agent": "a-deriva-ranking (github actions)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return r.read()
