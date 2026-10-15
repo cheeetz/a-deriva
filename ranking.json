@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-15T16:56:36Z",
+  "atualizado": "2026-10-15T20:19:28Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 23657,
+      "pontos": 23737,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -26,6 +26,28 @@
         "estrela": "ouro",
         "cm": 583.2,
         "pontos": 4500
+      }
+    },
+    {
+      "nome": "Zocratto",
+      "pontos": 14290,
+      "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 452.5,
+        "pontos": 3000
+      }
+    },
+    {
+      "nome": "Zoreia1",
+      "pontos": 13510,
+      "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 450.2,
+        "pontos": 3000
       }
     },
     {
@@ -48,28 +70,6 @@
         "estrela": "platina",
         "cm": 448.6,
         "pontos": 1500
-      }
-    },
-    {
-      "nome": "Zocratto",
-      "pontos": 11370,
-      "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 452.5,
-        "pontos": 3000
-      }
-    },
-    {
-      "nome": "Zoreia1",
-      "pontos": 10510,
-      "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 137.8,
-        "pontos": 1720
       }
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "nome": "Maks",
-      "pontos": 2740,
+      "pontos": 2820,
       "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -183,6 +183,17 @@
       }
     },
     {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 2110,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 228.9,
+        "pontos": 400
+      }
+    },
+    {
       "nome": "SlakeWare:",
       "pontos": 2034,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
@@ -227,14 +238,14 @@
       }
     },
     {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 1400,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "nome": "Sal",
+      "pontos": 736,
+      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
       "melhor": {
-        "raridade": "celestial",
+        "raridade": "lendario",
         "estrela": "bronze",
-        "cm": 315.5,
-        "pontos": 300
+        "cm": 143.0,
+        "pontos": 120
       }
     },
     {
@@ -257,17 +268,6 @@
         "estrela": "bronze",
         "cm": 353.2,
         "pontos": 300
-      }
-    },
-    {
-      "nome": "Sal",
-      "pontos": 561,
-      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "bronze",
-        "cm": 143.0,
-        "pontos": 120
       }
     },
     {
@@ -344,6 +344,17 @@
         "estrela": "bronze",
         "cm": 65.1,
         "pontos": 10
+      }
+    },
+    {
+      "nome": "ɖɩ𝔬𝔴𝔴",
+      "pontos": 4,
+      "avatar": "https://avatars.fastly.steamstatic.com/7523f6a6fed840e70151d6f5e6a54ff42cd8372e_medium.jpg",
+      "melhor": {
+        "raridade": "incomum",
+        "estrela": "bronze",
+        "cm": 61.5,
+        "pontos": 4
       }
     }
   ]
