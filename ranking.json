@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-15T11:23:02Z",
+  "atualizado": "2026-10-15T16:56:36Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Cheetz",
-      "pontos": 12009,
+      "pontos": 12639,
       "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 11210,
+      "pontos": 11370,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 10040,
+      "pontos": 10510,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -106,6 +106,17 @@
       }
     },
     {
+      "nome": "Habibi Yuri Martins",
+      "pontos": 7320,
+      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 139.8,
+        "pontos": 2580
+      }
+    },
+    {
       "nome": "A doormat With experience",
       "pontos": 4590,
       "avatar": "https://avatars.fastly.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
@@ -117,14 +128,14 @@
       }
     },
     {
-      "nome": "Habibi Yuri Martins",
-      "pontos": 3120,
-      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "nome": "Maks",
+      "pontos": 2740,
+      "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
       "melhor": {
-        "raridade": "lendario",
-        "estrela": "platina",
-        "cm": 227.2,
-        "pontos": 600
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 306.5,
+        "pontos": 300
       }
     },
     {
@@ -136,6 +147,28 @@
         "estrela": "ouro",
         "cm": 285.9,
         "pontos": 360
+      }
+    },
+    {
+      "nome": "SilleDerZocker",
+      "pontos": 2490,
+      "avatar": "https://avatars.fastly.steamstatic.com/da09c36b9252acd704e35b9b6163cb5b33891dae_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 396.1,
+        "pontos": 600
+      }
+    },
+    {
+      "nome": "Gordão Programas",
+      "pontos": 2457,
+      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 443.6,
+        "pontos": 900
       }
     },
     {
@@ -151,23 +184,12 @@
     },
     {
       "nome": "SlakeWare:",
-      "pontos": 1994,
+      "pontos": 2034,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 305.0,
-        "pontos": 300
-      }
-    },
-    {
-      "nome": "Maks",
-      "pontos": 1980,
-      "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 306.5,
         "pontos": 300
       }
     },
@@ -205,14 +227,14 @@
       }
     },
     {
-      "nome": "Gordão Programas",
-      "pontos": 1237,
-      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 1400,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 195.1,
-        "pontos": 160
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 315.5,
+        "pontos": 300
       }
     },
     {
@@ -310,17 +332,6 @@
         "raridade": "raro",
         "estrela": "bronze",
         "cm": 49.9,
-        "pontos": 10
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 50,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "raro",
-        "estrela": "bronze",
-        "cm": 42.2,
         "pontos": 10
       }
     },
