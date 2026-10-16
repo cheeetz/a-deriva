@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-16T09:45:22Z",
+  "atualizado": "2026-10-16T14:48:55Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -30,7 +30,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 19390,
+      "pontos": 19550,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 18520,
+      "pontos": 18600,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -73,6 +73,17 @@
       }
     },
     {
+      "nome": "Lyn",
+      "pontos": 13410,
+      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 818.9,
+        "pontos": 2250
+      }
+    },
+    {
       "nome": "Cheetz",
       "pontos": 12639,
       "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
@@ -81,17 +92,6 @@
         "estrela": "platina",
         "cm": 448.6,
         "pontos": 1500
-      }
-    },
-    {
-      "nome": "Lyn",
-      "pontos": 11990,
-      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 818.9,
-        "pontos": 2250
       }
     },
     {
@@ -128,6 +128,28 @@
       }
     },
     {
+      "nome": "Cyberprince",
+      "pontos": 3300,
+      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 372.4,
+        "pontos": 900
+      }
+    },
+    {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 3250,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 228.9,
+        "pontos": 400
+      }
+    },
+    {
       "nome": "Gordão Programas",
       "pontos": 2857,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
@@ -161,17 +183,6 @@
       }
     },
     {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 2540,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "platina",
-        "cm": 228.9,
-        "pontos": 400
-      }
-    },
-    {
       "nome": "irongiba",
       "pontos": 2514,
       "avatar": "https://avatars.fastly.steamstatic.com/8b2a255011fd464f84cdd9b8b3cbc4fe8771cee9_medium.jpg",
@@ -180,6 +191,17 @@
         "estrela": "bronze",
         "cm": 309.5,
         "pontos": 300
+      }
+    },
+    {
+      "nome": "ɖɩ𝔬𝔴𝔴",
+      "pontos": 2490,
+      "avatar": "https://avatars.fastly.steamstatic.com/7523f6a6fed840e70151d6f5e6a54ff42cd8372e_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 229.0,
+        "pontos": 400
       }
     },
     {
@@ -194,6 +216,17 @@
       }
     },
     {
+      "nome": "Father",
+      "pontos": 2145,
+      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 341.3,
+        "pontos": 450
+      }
+    },
+    {
       "nome": "SlakeWare:",
       "pontos": 2114,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
@@ -202,17 +235,6 @@
         "estrela": "bronze",
         "cm": 305.0,
         "pontos": 300
-      }
-    },
-    {
-      "nome": "ɖɩ𝔬𝔴𝔴",
-      "pontos": 1890,
-      "avatar": "https://avatars.fastly.steamstatic.com/7523f6a6fed840e70151d6f5e6a54ff42cd8372e_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "platina",
-        "cm": 229.0,
-        "pontos": 400
       }
     },
     {
