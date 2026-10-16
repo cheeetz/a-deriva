@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernando de Noronha — À Deriva</title>
+<meta name="description" content="Fernando de Noronha de verdade: o arquipélago vulcânico, o Pico e os Dois Irmãos, os golfinhos-rotadores, o Projeto Golfinho Rotador e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR (piloto, 15/10/2026). É o "saiba mais" da janela que o jogo abre ao
+     chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo (chance, preço,
+     tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve fonte saiu.
+     O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Pernambuco</div>
+    <h1>Fernando de <span>Noronha</span></h1>
+    <p class="chamada">O último mapa do jogo é um arquipélago de verdade, no meio do Atlântico. Aqui está
+    Noronha como ela é: o vulcão, o mar de piscina, os golfinhos que giram no ar e o que nada em volta.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>Fernando de Noronha fica a uns 350 quilômetros da costa do Rio Grande do Norte. São 21 ilhas,
+    ilhotas e rochedos de origem vulcânica, com uns 26 quilômetros quadrados no total, e só a maior tem gente. O
+    mar em volta é o Parque Nacional Marinho, criado em 1988 e Patrimônio Mundial da UNESCO desde 2001,
+    junto com o Atol das Rocas.</p>
+    <p>O relevo veio de erupções submarinas, e o vento e as ondas fizeram o resto: falésias, enseadas
+    e o Morro do Pico, que domina a paisagem. Nos rochedos nascem milhares de aves marinhas, nas praias as
+    tartarugas põem os ovos, e na Baía dos Golfinhos centenas de golfinhos-rotadores aparecem quase todo dia.</p>
+    <p>A história humana começou em disputa. A ilha foi doada como capitania hereditária a Fernão
+    de Loronha em 1504, e ingleses, franceses e holandeses a invadiram nos séculos seguintes. A partir de
+    1833 ela passou a receber condenados, e foi presídio, depois também político, até 1957. De 1942 a 1988 foi
+    território federal. Hoje vivem ali pouco mais de três mil pessoas: 3.167 no censo de 2022.</p>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/noronha/pico.jpg" alt="O Morro do Pico visto de dentro de um arco de rocha" loading="lazy"><figcaption>O Morro do Pico, visto de uma gruta, em Fernando de Noronha. Foto: Edson Ricardo Cunha, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Um_olhar_para_o_Morro_do_Pico_em_Noronha.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/noronha/dois-irmaos.jpg" alt="Os Dois Irmãos, dois picos de rocha, ao nascer do sol" loading="lazy"><figcaption>O Morro Dois Irmãos, em Fernando de Noronha. Foto: Carla Belke, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Morro_Dois_Irm%C3%A3os_em_Fernando_de_Noronha,_Pernambuco.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <figure class="tela tela-lugar">
+      <img class="arte" src="../tela-mar-aberto.png" alt="O mar aberto do jogo, de água turquesa, com o barco e uma ave">
+      <figcaption>O mar aberto do jogo.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>No horizonte do mapa estão o Morro do Pico, os Dois Irmãos e uma ilhota, e de vez em quando um
+    golfinho salta da água. Tudo isso existe de verdade, e a lista abaixo conta como.</p>
+
+    <h3 class="grupo">A paisagem</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Morro do Pico</h3>
+        <p>É o ponto mais alto do arquipélago, com pouco mais de trezentos metros, e o topo de uma montanha submarina que sobe de uns quatro mil metros de profundidade. O vulcão de Fernando de Noronha tem idade estimada entre 1,8 e 12,3 milhões de anos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dois Irmãos</h3>
+        <p>Duas pontas de rocha ao lado da Baía dos Porcos. Fazem parte do Parque Nacional Marinho, e o plano de manejo proíbe subir ou se aproximar delas.</p>
+      </div>
+      <div class="ficha">
+        <h3>Baía dos Golfinhos</h3>
+        <p>Os golfinhos-rotadores aparecem ali quase todo dia, e o lugar é considerado o ponto de observação mais regular da espécie no planeta.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os bichos</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/noronha/golfinho-rotador.jpg" alt="Dois golfinhos-rotadores saltando fora da água" loading="lazy"><figcaption>Golfinhos-rotadores (Stenella longirostris) saltando, em Fernando de Noronha. Foto: Liisa Havukainen, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Salto_duplo_(Stenella_longirotris).JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/noronha/tartaruga-verde.jpg" alt="Tartaruga-marinha nadando em água clara" loading="lazy"><figcaption>Tartaruga marinha na Praia do Sancho, no Parque Nacional Marinho de Fernando de Noronha. Foto: Rafa Tecchio, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:PE_-_Parque_Nacional_Marinho_Fernando_de_Noronha_-_Praia_do_Sancho_-_Tartaruga_Marinha_1.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/noronha/tubarao-limao.jpg" alt="Tubarão-limão na água rasa, sobre a areia" loading="lazy"><figcaption>Tubarão-limão (Negaprion brevirostris), em Fernando de Noronha. Foto: M. H. Mathias, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Limon_Shark,_Fernando_de_Noronha_(14799250735).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/noronha/ave-marinha.jpg" alt="Ave marinha de asas abertas sobre uma praia" loading="lazy"><figcaption>Ave marinha sobre uma praia do Parque Nacional Marinho de Fernando de Noronha. Foto: Ilma Melo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Atob%C3%A1_de_Noronha.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Golfinho-rotador</h3>
+        <span class="cientifico">Stenella longirostris</span>
+        <p>O nome vem do salto: ele sai da água e dá até sete voltas em torno do próprio eixo. Em Noronha, mais de 99,99% dos golfinhos são dessa espécie. De dia eles descansam e cuidam dos filhotes nas baías, e a comida costuma ficar em mar aberto. A menor unidade do grupo é uma família liderada por uma matriarca.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tartaruga-marinha</h3>
+        <span class="cientifico">Chelonia mydas e parentes</span>
+        <p>O Parque Nacional Marinho protege as tartarugas cabeçuda, verde, de pente e oliva, todas ameaçadas, e é uma das principais áreas de desova do Brasil. A verde adulta pasta capim-marinho e algas, e a fêmea volta à praia à noite para cavar o ninho acima da maré. É o pet do mapa no jogo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tubarão-limão</h3>
+        <span class="cientifico">Negaprion brevirostris</span>
+        <p>O amarelo da pele é camuflagem sobre o fundo de areia. Caça sobretudo à noite, e usa sensores elétricos no focinho para achar a presa no escuro. Os adultos costumam medir de dois metros e meio a três, e os filhotes crescem por anos em águas rasas. É uma das espécies ameaçadas que o parque protege.</p>
+      </div>
+      <div class="ficha">
+        <h3>Aves marinhas</h3>
+        <span class="cientifico">Phaethon aethereus, Phaethon lepturus e outras</span>
+        <p>Os rochedos isolados do arquipélago servem de berçário para milhares de aves marinhas. O ICMBio cita entre as espécies ameaçadas protegidas no parque os rabos-de-palha, Phaethon aethereus e Phaethon lepturus, e a pardela Puffinus lherminieri.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes de Noronha no jogo, da isca ao gigante do fundo. Quando o nome popular vale
+    para mais de uma espécie, o cartão avisa.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Xaréu</h3>
+        <span class="cientifico">Caranx, várias espécies</span>
+        <p>Peixe de cardume veloz, que come peixe menor e camarão. Em Noronha, o xaréu-preto (Caranx lugubris) está entre os peixes preferidos dos moradores e aparece nos desembarques da pesca artesanal.</p>
+      </div>
+      <div class="ficha">
+        <h3>Agulhinha</h3>
+        <span class="cientifico">Hemiramphus e parentes</span>
+        <p>Nome de peixes de bico alongado, os meio-bicos. Andam em cardume colados à superfície, comem capim-marinho e peixe pequeno, e os pescadores os usam como isca para agulhões e outros peixes grandes.</p>
+      </div>
+      <div class="ficha">
+        <h3>Sardinha</h3>
+        <span class="cientifico">Vários gêneros</span>
+        <p>Em Noronha, a sardinha serve de isca viva na pesca artesanal, e é com ela que o pescador vai atrás do peixe grande.</p>
+      </div>
+      <div class="ficha">
+        <h3>Guaiúba</h3>
+        <span class="cientifico">Ocyurus chrysurus</span>
+        <p>Peixe de recife de cauda amarela, que vive entre dez e setenta metros de fundo. Come plâncton e bichos do fundo, como peixe, crustáceo e verme, principalmente à noite. O maior registrado tem 86 centímetros, e o comum é por volta de quarenta.</p>
+      </div>
+      <div class="ficha">
+        <h3>Bonito</h3>
+        <span class="cientifico">Katsuwonus pelamis, entre outros</span>
+        <p>Bonito é nome de mais de um atum pequeno, e o mais conhecido é o listrado. Vive em águas oceânicas quentes, forma cardumes na superfície, às vezes junto de aves e objetos flutuantes, e come peixe, lula e crustáceo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Arabaiana</h3>
+        <span class="cientifico">Seriola dumerili</span>
+        <p>Peixe de recife fundo, que come outros peixes e invertebrados. Chega a 190 centímetros e mais de oitenta quilos, e o comum é por volta de um metro. É usado na pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dourado-do-mar</h3>
+        <span class="cientifico">Coryphaena hippurus</span>
+        <p>Cresce depressa: amadurece em quatro ou cinco meses e raramente passa de quatro anos de vida. Come quase qualquer peixe, lula e crustáceo, e o macho adulto tem uma crista óssea na testa. Os pescadores o atraem com bambu ou cortiça boiando.</p>
+      </div>
+      <div class="ficha">
+        <h3>Barracuda</h3>
+        <span class="cientifico">Sphyraena barracuda</span>
+        <p>A barracuda-grande chega a dois metros e vive perto de recifes. É um caçador diurno e quase sempre solitário, que vive de peixe e lula e raramente ataca gente. Em Noronha, aparece entre as maiores capturas da pesca artesanal.</p>
+      </div>
+      <div class="ficha">
+        <h3>Wahoo</h3>
+        <span class="cientifico">Acanthocybium solandri</span>
+        <p>Peixe comprido, de dorso azul-esverdeado com listras de azul-cobalto, que come peixe e lula em mar aberto, perto da superfície. Chega a dois metros e meio e mais de oitenta quilos, e é importante na pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Atum-amarelo</h3>
+        <span class="cientifico">Thunnus albacares</span>
+        <p>Chega a dois metros e a duzentos quilos. Mora em mar aberto, em águas quentes, e forma cardumes que às vezes nadam junto de golfinhos. Come peixe, lula e crustáceo, e é muito valorizado como sashimi.</p>
+      </div>
+      <div class="ficha">
+        <h3>Espadarte</h3>
+        <span class="cientifico">Xiphias gladius</span>
+        <p>Pode passar de quatro metros e meio e seiscentos quilos. Usa a espada para matar a presa e come peixe e lula, na superfície ou até uns quinhentos metros de fundo. Os grandes acumulam mercúrio na carne.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Marlim-Negro Imperial <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirado nos grandes marlins; o do Atlântico é o marlim-azul, Makaira nigricans</span>
+        <p>Um marlim imperial de nove mil quilos é invenção do jogo. O de verdade, o marlim-azul, chega a cinco metros e mais de seiscentos quilos. Vive em mar aberto, costuma andar sozinho e a IUCN o considera vulnerável à extinção.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/noronha/barracuda.jpg" alt="Barracuda nadando sobre o recife" loading="lazy"><figcaption>Barracuda (Sphyraena barracuda), no Parque Nacional Marinho de Fernando de Noronha. Foto: João D'Andretta, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Parque_Nacional_Marinho_de_Fernando_de_Noronha_-_João_Paulo_Marques_DAndretta_23.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/noronha/xareu.jpg" alt="Guaricema, um xaréu, nadando junto ao recife" loading="lazy"><figcaption>Guaricema (Caranx bartholomaei), um dos xaréus do gênero Caranx, em Fernando de Noronha. Foto: João D'Andretta, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caranx_bartholomaei,_avistamento_Fernando_de_Noronha.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="golfinhos">
+    <h2>O Projeto Golfinho Rotador</h2>
+    <p>Quem acompanha os golfinhos de Noronha é o Projeto Golfinho Rotador, que atua no arquipélago
+    desde 1990 e é tocado pelo Centro Golfinho Rotador, na Vila do Boldró. Os pesquisadores estudam a
+    Baía dos Golfinhos desde 1991 e a monitoram sem parar desde 2004: entre 2004 e 2024, os golfinhos
+    apareceram em 90% dos dias, com média de 352 por dia.</p>
+    <p>É trabalho de quem fica: contar, reconhecer, voltar no dia seguinte. Foi assim que o projeto viu
+    que, a partir de 2017, os golfinhos passaram a descansar mais na Baía de Santo Antônio, e que cada grupo é
+    feito de pequenas famílias lideradas por uma fêmea. O projeto foi finalista do prêmio Green Destinations,
+    e o site dele reúne fotos, vídeos, sons e perguntas e respostas.</p>
+    <p>Quer conhecer o trabalho deles? O site é <a href="https://golfinhorotador.org.br/">golfinhorotador.org.br</a>.
+    E a Fundação Projeto Tamar, que cuida das tartarugas marinhas do Brasil, tem um centro de visitantes
+    em Fernando de Noronha: <a href="https://www.tamar.org.br/">tamar.org.br</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Os golfinhos-rotadores descansam e cuidam dos filhotes nas baías durante o dia. Nos anos 1990 havia grupos que
+    passavam a manhã inteira na Baía dos Golfinhos, e hoje a média é de menos de três horas. Quanto menos
+    barco encostar no grupo, mais tempo eles descansam: quem visita fica a distância e deixa eles em paz.</p>
+    <p>Dentro do Parque Nacional Marinho a pesca não é permitida, e na área de proteção ambiental em volta ela
+    segue regras. As tartarugas marinhas, todas ameaçadas, também dependem de praias tranquilas para desovar.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>O lugar e a história</h3>
+    <ul>
+      <li>Wikipedia. <a href="https://pt.wikipedia.org/wiki/Fernando_de_Noronha">Fernando de Noronha</a> e <a href="https://pt.wikipedia.org/wiki/Morro_do_Pico">Morro do Pico</a></li>
+      <li>ICMBio. <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/parna-marinho-de-fernando-de-noronha">Parque Nacional Marinho de Fernando de Noronha</a></li>
+      <li>TNH1. <a href="https://www.tnh1.com.br/tnh1-variedades/area-oceanica-de-quase-11-mil-hectares-abriga-vulcoes-tartarugas-e-milhares-de-aves-em-um-patrimonio-mundial-desde-2001/">Área oceânica de quase 11 mil hectares abriga vulcões, tartarugas e milhares de aves</a></li>
+      <li>Folha de Pernambuco. <a href="https://www.folhape.com.br/noticias/estrangeiros-multados-noronha-subir-morro/433536/">Turistas estrangeiros são multados por subir no Morro Dois Irmãos</a></li>
+    </ul>
+
+    <h3>Os golfinhos e a conservação</h3>
+    <ul>
+      <li>Projeto Golfinho Rotador. <a href="https://golfinhorotador.org.br/os-golfinhos/os-rotadores-de-noronha/">Os rotadores de Noronha</a>, <a href="https://golfinhorotador.org.br/sobre-nos/">Sobre nós</a> e <a href="https://golfinhorotador.org.br/">página inicial</a></li>
+      <li>Fundação Projeto Tamar. <a href="https://www.tamar.org.br/">tamar.org.br</a></li>
+      <li>Wikipedia. <a href="https://pt.wikipedia.org/wiki/Tartaruga-verde">Tartaruga-verde</a> e <a href="https://pt.wikipedia.org/wiki/Tubar%C3%A3o-lim%C3%A3o">Tubarão-limão</a></li>
+    </ul>
+
+    <h3>Os peixes</h3>
+    <ul>
+      <li>Soto, J. M. R. (2001). Peixes do arquipélago de Fernando de Noronha, <em>Mare Magnum</em>, Museu Oceanográfico da Univali. <a href="https://adminnovoportal.univali.br/institucional/museu-oceanografico-univali/mare-magnum/volume-1-numero-2/Documents/maremagnum14.pdf">PDF</a></li>
+      <li>Estudo da pesca artesanal em Noronha. <a href="https://periodicos.ufpe.br/revistas/TROPICALOCEANOGRAPHY/article/download/5088/4363/9728">Tropical Oceanography (UFPE)</a></li>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Caranx-hippos.html">Caranx hippos</a>, <a href="https://www.fishbase.se/summary/Hemiramphus-brasiliensis.html">Hemiramphus brasiliensis</a>, <a href="https://www.fishbase.se/summary/Ocyurus-chrysurus.html">Ocyurus chrysurus</a>, <a href="https://www.fishbase.se/summary/Katsuwonus-pelamis.html">Katsuwonus pelamis</a>, <a href="https://www.fishbase.se/summary/Seriola-dumerili.html">Seriola dumerili</a>, <a href="https://www.fishbase.se/summary/Coryphaena-hippurus.html">Coryphaena hippurus</a>, <a href="https://www.fishbase.se/summary/Sphyraena-barracuda.html">Sphyraena barracuda</a>, <a href="https://www.fishbase.se/summary/Acanthocybium-solandri.html">Acanthocybium solandri</a>, <a href="https://www.fishbase.se/summary/Thunnus-albacares.html">Thunnus albacares</a>, <a href="https://www.fishbase.se/summary/Xiphias-gladius.html">Xiphias gladius</a> e <a href="https://www.fishbase.se/summary/Makaira-nigricans.html">Makaira nigricans</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Edson Ricardo Cunha, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Um_olhar_para_o_Morro_do_Pico_em_Noronha.jpg">O Morro do Pico, visto de uma gruta, em Fernando de Noronha.</a></li>
+      <li>Carla Belke, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Morro_Dois_Irm%C3%A3os_em_Fernando_de_Noronha,_Pernambuco.jpg">O Morro Dois Irmãos, em Fernando de Noronha.</a></li>
+      <li>Liisa Havukainen, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Salto_duplo_(Stenella_longirotris).JPG">Golfinhos-rotadores (Stenella longirostris) saltando, em Fernando de Noronha.</a></li>
+      <li>Rafa Tecchio, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:PE_-_Parque_Nacional_Marinho_Fernando_de_Noronha_-_Praia_do_Sancho_-_Tartaruga_Marinha_1.jpg">Tartaruga marinha na Praia do Sancho, no Parque Nacional Marinho de Fernando de Noronha.</a></li>
+      <li>M. H. Mathias, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Limon_Shark,_Fernando_de_Noronha_(14799250735).jpg">Tubarão-limão (Negaprion brevirostris), em Fernando de Noronha.</a></li>
+      <li>Ilma Melo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Atob%C3%A1_de_Noronha.jpg">Ave marinha sobre uma praia do Parque Nacional Marinho de Fernando de Noronha.</a></li>
+      <li>João D'Andretta, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Parque_Nacional_Marinho_de_Fernando_de_Noronha_-_João_Paulo_Marques_DAndretta_23.jpg">Barracuda (Sphyraena barracuda), em Fernando de Noronha.</a></li>
+      <li>João D'Andretta, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caranx_bartholomaei,_avistamento_Fernando_de_Noronha.jpg">Guaricema (Caranx bartholomaei), em Fernando de Noronha.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

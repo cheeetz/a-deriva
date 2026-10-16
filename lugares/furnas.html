@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lago de Furnas — À Deriva</title>
+<meta name="description" content="O Lago de Furnas de verdade: o Mar de Minas, os cânions de Capitólio, a Serra da Canastra, os bichos e as plantas do cenário e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR. É o "saiba mais" da janela que o jogo abre ao chegar no mapa: conta o
+     lugar e o bicho de verdade, e NÃO traz número de jogo (chance, preço, tamanho em jogo). Todo
+     fato daqui tem fonte na lista do fim; o que não teve fonte saiu. O visual é o do site
+     (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe um dourado-rei catalogado */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Minas Gerais</div>
+    <h1>Lago de <span>Furnas</span></h1>
+    <p class="chamada">O mar que Minas ganhou não existia antes de 1963. É um lago feito pela mão
+    de gente, com cidades dormindo no fundo, cânions de pedra nas bordas e a Serra da Canastra
+    lá longe, onde nasce um rio famoso. Aqui está o Furnas de verdade.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>O Lago de Furnas nasceu da usina hidrelétrica de Furnas, no Rio Grande, em Minas Gerais. A
+    usina começou a operar em 1963, e a água foi tomando o vale até virar um lago de cerca de 1.440
+    quilômetros quadrados. É tão grande que o apelido pegou: o Mar de Minas. Fica no Sul de Minas e
+    banha mais de trinta municípios.</p>
+    <p>Para fazer o lago, algumas cidades tiveram que ir para mais longe. Em Guapé, as comportas
+    foram fechadas em 9 de janeiro de 1963, e em dez dias a água já cobria a parte baixa da cidade.
+    A cidade nova foi reconstruída em 1964, num lugar mais alto, em forma de península cercada pela
+    água. Na seca, as ruínas da igreja matriz às vezes reaparecem. E lá embaixo, mergulhadores que
+    exploram a região de São José da Barra já encontraram uma rua inteira, casas quase intactas,
+    uma ponte e até um ônibus, a cerca de oitenta metros de fundo.</p>
+    <p>Em volta do lago é Minas de verdade: cerrado, pasto, café e eucalipto. Em Capitólio, a água
+    entrou entre paredões de quartzito, uma rocha dura, e hoje os cânions são o cartão-postal do
+    lago, com cachoeiras caindo nas paredes. E ao fundo, no horizonte do jogo, fica a Serra da
+    Canastra, onde estão as nascentes de rios importantes.</p>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/furnas/lago.jpg" alt="Mata, rochas e praia na beira do Lago de Furnas" loading="lazy"><figcaption>Mata, rochas e praia no Lago de Furnas. Foto: Mateus S. Figueiredo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Vista_do_Lago_de_Furnas_03.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/canion.jpg" alt="Cânion de paredões de pedra em Capitólio" loading="lazy"><figcaption>Cânion em Capitólio (MG). Foto: Claudio JJ, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capit%C3%B3lio_-_C%C3%A2nion.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/canastra.jpg" alt="Chapada da Serra da Canastra" loading="lazy"><figcaption>Parque Nacional da Serra da Canastra. Foto: Jairo Abud, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Serra_da_Canastra.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>Quase tudo o que aparece desenhado no cenário existe de verdade em volta do Lago de Furnas.</p>
+
+    <h3 class="grupo">A paisagem</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Paliteiro</h3>
+        <p>É o nome das árvores mortas que ficam de pé numa represa depois da inundação. Os galhos
+        expostos viram abrigo novo para bicho e planta, e estudos mostram que esse emaranhado ajuda
+        na reprodução de vários peixes. Também embaraça rede e anzol.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cânions de Capitólio</h3>
+        <p>Paredões de quartzito, uma rocha metamórfica, que a água esculpiu nas fraturas antigas da
+        pedra. Os paredões têm de vinte a sessenta metros, segundo o Serviço Geológico do Brasil.</p>
+      </div>
+      <div class="ficha">
+        <h3>Serra da Canastra</h3>
+        <p>O parque nacional foi criado em 1972 e tem quase 198 mil hectares de Cerrado. Protege
+        nascentes do Rio São Francisco, do Araguari e de afluentes da bacia do Rio Grande. A
+        cachoeira Casca d'Anta, de 186 metros, é a mais famosa da serra.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">O cerrado e a fazenda</h3>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/furnas/lobeira.jpg" alt="Lobeira, árvore do Cerrado" loading="lazy"><figcaption>Lobeira (Solanum lycocarpum), em Santana do Riacho (MG). Foto: Ana Cristina Almeida, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Solanum_lycocarpum_(Minas_Gerais,_Brazil).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/canela-de-ema.jpg" alt="Canela-de-ema no campo rupestre" loading="lazy"><figcaption>Canela-de-ema (Vellozia squamata). Foto: Tiago Degaspari, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Canela-de-ema_(Vellozia_squamata).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/cupinzeiro.jpg" alt="Cupinzeiro no pasto" loading="lazy"><figcaption>Cupinzeiro na área rural de Itaúna (MG). Foto: Andrepimentasc, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cupinzeiro_ao_fundo_na_%C3%A1rea_rural_de_Ita%C3%BAna,_MG,_Brasil..jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Pequizeiro</h3>
+        <span class="cientifico">Caryocar brasiliense</span>
+        <p>Dá o pequi, de uso largo na cozinha do Cerrado. Cresce no cerradão, uma mata de árvores de
+        até quinze metros que fica entre o campo aberto e a floresta úmida.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pau-terra</h3>
+        <span class="cientifico">Qualea grandiflora</span>
+        <p>Árvore do cerradão, de tronco torto e curto. O nome vem da cor do tronco, marrom
+        avermelhado, igual a terra.</p>
+      </div>
+      <div class="ficha">
+        <h3>Lobeira</h3>
+        <span class="cientifico">Solanum lycocarpum</span>
+        <p>Arbusto de beira de estrada e pasto, de até uns cinco metros. O nome científico quer
+        dizer "fruto de lobo": o fruto é o preferido do lobo-guará, que espalha as sementes pelo
+        caminho.</p>
+      </div>
+      <div class="ficha">
+        <h3>Ipê-amarelo</h3>
+        <span class="cientifico">Handroanthus, mais de uma espécie</span>
+        <p>Símbolo do Cerrado, conhecido pela florada e pela madeira nobre. Floresce na seca,
+        de julho a setembro, e as flores atraem abelhas e beija-flores.</p>
+      </div>
+      <div class="ficha">
+        <h3>Canela-de-ema</h3>
+        <span class="cientifico">Vellozia</span>
+        <p>Planta do campo rupestre, o campo de pedra das serras, que vive em rocha e solo raso.
+        Na Canastra ela forma campos inteiros, e rebrota fácil depois do fogo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cupinzeiro</h3>
+        <p>O montinho de terra dos cupins é dos desenhos mais comuns do Cerrado. Em noites quentes
+        e úmidas de primavera, larvas de vaga-lume acendem a luz na superfície do cupinzeiro para
+        atrair insetos, e a coruja-buraqueira gosta de pousar neles.</p>
+      </div>
+      <div class="ficha">
+        <h3>Eucalipto</h3>
+        <span class="cientifico">Eucalyptus</span>
+        <p>Não é daqui: vem da Austrália. As primeiras tentativas de plantio no Brasil foram no
+        século 19, e para valer ele ganhou força no começo do século 20, na construção das ferrovias do
+        Sudeste. Hoje Minas é o estado com mais eucalipto plantado.</p>
+      </div>
+      <div class="ficha">
+        <h3>Café</h3>
+        <p>O Sul de Minas é a maior região produtora de café do Brasil, com cafezais em morros
+        entre setecentos e pouco mais de mil metros de altitude.</p>
+      </div>
+      <div class="ficha">
+        <h3>Gado nelore</h3>
+        <p>Raça de origem indiana, da região de Ongole, que chegou ao Brasil há mais de cem anos.
+        Aguenta calor, parasita e clima variado, e é conhecida pela rusticidade e pela carne.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os bichos</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/furnas/seriema.jpg" alt="Seriema de perto" loading="lazy"><figcaption>Seriema (Cariama cristata), em Minas Gerais. Foto: Bruno Luka de Souza Bambirra Silveira, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cariama_cristata_385216954.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/coruja-buraqueira.jpg" alt="Coruja-buraqueira num mourão de cerca" loading="lazy"><figcaption>Coruja-buraqueira (Athene cunicularia), no Parque Estadual do Rio Preto (MG). Foto: Under the same moon..., <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Burrowing_Owl_(22572995297).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/capivara.jpg" alt="Capivaras na beira da lagoa" loading="lazy"><figcaption>Capivaras na beira da lagoa de Lagoa Santa (MG). A espécie é a mesma de Furnas. Foto: Valquiria Aldelita Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capivaras_em_familia.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/garca.jpg" alt="Garça-branca-grande na beira da água" loading="lazy"><figcaption>Garça-branca-grande (Ardea alba), em Lagoa Santa (MG). Foto: Valquiria Aldelita Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Gar%C3%A7a_branquinha.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+
+    <h3 class="grupo">No pasto e no mato</h3>
+    <div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Seriema</h3>
+        <span class="cientifico">Cariama cristata</span>
+        <p>O canto dela é o mais conhecido do Cerrado e se ouve a mais de um quilômetro. Come
+        inseto e bicho pequeno, de lagarto a cobra e roedor, e faz o ninho de gravetos numa árvore
+        baixa, de um a cinco metros.</p>
+      </div>
+      <div class="ficha">
+        <h3>Coruja-buraqueira</h3>
+        <span class="cientifico">Athene cunicularia</span>
+        <p>Coruja que acorda de dia e também de noite, de campo aberto. Cava a própria toca, mas
+        aproveita as abandonadas por outros bichos, como o tatu, e costuma ser vista em cupinzeiros
+        e postes.</p>
+      </div>
+      <div class="ficha">
+        <h3>João-de-barro</h3>
+        <span class="cientifico">Furnarius rufus</span>
+        <p>Constrói o ninho de barro molhado misturado com fibra e capim, e a obra é do casal: os
+        dois levam o barro aos poucos, em camadas, e o ninho tem uma parede por dentro, que separa a
+        entrada do quarto dos ovos. Na falta de galho firme, vale poste e telhado.</p>
+      </div>
+      <div class="ficha">
+        <h3>Lobo-guará</h3>
+        <span class="cientifico">Chrysocyon brachyurus</span>
+        <p>O maior canídeo selvagem da América do Sul. Sai ao
+        entardecer e anda por até dez horas atrás de comida, sozinho. Come bicho pequeno e fruta,
+        sobretudo a da lobeira.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">No céu</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Carcará</h3>
+        <span class="cientifico">Caracara plancus</span>
+        <p>Ave de rapina de campo aberto, cerrado e beira de estrada. Come carniça e bicho
+        atropelado, mas também inseto, roedor, réptil e ovo. O casal faz ninho de dois ou três ovos e
+        divide o cuidado dos filhotes.</p>
+      </div>
+      <div class="ficha">
+        <h3>Urubu</h3>
+        <span class="cientifico">Coragyps atratus, o de cabeça preta</span>
+        <p>Plana com as asas esticadas. Vive de carcaça e ajuda a limpar o campo e a beira de
+        estrada.</p>
+      </div>
+      <div class="ficha">
+        <h3>Arara-canindé</h3>
+        <span class="cientifico">Ara ararauna</span>
+        <p>A arara azul e amarela escolhe um parceiro para a vida toda e costuma fazer o ninho em
+        oco de tronco. Vive em buritizais e matas de galeria dos cerrados.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Na água e na beira</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Capivara</h3>
+        <span class="cientifico">Hydrochoerus hydrochaeris</span>
+        <p>O maior roedor do mundo, e vive perto da água.</p>
+      </div>
+      <div class="ficha">
+        <h3>Lontra</h3>
+        <span class="cientifico">Lontra longicaudis</span>
+        <p>Vive em rios e lagos de água doce, em quase todo o Brasil, e come principalmente peixe.
+        Num estudo em Minas, havia peixe em quase todas as fezes analisadas. Caça, poluição e
+        destruição da mata da beira são as ameaças.</p>
+      </div>
+      <div class="ficha">
+        <h3>Garça-branca-grande</h3>
+        <span class="cientifico">Ardea alba</span>
+        <p>Pesca devagar: anda na água rasa, num passo calmo, e dá o bote rápido e certeiro. Come
+        sobretudo peixe, mas também anfíbio, crustáceo e inseto de água.</p>
+      </div>
+      <div class="ficha">
+        <h3>Biguá</h3>
+        <span class="cientifico">Nannopterum brasilianus</span>
+        <p>Mergulha atrás de peixe. As penas dele não têm a cera que as impermeabiliza, então
+        molham e pesam, o que ajuda a afundar. Por isso fica horas de asas abertas num tronco ou
+        pedra, secando ao sol e ao vento.</p>
+      </div>
+      <div class="ficha">
+        <h3>Martim-pescador</h3>
+        <span class="cientifico">Megaceryle torquata, o grande</span>
+        <p>Espera num poleiro alto sobre a água limpa, mergulha no peixe que vê e volta para o
+        poleiro, onde bate a presa numa superfície dura antes de engolir.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tanques-rede de tilápia</h3>
+        <p>Nem todo peixe do lago é solto: parte é criada em gaiolas flutuantes. Em Guapé, a
+        criação de tilápia no Lago de Furnas é feita assim, e o governo demarcou os primeiros
+        parques de criação nas baías dos braços do Rio Grande e do Sapucaí.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes do Furnas no jogo, do lambari ao rei. Quando o nome popular vale para mais de
+    uma espécie, o cartão avisa. Vários não nasceram no lago: chegaram com gente, e os cartões dizem
+    quem.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Lambari</h3>
+        <span class="cientifico">Astyanax, várias espécies</span>
+        <p>Lambari é nome de várias espécies pequenas, de dez a vinte centímetros. Vive em cardume,
+        come inseto que cai na água, bichinho e pedaço de planta, e às vezes sobe à superfície para
+        se alimentar. É comida de peixe maior e de ave, e por isso serve de isca viva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tilápia</h3>
+        <span class="cientifico">Oreochromis niloticus, a do Nilo</span>
+        <p>Peixe africano que os egípcios já conheciam por volta de 2000 a.C. A fêmea guarda os ovos
+        na boca. Chegou ao Brasil em 1971 e hoje é muito criada em tanque-rede. Pescadores de
+        Furnas contam que a tilápia-capim foi uma das primeiras a entrar no lago, nos anos 1950, e
+        que a do Nilo foi notada por volta de meados dos anos 1990.</p>
+      </div>
+      <div class="ficha">
+        <h3>Mandi-amarelo</h3>
+        <span class="cientifico">Pimelodus maculatus</span>
+        <p>Bagre de uns quarenta centímetros e até três quilos, que come de tudo, principalmente
+        inseto de água. Tem espinho nas nadadeiras, e a ferroada dói e incha. É nativo das bacias do
+        Paraná e do São Francisco e muito apreciado na pesca esportiva e na cozinha.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piapara</h3>
+        <span class="cientifico">Leporinus obtusidens (Megaleporinus)</span>
+        <p>Também chamada de piau-verdadeiro ou piavuçu. Come de tudo, de semente e vegetal a
+        invertebrado e peixe pequeno. É migradora e prefere água funda, e vive nas bacias do Paraná,
+        do Prata e do São Francisco.</p>
+      </div>
+      <div class="ficha">
+        <h3>Traíra</h3>
+        <span class="cientifico">Hoplias malabaricus</span>
+        <p>Chega a setenta centímetros e quatro quilos. Tem dentes afiados, cortantes, e come peixe
+        pequeno. O nome vem do tupi, tare'ira. Tem o dorso preto, o ventre branco e manchas escuras
+        no corpo, e não tem a nadadeira de gordura.</p>
+      </div>
+      <div class="ficha">
+        <h3>Corvina-de-água-doce</h3>
+        <span class="cientifico">Plagioscion squamosissimus</span>
+        <p>Também chamada de pescada-amazônica: é uma pescada de rio, de origem amazônica. Na
+        represa do Jaguari, em São Paulo, ela virou a espécie mais abundante em cerca de dez anos,
+        e a diversidade de peixes nativos caiu, segundo um estudo da Unesp.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tucunaré-amarelo</h3>
+        <span class="cientifico">Cichla kelberi</span>
+        <p>Descrito como espécie só em 2006. Os tucunarés introduzidos em reservatórios do Sul, Sudeste e
+        Nordeste eram tomados por outras espécies e são, na verdade, o tucunaré-amarelo e o azul. Em Furnas, mais da metade dos pescadores ouvidos num estudo citou o
+        tucunaré como peixe de fora. Como é caçador de peixe, pode reduzir os peixes do lugar.</p>
+      </div>
+      <div class="ficha">
+        <h3>Trairão</h3>
+        <span class="cientifico">Hoplias lacerdae</span>
+        <p>Parente grande da traíra: o nome do gênero vem do grego hoplon, "arma". Come outros
+        peixes, chega a uns setenta e cinco centímetros e quatro quilos, e a espécie leva o nome do
+        médico e cientista João Batista de Lacerda.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dourado</h3>
+        <span class="cientifico">Salminus brasiliensis</span>
+        <p>Come peixe e crustáceo. Passa de um metro, e
+        o maior registrado pesou mais de trinta quilos. Migra dentro dos rios das bacias do Paraná,
+        Paraguai e Uruguai. É um dos peixes mais procurados na pesca esportiva, e o pesque e solte
+        funciona bem se o peixe ficar pouco tempo fora da água.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirapitinga</h3>
+        <span class="cientifico">Brycon nattereri</span>
+        <p>Peixe de rio de porte médio, de água clara e mata preservada na beira, que chega a uns
+        cinquenta centímetros e dois quilos e meio. O gênero Brycon come de tudo, de flor, folha,
+        fruto e semente a inseto. Vive nas bacias do Alto Paraná, do São Francisco e do Alto
+        Tocantins.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jaú-do-Rio-Grande</h3>
+        <span class="cientifico">Zungaro jahu</span>
+        <p>Bagre gigante de bigodes longos das bacias do Paraná e do Paraguai. Chega a mais de um
+        metro e quarenta de corpo e está na lista de espécies quase ameaçadas da IUCN, a União
+        Internacional para a Conservação da Natureza.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Dourado-Rei <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirado no dourado, Salminus brasiliensis</span>
+        <p>Um dourado-rei é invenção do jogo, mas o dourado de verdade já é um peixe de respeito:
+        passa de um metro, pode passar de trinta quilos e é alvo da pesca esportiva. O nome do gênero, Salminus, vem provavelmente do latim para salmão. O rei é só um
+        dourado que a gente nunca viu.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/furnas/dourado.jpg" alt="Dourado nadando" loading="lazy"><figcaption>Dourado (Salminus brasiliensis), em Bonito (MS). Foto: David Morimoto, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Dourado(Salminus_brasiliensis)emBonito.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/dourado-2.jpg" alt="Dourado nadando na água clara" loading="lazy"><figcaption>Dourado (Salminus brasiliensis), em Mato Grosso. Foto: Donald Davesne, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Salminus_brasiliensis_565771871.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="canastra">
+    <h2>O lobo-guará e a Canastra</h2>
+    <p>O lobo-guará é considerado Vulnerável na lista brasileira de espécies ameaçadas. Estima-se
+    que existam cerca de 24 mil no país, a maioria no Cerrado, que vem perdendo espaço para lavoura,
+    pasto, cidade e estrada. A região da Serra da Canastra tem uma das maiores densidades da espécie.</p>
+    <p>É lá que trabalha o Programa Lobos da Canastra, do Instituto Pró-Carnívoros. O trabalho
+    começou em 2004, como uma pesquisa de campo sobre o lobo-guará no Cerrado, com dez instituições,
+    e cresceu até virar um programa de conservação. Já foram equipados 78 lobos com colar de
+    rastreamento, e a caça ao lobo na região, que chegava a uns seis bichos por ano, ficou rara
+    depois que o projeto conversou com os fazendeiros.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/furnas/lobo-guara.jpg" alt="Lobo-guará no Parque Nacional da Serra da Canastra" loading="lazy"><figcaption>Lobo-guará (Chrysocyon brachyurus) no Parque Nacional da Serra da Canastra. Foto: Ferrarezi Jr., <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Chrysocyon_brachyurus_no_Parque_Nacional_da_Serra_da_Canastra_por_Celso_Ferrarezi_Jr_(07).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/furnas/lobo-guara-2.jpg" alt="Lobo-guará na Serra da Canastra" loading="lazy"><figcaption>Lobo-guará na Serra da Canastra. Foto: Nortondefeis, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Lobo-guar%C3%A1_na_Serra_da_Canastra.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <p>O programa também foi à escola: fez oficinas com cerca de cem professores de São Roque de
+    Minas e Vargem Bonita, levou o Cine-Lobo para as praças e as fazendas e criou um lobo mascote
+    para conversar com as crianças. Proteger o lobo é proteger o campo inteiro: a lobeira, que ele
+    planta pelo caminho, e tudo o que vive junto dela.</p>
+    <p>Quer conhecer? O programa está em
+    <a href="https://procarnivoros.org.br/projeto/programa-para-a-conservacao-do-lobo-guara-lobos-da-canastra/">procarnivoros.org.br</a>
+    e o parque nacional, na página do
+    <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/cerrado/lista-de-ucs/parna-da-serra-da-canastra">ICMBio</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Em Minas Gerais, entre 1º de novembro e 28 de fevereiro vale a piracema, o defeso do peixe de
+    rio: nesse período a pesca de espécie nativa é proibida em represas como Furnas. Vale confirmar
+    as regras do Instituto Estadual de Florestas antes de pescar.</p>
+    <p>Tilápia e tucunaré não são daqui, e peixe de criação não vai para o lago. O dourado é peixe
+    de soltar, e quanto menos tempo fora da água, mais chance ele tem de seguir vivo.</p>
+    <p>E na hora de passear nos cânions de Capitólio, respeite os paredões: a pedra tem fratura, a
+    cachoeira desgasta a base dela, e a Polícia Civil atribuiu a queda de um bloco em 2022 a esse
+    processo natural.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>O lago e a gente</h3>
+    <ul>
+      <li>Wikipédia. <a href="https://pt.wikipedia.org/wiki/Usina_Hidrel%C3%A9trica_de_Furnas">Usina Hidrelétrica de Furnas</a> (usada com as demais desta lista, nunca sozinha).</li>
+      <li>Olhar Digital (02/04/2026). <a href="https://olhardigital.com.br/2026/04/02/ciencia-e-espaco/cidade-submersa-volta-a-vida-no-sul-de-minas-gerais/">Cidade submersa volta à vida no Sul de Minas Gerais</a></li>
+      <li>Cidade de MG. <a href="https://smargiassi.com.br/mg/guape/">Guapé</a> e UAI Serviços. <a href="https://www.uai.com.br/cidades/2026/03/31/o-mar-secreto-de-minas-gerais-com-canions-de-20-metros-e-aguas-verde-esmeralda-a-4-horas-de-bh/">O mar secreto de Minas Gerais</a></li>
+      <li>Olhar Digital (08/01/2022). <a href="https://olhardigital.com.br/2022/01/08/ciencia-e-espaco/capitolio-o-que-causou-a-queda-do-paredao-em-minas-gerais/">Capitólio: geóloga explica o que causou queda de paredão em Minas Gerais</a> e Confea. <a href="https://www.confea.org.br/node/226488">Geólogos esclarecem fatores que podem ter causado tragédia em Minas</a></li>
+      <li>O Antagonista. <a href="https://oantagonista.com.br/?p=731647">Queda de rocha em Capitólio foi "evento natural", conclui Polícia Civil</a></li>
+      <li>Estado de Minas (07/2026). <a href="https://www.em.com.br/turismo/2026/07/7469459-5-destinos-em-minas-gerais-para-quem-ama-pescar-em-meio-a-natureza.html">5 destinos em Minas Gerais para quem ama pescar em meio à natureza</a></li>
+    </ul>
+
+    <h3>A Canastra e o lobo-guará</h3>
+    <ul>
+      <li>ICMBio. <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/cerrado/lista-de-ucs/parna-da-serra-da-canastra">Parque Nacional da Serra da Canastra</a> e <a href="https://www.gov.br/icmbio/pt-br/centrais-de-conteudo/publicacoes/editais-diversos/editais-diversos-2017/edital_parna_serra_da_canastra.pdf">edital do parque</a> (PDF)</li>
+      <li>Estado de Minas (03/2024). <a href="https://em.com.br/turismo/2024/03/6826389-belezas-e-sabores-da-canastra-que-voce-precisa-conhecer-nesta-vida.html">Belezas e sabores da Canastra</a></li>
+      <li>National Geographic Brasil (2020). <a href="https://www.nationalgeographicbrasil.com/animais/2020/04/especies-ameacadas-lobo-guara-cerrado-dia-da-terra">Entre carros e plantações, lobo-guará luta para sobreviver no que resta do Cerrado</a></li>
+      <li>Instituto Pró-Carnívoros. <a href="https://procarnivoros.org.br/projeto/programa-para-a-conservacao-do-lobo-guara-lobos-da-canastra/">Programa para a Conservação do Lobo-Guará, Lobos da Canastra</a> (só o link; nenhum conteúdo ou foto do site foi copiado).</li>
+      <li>Universidade Federal de Uberlândia (2019). <a href="https://repositorio.ufu.br/handle/123456789/27043">Dissertação sobre o lobo-guará e a dispersão de sementes da lobeira</a></li>
+    </ul>
+
+    <h3>O cenário</h3>
+    <ul>
+      <li>Biota Neotropica. <a href="https://www.biotaneotropica.org.br/BN/article/view/1734/3334">Árvores submersas em reservatórios</a>, e Unioeste. <a href="https://bdtd.ibict.br/vufind/Record/UNIOESTE-1_2c180adc024dd5b2b3f0597f74defda2">Influência da complexidade estrutural sobre a reprodução da ictiofauna: o caso das árvores submersas em reservatórios</a></li>
+      <li>Embrapa. <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1136652/1/Especies-Arboreas-Brasileiras-vol-3-Pau-terra-grande.pdf">Espécies Arbóreas Brasileiras, vol. 3: Pau-terra-grande</a> e <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140022/1/Especies-Arboreas-Brasileiras-vol-4-Lobeira.pdf">vol. 4: Lobeira</a></li>
+      <li>Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/185453/1/cot103.pdf">Eucalipto no Brasil</a> e <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1131863/1/EmbrapaFlorestas-2021-LV-EucaliptoEmbrapa-cap3.pdf">Eucalipto, Embrapa Florestas, capítulo 3</a></li>
+      <li>Embrapa. <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/794751/1/DINMICA-DA-CADEIA-PRODUTIVA-.pdf">Dinâmica da cadeia produtiva do café</a>, sobre o Sul de Minas.</li>
+      <li>Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/bitstream/doc/566499/1/doc49.pdf">Documento sobre a raça Nelore</a> e Compre Rural. <a href="https://comprerural.com/ongole-conheca-a-raca-e-regiao-que-originou-o-nelore-brasileiro/">Ongole: conheça a raça e região que originou o Nelore brasileiro</a></li>
+      <li>Correio Braziliense (24/07/2024). <a href="https://www.correiobraziliense.com.br/cidades-df/2024/07/amp/6904782-comeca-a-floracao-dos-ipes-amarelos-um-dos-simbolos-de-brasilia.html">Começa a floração dos ipês amarelos</a>, Embrapa. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/859495/1/folderburiti.pdf">Buriti (Mauritia flexuosa)</a> e Jornal Opção, Araguaia em Foco. <a href="https://www.jornalopcao.com.br/colunas-e-blogs/araguaia-em-foco/as-florestas-do-cerrado-paisagens-que-surpreendem-725565/">As florestas do Cerrado: paisagens que surpreendem</a> (pequi e cerradão)</li>
+      <li>Agência FAPESP. <a href="https://agencia.fapesp.br/luzes-de-alerta/12138">Luzes de alerta</a>, sobre os cupinzeiros luminosos do Cerrado.</li>
+      <li>IFMG ForScience. <a href="https://forscience.ifmg.edu.br/index.php/forscience/article/download/285/150/1372">Estudo sobre a canela-de-ema (Vellozia) na Canastra</a> e USP. <a href="https://jornal.usp.br/?p=857368">Espécie do gênero Vellozia</a></li>
+      <li>Museus da Universidade de Lisboa. <a href="https://museus.ulisboa.pt/capivara-objeto-do-mes-de-outubro-2023">Capivara</a></li>
+      <li>Semil-SP. <a href="https://semil.sp.gov.br/2015/09/afinal-e-seriema-ou-siriema/">Afinal é seriema ou siriema?</a>, Catraca Livre. <a href="https://catracalivre.com.br/cidadania/coisas-que-voce-precisa-saber-sobre-a-seriema-a-ave-tipica-do-cerrado/">Coisas que você precisa saber sobre a seriema</a>, Instituto Federal Goiano. <a href="https://www.ifgoiano.edu.br/home/images/RV/2024/Marco/Desbaratando_a_Biologia_Coruja-buraqueira.pdf">Desbaratando a Biologia: coruja-buraqueira</a></li>
+      <li>InfoEscola. <a href="https://www.infoescola.com/aves/joao-de-barro/">João-de-barro</a>, <a href="https://www.infoescola.com/aves/bigua/">Biguá</a> e <a href="https://www.infoescola.com/aves/urubu/">Urubu</a>. Prefeitura de São Paulo. <a href="https://prefeitura.sp.gov.br/web/meio_ambiente/w/servicos/fauna/especies_da_cidade/13235">Carcará</a>. Portal São Francisco. <a href="https://www.portalsaofrancisco.com.br/animais/martim-pescador">Martim-pescador</a>. Prefeitura de Piracicaba. <a href="https://piracicaba.sp.gov.br/wp-content/uploads/2024/08/SIMAP_NEA_Cartilha-Zoologico.pdf">Cartilha do Zoológico</a> (arara-canindé).</li>
+      <li>EcoRegistros. <a href="https://www.ecoregistros.org/sheet/Ardea-alba?id=29">Ardea alba</a></li>
+      <li>Iheringia, Série Zoologia. <a href="https://biblat.unam.mx/en/revista/iheringia-serie-zoologia/articulo/trophic-ecology-of-lontra-longicaudis-carnivora-mustelidae-in-lotic-and-semilotic-environments-in-southeastern-brazil">Trophic ecology of Lontra longicaudis in lotic and semilotic environments in southeastern Brazil</a></li>
+      <li>Confederação da Agricultura e Pecuária do Brasil. <a href="https://cna-portal-2022new.dotgroup.com.br/storage/arquivos/ativos_Aquicultura_campo_futuro_Agosto_190902_130652.pdf">Aquicultura, Campo Futuro</a> (tanques-rede em Guapé)</li>
+    </ul>
+
+    <h3>Os peixes</h3>
+    <ul>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Salminus-brasiliensis.html">Salminus brasiliensis</a>, <a href="https://www.fishbase.se/summary/Hoplias-lacerdae.html">Hoplias lacerdae</a>, <a href="https://www.fishbase.se/summary/Brycon-nattereri.html">Brycon nattereri</a>, <a href="https://www.fishbase.se/summary/Zungaro-jahu.html">Zungaro jahu</a> e <a href="https://www.fishbase.se/summary/Cichla-kelberi.html">Cichla kelberi</a></li>
+      <li>Wikipédia. <a href="https://pt.wikipedia.org/wiki/Pimelodus_maculatus">Pimelodus maculatus</a>, <a href="https://pt.wikipedia.org/wiki/Leporinus_obtusidens">Leporinus obtusidens</a>, <a href="https://pt.wikipedia.org/wiki/Hoplias_malabaricus">Hoplias malabaricus</a> e <a href="https://pt.wikipedia.org/wiki/Til%C3%A1pia-do-nilo">Tilápia-do-nilo</a></li>
+      <li>Aquarismo Paulista. <a href="https://www.aquarismopaulista.com/blog28923/">Peixe amazônico, introduzido em reservatório paulista, vira predador de espécies nativas</a> (corvina na represa do Jaguari, estudo da Unesp)</li>
+      <li>Concepção dos pescadores artesanais que utilizam o reservatório de Furnas. <a href="https://www.researchgate.net/publication/279349469_Concepcao_dos_pescadores_artesanais_que_utilizam_o_reservatorio_de_Furnas_Estado_de_Minas_Gerais_acerca_dos_recursos_pesqueiros_um_estudo_etnoictiologico">Estudo etnoictiológico</a></li>
+      <li>InfoEscola. <a href="https://www.infoescola.com/peixes/lambari/">Lambari</a></li>
+      <li>Seb-Ecologia. <a href="https://www.seb-ecologia.org.br/revistas/indexar/anais/xceb/resumos/1316.pdf">Resumo sobre Brycon nattereri</a> e Rufford Foundation. <a href="https://rufford.org/projects/oscar-barroso-vitorino-j%C3%BAnior/pirapitinga-project-conservation-and-environmental-education-allied-for-maintenance-of-endangered-fishes-from-headwaters-of-two-main-brazilian-basins">Pirapitinga project</a></li>
+      <li>Brazilian Journal of Biology. <a href="https://www.scielo.br/j/bjb/a/MYkDjfz4LdN6FqPPCQQ4WdR/?lang=en">The influence of catch-and-release on mortality of Salminus brasiliensis</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Mateus S. Figueiredo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Vista_do_Lago_de_Furnas_03.jpg">Mata, rochas e praia no Lago de Furnas.</a></li>
+      <li>Claudio JJ, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capit%C3%B3lio_-_C%C3%A2nion.jpg">Cânion em Capitólio (MG).</a></li>
+      <li>Jairo Abud, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Serra_da_Canastra.jpg">Parque Nacional da Serra da Canastra.</a></li>
+      <li>Ana Cristina Almeida, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Solanum_lycocarpum_(Minas_Gerais,_Brazil).jpg">Lobeira (Solanum lycocarpum), em Santana do Riacho (MG).</a></li>
+      <li>Tiago Degaspari, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Canela-de-ema_(Vellozia_squamata).jpg">Canela-de-ema (Vellozia squamata).</a></li>
+      <li>Andrepimentasc, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cupinzeiro_ao_fundo_na_%C3%A1rea_rural_de_Ita%C3%BAna,_MG,_Brasil..jpg">Cupinzeiro na área rural de Itaúna (MG).</a></li>
+      <li>Bruno Luka de Souza Bambirra Silveira, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cariama_cristata_385216954.jpg">Seriema (Cariama cristata), em Minas Gerais.</a></li>
+      <li>Under the same moon..., <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Burrowing_Owl_(22572995297).jpg">Coruja-buraqueira (Athene cunicularia), no Parque Estadual do Rio Preto (MG).</a></li>
+      <li>Valquiria Aldelita Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capivaras_em_familia.jpg">Capivaras na beira da lagoa de Lagoa Santa (MG). A espécie é a mesma de Furnas.</a></li>
+      <li>Valquiria Aldelita Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Gar%C3%A7a_branquinha.jpg">Garça-branca-grande (Ardea alba), em Lagoa Santa (MG).</a></li>
+      <li>David Morimoto, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Dourado(Salminus_brasiliensis)emBonito.jpg">Dourado em Bonito (MS).</a></li>
+      <li>Donald Davesne, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Salminus_brasiliensis_565771871.jpg">Dourado (Salminus brasiliensis), em Mato Grosso.</a></li>
+      <li>Ferrarezi Jr., <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Chrysocyon_brachyurus_no_Parque_Nacional_da_Serra_da_Canastra_por_Celso_Ferrarezi_Jr_(07).jpg">Lobo-guará no Parque Nacional da Serra da Canastra.</a></li>
+      <li>Nortondefeis, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Lobo-guar%C3%A1_na_Serra_da_Canastra.jpg">Lobo-guará na Serra da Canastra.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

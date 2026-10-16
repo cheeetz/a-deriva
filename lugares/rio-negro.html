@@ -45,6 +45,9 @@
   .foto { margin: 0; }
   .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
   .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
   .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
   .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
   /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
@@ -156,10 +159,9 @@
     </div>
 
     <h3 class="grupo">Os bichos</h3>
-    <div class="galeria" style="--cols:3">
-<figure class="foto"><img src="fotos/rio-negro/macaco-aranha.jpg" alt="Macaco-aranha-de-cara-vermelha" loading="lazy"><figcaption>Macaco-aranha-de-cara-vermelha (Ateles paniscus), no Jardim Zoológico de Curitiba. Foto: Wilfredor, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Ateles_paniscus_in_Jardim_Zool%C3%B3gico_de_Curitiba.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/cobra-papagaio.jpg" alt="Cobra-papagaio enrolada num galho" loading="lazy"><figcaption>Cobra-papagaio (Corallus batesii), no Brasil. Foto: Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/tucano.jpg" alt="Tucano-grande-de-papo-branco num galho" loading="lazy"><figcaption>Tucano-grande-de-papo-branco (Ramphastos tucanus). Foto: Dominic Sherony, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:White-throated_Toucan_(Ramphastos_tucanus)_(9499725570).jpg">Wikimedia Commons</a>.</figcaption></figure>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/rio-negro/cobra-papagaio.jpg" alt="Cobra-papagaio enrolada num galho" loading="lazy"><figcaption>Cobra-papagaio (Corallus batesii), no vale do Rio Cristalino (MT). Foto: Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/tucano.jpg" alt="Tucano-grande-de-papo-branco num galho" loading="lazy"><figcaption>Tucano-grande-de-papo-branco (Ramphastos tucanus), em Balbina (AM). Foto: Ingrid Torres de Macedo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Tucano-de-papo-branco.jpg">Wikimedia Commons</a>.</figcaption></figure>
 </div>
     <div class="fichas" style="--cols:3">
       <div class="ficha">
@@ -315,16 +317,11 @@
         Norato, tema do poema de Raul Bopp.</p>
       </div>
     </div>
-    <div class="galeria" style="--cols:3">
-<figure class="foto"><img src="fotos/rio-negro/acara-acu.jpg" alt="Acará-açu num aquário" loading="lazy"><figcaption>Acará-açu (Astronotus ocellatus), num zoológico na Alemanha. Foto: H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Karlsruhe_Zoo_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/jaraqui.jpg" alt="Jaraqui" loading="lazy"><figcaption>Jaraqui (Semaprochilodus insignis). Foto: Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Semaprochilodus_insignis.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/traira.jpg" alt="Traíra" loading="lazy"><figcaption>Traíra (Hoplias malabaricus), no Rio Pelotas (RS). Foto: Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/piranha.jpg" alt="Piranha-vermelha num aquário" loading="lazy"><figcaption>Piranha-vermelha (Pygocentrus nattereri), num aquário. Foto: Gregory Moine, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Gregory_Moine_-_Red_bellied_Piranha_(by).jpg">Wikimedia Commons</a>.</figcaption></figure>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/rio-negro/acara-acu.jpg" alt="Acará-açu" loading="lazy"><figcaption>Acará-açu (Astronotus ocellatus), no Parque Nacional de Anavilhanas (AM). Foto: Germano Roberto Schüür, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Apaiari_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
 <figure class="foto"><img src="fotos/rio-negro/tucunare-acu.jpg" alt="Tucunaré-açu" loading="lazy"><figcaption>Tucunaré-açu (Cichla temensis). Foto: Diogo Luiz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cichla_temensis_179491250.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/bicuda.jpg" alt="Bicuda num aquário" loading="lazy"><figcaption>Bicuda (Boulengerella maculata), num zoológico na Alemanha. Foto: H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_-_Karlsruhe_Zoo_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/pirarara.jpg" alt="Pirarara" loading="lazy"><figcaption>Pirarara (Phractocephalus hemioliopterus). Foto: Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Phractocephalus_hemioliopterus_-_1.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/surubim.jpg" alt="Surubim num aquário" loading="lazy"><figcaption>Surubim (Pseudoplatystoma fasciatum), num aquário na Tailândia. Foto: NasserHalaweh, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pimelodidae_Pseudoplatystoma_fasciatum_3.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/rio-negro/pirarucu.jpg" alt="Pirarucu" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), em cativeiro. Foto: T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/bicuda.jpg" alt="Bicuda na mão de um pescador" loading="lazy"><figcaption>Bicuda (Boulengerella maculata), no oeste do Amazonas. Foto: Whaldener Endo, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_205432353.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/rio-negro/pirarucu.jpg" alt="Pirarucu na água, entre plantas aquáticas" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), no Rio Jamari, em Candeias do Jamari (RO). Foto: Fernando Jose Cantele, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Gigante_da_Amaz%C3%B4nia.jpg">Wikimedia Commons</a>.</figcaption></figure>
 </div>
   </section>
 
@@ -334,7 +331,6 @@
     principal é o cardinal, o Paracheirodon axelrodi, que se chama de piaba, "peixinho". Quem pesca é
     o piabeiro. A palavra já foi meio ofensa, e hoje ser piabeiro é motivo de orgulho: a cidade faz uma
     festa dos peixes ornamentais todo janeiro.</p>
-    <div class="foto-sozinha"><figure class="foto"><img src="fotos/rio-negro/cardinal.jpg" alt="Cardinais num aquário" loading="lazy"><figcaption>Cardinais (Paracheirodon axelrodi), o peixinho dos piabeiros, num aquário. Foto: Paolo Neo, domínio público, <a href="https://commons.wikimedia.org/wiki/File:Paracheirodon_axelrodi_2.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
     <p>A pesca é feita à mão, com rede pequena, e o peixe que não serve é solto na hora. Quando a
     pescaria fica fraca num lugar, as famílias se mudam para outro e deixam a população voltar. O
     comércio de aquário responde por cerca de 60% da renda em dinheiro de 40 mil pessoas do
@@ -359,7 +355,6 @@
 
   <section class="fontes">
     <h2>Fontes</h2>
-    <p>Todo fato desta página saiu de uma destas fontes.</p>
 
     <h3>O rio e a gente</h3>
     <ul>
@@ -412,22 +407,15 @@
       <li>Paulo JC Nogueira, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Rio_Negro_-_Encontro_das_%C3%81guas_-_Manaus_-_Amazonas_-_panoramio.jpg">O Encontro das Águas, em Manaus: a água preta do Rio Negro ao lado da barrenta do Solimões.</a></li>
       <li>Karen Mohrstedt Badin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arquip%C3%A9lago_de_Anavilhanas_12.jpg">O Arquipélago de Anavilhanas, no baixo Rio Negro.</a></li>
       <li>José Renato Venâncio Resende, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Mata_de_Igap%C3%B3.jpg">Floresta alagada (igapó) no Rio Negro, com vitórias-régias.</a></li>
-      <li>Paolo Neo, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Paracheirodon_axelrodi_2.jpg">Cardinais (Paracheirodon axelrodi), o peixinho dos piabeiros, num aquário.</a></li>
-      <li>Wilfredor, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Ateles_paniscus_in_Jardim_Zool%C3%B3gico_de_Curitiba.jpg">Macaco-aranha-de-cara-vermelha (Ateles paniscus), no Jardim Zoológico de Curitiba.</a></li>
-      <li>Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Cobra-papagaio (Corallus batesii), no Brasil.</a></li>
-      <li>Dominic Sherony, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:White-throated_Toucan_(Ramphastos_tucanus)_(9499725570).jpg">Tucano-grande-de-papo-branco (Ramphastos tucanus).</a></li>
+      <li>Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Corallus_batesii_350213876.jpg">Cobra-papagaio (Corallus batesii), no vale do Rio Cristalino (MT).</a></li>
+      <li>Ingrid Torres de Macedo, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Tucano-de-papo-branco.jpg">Tucano-grande-de-papo-branco (Ramphastos tucanus), em Balbina (AM).</a></li>
       <li>Chris Krambeck, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Montrichardia_linifera,_Amazon_v%C3%A1rzea.jpg">Aningal de três a quatro metros de altura (Montrichardia linifera), na várzea amazônica.</a></li>
       <li>Fred Almeida2016, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Camu-camu_-_Myrciaria_dubia.jpg">Frutos do camu-camu (Myrciaria dubia).</a></li>
       <li>Diogo Luiz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cichla_temensis_179491250.jpg">Tucunaré-açu (Cichla temensis).</a></li>
-      <li>Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Semaprochilodus_insignis.jpg">Jaraqui (Semaprochilodus insignis).</a></li>
-      <li>Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus.jpg">Traíra (Hoplias malabaricus), no Rio Pelotas (RS).</a></li>
-      <li>NasserHalaweh, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pimelodidae_Pseudoplatystoma_fasciatum_3.jpg">Surubim (Pseudoplatystoma fasciatum), num aquário na Tailândia.</a></li>
-      <li>H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_-_Karlsruhe_Zoo_01.jpg">Bicuda (Boulengerella maculata), num zoológico na Alemanha.</a></li>
-      <li>Cliff, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Phractocephalus_hemioliopterus_-_1.jpg">Pirarara (Phractocephalus hemioliopterus).</a></li>
-      <li>T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Pirarucu (Arapaima gigas), em cativeiro.</a></li>
+      <li>Whaldener Endo, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Boulengerella_maculata_205432353.jpg">Bicuda (Boulengerella maculata), no oeste do Amazonas.</a></li>
+      <li>Fernando Jose Cantele, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Gigante_da_Amaz%C3%B4nia.jpg">Pirarucu (Arapaima gigas), no Rio Jamari, em Candeias do Jamari (RO).</a></li>
       <li>OliveiraJC, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:O_Rio_Negro_tamb%C3%A9m_tem_praia.jpg">Praia de areia clara com a água escura do Rio Negro, num dia de chuva.</a></li>
-      <li>H. Zell, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Karlsruhe_Zoo_01.jpg">Acará-açu (Astronotus ocellatus), num zoológico na Alemanha.</a></li>
-      <li>Gregory Moine, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Gregory_Moine_-_Red_bellied_Piranha_(by).jpg">Piranha-vermelha (Pygocentrus nattereri), num aquário.</a></li>
+      <li>Germano Roberto Schüür, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Astronotus_ocellatus_-_Apaiari_01.jpg">Acará-açu (Astronotus ocellatus), no Parque Nacional de Anavilhanas (AM).</a></li>
     </ul>
   </section>
 

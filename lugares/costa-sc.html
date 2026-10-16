@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costa de Santa Catarina — À Deriva</title>
+<meta name="description" content="A Costa de Santa Catarina de verdade: os açorianos, a tainha do arrasto de praia, as baleias-francas e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR. É o "saiba mais" da janela que o jogo abre ao chegar no mapa: conta o
+     lugar e o bicho de verdade, e NÃO traz número de jogo (chance, preço, tamanho em jogo). Todo
+     fato daqui tem fonte na lista do fim; o que não teve fonte saiu.
+     O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Santa Catarina</div>
+    <h1>Costa de <span>Santa Catarina</span></h1>
+    <p class="chamada">Aqui o mar tem dono e tem calendário. No outono a tainha corre a costa, no
+    inverno a baleia chega para parir, e o litoral guarda o jeito de viver que os açorianos
+    trouxeram há mais de dois séculos.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>No século XVIII, famílias açorianas se instalaram no litoral de Santa Catarina, na então Vila
+    do Desterro, hoje Florianópolis. Elas já tinham na pesca uma das principais fontes de comida e de
+    renda, e o jeito de morar delas ficou: vilas de casas enfileiradas ao longo das ruas, com a igreja
+    de frente para o mar. A de Santo Antônio de Lisboa, a Nossa Senhora das Necessidades, foi
+    construída entre 1750 e 1756.</p>
+    <p>Com as mulheres açorianas veio a renda de bilro, feita em almofada, com os bilros trançando os
+    fios. Era renda de família, e vendida por intermédio das compradeiras, que levavam as peças das
+    rendeiras até quem comprava. Hoje a herança açoriana aparece nas festas religiosas, na ratoeira,
+    na renda e na tainha à mesa.</p>
+    <p>E é a tainha que dá o ritmo. No outono e no inverno ela migra para o norte, em grandes
+    cardumes, atrás de água mais quente para desovar. Os cardumes saem da Lagoa dos Patos depois da
+    passagem das frentes frias, e o frio e o vento sul empurram o peixe para perto da costa. Quando
+    chega, a praia inteira trabalha: é o arrasto de praia, uma pesca artesanal que os açorianos
+    trouxeram e que Santa Catarina reconheceu como patrimônio cultural em 2012.</p>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/costa-sc/arrasto-rede.jpg" alt="Pescadores puxando a rede do arrasto de tainha na Praia do Moçambique" loading="lazy"><figcaption>O arrasto de tainha na Praia do Moçambique, em Florianópolis. Foto: Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_-_Praia_Mo%C3%A7ambique_%2814697591571%29.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/arrasto-canoa.jpg" alt="A canoa do arrasto na areia, com a rede e os pescadores ao fundo" loading="lazy"><figcaption>A canoa do arrasto na Praia do Moçambique. Foto: Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_-_Praia_Mo%C3%A7ambique_%2814700760695%29.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/tainhas-na-areia.jpg" alt="Tainhas na areia depois do arrasto" loading="lazy"><figcaption>Tainhas na areia depois do arrasto. Foto: Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_%2814654682806%29.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/costa-sc/campeche.jpg" alt="Praia do Campeche, em Florianópolis" loading="lazy"><figcaption>A Praia do Campeche, em Florianópolis. Foto: Daniel Vianna, Ministério do Turismo, domínio público, <a href="https://commons.wikimedia.org/wiki/File:DanielVianna_Praia_do_Campeche_Florianopolis_SC_(41528477152).jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/costa-sc/casa-ribeirao.jpg" alt="Casa azul antiga no Ribeirão da Ilha" loading="lazy"><figcaption>Casa antiga no Ribeirão da Ilha, em Florianópolis. Foto: Rafael Abreu Rojas, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Fachada_de_casa_azul_em_Ribeir%C3%A3o_da_Ilha-2.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/igreja-lapa.jpg" alt="Igreja Nossa Senhora da Lapa, no Ribeirão da Ilha" loading="lazy"><figcaption>A igreja de Nossa Senhora da Lapa, no Ribeirão da Ilha. Foto: Boaventuravinicius, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Igreja_Nossa_Senhora_da_Lapa_no_Ribeir%C3%A3o_da_Ilha.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/renda-bilro.jpg" alt="Renda de bilro na almofada, com os bilros pendurados" loading="lazy"><figcaption>Renda de bilro: almofada, tiara e bilros. Foto: Ciriice, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Renda_de_bilro.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <h3 class="grupo">Os portos</h3>
+    <p>O mar de Santa Catarina também é caminho de navio. Ao norte, na Baía da Babitonga, fica São
+    Francisco do Sul, a cidade mais antiga do estado: o navegador francês Binot Paulmier de Gonneville
+    teria chegado ali em janeiro de 1504, e o povoamento português começou em 1658. O canal de fácil
+    acesso da baía fez o porto crescer, e desde o fim do século XIX ele é a principal atividade da
+    cidade.</p>
+    <p>Mais ao sul, na foz do rio Itajaí-Açu, fica Itajaí. No século XIX o porto escoava madeira para
+    Santos e para o Rio de Janeiro; no século XX vieram a pesca industrial e a construção naval, e a
+    cidade virou um dos maiores portos pesqueiros do Brasil. Junto com a Portonave, na outra margem do
+    rio, forma hoje um dos maiores complexos de contêineres do país. É desse vaivém que vem o cargueiro
+    que passa no horizonte do jogo.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/costa-sc/porto-sao-francisco.jpg" alt="Navio de carga na Baía da Babitonga, em São Francisco do Sul" loading="lazy"><figcaption>Navio de carga na Baía da Babitonga, em São Francisco do Sul. Foto: Stanglavine, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Norsul_11_in_S%C3%A3o_Francisco_do_Sul,_2025_01.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/porto-itajai.jpg" alt="O Porto de Itajaí ao amanhecer, com os guindastes e o rio" loading="lazy"><figcaption>O Porto de Itajaí ao amanhecer. Foto: Marinha do Brasil, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Porto_de_Itaja%C3%AD,_Santa_Catarina_-_2021.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>A Costa do jogo junta costão, praia e ilha, com o casario açoriano, a igrejinha e o farol.
+    Algumas dessas peças têm uma história de verdade por trás.</p>
+
+    <h3 class="grupo">A paisagem</h3>
+    <div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Casario e igrejinha</h3>
+        <p>O desenho das vilas açorianas é o da igreja de frente para o mar, com as casas dispostas
+        pelas ruas em volta. Em Santo Antônio de Lisboa e no Ribeirão da Ilha, em Florianópolis,
+        esses centros históricos existem até hoje.</p>
+      </div>
+      <div class="ficha">
+        <h3>Costão e praia</h3>
+        <p>É aqui que o arrasto de praia acontece. Os vigias, ou olheiros, ficam nos costões ou na
+        faixa de areia, acompanhando os cardumes. Quando o peixe se aproxima, avisam os pescadores,
+        que esperam prontos para entrar no mar e fechar o cerco.</p>
+      </div>
+      <div class="ficha">
+        <h3>A baleeira</h3>
+        <p>Antes de virar símbolo de proteção, a baleia-franca foi o motor de uma economia. Santa
+        Catarina teve armações baleeiras desde 1746, e a caça durou até 1973, em Imbituba. A antiga
+        armação de Imbituba, de 1796, hoje abriga o Museu da Baleia.</p>
+      </div>
+      <div class="ficha">
+        <h3>Biguá</h3>
+        <span class="cientifico">Nannopterum brasilianus</span>
+        <p>Ave aquática que come principalmente peixe e caça na água, sozinha ou em grupo, conforme
+        a fartura de presas. Tem os pés com membrana entre os dedos. Em estudos no Rio Grande do Sul,
+        peixes de fundo, como bagres e corvinas, foram as presas mais importantes.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/costa-sc/farol.jpg" alt="Farol na Praia dos Naufragados" loading="lazy"><figcaption>O farol da Praia dos Naufragados, em Florianópolis. Foto: Papa Pic, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Farol_da_Praia_de_Naufragados.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/bigua.jpg" alt="Biguá pousado num tronco" loading="lazy"><figcaption>Biguá (Nannopterum brasilianus), em Porto Belo (SC). Foto: Alessandher Piva, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Nannopterum_brasilianum_-_Alessandher_Piva_-_468424879.jpeg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Doze peixes do mar de Santa Catarina no jogo, do mais comum ao mais raro. Quando o nome
+    popular vale para mais de uma espécie, o cartão avisa.</p>
+
+    <h3 class="grupo">Os de todo dia</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Sardinha-verdadeira</h3>
+        <span class="cientifico">Sardinella brasiliensis</span>
+        <p>Peixe pequeno de costa, de até 27 centímetros. Vive em cardumes
+        compactos, entre 5 e 60 metros de profundidade, e é pescada para consumo fresco e em
+        conserva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Paratí</h3>
+        <span class="cientifico">Mugil curema</span>
+        <p>Na costa catarinense, é o nome da tainha pequena, parente da tainha de verdade. Come
+        algas, vive em cardumes em praia de areia, lagoa e estuário, e desova entre março e agosto,
+        soltando milhões de ovos no mar. Também é chamada de tainha-branca.</p>
+      </div>
+      <div class="ficha">
+        <h3>Peixe-espada</h3>
+        <span class="cientifico">Trichiurus lepturus</span>
+        <p>Corpo comprido e achatado, que afina até uma ponta, sem nadadeira caudal e sem nadadeiras
+        pélvicas. Fresco, é azul metálico com reflexos prateados. Come peixe, lula e crustáceo, e à
+        noite sobe para perto da superfície.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os de costão e arrebentação</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Tainha</h3>
+        <span class="cientifico">Mugil liza</span>
+        <p>A estrela do litoral catarinense. Chega a 80 centímetros, come algas e matéria orgânica do
+        fundo e anda em cardumes enormes. No outono e no inverno viaja para o norte para desovar, e
+        é ela que o arrasto de praia espera. Já foi chamada de Mugil platanus, mas estudos genéticos
+        mostraram que é a mesma espécie.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pampo</h3>
+        <span class="cientifico">Trachinotus, gênero; T. marginatus no sul</span>
+        <p>Pampo é nome de peixes do gênero Trachinotus. No sul do Brasil e até o norte da
+        Argentina vive o Trachinotus marginatus, de até 45 centímetros. Nas praias do Rio Grande do
+        Sul, ele foi o peixe mais comum numa pesca de rede feita na arrebentação.</p>
+      </div>
+      <div class="ficha">
+        <h3>Corvina</h3>
+        <span class="cientifico">Micropogonias furnieri</span>
+        <p>Vive perto do fundo, de areia e lama, em água costeira e em estuário, onde ficam os
+        berçários. Os filhotes comem crustáceos e moluscos do fundo, e o adulto também, e de vez em
+        quando pega um peixe. Forma cardumes e faz migrações com as estações.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os raros</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Anchova</h3>
+        <span class="cientifico">Pomatomus saltatrix</span>
+        <p>Também chamada de enchova. Caça em grupos soltos e ataca cardumes de tainha e de outros
+        peixes, matando muito mais do que precisa para comer. Gosta de praia de arrebentação e de
+        costão, em água limpa e agitada, e no inverno migra para águas mais quentes. É peixe
+        esportivo querido.</p>
+      </div>
+      <div class="ficha">
+        <h3>Robalo-flecha</h3>
+        <span class="cientifico">Centropomus undecimalis</span>
+        <p>É um dos robalos do Brasil, e o robalo-peva é outra espécie, o Centropomus parallelus. Os
+        dois vivem em água costeira e em estuário, perto de manguezal, e chegam até Santa Catarina.
+        O robalo-flecha come peixe e camarão e, de maio a setembro, os adultos se reúnem na foz de
+        rios para desovar.</p>
+      </div>
+      <div class="ficha">
+        <h3>Olho-de-boi</h3>
+        <span class="cientifico">Seriola dumerili</span>
+        <p>Peixe de recife, de até 1,9 metro. Os adultos ficam em recifes fundos voltados para o mar e
+        comem sobretudo peixe, além de invertebrados. Os pequenos vivem perto de plantas e detritos
+        flutuantes no mar aberto, e a desova é no verão, perto da costa. Há relatos de intoxicação
+        por ciguatera ao comê-lo.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os grandes</h3>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Garoupa</h3>
+        <span class="cientifico">Epinephelus marginatus</span>
+        <p>A garoupa-de-dorso-escuro nasce fêmea e pode virar macho entre os 12 e os 17 anos. Os
+        adultos vivem sozinhos, no fundo rochoso, e defendem o território. Comem caranguejo e polvo, e
+        os maiores também comem peixe. Podem passar dos 50 anos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Marlim-branco</h3>
+        <span class="cientifico">Kajikia albida</span>
+        <p>Peixe de mar aberto, de água azul funda, que come peixe e lula e atravessa o Atlântico em
+        longas viagens. Chega a três metros. As costas são azul-escuras, as laterais prateadas com
+        manchas marrons. É peixe de pesca esportiva.</p>
+      </div>
+      <div class="ficha">
+        <h3>Marlim-azul</h3>
+        <span class="cientifico">Makaira nigricans</span>
+        <p>O maior do mapa: pode chegar a cinco metros de comprimento e passar de seiscentos quilos.
+        Vive em mar aberto, em geral sozinho, caça peixe, polvo e lula de dia e viaja longas
+        distâncias. A IUCN o classifica como vulnerável à extinção, desde a avaliação de 2021.</p>
+      </div>
+    </div>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/costa-sc/pampo.jpg" alt="Pampo sobre uma pedra" loading="lazy"><figcaption>Pampo (Trachinotus marginatus), fotografado em Rio Grande (RS). Foto: vinicius_s_domingues, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Trachinotus_marginatus_199067276.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/garoupa.jpg" alt="Garoupa sobre o fundo rochoso" loading="lazy"><figcaption>Garoupa (Epinephelus marginatus), na Ilha do Arvoredo, em Santa Catarina. Foto: Marcelo Bandeira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Peixe_garoupa.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/parati.jpg" alt="Cardume de paratis na água rasa da praia" loading="lazy"><figcaption>Paratis (Mugil curema) na água rasa, no Parque Estadual da Serra do Mar, em São Paulo. Foto: Gilmar R. Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Mugil_curema_-_Parque_Estadual_da_Serra_do_Mar_-_iNaturalist_199855691_(1).jpeg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="baleias">
+    <h2>As baleias-francas</h2>
+    <p>De julho a novembro, a costa catarinense vira ponto de encontro das baleias-francas-austrais
+    (Eubalaena australis). Elas vêm para acasalar, parir e amamentar em enseadas e baías pequenas
+    e protegidas, onde não há predador natural. Boa parte dos grupos que se veem perto da praia são
+    fêmeas com filhote.</p>
+    <p>Houve um tempo em que a história era outra: a baleia-franca era caçada nas armações, e a
+    caça acabou de vez só em 1973. Hoje o litoral que antes as perseguia cuida delas. Em 2000 foi
+    criada a APA da Baleia Franca, que protege mais de 150 mil hectares de costa, do sul da Ilha de
+    Santa Catarina até o Balneário Rincão. Na lista de bichos que ela protege estão a própria
+    baleia-franca, a toninha e as tartarugas-cabeçuda e verde.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/costa-sc/baleia.jpg" alt="Baleia-franca na costa brasileira" loading="lazy"><figcaption>Baleia-franca na Praia do Arroio Corrente, em Jaguaruna (SC). Foto: Geraldo D'Alascio, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Baleia_Franca.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/costa-sc/baleia-2.jpg" alt="Baleia-franca perto do Morro das Pedras, em Florianópolis" loading="lazy"><figcaption>Baleia-franca no Morro das Pedras, em Florianópolis. Foto: Adtormena, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Baleia_Franca-Morro_das_Pedras_Florian%C3%B3polis_SC.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <h3 class="grupo">O Projeto Baleia Franca</h3>
+    <p>Quem cuida das baleias na pesquisa e na escola é o Instituto Australis, que toca o ProFRANCA,
+    o Projeto Franca Austral (o Projeto Baleia Franca): pesquisa, monitoramento e educação ambiental
+    sobre a baleia-franca-austral e os ecossistemas marinhos do sul do Brasil. O projeto mantém o
+    Centro Nacional de Conservação da Baleia Franca, em Itapirubá Norte, em Imbituba, que recebe
+    visitantes, e tem a campanha Adote uma Baleia, além de um programa infantil, o ABC do Franquinho.
+    Setembro é o Mês da Baleia Franca, quando a temporada chega ao auge. Foi também uma parceria do
+    projeto com a prefeitura que, em 2003, transformou a antiga armação de Imbituba no Museu da
+    Baleia.</p>
+    <p>Quer conhecer o trabalho deles? O site é <a href="https://baleiafranca.org.br/">baleiafranca.org.br</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>O arrasto de praia da tainha guarda a tradição, e hoje também tem limite: desde 2025, essa
+    modalidade tem cota de captura, e o presidente da Fepesc conta que o
+    arrasto depende de vento sul e mar calmo. Um relatório de 2023 apontou que o estoque da tainha
+    estava abaixo do nível sustentável.</p>
+    <p>O marlim-azul é considerado vulnerável à extinção. É peixe de mar aberto, que viaja
+    longas distâncias, e por isso a pesca dele precisa de cuidado.</p>
+    <p>E, na temporada das baleias, o que cabe a quem vai à praia é olhar de longe: elas estão ali
+    para cuidar dos filhotes.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>O lugar e a gente</h3>
+    <ul>
+      <li>UFSC, Santa Catarina em História. <a href="https://ojs.sites.ufsc.br/index.php/sceh/article/view/1498/4122">Povoamento da Ilha de Santa Catarina e a vinda dos açorianos para o Desterro</a></li>
+      <li>UDESC. <a href="https://www.udesc.br/arquivos/ceart/id_cpmenu/15242/Artesanato_de_renda_de_bilros_em_Florian_polis_SC_e_o_setor_da_moda_uma_poss_vel_conex_o_16643873188046_15242.pdf">Artesanato de renda de bilros em Florianópolis (SC) e o setor da moda</a></li>
+      <li>CAPES, educaCAPES. <a href="https://educapes.capes.gov.br/handle/capes/920153?mode=full">Legado açoriano em Santa Catarina</a></li>
+      <li>Revista Paranoá (UnB). <a href="https://periodicos.unb.br/index.php/paranoa/article/download/42412/35434/145477">Estudo sobre Santo Antônio de Lisboa e a poligonal de tombamento do IPHAN</a></li>
+      <li>Guia da Semana. <a href="https://www.guiadasemana.com.br/florianopolis/turismo/estabelecimento/igreja-de-nossa-senhora-das-necessidades">Igreja de Nossa Senhora das Necessidades</a></li>
+      <li>NSC Total. <a href="https://www.nsctotal.com.br/?p=7153641">Como a caça às baleias mudou SC e quase levou espécie à extinção</a></li>
+    </ul>
+
+    <h3>Os portos</h3>
+    <ul>
+      <li>Marinha do Brasil, Delegacia da Capitania dos Portos em São Francisco do Sul. <a href="https://www.marinha.mil.br/delsfsul/node/1131">A história de São Francisco do Sul</a></li>
+      <li>Senado Federal. <a href="https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/pronunciamento/342607">Pronunciamento sobre os 500 anos de São Francisco do Sul</a></li>
+      <li>NSC Total. <a href="https://www.nsctotal.com.br/noticias/itajai-e-o-maior-porto-pesqueiro-do-brasil">Itajaí é o maior porto pesqueiro do Brasil</a></li>
+      <li>NSC Total. <a href="https://www.nsctotal.com.br/noticias/dc-35-anos-vocacoes-itajai">Itajaí: porta de entrada e saída da economia de SC</a></li>
+      <li>Smargiassi. <a href="https://smargiassi.com.br/sc/itajai/">Itajaí, perfil da cidade</a></li>
+    </ul>
+
+    <h3>A tainha e o arrasto de praia</h3>
+    <ul>
+      <li>Gazeta do Povo. <a href="https://www.gazetadopovo.com.br/santa-catarina/proibicao-pesca-arrasto-tainha-tradicao-acoriana/">Arrasto da tainha e a tradição açoriana</a></li>
+      <li>Instituto Humanitas Unisinos (IHU), reportagem da DW. <a href="https://ihu.unisinos.br/651436-pesca-da-tainha-opoe-conservacao-do-oceano-e-tradicao">Pesca da tainha opõe conservação do oceano e tradição</a></li>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Mugil-liza.html">Mugil liza</a></li>
+    </ul>
+
+    <h3>As baleias</h3>
+    <ul>
+      <li>Instituto Australis, Projeto Baleia Franca. <a href="https://baleiafranca.org.br/">baleiafranca.org.br</a> (só o link; nenhum conteúdo ou foto do site foi copiado).</li>
+      <li>ICMBio. <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-da-baleia-franca">APA da Baleia Franca</a></li>
+    </ul>
+
+    <h3>Os bichos do cenário e os peixes</h3>
+    <ul>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Sardinella-brasiliensis.html">Sardinella brasiliensis</a>, <a href="https://www.fishbase.se/summary/Mugil-curema.html">Mugil curema</a>, <a href="https://www.fishbase.se/summary/Trichiurus-lepturus.html">Trichiurus lepturus</a>, <a href="https://www.fishbase.se/summary/Trachinotus-marginatus.html">Trachinotus marginatus</a>, <a href="https://www.fishbase.se/summary/Micropogonias-furnieri.html">Micropogonias furnieri</a>, <a href="https://www.fishbase.se/summary/Pomatomus-saltatrix.html">Pomatomus saltatrix</a>, <a href="https://www.fishbase.se/summary/Centropomus-undecimalis.html">Centropomus undecimalis</a>, <a href="https://www.fishbase.se/summary/Epinephelus-marginatus.html">Epinephelus marginatus</a>, <a href="https://www.fishbase.se/summary/Kajikia-albida.html">Kajikia albida</a>, <a href="https://www.fishbase.se/summary/Makaira-nigricans.html">Makaira nigricans</a> e <a href="https://www.fishbase.se/summary/Seriola-dumerili.html">Seriola dumerili</a> (nomes comuns, <a href="https://www.fishbase.se/ComNames/CommonNamesList.php?Genus=Seriola&amp;Species=dumerili">olho-de-boi</a>)</li>
+      <li>Epagri, Revista Agropecuária Catarinense. <a href="https://publicacoes.epagri.sc.gov.br/rac/article/download/783/667/4799">Tainhas e paratis no litoral catarinense</a></li>
+      <li>ICMBio, Boletim Técnico-Científico do CEPENE. <a href="https://www1.icmbio.gov.br/cepene/images/stories/publicacoes/btc/vol17/art06-V17.pdf">Estudo sobre robalos (Centropomus)</a>; Ximenes-Carvalho et al. (2007), <a href="https://labomar.ufc.br/wp-content/uploads/2017/01/acm-2007-40-1-11.pdf">Arquivos de Ciências do Mar</a>, sobre o robalo-flecha e o robalo-peva</li>
+      <li>Instituto de Pesca. <a href="https://institutodepesca.org/index.php/bip/article/download/1152/1130/3943">Pesca de arrebentação no Rio Grande do Sul, com o pampo</a></li>
+      <li>UDESC. <a href="https://www.udesc.br/arquivos/udesc/id_cpmenu/16952/DIVERSIDADE_DA_ICTIOFAUNA_NA_DIETA_DO_BIGU___NANNOPTERUM_BRASILIANUS__NO_SISTEMA_ESTUARINO_DE_LAGUNA__SC__16947959615033_16952.pdf">Diversidade da ictiofauna na dieta do biguá no sistema estuarino de Laguna (SC)</a>; <a href="https://lume.ufrgs.br/handle/10183/212837">UFRGS, estudo sobre o biguá</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_-_Praia_Mo%C3%A7ambique_%2814697591571%29.jpg">O arrasto de tainha na Praia do Moçambique, em Florianópolis.</a></li>
+      <li>Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_-_Praia_Mo%C3%A7ambique_%2814700760695%29.jpg">A canoa do arrasto na Praia do Moçambique.</a></li>
+      <li>Otávio Nogueira, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File%3APesca_da_Tainha_%2814654682806%29.jpg">Tainhas na areia depois do arrasto.</a></li>
+      <li>Stanglavine, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Norsul_11_in_S%C3%A3o_Francisco_do_Sul,_2025_01.jpg">Navio de carga na Baía da Babitonga.</a></li>
+      <li>Marinha do Brasil, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Porto_de_Itaja%C3%AD,_Santa_Catarina_-_2021.jpg">O Porto de Itajaí.</a></li>
+      <li>Daniel Vianna / Ministério do Turismo, domínio público. <a href="https://commons.wikimedia.org/wiki/File:DanielVianna_Praia_do_Campeche_Florianopolis_SC_(41528477152).jpg">A Praia do Campeche, em Florianópolis.</a></li>
+      <li>Rafael Abreu Rojas, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Fachada_de_casa_azul_em_Ribeir%C3%A3o_da_Ilha-2.jpg">Casa antiga no Ribeirão da Ilha.</a></li>
+      <li>Boaventuravinicius, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Igreja_Nossa_Senhora_da_Lapa_no_Ribeir%C3%A3o_da_Ilha.jpg">A igreja de Nossa Senhora da Lapa, no Ribeirão da Ilha.</a></li>
+      <li>Ciriice, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Renda_de_bilro.jpg">Renda de bilro.</a></li>
+      <li>Papa Pic, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Farol_da_Praia_de_Naufragados.jpg">O farol da Praia dos Naufragados.</a></li>
+      <li>Alessandher Piva, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Nannopterum_brasilianum_-_Alessandher_Piva_-_468424879.jpeg">Biguá, em Porto Belo (SC).</a></li>
+      <li>vinicius_s_domingues, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Trachinotus_marginatus_199067276.jpg">Pampo, fotografado em Rio Grande (RS).</a></li>
+      <li>Marcelo Bandeira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Peixe_garoupa.jpg">Garoupa, na Ilha do Arvoredo (SC).</a></li>
+      <li>Gilmar R. Ferreira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Mugil_curema_-_Parque_Estadual_da_Serra_do_Mar_-_iNaturalist_199855691_(1).jpeg">Paratis, no Parque Estadual da Serra do Mar (SP).</a></li>
+      <li>Geraldo D'Alascio, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Baleia_Franca.jpg">Baleia-franca na costa brasileira.</a></li>
+      <li>Adtormena, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Baleia_Franca-Morro_das_Pedras_Florian%C3%B3polis_SC.jpg">Baleia-franca no Morro das Pedras, em Florianópolis.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

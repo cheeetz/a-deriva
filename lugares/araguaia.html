@@ -45,6 +45,9 @@
   .foto { margin: 0; }
   .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
   .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
   .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
   .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
   /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
@@ -133,8 +136,8 @@
 
     <h3 class="grupo">As plantas</h3>
     <div class="galeria" style="--cols:2">
-<figure class="foto"><img src="fotos/araguaia/buriti.jpg" alt="Buritis, palmeiras altas" loading="lazy"><figcaption>Buritis (Mauritia flexuosa), fotografados na Colômbia. Foto: Kristof Zyskowski e Yulia Bereshpolova, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arecaceae-_Mauritia_flexuosa_(buriti).jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/pequizeiro.jpg" alt="Flor do pequizeiro" loading="lazy"><figcaption>Flor do pequizeiro (Caryocar brasiliense). Foto: Luizdesouza, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caryocar_brasiliense_2015-09-27_(084306).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/buriti.jpg" alt="Frutos do buriti na mão de uma pessoa" loading="lazy"><figcaption>Frutos do buriti (Mauritia flexuosa), no Parque Estadual do Lajeado (TO). Foto: Leovigildo Santos, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Buriti,_no_estado_do_Tocantins..jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/pequizeiro.jpg" alt="Fruto do pequizeiro aberto na palma da mão" loading="lazy"><figcaption>Fruto do pequizeiro (Caryocar brasiliense), em Luziânia (GO). Foto: Arley da Cruz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pequi_na_palma_da_minha_m%C3%A3o.jpg">Wikimedia Commons</a>.</figcaption></figure>
 </div>
         <div class="fichas" style="--cols:3">
       <div class="ficha">
@@ -181,10 +184,10 @@
 
     <h3 class="grupo">Os bichos</h3>
     <div class="galeria" style="--cols:2">
-<figure class="foto"><img src="fotos/araguaia/capivara.jpg" alt="Capivaras na beira da água" loading="lazy"><figcaption>Capivaras na beira do Rio Tietê, em São Paulo. A espécie é a mesma do Araguaia. Foto: Clodomiro Esteves Junior, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capivara(Hydrochoerus_hydrochaeris).jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/jacare.jpg" alt="Jacaré-tinga na beira da água" loading="lazy"><figcaption>Jacaré-tinga (Caiman crocodilus), fotografado na Bolívia. Foto: Vincent A. Vos, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus_Bolivia.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/taracaja.jpg" alt="Tracajá sobre um tronco" loading="lazy"><figcaption>Tracajá (Podocnemis unifilis), fotografado na Bolívia. Foto: Vincent A. Vos, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Podocnemis_unifilis_-_Vincent_A._Vos_-_446622959.jpeg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/arara-azul.jpg" alt="Arara-azul em voo" loading="lazy"><figcaption>Arara-azul (Anodorhynchus hyacinthinus) em voo, no Pantanal. Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_macaw_(Anodorhynchus_hyacinthinus)_in_flight.JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/capivara.jpg" alt="Capivara pastando na grama" loading="lazy"><figcaption>Capivara em Uberlândia (MG), no Cerrado. A espécie é a mesma do Araguaia. Foto: Vinicius Augusto De Souza, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hydrochoerus_hydrochaeris_181536676.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/jacare.jpg" alt="Jacaré-tinga sobre uma raiz, na beira da água" loading="lazy"><figcaption>Jacaré-tinga (Caiman crocodilus), no Delta do Parnaíba (PI). Foto: Tarciso Leão, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus,_jacar%C3%A9.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/taracaja.jpg" alt="Tracajá sobre um tronco" loading="lazy"><figcaption>Tracajá (Podocnemis unifilis), na Reserva Biológica do Tapirapé, em Marabá (PA). Foto: Raquel Ribeiro da Silva, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Tracaja.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/arara-azul.jpg" alt="Araras-azuis em voo" loading="lazy"><figcaption>Araras-azuis-grandes (Anodorhynchus hyacinthinus) em voo, no Jalapão (TO). Foto: Marcel Favery, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Araras_Azuis.jpg">Wikimedia Commons</a>.</figcaption></figure>
 </div>
         <div class="fichas" style="--cols:3">
       <div class="ficha">
@@ -331,8 +334,8 @@
     </div>
     <div class="galeria" style="--cols:3">
 <figure class="foto"><img src="fotos/araguaia/tucunare.jpg" alt="Tucunaré-azul" loading="lazy"><figcaption>Tucunaré-azul (Cichla piquiti). Foto: Douglas, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cichla_piquiti_29769333.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/pirarucu.jpg" alt="Pirarucu" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), em cativeiro. Foto: T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Wikimedia Commons</a>.</figcaption></figure>
-<figure class="foto"><img src="fotos/araguaia/piraiba.jpg" alt="Piraíba nadando num aquário" loading="lazy"><figcaption>Piraíba (Brachyplatystoma filamentosum), num aquário no Japão. Foto: タウナギ, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, <a href="https://commons.wikimedia.org/wiki/File:Brachyplatystoma_filamentosum_Totto.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/pirarucu.jpg" alt="Pirarucu na água, entre plantas aquáticas" loading="lazy"><figcaption>Pirarucu (Arapaima gigas), no Rio Jamari, em Candeias do Jamari (RO). Foto: Fernando Jose Cantele, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Gigante_da_Amaz%C3%B4nia.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/piraiba.jpg" alt="Pescador segurando uma piraíba na beira do rio" loading="lazy"><figcaption>Piraíba (Brachyplatystoma filamentosum), num rio do sul do Amazonas. Foto: Waltman30, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pira%C3%ADba_(Goliath_Catfish).jpg">Wikimedia Commons</a>.</figcaption></figure>
 </div>
   </section>
 
@@ -352,7 +355,7 @@
     contamos, um estudo do instituto apontou o Araguaia, com o Tocantins, como a melhor ligação
     entre as regiões do país com populações viáveis de onça.</p>
     <div class="galeria" style="--cols:2">
-<figure class="foto"><img src="fotos/araguaia/onca-pintada.jpg" alt="Onça-pintada deitada entre arbustos" loading="lazy"><figcaption>Onça-pintada no Pantanal. Foto: Leonardo Ramos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:On%C3%A7a_do_Pantanal.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/araguaia/onca-pintada.jpg" alt="Onça-pintada entre galhos, olhando para a câmera" loading="lazy"><figcaption>Onça-pintada na Reserva Biológica do Tapirapé, em Marabá (PA). Foto: Raquel Ribeiro da Silva, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Panthera_onca_REBIO_TAPIRAPE.jpg">Wikimedia Commons</a>.</figcaption></figure>
 <figure class="foto"><img src="fotos/araguaia/onca-pintada-2.jpg" alt="Onça-pintada fêmea na beira de um rio" loading="lazy"><figcaption>Onça-pintada fêmea na beira do Rio Piquiri, no Pantanal. Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_female_Piquiri_River_2.JPG">Wikimedia Commons</a>.</figcaption></figure>
 </div>
     <h3 class="grupo">O Instituto Onça-Pintada</h3>
@@ -379,9 +382,6 @@
 
   <section class="fontes">
     <h2>Fontes</h2>
-    <p>Todo fato desta página saiu de uma destas fontes. Muitas são da coluna Araguaia em Foco, do
-    Jornal Opção, escrita pelos pesquisadores do programa Araguaia Vivo 2030 e do PPBio Araguaia
-    (UEG, UFG, UFMT, PUC Goiás e parceiros).</p>
 
     <h3>O rio e a gente</h3>
     <ul>
@@ -449,16 +449,16 @@
     <ul>
       <li>R. Uchôa, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Nascer_do_sol_na_Praia_da_Gaivota_no_rio_Araguaia,_vista_da_cidade_de_Araguacema,_Tocantins.jpg">A Praia da Gaivota, no Araguaia, em Araguacema (TO), ao nascer do sol.</a></li>
       <li>Arthur to, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Rio_Java%C3%A9s.jpg">O Rio Javaés e a Ilha do Bananal, vistos da aldeia Txuiri, em Formoso do Araguaia (TO).</a></li>
-      <li>Clodomiro Esteves Junior, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capivara(Hydrochoerus_hydrochaeris).jpg">Capivaras na beira do Rio Tietê, em São Paulo. A espécie é a mesma do Araguaia.</a></li>
-      <li>Vincent A. Vos, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus_Bolivia.jpg">Jacaré-tinga (Caiman crocodilus), fotografado na Bolívia.</a></li>
-      <li>Vincent A. Vos, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Podocnemis_unifilis_-_Vincent_A._Vos_-_446622959.jpeg">Tracajá (Podocnemis unifilis), fotografado na Bolívia.</a></li>
-      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_macaw_(Anodorhynchus_hyacinthinus)_in_flight.JPG">Arara-azul (Anodorhynchus hyacinthinus) em voo, no Pantanal.</a></li>
-      <li>Kristof Zyskowski e Yulia Bereshpolova, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arecaceae-_Mauritia_flexuosa_(buriti).jpg">Buritis (Mauritia flexuosa), fotografados na Colômbia.</a></li>
-      <li>Luizdesouza, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caryocar_brasiliense_2015-09-27_(084306).jpg">Flor do pequizeiro (Caryocar brasiliense).</a></li>
+      <li>Vinicius Augusto De Souza, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hydrochoerus_hydrochaeris_181536676.jpg">Capivara em Uberlândia (MG), no Cerrado. A espécie é a mesma do Araguaia.</a></li>
+      <li>Tarciso Leão, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Caiman_crocodilus,_jacar%C3%A9.jpg">Jacaré-tinga (Caiman crocodilus), no Delta do Parnaíba (PI).</a></li>
+      <li>Raquel Ribeiro da Silva, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Tracaja.jpg">Tracajá (Podocnemis unifilis), na Reserva Biológica do Tapirapé, em Marabá (PA).</a></li>
+      <li>Marcel Favery, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Araras_Azuis.jpg">Araras-azuis-grandes (Anodorhynchus hyacinthinus) em voo, no Jalapão (TO).</a></li>
+      <li>Leovigildo Santos, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Buriti,_no_estado_do_Tocantins..jpg">Frutos do buriti (Mauritia flexuosa), no Parque Estadual do Lajeado (TO).</a></li>
+      <li>Arley da Cruz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pequi_na_palma_da_minha_m%C3%A3o.jpg">Fruto do pequizeiro (Caryocar brasiliense), em Luziânia (GO).</a></li>
       <li>Douglas, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cichla_piquiti_29769333.jpg">Tucunaré-azul (Cichla piquiti).</a></li>
-      <li>T. Voekler, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Arapaima_gigas_5147.jpg">Pirarucu (Arapaima gigas), em cativeiro.</a></li>
-      <li>タウナギ, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. <a href="https://commons.wikimedia.org/wiki/File:Brachyplatystoma_filamentosum_Totto.jpg">Piraíba (Brachyplatystoma filamentosum), num aquário no Japão.</a></li>
-      <li>Leonardo Ramos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:On%C3%A7a_do_Pantanal.jpg">Onça-pintada no Pantanal.</a></li>
+      <li>Fernando Jose Cantele, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Gigante_da_Amaz%C3%B4nia.jpg">Pirarucu (Arapaima gigas), no Rio Jamari, em Candeias do Jamari (RO).</a></li>
+      <li>Waltman30, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pira%C3%ADba_(Goliath_Catfish).jpg">Piraíba (Brachyplatystoma filamentosum), num rio do sul do Amazonas.</a></li>
+      <li>Raquel Ribeiro da Silva, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Panthera_onca_REBIO_TAPIRAPE.jpg">Onça-pintada na Reserva Biológica do Tapirapé, em Marabá (PA).</a></li>
       <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_female_Piquiri_River_2.JPG">Onça-pintada fêmea na beira do Rio Piquiri, no Pantanal.</a></li>
     </ul>
   </section>

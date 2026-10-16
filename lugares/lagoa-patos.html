@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lagoa dos Patos — À Deriva</title>
+<meta name="description" content="A Lagoa dos Patos de verdade: a barra, os molhes e o farol, a Foca Maroca de Camaquã, os bichos do cenário e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR (mesmo molde do Araguaia e do Rio Negro). É o "saiba mais" da janela que o
+     jogo abre ao chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo
+     (chance, preço, tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve
+     fonte saiu. O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Rio Grande do Sul</div>
+    <h1>Lagoa dos <span>Patos</span></h1>
+    <p class="chamada">Uma laguna enorme com uma única porta para o mar. Aqui está a Lagoa dos Patos de
+    verdade: a barra de Rio Grande, o farol, uma foca que virou símbolo de cidade e os peixes que
+    vivem onde a água doce encontra a salgada.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>A Lagoa dos Patos fica no Rio Grande do Sul e é a maior laguna do Brasil: cerca de dez mil
+    quilômetros quadrados, mais de duzentos quilômetros de comprimento, entre a região de Porto
+    Alegre e a cidade de Rio Grande. Uma faixa estreita de dunas separa a lagoa do Atlântico, e só
+    existe uma ligação com o mar: o canal da barra de Rio Grande.</p>
+    <p>É por esse canal que a água do mar entra e se mistura com a que vem dos rios. A parte
+    estuarina, perto da barra, tem enseadas rasas, cheias de comida e de esconderijo, e por isso
+    funciona como berçário: muito peixe e muito crustáceo do mar entra ali para crescer. Passam de
+    cento e dez as espécies de peixes e crustáceos do estuário, e cinco sustentaram a pesca
+    artesanal por mais de um século: o camarão-rosa, a corvina, os bagres, a tainha e a
+    miraguaia.</p>
+    <p>A pesca artesanal ainda marca a vida da beira. O pescador costuma ser dono do barco, um bote
+    de cinco a dez metros, e sai com dois ou três parentes ou vizinhos. O ano de pesca tem calendário
+    próprio: o camarão e a tainha no começo do ano, o bagre depois, e a chegada dos grandes cardumes
+    de corvina e de miraguaia para abrir uma nova safra. E o camarão-rosa tem uma rede só dele, o
+    saquinho ou aviãozinho, uma rede fixa que atrai o camarão com luz.</p>
+    <p>Em 1996 nasceu o Fórum da Lagoa dos Patos, em Rio Grande, que junta 21 instituições da
+    sociedade e do poder público das cidades da beira para cuidar da pesca e da lagoa.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/lagoa-patos/lagoa-satelite.jpg" alt="A Lagoa dos Patos vista do espaço" loading="lazy"><figcaption>A Lagoa dos Patos vista do espaço, com a barra de Rio Grande ao sul. Imagem: NASA/GSFC/LaRC/JPL, equipe MISR, domínio público, <a href="https://commons.wikimedia.org/wiki/File:Lagoa_dos_Patos_PIA03444_lrg.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/molhes-aerea.jpg" alt="Os molhes da barra vistos de cima" loading="lazy"><figcaption>Os molhes da barra de Rio Grande, em fevereiro de 2016. Foto: Mauricio Carlos Dias, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Molhes_da_Barra,_Rio_Grande,_RS.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>O cenário da Lagoa mistura o que o lugar tem de mais característico: dunas, campo, banhado e a
+    praia dos molhes com o farol.</p>
+
+    <h3 class="grupo">A paisagem</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/lagoa-patos/banhado.jpg" alt="Banhado e campo ao lado de uma estrada" loading="lazy"><figcaption>Banhado na Estação Ecológica do Taim, no sul do Rio Grande do Sul. Foto: Luiz Artur Raya Tavora, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Banhado_do_Taim.JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/itapua-lago.jpg" alt="O lago Guaíba espelhando o céu" loading="lazy"><figcaption>O lago Guaíba espelhando o céu no Parque Estadual de Itapuã. Foto: Edsonbrettas, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Parque_Estadual_de_Itapu%C3%A3_-_espelho_d%27%C3%A1gua.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+<div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Dunas</h3>
+        
+        <p>Uma faixa de dunas separa a lagoa do mar. No Molhe Leste, em meio às dunas e à restinga, os pesquisadores registraram o tuco-tuco-das-dunas, um roedor ameaçado de extinção.</p>
+      </div>
+      <div class="ficha">
+        <h3>Campo</h3>
+        
+        <p>O campo aberto é a paisagem do Pampa, no sul do Rio Grande do Sul. No Molhe Leste, entre as aves registradas estão a polícia-inglesa-do-sul e o canário-do-campo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Banhado</h3>
+        
+        <p>Terra baixa que alaga e seca com a chuva. O Parque Estadual de Itapuã tem banhados, e no Molhe Leste os pesquisadores encontraram a perereca-pizzicato nos banhados temporários no meio da restinga.</p>
+      </div>
+      <div class="ficha">
+        <h3>Praia dos molhes e farol</h3>
+        
+        <p>Os molhes e o farol têm uma seção própria mais abaixo: a história da barra de Rio Grande e o Farol de Itapuã, um farol de verdade da lagoa.</p>
+      </div>
+    </div>
+
+    <h3 class="grupo">Os bichos</h3>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/lagoa-patos/capivara.jpg" alt="Capivara na beira do parque" loading="lazy"><figcaption>Capivara no Parque Estadual de Itapuã, com um suiriri-cavaleiro nas costas. Foto: Adriano Nygaard, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capivaraitapua.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/quero-quero.jpg" alt="Quero-quero no capim" loading="lazy"><figcaption>Quero-quero (Vanellus chilensis), em Capão do Leão, no Rio Grande do Sul. Foto: Cláudio Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Vanellus_chilensis_-Rio_Grande_do_Sul-8.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/camarao-rosa.jpg" alt="Camarão-rosa" loading="lazy"><figcaption>Camarão-rosa (Farfantepenaeus paulensis), do estuário da Lagoa dos Patos. Foto: Cláudio Dias Timm, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Farfantepenaeus_paulensis.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/leao-marinho.jpg" alt="Leão-marinho numa praia, com o mar quebrando atrás" loading="lazy"><figcaption>Leão-marinho-do-sul (Otaria flavescens) descansando na Praia do Arroio Corrente, em Jaguaruna (SC), no litoral catarinense, ao norte de Rio Grande. Foto: Geraldo D'Alascio, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Leão_marinho_na_Praia_do_Arroio_Corrente_-_Jaguaruna_10.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+<div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Capivara</h3>
+        <span class="cientifico">Hydrochoerus hydrochaeris</span>
+        <p>O maior roedor do mundo, e vive perto da água. Aparece nos banhados e nas margens da lagoa, como no Parque Estadual de Itapuã.</p>
+      </div>
+      <div class="ficha">
+        <h3>Quero-quero</h3>
+        <span class="cientifico">Vanellus chilensis</span>
+        <p>Tem um esporão de osso na dobra da asa e faz o ninho num buraco raso raspado no chão. Para afastar quem chega perto, finge estar ferido, e o macho pode partir para bicar.</p>
+      </div>
+      <div class="ficha">
+        <h3>Camarão-rosa</h3>
+        <span class="cientifico">Farfantepenaeus paulensis</span>
+        <p>É o principal recurso da pesca no estuário. A safra depende da salinidade da água, que muda com a chuva: nos anos de muita chuva, a produção de camarão cai.</p>
+      </div>
+      <div class="ficha">
+        <h3>Leão-marinho e lobo-marinho</h3>
+        <span class="cientifico">Otaria flavescens e Arctocephalus australis</span>
+        <p>São o leão-marinho-do-sul e o lobo-marinho-do-sul, dois mamíferos marinhos que descansam no Molhe Leste da barra de Rio Grande. A história deles está na seção dos molhes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="molhes">
+    <h2>Os molhes da barra</h2>
+    <p>A saída da lagoa para o mar já foi um perigo. Antes de existirem os molhes, o lugar era
+    conhecido pelo acesso difícil e pelo risco de naufrágios, e os moradores o chamavam de "barra
+    maldita". O canal de navegação tinha de dois a três metros de profundidade.</p>
+    <p>Os molhes, dois paredões de pedra que entram no mar, foram construídos entre 1909 e 1915 para
+    aprofundar o canal. Hoje a barra é um corredor de uns 740 metros de largura entre eles, dragado
+    para manter catorze metros de fundo, e todo bicho do mar que depende do estuário passa por ali.</p>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/lagoa-patos/molhe-cassino.jpg" alt="Molhe de pedra entrando no mar" loading="lazy"><figcaption>O molhe de pedra na praia do Cassino, em Rio Grande. Foto: Mauren da Silva Rodrigues, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Molhes_de_Pedra.JPG">Wikimedia Commons</a>.</figcaption></figure></div>
+    <p>E os molhes têm moradores. Em 1996, São José do Norte criou o Refúgio de Vida Silvestre do
+    Molhe Leste da Barra de Rio Grande, para proteger leões-marinhos e lobos-marinhos que usam a
+    ponta do molhe leste para descansar e se abrigar na rota de migração deles. O refúgio cobre uns
+    mil metros do molhe. Numa contagem de barco em fevereiro de 2019, os pesquisadores viram 38
+    leões-marinhos dentro dos limites da área.</p>
+  </section>
+
+  <section id="farol">
+    <h2>O Farol de Itapuã</h2>
+    <p>No norte da lagoa, na Ponta de Itapuã, em Viamão, fica um farol de verdade. O Farol de Itapuã
+    foi concluído em 1860 e marca o encontro das águas do Lago Guaíba com a Laguna dos Patos. Ele
+    fica dentro do Parque Estadual de Itapuã, a cerca de 57 quilômetros de Porto Alegre.</p>
+    <p>A região guarda também marcas da Revolução Farroupilha, que durou de 1835 a 1845: há vestígios
+    dela no Morro da Fortaleza, na Ilha do Junco e na Ferraria dos Farrapos. No jogo, o farol fica na
+    praia dos molhes.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/lagoa-patos/farol-itapua.jpg" alt="O Farol de Itapuã visto de cima" loading="lazy"><figcaption>O Farol de Itapuã, na Ponta de Itapuã, em Viamão. Foto: Cesar Barreto, publicada pela Marinha do Brasil, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Farol_de_Itapu%C3%A3_da_Lagoa_-_Viam%C3%A3o_RS_(52115185915).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/farol-distancia.jpg" alt="O farol na ponta do morro, visto da água" loading="lazy"><figcaption>A Ponta de Itapuã e o farol, vistos da Praia das Pedras. Foto: Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/3.0/br">CC BY-SA 3.0 BR</a>, <a href="https://commons.wikimedia.org/wiki/File:Farol_de_Itapu%C3%A3_vista_a_partir_da_Praia_das_Pedras.JPG">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="foca">
+    <h2>A Foca Maroca</h2>
+    <p>Na margem oeste da lagoa fica Camaquã, e lá mora uma das histórias mais simpáticas da região.
+    Em 1953, quando a Praça Donário Lopes foi inaugurada, dois rapazes, Oly Corleta e Epaminondas
+    Martins, voltaram de uma viagem ao Litoral Sul trazendo uma foca viva num caminhão que chamavam de "fordeco". Foram direto ao gabinete do prefeito, Ney Silva Azambuja, que ordenou:
+    "Coloquem-na no aquário da praça!"</p>
+    <p>A foca comeu os peixinhos vermelhos que moravam ali e virou a dona do aquário. Atraiu muita gente
+    à cidade e virou mascote dos moradores. Viveu pouco tempo, mas ficou na memória: o
+    aquário passou a se chamar "O Lago da Foca", e a prefeitura pôs no meio dele uma foca de
+    cerâmica marrom-avermelhada, no lugar da original.</p>
+    <p>A foca de cerâmica virou símbolo do centro de Camaquã. Os carnavais do Clube Camaquense
+    terminavam ali, com o tradicional "banho da Foca Maroca": com orquestra e foliões. O nome só veio em 2011, quando a prefeitura revitalizou a praça. Até então ela era "a
+    Foca da Praça Donário Lopes". A Secretaria de Cultura e Turismo e a de Educação fizeram um
+    concurso entre as escolas, e o nome vencedor foi sugestão de uma aluna do 1º ano da EMEF Dr.
+    Nadir Medeiros, Andriely Santos de Oliveira. A viúva de Oly, Helena Corleta, assistiu à
+    homenagem. O artista Caiaque restaurou a foca na ocasião, e em 2021 ela foi retirada, restaurada
+    de novo por um servidor da prefeitura e devolvida ao lago, que ganhou uma pintura azul mais viva
+    para destacá-la.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/lagoa-patos/lago-da-foca.jpg" alt="Praça com o Lago da Foca ao fundo" loading="lazy"><figcaption>O Lago da Foca, na Praça Donário Lopes, em Camaquã. Foto: Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Dr._Don%C3%A1rio_Lopes_007.JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/placa-foca-maroca.jpg" alt="Placa com a história da Foca Maroca" loading="lazy"><figcaption>A placa da Foca Maroca na praça, com a história da foca. Foto: Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Dr._Don%C3%A1rio_Lopes_009.JPG">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes da Lagoa dos Patos no jogo, de peixe-rei a miraguaia. Quando o nome popular vale
+    para mais de uma espécie, o cartão avisa.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Peixe-rei</h3>
+        <span class="cientifico">Odontesthes, mais de uma espécie</span>
+        <p>Peixe de corpo comprido e prateado. Uma das espécies, Odontesthes argentinensis, vive no sul do Brasil, na Argentina e no Uruguai, em água salgada, salobra e doce, e passa dos quarenta centímetros. As regras de pesca do estuário já fixaram um tamanho mínimo de vinte centímetros para ele.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jundiá</h3>
+        <span class="cientifico">Rhamdia quelen</span>
+        <p>Bagre de água doce que vive de noite. De dia fica escondido no fundo de lama, entre folhas e madeira podre, e à noite come de tudo um pouco: peixe, inseto, crustáceo. As nadadeiras têm espinhos com veneno. Vive do México ao centro da Argentina.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cará</h3>
+        <span class="cientifico">Geophagus brasiliensis, entre outros</span>
+        <p>Cará, ou acará, é nome de vários peixes da família dos ciclídeos. Um deles, o Geophagus brasiliensis, vive nos rios do leste e do sul do Brasil e do Uruguai, em água doce e salobra. O nome do gênero vem do grego e quer dizer comedor de terra.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tainha</h3>
+        <span class="cientifico">Mugil liza</span>
+        <p>Vive em grandes cardumes perto do mar, no estuário, e entra até na água doce. Come detrito e alga. Desova no mar, e a pesca da lagoa seguia o calendário dela: em janeiro, quando os adultos voltam da desova, e na corrida da tainha, entre abril e junho, quando os cardumes saem do estuário para o mar. As ovas, salgadas e secas, são uma iguaria.</p>
+      </div>
+      <div class="ficha">
+        <h3>Bagre-branco</h3>
+        <span class="cientifico">Genidens barbus</span>
+        <p>Foi o bagre da pesca artesanal da lagoa: a safra ia de agosto ao começo de novembro. Nos anos 1980, com mais rede de emalhe, a pesca de bagre quebrou, e hoje só sobra uma pequena pescaria no alto do estuário, no inverno. Nos textos antigos ele aparece como Netuma barba. Em bagres marinhos parentes dele, como o Genidens genidens, é o macho que guarda ovos e filhotes na boca.</p>
+      </div>
+      <div class="ficha">
+        <h3>Traíra</h3>
+        <span class="cientifico">Hoplias malabaricus</span>
+        <p>Passa o dia parada na vegetação e fica ativa à noite. O adulto come peixe. A fêmea põe os ovos em covas rasas e o macho guarda o ninho, até depois de os filhotes nascerem. Os dentes são afiados e a boca é forte. Vive da Costa Rica à Argentina.</p>
+      </div>
+      <div class="ficha">
+        <h3>Corvina</h3>
+        <span class="cientifico">Micropogonias furnieri</span>
+        <p>Vive em fundo de lama e areia, na costa e nos estuários, que são o berçário e a área de comer dela. Os filhotes comem crustáceos pequenos e moluscos, e os adultos, bichos do fundo e, de vez em quando, peixe. Chega a sessenta centímetros. Quando os grandes cardumes chegam, por volta de novembro, começa a safra dela.</p>
+      </div>
+      <div class="ficha">
+        <h3>Linguado</h3>
+        <span class="cientifico">Paralichthys orbignyanus</span>
+        <p>Peixe chato que vive no fundo, perto da costa, e entra nas lagoas costeiras. Os estuários são o berçário. O adulto come camarão e caranguejo e passa de oitenta centímetros. Vive do Rio de Janeiro até Mar del Plata, na Argentina.</p>
+      </div>
+      <div class="ficha">
+        <h3>Robalo-peva</h3>
+        <span class="cientifico">Centropomus parallelus</span>
+        <p>Vive em águas costeiras, estuários e lagunas, e sobe até a água doce. Desova em água salobra de estuário e come peixe e crustáceo. Passa de setenta centímetros. O Rio Grande do Sul é o limite sul de onde ele vive, e a carne é muito apreciada.</p>
+      </div>
+      <div class="ficha">
+        <h3>Viola</h3>
+        <span class="cientifico">Pseudobatos horkelii, e parentes</span>
+        <p>Viola é o nome de raias de focinho comprido, as raias-viola, e mais de uma espécie leva o nome. A Pseudobatos horkelii, o cação-viola, chega a um metro e meio de corpo e era abundante na costa do Rio Grande do Sul até o começo dos anos 1980. Entre 1985 e 1997 a população caiu 85% na plataforma sul, e hoje ela está criticamente ameaçada.</p>
+      </div>
+      <div class="ficha">
+        <h3>Miraguaia</h3>
+        <span class="cientifico">Pogonias courbina</span>
+        <p>A miraguaia, ou miragaia, ou burriquete, é uma corvina grande, que passa de um metro e vive de caçar no fundo: caramujo, mexilhão, caranguejo. Todo ano os adultos migram para o estuário para desovar. Entre os anos 1950 e 1970 foi pesca de peso na lagoa, chegando a 1.450 toneladas em 1977. Em 1982 a pesca já não compensava, e a espécie entrou em 2014 na lista nacional de ameaçadas, na categoria em perigo.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Miraguaia-Rainha <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirada na miraguaia, Pogonias courbina</span>
+        <p>A Miraguaia-Rainha é invenção do jogo, que a imagina subindo do fundo atraída pela luz de um farol. A de verdade é uma das maiores da família das corvinas. Depois que a pesca quebrou, só se acham dentro do estuário miraguaias de porte pequeno e médio, de uns 28 a 62 centímetros.</p>
+      </div>
+    </div>
+<div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/lagoa-patos/corvina.jpg" alt="Corvina" loading="lazy"><figcaption>Corvina (Micropogonias furnieri), do estuário da Lagoa dos Patos. Foto: Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Micropogonias_furnieri.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/linguado.jpg" alt="Linguado, ilustração antiga" loading="lazy"><figcaption>Linguado (Paralichthys orbignyanus), numa ilustração de Paul Louis Oudart. Domínio público, <a href="https://commons.wikimedia.org/wiki/File:Paralichthys_orbignyanus.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/bagre-branco.jpg" alt="Bagre-branco, ilustração antiga" loading="lazy"><figcaption>Bagre-branco (Genidens barbus), numa ilustração de Castelnau. Domínio público, <a href="https://commons.wikimedia.org/wiki/File:Genidens_barbus.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/robalo-peva.jpg" alt="Robalo-peva" loading="lazy"><figcaption>Robalo-peva (Centropomus parallelus), fotografado em Santos (SP). Foto: Carla Isobel Elliff, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Centropomus_parallelus.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img class="inteira" style="background:#ececec" src="fotos/lagoa-patos/jundia.jpg" alt="Jundiá" loading="lazy"><figcaption>Jundiá (Rhamdia quelen), de uma barragem no Rio Grande do Sul. Foto: Cláudio Dias Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Jundiá_(Rhamdia_quelen)_2.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/lagoa-patos/traira.jpg" alt="Traíra" loading="lazy"><figcaption>Traíra (Hoplias malabaricus), do rio Pelotas, no Rio Grande do Sul. Foto: Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus1.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="itapua">
+    <h2>O Parque Estadual de Itapuã</h2>
+    <p>No ponto onde o Guaíba encontra a Laguna dos Patos, em Viamão, fica uma das últimas amostras
+    dos ambientes originais da região metropolitana de Porto Alegre: o Parque Estadual de Itapuã.
+    Ele é uma unidade de conservação de proteção integral, criada para proteger a beleza, a flora e
+    a fauna e os sítios de valor histórico da região, com morros, praias, dunas, lagoas e banhados.</p>
+    <p>O parque ficou mais de dez anos fechado para os ecossistemas se recuperarem e foi reaberto em
+    abril de 2002. Entre os bichos que ele guarda estão o bugio-ruivo, ameaçado de extinção, a lontra
+    e o gato-maracajá, além de aves migratórias como o maçarico-acanelado. Lá também mora o Farol de
+    Itapuã. E o parque tem centro de visitantes, com exposição de fotos, e palestras para grupos
+    agendados.</p>
+    <p>Proteger Itapuã é proteger o lugar onde a lagoa começa. Quer conhecer o parque? A página
+    oficial é a da Secretaria do Meio Ambiente do estado: <a href="https://sema.rs.gov.br/parque-estadual-de-itapua">sema.rs.gov.br/parque-estadual-de-itapua</a>.
+    E o Molhe Leste, lá na barra, também tem a sua proteção: o refúgio dos leões e lobos-marinhos.</p>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Quem pesca na lagoa conhece a lição: bagre e miraguaia já quebraram uma vez, e a raia-viola,
+    que enchia a costa do Rio Grande do Sul, hoje está criticamente ameaçada. Por isso a pesca no
+    estuário tem tamanho mínimo e épocas de defeso para cada peixe, definidos junto com os próprios
+    pescadores, e respeitar essas regras é o que garante peixe na safra seguinte.</p>
+    <p>E o camarão-rosa depende da água: quando a chuva muda a salinidade, a safra muda.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>A lagoa, a barra e a pesca</h3>
+    <ul>
+      <li>Haimovici, M. et al. (2006). <a href="https://demersais.furg.br/images/producao/2006_haimovici_capitulo7_milenio.pdf">Diagnóstico da pesca no litoral do Rio Grande do Sul</a> (capítulo do livro Milênio, FURG), sobre a área da lagoa, o estuário, o calendário de pesca, o camarão-rosa, o Fórum da Lagoa dos Patos e os molhes.</li>
+      <li>Pesquisas em Geociências (UFRGS). <a href="https://seer.ufrgs.br/index.php/PesquisasemGeociencias/article/download/19516/pdf/126936">Toldo Jr., E. et al. (2007). Sedimentação de longo e curto período na Lagoa dos Patos, sul do Brasil</a>, sobre o comprimento da laguna.</li>
+      <li>FURG, MARESS. <a href="https://maress.furg.br/images/PRODUCOES/Plano_de_Manejo_REVIS_Molhe_Leste.pdf">Proposta de Plano de Manejo do Refúgio da Vida Silvestre do Molhe Leste da Barra de Rio Grande</a> (PDF), sobre a barra maldita, os molhes, o refúgio, os leões-marinhos e a fauna registrada.</li>
+      <li>Santos, P. R. S. dos, Einhardt, A. C. M. e Velasco, G. <a href="https://institutodepesca.org/index.php/bip/article/download/1117/1094">A pesca artesanal da miragaia (Pogonias cromis, Sciaenidae) no estuário da Lagoa dos Patos, Brasil</a>. Boletim do Instituto de Pesca.</li>
+    </ul>
+
+    <h3>O farol e o Parque de Itapuã</h3>
+    <ul>
+      <li>Secretaria do Meio Ambiente e Infraestrutura do RS (Sema). <a href="https://sema.rs.gov.br/parque-estadual-de-itapua">Parque Estadual de Itapuã</a></li>
+    </ul>
+
+    <h3>A Foca Maroca</h3>
+    <ul>
+      <li>Clic Camaquã. <a href="https://www.cliccamaqua.com.br/noticias/variedades/a-historia-da-foca-maroca-personagem-do-centro-de-camaqua/">A história da Foca Maroca, a personagem do Centro de Camaquã</a></li>
+      <li>Clic Camaquã. <a href="https://www.cliccamaqua.com.br/noticias/mundo-animal/voce-sabia-que-a-foca-maroca-realmente-existiu/">Você sabia que a Foca Maroca realmente existiu?</a></li>
+      <li>Clic Camaquã. <a href="https://www.cliccamaqua.com.br/noticias/variedades/foca-maroca-volta-a-praca-donario-lopes-apos-restauracao/">Foca Maroca volta à Praça Donário Lopes após restauração</a></li>
+      <li>Acústica FM. <a href="https://acusticafm.com.br/espaco-da-foca-maroca-em-camaqua-passa-por-revitalizacao/">Espaço da "foca maroca" em Camaquã passa por revitalização</a></li>
+    </ul>
+
+    <h3>O cenário e os peixes</h3>
+    <ul>
+      <li>WikiAves. <a href="https://www.wikiaves.com.br/wiki/quero-quero">Quero-quero</a></li>
+      <li>Museus da Universidade de Lisboa. <a href="https://museus.ulisboa.pt/capivara-objeto-do-mes-de-outubro-2023">Capivara</a></li>
+      <li>Revista Pesquisa FAPESP (dezembro de 2005). <a href="https://revistapesquisa.fapesp.br/predadores-vulneraveis/">Predadores vulneráveis</a>, sobre a raia-viola.</li>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Micropogonias-furnieri.html">Micropogonias furnieri</a>, <a href="https://www.fishbase.se/summary/Mugil-liza.html">Mugil liza</a>, <a href="https://www.fishbase.se/summary/Paralichthys-orbignyanus.html">Paralichthys orbignyanus</a>, <a href="https://www.fishbase.se/summary/Centropomus-parallelus.html">Centropomus parallelus</a>, <a href="https://www.fishbase.se/summary/Odontesthes-argentinensis.html">Odontesthes argentinensis</a>, <a href="https://www.fishbase.se/summary/Rhamdia-quelen.html">Rhamdia quelen</a>, <a href="https://www.fishbase.se/summary/Geophagus-brasiliensis.html">Geophagus brasiliensis</a>, <a href="https://www.fishbase.se/summary/Hoplias-malabaricus.html">Hoplias malabaricus</a> e <a href="https://www.fishbase.se/summary/Pogonias-courbina.html">Pogonias courbina</a></li>
+      <li>Maciel, T. R. et al. (2018). <a href="https://www.scielo.br/j/ni/a/sY4gGtkTBfkMHFJHPWNxm8v/?lang=en">Management proposal based on the timing of oral incubation of eggs and juveniles in the sentinel species Genidens genidens in a tropical estuary</a>. Neotropical Ichthyology.</li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>NASA/GSFC/LaRC/JPL, equipe MISR, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Lagoa_dos_Patos_PIA03444_lrg.jpg">A Lagoa dos Patos vista do espaço, com a barra de Rio Grande ao sul.</a></li>
+      <li>Mauricio Carlos Dias, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Molhes_da_Barra,_Rio_Grande,_RS.jpg">Os molhes da barra de Rio Grande, em fevereiro de 2016.</a></li>
+      <li>Luiz Artur Raya Tavora, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Banhado_do_Taim.JPG">Banhado na Estação Ecológica do Taim, no sul do Rio Grande do Sul.</a></li>
+      <li>Edsonbrettas, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Parque_Estadual_de_Itapu%C3%A3_-_espelho_d%27%C3%A1gua.jpg">O lago Guaíba espelhando o céu no Parque Estadual de Itapuã.</a></li>
+      <li>Adriano Nygaard, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capivaraitapua.jpg">Capivara no Parque Estadual de Itapuã, com um suiriri-cavaleiro nas costas.</a></li>
+      <li>Cláudio Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Vanellus_chilensis_-Rio_Grande_do_Sul-8.jpg">Quero-quero (Vanellus chilensis), em Capão do Leão, no Rio Grande do Sul.</a></li>
+      <li>Cláudio Dias Timm, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Farfantepenaeus_paulensis.jpg">Camarão-rosa (Farfantepenaeus paulensis), do estuário da Lagoa dos Patos.</a></li>
+      <li>Geraldo D'Alascio, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Leão_marinho_na_Praia_do_Arroio_Corrente_-_Jaguaruna_10.jpg">Leão-marinho-do-sul (Otaria flavescens) na Praia do Arroio Corrente, em Jaguaruna (SC).</a></li>
+      <li>Mauren da Silva Rodrigues, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Molhes_de_Pedra.JPG">O molhe de pedra na praia do Cassino, em Rio Grande.</a></li>
+      <li>Marinha do Brasil, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Farol_de_Itapu%C3%A3_da_Lagoa_-_Viam%C3%A3o_RS_(52115185915).jpg">O Farol de Itapuã, na Ponta de Itapuã, em Viamão. Foto: Cesar Barreto, publicada pela Marinha do Brasil.</a></li>
+      <li>Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/3.0/br">CC BY-SA 3.0 BR</a>. <a href="https://commons.wikimedia.org/wiki/File:Farol_de_Itapu%C3%A3_vista_a_partir_da_Praia_das_Pedras.JPG">A Ponta de Itapuã e o farol, vistos da Praia das Pedras.</a></li>
+      <li>Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Dr._Don%C3%A1rio_Lopes_007.JPG">O Lago da Foca, na Praça Donário Lopes, em Camaquã.</a></li>
+      <li>Paulo rsmenezes, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Dr._Don%C3%A1rio_Lopes_009.JPG">A placa da Foca Maroca na praça, com a história da foca.</a></li>
+      <li>Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Micropogonias_furnieri.jpg">Corvina (Micropogonias furnieri), do estuário da Lagoa dos Patos.</a></li>
+      <li>Paul Louis Oudart, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Paralichthys_orbignyanus.jpg">Linguado (Paralichthys orbignyanus), numa ilustração de Paul Louis Oudart.</a></li>
+      <li>François-Louis Laporte, conde de Castelnau, domínio público. <a href="https://commons.wikimedia.org/wiki/File:Genidens_barbus.jpg">Bagre-branco (Genidens barbus), numa ilustração de Castelnau.</a></li>
+      <li>Carla Isobel Elliff, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Centropomus_parallelus.jpg">Robalo-peva (Centropomus parallelus), fotografado em Santos (SP).</a></li>
+      <li>Cláudio Dias Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Jundiá_(Rhamdia_quelen)_2.jpg">Jundiá (Rhamdia quelen), de uma barragem no Rio Grande do Sul.</a></li>
+      <li>Cláudio D. Timm, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hoplias_malabaricus1.jpg">Traíra (Hoplias malabaricus), do rio Pelotas, no Rio Grande do Sul.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
