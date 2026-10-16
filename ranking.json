@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-16T14:48:55Z",
+  "atualizado": "2026-10-16T18:47:17Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -30,7 +30,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 19550,
+      "pontos": 19670,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 18600,
+      "pontos": 18960,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "FIX ☕",
-      "pontos": 15950,
+      "pontos": 18030,
       "avatar": "https://avatars.fastly.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Cabrito",
-      "pontos": 13554,
+      "pontos": 13780,
       "avatar": "https://avatars.fastly.steamstatic.com/752064291e6ffab0f592425d0e4fa18f30d7c0bb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 13410,
+      "pontos": 13570,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -128,25 +128,25 @@
       }
     },
     {
-      "nome": "Cyberprince",
-      "pontos": 3300,
-      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 372.4,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 3250,
+      "pontos": 3500,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "platina",
         "cm": 228.9,
         "pontos": 400
+      }
+    },
+    {
+      "nome": "Cyberprince",
+      "pontos": 3420,
+      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 372.4,
+        "pontos": 900
       }
     },
     {
