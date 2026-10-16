@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-16T18:47:17Z",
+  "atualizado": "2026-10-16T22:04:01Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 28237,
+      "pontos": 33097,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 18960,
+      "pontos": 19320,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Cabrito",
-      "pontos": 13780,
+      "pontos": 13840,
       "avatar": "https://avatars.fastly.steamstatic.com/752064291e6ffab0f592425d0e4fa18f30d7c0bb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -129,7 +129,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 3500,
+      "pontos": 3640,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "lendario",
