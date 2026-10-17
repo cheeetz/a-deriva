@@ -4,23 +4,23 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-17T05:33:59Z",
+  "atualizado": "2026-10-17T10:38:06Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 46177,
-      "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
+      "pontos": 54817,
+      "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 587.8,
-        "pontos": 4500
+        "estrela": "prata",
+        "cm": 537.6,
+        "pontos": 9000
       }
     },
     {
       "nome": "Habibi Yuri Martins",
       "pontos": 39670,
-      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
@@ -31,7 +31,7 @@
     {
       "nome": "Zoreia1",
       "pontos": 20610,
-      "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -41,8 +41,8 @@
     },
     {
       "nome": "FIX ☕",
-      "pontos": 20190,
-      "avatar": "https://avatars.fastly.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
+      "pontos": 20270,
+      "avatar": "https://avatars.akamai.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
@@ -53,7 +53,7 @@
     {
       "nome": "Zocratto",
       "pontos": 19670,
-      "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -63,8 +63,8 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 18250,
-      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "pontos": 19170,
+      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -75,7 +75,7 @@
     {
       "nome": "Cabrito",
       "pontos": 13840,
-      "avatar": "https://avatars.fastly.steamstatic.com/752064291e6ffab0f592425d0e4fa18f30d7c0bb_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/752064291e6ffab0f592425d0e4fa18f30d7c0bb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -86,7 +86,7 @@
     {
       "nome": "Cheetz",
       "pontos": 12639,
-      "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "platina",
@@ -97,7 +97,7 @@
     {
       "nome": "hmr1",
       "pontos": 9100,
-      "avatar": "https://avatars.fastly.steamstatic.com/1893d7c151ac71f1182e4097df5072dbfd996d6c_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/1893d7c151ac71f1182e4097df5072dbfd996d6c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
@@ -108,7 +108,7 @@
     {
       "nome": "滚键盘",
       "pontos": 8700,
-      "avatar": "https://avatars.fastly.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -117,9 +117,20 @@
       }
     },
     {
+      "nome": "Cyberprince",
+      "pontos": 5875,
+      "avatar": "https://avatars.akamai.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 372.4,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "A doormat With experience",
-      "pontos": 4875,
-      "avatar": "https://avatars.fastly.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
+      "pontos": 4879,
+      "avatar": "https://avatars.akamai.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -130,7 +141,7 @@
     {
       "nome": "Gordão Programas",
       "pontos": 3872,
-      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
@@ -139,20 +150,20 @@
       }
     },
     {
-      "nome": "Cyberprince",
-      "pontos": 3820,
-      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "nome": "Father",
+      "pontos": 3715,
+      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
       "melhor": {
         "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 372.4,
-        "pontos": 900
+        "estrela": "bronze",
+        "cm": 341.3,
+        "pontos": 450
       }
     },
     {
       "nome": "Cyrus_The_ViruZ",
       "pontos": 3640,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "platina",
@@ -163,7 +174,7 @@
     {
       "nome": "Maks",
       "pontos": 2820,
-      "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -174,7 +185,7 @@
     {
       "nome": "isa",
       "pontos": 2600,
-      "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -183,20 +194,9 @@
       }
     },
     {
-      "nome": "Father",
-      "pontos": 2589,
-      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 341.3,
-        "pontos": 450
-      }
-    },
-    {
       "nome": "irongiba",
       "pontos": 2514,
-      "avatar": "https://avatars.fastly.steamstatic.com/8b2a255011fd464f84cdd9b8b3cbc4fe8771cee9_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/8b2a255011fd464f84cdd9b8b3cbc4fe8771cee9_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -207,7 +207,7 @@
     {
       "nome": "ɖɩ𝔬𝔴𝔴",
       "pontos": 2490,
-      "avatar": "https://avatars.fastly.steamstatic.com/7523f6a6fed840e70151d6f5e6a54ff42cd8372e_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/7523f6a6fed840e70151d6f5e6a54ff42cd8372e_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "platina",
@@ -218,7 +218,7 @@
     {
       "nome": "SilleDerZocker",
       "pontos": 2490,
-      "avatar": "https://avatars.fastly.steamstatic.com/da09c36b9252acd704e35b9b6163cb5b33891dae_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/da09c36b9252acd704e35b9b6163cb5b33891dae_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "prata",
@@ -229,7 +229,7 @@
     {
       "nome": "SlakeWare:",
       "pontos": 2114,
-      "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -240,7 +240,7 @@
     {
       "nome": "Felipoggers",
       "pontos": 1723,
-      "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "prata",
@@ -251,7 +251,7 @@
     {
       "nome": "Kolter",
       "pontos": 1645,
-      "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -262,7 +262,7 @@
     {
       "nome": "Brucutu Garanhão",
       "pontos": 1612,
-      "avatar": "https://avatars.fastly.steamstatic.com/f53968e5e2ebf7e526b5246e721f6b259e691f9d_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/f53968e5e2ebf7e526b5246e721f6b259e691f9d_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "bronze",
@@ -273,7 +273,7 @@
     {
       "nome": "NandinXD",
       "pontos": 1595,
-      "avatar": "https://avatars.fastly.steamstatic.com/4e2dfd584f9a27ea777db5a08762691ec3f4f6e7_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/4e2dfd584f9a27ea777db5a08762691ec3f4f6e7_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -284,7 +284,7 @@
     {
       "nome": "Cortacs",
       "pontos": 1590,
-      "avatar": "https://avatars.fastly.steamstatic.com/e07f621680c3c91cae338804727ad538257bfabf_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/e07f621680c3c91cae338804727ad538257bfabf_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -295,7 +295,7 @@
     {
       "nome": "Sal",
       "pontos": 1258,
-      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "bronze",
@@ -306,7 +306,7 @@
     {
       "nome": "Sigma",
       "pontos": 1150,
-      "avatar": "https://avatars.fastly.steamstatic.com/7bc2e0e6ab49af66cf8260d44ef9faebb335c8d7_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/7bc2e0e6ab49af66cf8260d44ef9faebb335c8d7_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "prata",
@@ -317,7 +317,7 @@
     {
       "nome": "尼古丁…有毒",
       "pontos": 622,
-      "avatar": "https://avatars.fastly.steamstatic.com/79a8119bd2a027755f93872d0d09b959909a0405_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/79a8119bd2a027755f93872d0d09b959909a0405_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -328,7 +328,7 @@
     {
       "nome": "nik_666",
       "pontos": 570,
-      "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "prata",
@@ -339,7 +339,7 @@
     {
       "nome": "Dog",
       "pontos": 562,
-      "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -350,7 +350,7 @@
     {
       "nome": "奔腾的萝卜",
       "pontos": 545,
-      "avatar": "https://avatars.fastly.steamstatic.com/e8ef2b11eee5e2b7b13c3a82cbbbb5e4efdb454a_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/e8ef2b11eee5e2b7b13c3a82cbbbb5e4efdb454a_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "prata",
@@ -361,7 +361,7 @@
     {
       "nome": "bloodyfog6666",
       "pontos": 418,
-      "avatar": "https://avatars.fastly.steamstatic.com/5b8825b34c5d77b00c3a18897f2f1175fa0e0e57_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/5b8825b34c5d77b00c3a18897f2f1175fa0e0e57_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "ouro",
@@ -372,7 +372,7 @@
     {
       "nome": "Ed",
       "pontos": 78,
-      "avatar": "https://avatars.fastly.steamstatic.com/ccb694061c77980d5aa74593c176e154b5421569_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/ccb694061c77980d5aa74593c176e154b5421569_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "bronze",
@@ -393,7 +393,7 @@
     {
       "nome": "JF",
       "pontos": 58,
-      "avatar": "https://avatars.fastly.steamstatic.com/34db1edc845d897c0e2f5ac6e3416b7aa4fe287e_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/34db1edc845d897c0e2f5ac6e3416b7aa4fe287e_medium.jpg",
       "melhor": {
         "raridade": "raro",
         "estrela": "bronze",
@@ -404,7 +404,7 @@
     {
       "nome": "ZENN",
       "pontos": 14,
-      "avatar": "https://avatars.fastly.steamstatic.com/8641b2c0460e6a574f04690a839cec8ca12220f3_medium.jpg",
+      "avatar": "https://avatars.akamai.steamstatic.com/8641b2c0460e6a574f04690a839cec8ca12220f3_medium.jpg",
       "melhor": {
         "raridade": "raro",
         "estrela": "bronze",
