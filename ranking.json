@@ -4,8 +4,19 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-16T22:04:01Z",
+  "atualizado": "2026-10-17T00:26:25Z",
   "entradas": [
+    {
+      "nome": "Habibi Yuri Martins",
+      "pontos": 33705,
+      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 591.1,
+        "pontos": 6750
+      }
+    },
     {
       "nome": "Codeplay",
       "pontos": 33097,
@@ -40,19 +51,8 @@
       }
     },
     {
-      "nome": "Habibi Yuri Martins",
-      "pontos": 19320,
-      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 591.1,
-        "pontos": 6750
-      }
-    },
-    {
       "nome": "FIX ☕",
-      "pontos": 18030,
+      "pontos": 18112,
       "avatar": "https://avatars.fastly.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 13570,
+      "pontos": 13718,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -140,7 +140,7 @@
     },
     {
       "nome": "Cyberprince",
-      "pontos": 3420,
+      "pontos": 3422,
       "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -151,7 +151,7 @@
     },
     {
       "nome": "Gordão Programas",
-      "pontos": 2857,
+      "pontos": 3117,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -217,7 +217,7 @@
     },
     {
       "nome": "Father",
-      "pontos": 2145,
+      "pontos": 2179,
       "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -367,6 +367,17 @@
         "estrela": "ouro",
         "cm": 138.7,
         "pontos": 90
+      }
+    },
+    {
+      "nome": "Ed",
+      "pontos": 78,
+      "avatar": "https://avatars.fastly.steamstatic.com/ccb694061c77980d5aa74593c176e154b5421569_medium.jpg",
+      "melhor": {
+        "raridade": "epico",
+        "estrela": "bronze",
+        "cm": 57.8,
+        "pontos": 30
       }
     },
     {
