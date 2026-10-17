@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-17T10:38:06Z",
+  "atualizado": "2026-10-17T14:11:23Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 54817,
+      "pontos": 55057,
       "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "FIX ☕",
-      "pontos": 20270,
+      "pontos": 20590,
       "avatar": "https://avatars.akamai.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -128,6 +128,17 @@
       }
     },
     {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 5600,
+      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 644.0,
+        "pontos": 500
+      }
+    },
+    {
       "nome": "A doormat With experience",
       "pontos": 4879,
       "avatar": "https://avatars.akamai.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
@@ -158,17 +169,6 @@
         "estrela": "bronze",
         "cm": 341.3,
         "pontos": 450
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 3640,
-      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "platina",
-        "cm": 228.9,
-        "pontos": 400
       }
     },
     {
