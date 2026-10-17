@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rio S�o Francisco � � Deriva</title>
-<meta name="description" content="O Rio S�o Francisco de verdade: o sert�o, as carrancas, o Caboclo d'�gua, a ararinha-azul, os bichos do cen�rio e cada peixe do mapa no � Deriva.">
+<title>Rio São Francisco — À Deriva</title>
+<meta name="description" content="O Rio São Francisco de verdade: o sertão, as carrancas, o Caboclo d'Água, a ararinha-azul, os bichos do cenário e cada peixe do mapa no À Deriva.">
 <link rel="stylesheet" href="../estilo.css">
-<!-- A P�GINA DE UM LUGAR (mesmo molde do Araguaia, do Rio Negro e da Lagoa). � o "saiba mais" da janela que o
-     jogo abre ao chegar no mapa: conta o lugar e o bicho de verdade, e N�O traz n�mero de jogo
-     (chance, pre�o, tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que n�o teve
-     fonte saiu. O visual � o do site (estilo.css); o que est� abaixo � s� o que esta p�gina tem a mais. -->
+<!-- A PÁGINA DE UM LUGAR (mesmo molde do Araguaia, do Rio Negro e da Lagoa). É o "saiba mais" da janela que o
+     jogo abre ao chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo
+     (chance, preço, tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve
+     fonte saiu. O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
 <style>
   .lugar-intro { display: flex; flex-direction: column; gap: 0; }
   .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
@@ -23,8 +23,8 @@
     display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
     color: var(--realce-2);
   }
-  /* o peixe que o jogo inventou ganha o fundo de �gua funda e a etiqueta de lenda, pra ningu�m
-     sair daqui achando que existe uma pira�ba de cem anos catalogada */
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
   .ficha.lenda {
     background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
     border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
@@ -85,7 +85,7 @@
     Juazeiro, na Bahia, e Petrolina, em Pernambuco, ligadas por uma ponte, o Xingó e, perto da foz,
     Penedo, em Alagoas.</p>
     <p>Muitos peixes do rio só existem nessa bacia: a curimatã-pioa, a curimatã-pacu, a matrinxã, o
-    pacamã, o dourado do São Francisco e o pirá, todos desta página. E o rio é também terra de
+    a piranha do São Francisco e o dourado do rio, todos desta página. E o rio é também terra de
     barqueiros, de pescadores e de artesãos que esculpem carrancas.</p>
     <div class="galeria" style="--cols:2">
 <figure class="foto"><img src="fotos/sao-francisco/pirapora.jpg" alt="O Rio São Francisco largo em Pirapora" loading="lazy"><figcaption>O Rio São Francisco em Pirapora (MG), em março de 2014. Foto: Junio César Rodrigues Campos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Rio_Sao_Francisco_Pirapora.jpg">Wikimedia Commons</a>.</figcaption></figure>
@@ -175,18 +175,23 @@
 
   <section>
     <h2>Os peixes do mapa</h2>
-    <p>Os doze peixes do São Francisco no jogo, da curimatã-pioa ao Caboclo d'Água. Quando o nome popular
+    <p>Os doze peixes do São Francisco no jogo, do piau-três-pintas à Curimatã do Caboclo. Quando o nome popular
     vale para mais de uma espécie, o cartão avisa.</p>
     <div class="fichas" style="--cols:3">
       <div class="ficha">
-        <h3>Curimatã-pioa</h3>
-        <span class="cientifico">Prochilodus costatus</span>
-        <p>Também chamada de curimba, só existe na bacia do São Francisco. Vive perto do fundo e é um peixe de migração: sobe e desce o rio dentro da água doce. Passa de meio metro e de quatro quilos.</p>
+        <h3>Piau-três-pintas</h3>
+        <span class="cientifico">Megaleporinus reinhardti</span>
+        <p>Piau pequeno, de corpo comprido, que só existe na bacia do São Francisco e chega a uns 28 centímetros. Os casais desovam no meio da vegetação densa. Abaixo da represa de Três Marias, os pesquisadores viram que ele só conseguia se reproduzir no trecho onde o rio recebe a água do Rio Abaeté.</p>
       </div>
       <div class="ficha">
-        <h3>Piau-verdadeiro</h3>
-        <span class="cientifico">Megaleporinus obtusidens</span>
-        <p>Peixe que come de tudo, de rio médio e grande, e vive nas bacias do São Francisco, do Paraná, do Prata e do Parnaíba, entre outras. Faz longas migrações para comer e para se reproduzir, e os casais desovam no meio da vegetação densa. Chega a uns 76 centímetros.</p>
+        <h3>Pirambeba</h3>
+        <span class="cientifico">Serrasalmus brandtii</span>
+        <p>Uma piranha menor, também chamada de piranha-branca, que chega a uns 29 centímetros e vive na bacia do São Francisco. Na região da represa de Três Marias, a desova dela é mais forte de novembro a fevereiro, quando a água está mais quente e chove mais.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piau-gordura</h3>
+        <span class="cientifico">Leporinus piau</span>
+        <p>Outro piau do rio, que passa um pouco dos 30 centímetros. Na represa de Três Marias e no rio logo abaixo, a desova dele se concentra nos meses quentes e de chuva, e o peixe da represa cresce mais que o do rio. As fêmeas ficam maiores que os machos.</p>
       </div>
       <div class="ficha">
         <h3>Piranha</h3>
@@ -194,14 +199,9 @@
         <p>Piranha é nome de várias espécies. A do mapa é a Pygocentrus piraya, conhecida só na bacia do São Francisco e tida como a maior de todas as piranhas: passa dos 38 centímetros e dos três quilos. É peixe de pesca esportiva, e a mordida machuca gente.</p>
       </div>
       <div class="ficha">
-        <h3>Curimatã-pacu</h3>
-        <span class="cientifico">Prochilodus argenteus</span>
-        <p>A curimatã grande do rio, também só da bacia do São Francisco, que passa de seis quilos. Com radiotransmissores, os pesquisadores viram que, na primeira subida das águas da estação chuvosa, metade dos peixes subiu o rio de 100 a 365 quilômetros, e a outra metade ficou onde estava.</p>
-      </div>
-      <div class="ficha">
-        <h3>Pirambeba</h3>
-        <span class="cientifico">Serrasalmus brandtii</span>
-        <p>Uma piranha menor, também chamada de piranha-branca, que chega a uns 29 centímetros e vive na bacia do São Francisco. Na região da represa de Três Marias, a desova dela é mais forte de novembro a fevereiro, quando a água está mais quente e chove mais.</p>
+        <h3>Pacu-do-São-Francisco</h3>
+        <span class="cientifico">Myleus micans</span>
+        <p>O pacu deste rio é parente das piranhas, da mesma família, mas tem o corpo alto e redondo. Só existe na bacia do São Francisco e passa dos 38 centímetros e dos dois quilos.</p>
       </div>
       <div class="ficha">
         <h3>Cascudo</h3>
@@ -214,29 +214,29 @@
         <p>Só existe na bacia do São Francisco e passa dos quarenta centímetros. Tinha sumido da represa de Três Marias no fim dos anos 1970 e voltou a aparecer em meados dos anos 1990, depois que a Codevasf começou a soltar filhotes criados nos seus centros.</p>
       </div>
       <div class="ficha">
-        <h3>Pacamã</h3>
-        <span class="cientifico">Lophiosilurus alexandri</span>
-        <p>Bagre achatado de boca enorme, que só existe na bacia do São Francisco. Prefere água parada e não sai viajando pelo rio. Os ovos grudam onde são postos, e é o macho que cuida da ninhada. Está na lista de espécies ameaçadas.</p>
+        <h3>Tabarana</h3>
+        <span class="cientifico">Salminus hilarii</span>
+        <p>Parente do dourado, menor e mais prateado, que chega a uns 50 centímetros. Foi descrita em 1850 a partir de peixes do próprio Rio São Francisco. É predadora, fica no topo da cadeia alimentar do rio e, na represa de Três Marias, desova no fim e no começo do ano.</p>
       </div>
       <div class="ficha">
-        <h3>Dourado</h3>
+        <h3>Curimatã-pioa</h3>
+        <span class="cientifico">Prochilodus costatus</span>
+        <p>Também chamada de curimba, só existe na bacia do São Francisco. Vive perto do fundo e é um peixe de migração: sobe e desce o rio dentro da água doce. Passa de meio metro e de quatro quilos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Curimatã-pacu</h3>
+        <span class="cientifico">Prochilodus argenteus</span>
+        <p>A curimatã grande do rio, também só da bacia do São Francisco, que chega perto de sete quilos. Com radiotransmissores, os pesquisadores viram que, na primeira subida das águas da estação chuvosa, metade dos peixes subiu o rio de 100 a 365 quilômetros, e a outra metade ficou onde estava.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dourado-do-Velho-Chico</h3>
         <span class="cientifico">Salminus franciscanus</span>
         <p>O dourado do São Francisco só ganhou nome científico próprio em 2007; antes era confundido com o dourado do Prata. Come peixe, migra para se reproduzir na estação das chuvas, e os filhotes crescem nas lagoas da margem. É dos peixes mais procurados pela pesca no médio São Francisco e passa de 90 centímetros.</p>
       </div>
-      <div class="ficha">
-        <h3>Surubim</h3>
-        <span class="cientifico">Pseudoplatystoma corruscans</span>
-        <p>O surubim, ou pintado, é um bagre grande e pintado, das bacias do São Francisco e do Paraná, que come sobretudo peixe e passa de um metro e meio. É símbolo da pesca no Brasil. Em 2022 entrou na lista nacional de espécies ameaçadas, como vulnerável, e por isso a pesca dele ficou proibida.</p>
-      </div>
-      <div class="ficha">
-        <h3>Pirá</h3>
-        <span class="cientifico">Conorhynchos conirostris</span>
-        <p>Bagre que só existe no São Francisco, o terceiro maior peixe da bacia: chega a um metro e a treze quilos. É migrador, mas, ao contrário dos outros migradores do rio, não usa as lagoas da margem como berçário, e ninguém sabe ainda direito onde ele desova.</p>
-      </div>
       <div class="ficha lenda">
-        <h3>Caboclo d'Água <span class="selo-lenda">lenda do jogo</span></h3>
-        <span class="cientifico">inspirado na lenda do Caboclo d'Água</span>
-        <p>Não é peixe: é o guardião do rio nas histórias da beira, de pele cor de bronze, que vira canoas e espanta os peixes. No jogo, ele é quem vigia de baixo d'água, enquanto a carranca vigia da proa. A lenda inteira está mais acima.</p>
+        <h3>Curimatã do Caboclo <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirada na lenda do Caboclo d'Água</span>
+        <p>Não existe: é a curimatã que, no jogo, o Caboclo d'Água guarda para si. Nas histórias da beira, o guardião do rio espanta os peixes de quem pesca, e um pedaço de fumo oferecido o acalmaria por um tempo. A lenda inteira está mais acima.</p>
       </div>
     </div>
     <div class="foto-sozinha"><figure class="foto"><img src="fotos/sao-francisco/curimata-pioa.jpg" alt="Desenho de uma curimatã-pioa" loading="lazy"><figcaption>Curimatã-pioa (Prochilodus costatus), peixe que só existe na bacia do São Francisco, em desenho de André Koehne. <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Curimat%C3%A1-pioa_(Prochilodus_costatus)_by_Andr%C3%A9_Koehne.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
@@ -245,8 +245,8 @@
   <section id="piracema">
     <h2>A piracema</h2>
     <p>Com as primeiras chuvas, os peixes migradores sobem o rio para desovar: é a piracema. As
-    curimatãs sobem com a primeira cheia da estação, e os filhotes de muitos peixes, como o dourado,
-    vão crescer nas lagoas da margem. Por isso, na bacia do São Francisco, a pesca para no defeso, de
+    curimatãs sobem com a primeira cheia da estação, e os filhotes de muitos peixes vão crescer nas
+    lagoas da margem. Por isso, na bacia do São Francisco, a pesca para no defeso, de
     1º de novembro a 28 de fevereiro, e nas lagoas da margem a proibição vai até 30 de abril.</p>
   </section>
 
@@ -269,8 +269,8 @@
 
   <section>
     <h2>Pra cuidar</h2>
-    <p>Respeitar a piracema é o que garante a curimatã do ano que vem. E o surubim, que hoje não pode
-    ser pescado, só volta a encher o rio se ficar na água: quem fisgar um por acaso, solta.</p>
+    <p>Respeitar a piracema é o que garante a curimatã do ano que vem. E o pacamã e o pirá, bagres do rio que
+    estão na lista de espécies ameaçadas, dependem do peixamento e de ficar na água para voltar a ser comuns.</p>
   </section>
 
   <section class="fontes">
@@ -301,12 +301,16 @@
 
     <h3>Os peixes</h3>
     <ul>
-      <li>FishBase: <a href="https://www.fishbase.se/summary/Prochilodus-costatus.html">Prochilodus costatus</a>, <a href="https://www.fishbase.se/summary/Prochilodus-argenteus.html">Prochilodus argenteus</a>, <a href="https://www.fishbase.se/summary/Megaleporinus-obtusidens.html">Megaleporinus obtusidens</a>, <a href="https://www.fishbase.se/summary/Pygocentrus-piraya.html">Pygocentrus piraya</a>, <a href="https://www.fishbase.se/summary/Serrasalmus-brandtii.html">Serrasalmus brandtii</a>, <a href="https://www.fishbase.se/summary/Hypostomus-francisci.html">Hypostomus francisci</a>, <a href="https://www.fishbase.se/summary/Brycon-orthotaenia.html">Brycon orthotaenia</a>, <a href="https://www.fishbase.se/summary/Lophiosilurus-alexandri.html">Lophiosilurus alexandri</a>, <a href="https://www.fishbase.se/summary/Salminus-franciscanus.html">Salminus franciscanus</a>, <a href="https://www.fishbase.se/summary/Pseudoplatystoma-corruscans.html">Pseudoplatystoma corruscans</a> e <a href="https://www.fishbase.se/summary/Conorhynchos-conirostris.html">Conorhynchos conirostris</a>.</li>
+      <li>FishBase: <a href="https://www.fishbase.se/summary/Megaleporinus-reinhardti.html">Megaleporinus reinhardti</a>, <a href="https://www.fishbase.se/summary/Serrasalmus-brandtii.html">Serrasalmus brandtii</a>, <a href="https://www.fishbase.se/summary/Leporinus-piau.html">Leporinus piau</a>, <a href="https://www.fishbase.se/summary/Hypostomus-francisci.html">Hypostomus francisci</a>, <a href="https://www.fishbase.se/summary/Myleus-micans.html">Myleus micans</a>, <a href="https://www.fishbase.se/summary/Pygocentrus-piraya.html">Pygocentrus piraya</a>, <a href="https://www.fishbase.se/summary/Brycon-orthotaenia.html">Brycon orthotaenia</a>, <a href="https://www.fishbase.se/summary/Prochilodus-costatus.html">Prochilodus costatus</a>, <a href="https://www.fishbase.se/summary/Salminus-hilarii.html">Salminus hilarii</a>, <a href="https://www.fishbase.se/summary/Salminus-franciscanus.html">Salminus franciscanus</a> e <a href="https://www.fishbase.se/summary/Prochilodus-argenteus.html">Prochilodus argenteus</a>.</li>
       <li>USGS. <a href="https://www.usgs.gov/publications/migration-and-spawning-radio-tagged-zulega-prochilodus-argenteus-a-dammed-brazilian">Migration and spawning of radio-tagged zulega Prochilodus argenteus in a dammed Brazilian river</a>.</li>
+      <li>Aquatic Biology. <a href="https://int-res.com/abstracts/ab/v19/n2/p195-200">Reprodução de Leporinus reinhardti em dois trechos do Rio São Francisco abaixo da represa de Três Marias</a>.</li>
+      <li>Nascimento et al. (2020). <a href="https://www.scielo.br/j/ni/a/Ly3q8ScTrLzXPrMnrvRJpqB/?lang=en">Atividade reprodutiva de Leporinus piau em ambientes de água parada e corrente</a>. Neotropical Ichthyology.</li>
+      <li>Journal of Limnology (2015). <a href="https://www.jlimnol.it/jlimnol/article/download/jlimnol.2015.1266/784/5877">Levantamento de peixes na represa de Três Marias</a>, com os nomes populares dos piaus (PDF).</li>
       <li>Biota Neotropica. <a href="https://www.biotaneotropica.org.br/BN/article/view/1626">Reprodução da piranha-branca Serrasalmus brandtii na bacia do São Francisco</a>.</li>
-      <li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Lophiosilurus_alexandri">Lophiosilurus alexandri</a>.</li>
       <li>Lima, F. C. T. e Britski, H. A. (2007). <a href="https://www.scielo.br/j/ni/a/WBLWpgxQN8x9fDJxbxZKNyM/">Salminus franciscanus, uma espécie nova de dourado do Rio São Francisco</a>. Neotropical Ichthyology.</li>
-      <li>O Presente Rural (2022). <a href="https://opresenterural.com.br/pintado-entra-na-lista-nacional-de-especies-ameacadas-de-extincao/">Pintado entra na lista nacional de espécies ameaçadas de extinção</a>, e IstoÉ Dinheiro (15/09/2022), <a href="https://istoedinheiro.com.br/governo-reavalia-lista-de-risco-que-proibia-a-pesca-do-pintado">Governo reavalia lista de risco que proibia a pesca do pintado</a>.</li>
+      <li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Salminus_hilarii">Salminus hilarii</a>, sobre a descrição da tabarana.</li>
+      <li>Revista Brasileira de Ciência Veterinária (UFF). <a href="https://periodicos.uff.br/rbcv/article/download/7238/pdf/31229">Estudo da tabarana na represa de Três Marias</a> (PDF), sobre a desova e o papel de predadora.</li>
+      <li>ICMBio. <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/pan/pan-sao-francisco">Plano de Ação Nacional para os peixes do São Francisco</a>, com o pacamã e o pirá entre as espécies ameaçadas.</li>
     </ul>
 
     <h3>Fotos</h3>
