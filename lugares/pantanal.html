@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pantanal — À Deriva</title>
+<meta name="description" content="O Pantanal de verdade: a cheia e a seca, a Transpantaneira e Porto Jofre, a dequada e a piracema, os bichos do cenário e cada peixe do mapa no À Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A PÁGINA DE UM LUGAR (mesmo molde do Araguaia e da Lagoa dos Patos). É o "saiba mais" da janela que o
+     jogo abre ao chegar no mapa: conta o lugar e o bicho de verdade, e NÃO traz número de jogo
+     (chance, preço, tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que não teve
+     fonte saiu. O visual é o do site (estilo.css); o que está abaixo é só o que esta página tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de água funda e a etiqueta de lenda, pra ninguém
+     sair daqui achando que existe uma piraíba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · Mato Grosso e Mato Grosso do Sul</div>
+    <h1><span>Pantanal</span></h1>
+    <p class="chamada">Metade do ano é rio, a outra metade é campo. Aqui está o Pantanal de verdade: a
+    planície que enche e esvazia, a estrada que termina na beira do rio das onças, a água que escurece
+    na cheia e os peixes que sobem o rio para desovar.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>O Pantanal ocupa cerca de 150 mil quilômetros quadrados em Mato Grosso e Mato Grosso do Sul,
+    na bacia do rio Paraguai. É a maior planície inundável do planeta, e quase plana: a altitude média
+    fica em torno de cem metros. Na época das chuvas, a água sobe, transborda dos rios e cobre boa parte
+    da planície. Na seca, ela volta para os rios, os corixos e as baías, e o campo reaparece.</p>
+    <p>É esse vaivém da água que manda em tudo. A água anda devagar pela planície: no sul, as maiores
+    cheias chegam quatro a cinco meses depois do pico das chuvas. Os bichos, as plantas e as pessoas
+    seguem esse calendário.</p>
+    <p>A gente pantaneira vive do gado há muito tempo. A pecuária começou em meados do século XVIII,
+    com o gado pantaneiro, ou tucura, descendente das raças trazidas por portugueses e espanhóis.
+    Depois de séculos sob seleção natural, esse gado ficou menor e muito resistente à seca e à cheia.
+    No começo do século XX chegou o zebu, de origem indiana, com a ajuda da Estrada de Ferro Noroeste do
+    Brasil, e os cruzamentos quase apagaram o tucura. Hoje a Embrapa Pantanal ajuda a conservar os
+    últimos rebanhos, como o da fazenda Nhumirim, na Nhecolândia.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/pantanal/porto-jofre.jpg" alt="O rio Cuiabá visto da margem, entre árvores" loading="lazy"><figcaption>O rio Cuiabá visto de Porto Jofre, no fim da Transpantaneira, em Mato Grosso. Foto: Pezow, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Porto_Jofre.JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/rio-paraguai-corumba.jpg" alt="O rio Paraguai ao pôr do sol" loading="lazy"><figcaption>O rio Paraguai visto do porto de Corumbá, em Mato Grosso do Sul. Foto: Kaliewhite, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Rio_Paraguai_Pantanal_Corumb%C3%A1.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="transpantaneira">
+    <h2>A estrada que termina no rio</h2>
+    <p>A Transpantaneira, a MT-060, sai de Poconé e vai até Porto Jofre, na beira do rio Cuiabá. São
+    cerca de 147 quilômetros de terra, em cima de aterros, cruzando campos, corixos e baías sobre
+    dezenas de pontes. As pontes não estão ali por enfeite: deixam a água da cheia passar de um lado
+    para o outro da pista.</p>
+    <p>Em Porto Jofre a estrada acaba e o barco assume. O turismo dali já foi quase só de pesca, e com
+    o tempo ganhou outro motivo: ver onças-pintadas na beira do rio. A procura é maior na seca, quando
+    as praias e os barrancos ficam expostos e os barcos passam pelos lugares que os bichos usam.</p>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>O cenário do Pantanal junta os bichos mais famosos da planície, e o seu companheiro de barco é um
+    jacaré-do-pantanal. Todos eles existem de verdade, e as fotos abaixo foram feitas no Pantanal.</p>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/pantanal/onca-pintada.jpg" alt="Onça-pintada andando na beira do rio" loading="lazy"><figcaption>Onça-pintada macho no rio Três Irmãos, no Parque Estadual Encontro das Águas, perto de Porto Jofre (MT). Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_male_Three_Brothers_River_5.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/tuiuiu.jpg" alt="Dois tuiuiús no alto de uma árvore" loading="lazy"><figcaption>Casal de tuiuiús no ninho, no Pantanal. Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Jabirus_(Jabiru_mycteria)_on_nest.JPG">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/arara-azul.jpg" alt="Duas araras-azuis num galho seco" loading="lazy"><figcaption>Araras-azuis-grandes na Transpantaneira, em Poconé (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_Macaws_(Anodorhynchus_hyacinthinus),_Pocon%C3%A9,_Mato_Grosso.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/capivara.jpg" alt="Capivara comendo capim na água rasa" loading="lazy"><figcaption>Capivara pastando na Transpantaneira, em Poconé (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Capybara_(Hydrochoerus_hydrochaeris)_grazing.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/cervo-do-pantanal.jpg" alt="Fêmea de cervo-do-pantanal na estrada de terra" loading="lazy"><figcaption>Fêmea de cervo-do-pantanal na Transpantaneira, em Poconé (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Marsh_Deer_(Blastocerus_dichotomus)_doe_on_the_road_..._(31560683471).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/jacare.jpg" alt="Jacaré deitado na margem" loading="lazy"><figcaption>Jacaré-do-pantanal na Transpantaneira, em Poconé (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Yacare_Caiman_(Caiman_yacare)_(28742110492).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Onça-pintada</h3>
+        <span class="cientifico">Panthera onca</span>
+        <p>No Pantanal ela vive na beira dos rios, e na seca fica mais fácil de ver, quando praias e barrancos aparecem. O território de um macho chega a uns 345 quilômetros quadrados. É uma das espécies ameaçadas que o Parque Nacional do Pantanal Matogrossense, perto de Porto Jofre, protege.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tuiuiú</h3>
+        <span class="cientifico">Jabiru mycteria</span>
+        <p>A ave símbolo do Pantanal e a maior ave voadora de lá: chega perto de três metros de asa aberta. O ninho fica no alto das árvores, é reaproveitado e aumentado ano após ano, e passa de um metro e oitenta de largura. Come peixe, e também peixe morto, o que ajuda a limpar a água na seca.</p>
+      </div>
+      <div class="ficha">
+        <h3>Arara-azul-grande</h3>
+        <span class="cientifico">Anodorhynchus hyacinthinus</span>
+        <p>A maior ave da família dos papagaios, com até um metro do bico à ponta da cauda. Em 95% das vezes faz o ninho num oco do manduvi, uma árvore do Pantanal que só tem buraco do tamanho certo depois dos sessenta anos. Nos anos 1980 restavam umas 2.500 araras; mais de três décadas de trabalho do Instituto Arara Azul ajudaram a população a chegar a cerca de seis mil.</p>
+      </div>
+      <div class="ficha">
+        <h3>Capivara</h3>
+        <span class="cientifico">Hydrochoerus hydrochaeris</span>
+        <p>Um dos maiores roedores do mundo, e especialmente abundante no Pantanal. Vive em grupo e precisa de três coisas: água, campo para pastar e capão de mata. Numa fazenda da Nhecolândia, os pesquisadores da Embrapa contaram 325 capivaras divididas em 38 grupos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cervo-do-pantanal</h3>
+        <span class="cientifico">Blastocerus dichotomus</span>
+        <p>As maiores populações de hoje estão no Pantanal. Come sobretudo plantas aquáticas e plantas que aguentam solo encharcado, como a ninfeia, e brotos de arbustos. A espécie é considerada vulnerável no Brasil.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jacaré-do-pantanal</h3>
+        <span class="cientifico">Caiman yacare</span>
+        <p>A fêmea monta o ninho com folhas e gravetos, na mata ou em cima da vegetação flutuante, e fica de guarda. É a temperatura que decide o sexo dos filhotes: ninho mais frio dá fêmeas, ninho mais quente dá principalmente machos. Depois que eles nascem, a mãe fica por perto até um ano.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes do Pantanal no jogo, da piraputanga ao Minhocão.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Piraputanga</h3>
+        <span class="cientifico">Brycon hilarii</span>
+        <p>Vive na bacia do rio Paraguai e passa dos cinquenta centímetros. Come muita fruta: num estudo no rio Formoso, em Bonito, quase um terço do que ela tinha no estômago eram frutos e sementes. As sementes pequenas, como as do figo e da goiaba, passam inteiras, e a piraputanga as espalha pela beira do rio.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pacu-peva</h3>
+        <span class="cientifico">Mylossoma duriventre</span>
+        <p>Um parente pequeno do pacu, de uns 25 centímetros. Come planta, migra dentro dos rios e depende muito das áreas que alagam na cheia. Vive no rio Paraguai e na parte baixa das bacias do Paraná e do Uruguai.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piranha-vermelha</h3>
+        <span class="cientifico">Pygocentrus nattereri</span>
+        <p>Anda em cardumes pequenos, com hierarquia entre elas. As maiores caçam de madrugada, no fim da tarde e à noite, e comem inseto, verme e peixe. Os dentes são trocados de um lado da boca por vez, e ela nunca fica sem mordida. Os ovos ficam presos em raízes submersas, e são guardados até nascer.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jurupoca</h3>
+        <span class="cientifico">Hemisorubim platyrhynchos</span>
+        <p>Bagre de fundo de lama, das partes fundas e calmas dos rios grandes, e bem raro. O jeito dos olhos e da boca serve para a tocaia: fica parado no fundo e ataca peixes e bichos do fundo. Passa dos sessenta centímetros.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piavuçu</h3>
+        <span class="cientifico">Megaleporinus macrocephalus</span>
+        <p>Peixe de escama da bacia do rio Paraguai, que passa dos sessenta centímetros e de cinco quilos. Os casais desovam em lugares de vegetação fechada. Está entre os peixes mais pescados de Mato Grosso do Sul, e em textos mais antigos aparece como Leporinus macrocephalus.</p>
+      </div>
+      <div class="ficha">
+        <h3>Barbado</h3>
+        <span class="cientifico">Pinirampus pirinampu</span>
+        <p>Bagre de corpo comprido, que anda em cardume e come bichos do fundo. Migra dentro dos rios e pode passar de um metro. Vive nas bacias do Amazonas, do Orinoco e do Paraná, à qual o Pantanal pertence.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pacu</h3>
+        <span class="cientifico">Piaractus mesopotamicus</span>
+        <p>Peixe de corpo alto, cinza-escuro nas costas e de peito amarelado. Na cheia, entra na mata alagada para comer as castanhas e sementes que caem das árvores. Pode chegar a vinte quilos. Está entre os peixes mais pescados de Mato Grosso do Sul, e a espécie é considerada quase ameaçada.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jurupensém</h3>
+        <span class="cientifico">Sorubim lima</span>
+        <p>Bagre de focinho achatado e comprido, que anda em cardume e sai mais à noite. Come peixe e crustáceo. O nome lima vem da placa de dentes da boca, áspera como uma lima.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cachara</h3>
+        <span class="cientifico">Pseudoplatystoma reticulatum</span>
+        <p>Um dos grandes bagres pintados do Pantanal, parente do pintado. Vive da Amazônia central à bacia do Paraná. Está entre os peixes mais pescados de Mato Grosso do Sul, e em textos mais antigos aparece como Pseudoplatystoma fasciatum.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dourado</h3>
+        <span class="cientifico">Salminus brasiliensis</span>
+        <p>O peixe de escama dourada que é o sonho de quem pesca no Pantanal. Caça peixe e crustáceo, chega a um metro de corpo e passa dos trinta quilos. Vive nas bacias do Paraná, do Paraguai e do Uruguai. Em textos antigos aparece como Salminus maxillosus.</p>
+      </div>
+      <div class="ficha">
+        <h3>Jaú</h3>
+        <span class="cientifico">Zungaro jahu</span>
+        <p>Um bagre gigante das bacias do Paraná e do Paraguai, que passa de um metro e quarenta de corpo. Cresce devagar, e por isso uma população demora muito a se recuperar: a espécie é considerada quase ameaçada. O nome do gênero vem de um nome indígena dado a vários bagres grandes.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Minhocão <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirado numa lenda do Centro-Oeste</span>
+        <p>O Minhocão é um mito das águas contado na região de Corumbá, no Pantanal sul, e em Mato Grosso: uma serpente tão grande quanto a largura do rio, que assusta os barqueiros e, quando se zanga, derruba os barrancos dentro do rio. O jogo a faz aparecer nas noites de lua cheia.</p>
+      </div>
+    </div>
+<div class="galeria" style="--cols:2">
+<figure class="foto"><img class="inteira" style="background:#3d4a35" src="fotos/pantanal/piranha.jpg" alt="Piranha-vermelha segurada na mão" loading="lazy"><figcaption>Piranha-vermelha (Pygocentrus nattereri) no rio Claro, na Transpantaneira, em Poconé (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Red-bellied_Piranha_(Pygocentrus_nattereri)_(28469321432).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/pacu-bonito.jpg" alt="Pacus nadando em água clara" loading="lazy"><figcaption>Pacus (Piaractus mesopotamicus) num rio de água clara em Bonito (MS). Foto: David Morimoto, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:MergulhoemBonito2.jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="agua">
+    <h2>A dequada e a piracema</h2>
+    <p>Todo ano, quando a cheia começa, a água do rio Paraguai muda de cor. A enchente invade o campo e
+    a matéria das plantas das margens começa a se decompor. As bactérias que fazem esse trabalho gastam
+    o oxigênio da água, que fica escura, avermelhada e ácida. Os pantaneiros chamam isso de dequada, ou
+    decoada. Acontece de Cáceres, no norte, até Porto Murtinho, no sul, e é mais forte no rio Paraguai.
+    Costuma começar no fim de março, com as primeiras águas.</p>
+    <p>Na dequada forte, falta ar para os peixes. Alguns fogem para baías de água limpa; os que ficam
+    fracos são os "peixes tontos", e muitos morrem. É um fenômeno natural, e os peixes mortos viram
+    comida para as garças e para outros bichos.</p>
+    <p>A piracema é a outra estação da água: é a época em que os peixes se reproduzem. Para eles terem
+    sossego, a pesca nos rios de Mato Grosso do Sul fica fechada todo ano de 5 de novembro a 28 de
+    fevereiro.</p>
+  </section>
+
+  <section id="cuidar">
+    <h2>Quem cuida do Pantanal</h2>
+    <p>Muita gente trabalha para o Pantanal continuar cheio de vida. A Embrapa Pantanal, em Corumbá,
+    pesquisa os bichos e os peixes da planície há décadas. Ela montou um banco de sêmen de peixes
+    nativos, congelado em nitrogênio líquido, com pacu, pintado, cachara e dourado: serve para estudos
+    genéticos, para repovoar rios e para ajudar a afinar as regras de pesca da região.</p>
+    <p>Na beira do rio Cuiabá, perto de Porto Jofre, vivem as ariranhas, uma espécie ameaçada. A bióloga
+    Caroline Leuchtenberger estuda as ariranhas do Pantanal há quase duas décadas e criou em 2019 o
+    Projeto Ariranhas, que quer fazer delas um símbolo de um ambiente equilibrado e da convivência entre
+    gente e bicho. O projeto tem até um guia de boas práticas para quem vai observar ariranhas.</p>
+    <p>No sul do Pantanal, no Refúgio Ecológico Caiman, em Miranda (MS), o Onçafari, criado por Mario
+    Haberfeld por volta de 2011, acostuma as onças à presença dos carros de safári. A onça continua
+    selvagem; só deixa de ver o carro como ameaça. O projeto acompanha as onças com armadilhas
+    fotográficas e colares com GPS, e treinou antigos caçadores como guias de ecoturismo.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/pantanal/ariranhas.jpg" alt="Duas ariranhas deitadas num tronco" loading="lazy"><figcaption>Ariranhas no rio Três Irmãos, perto de Porto Jofre (MT). Foto: Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Giant_otters_(Pteronura_brasiliensis).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/pantanal/ariranha-peixe.jpg" alt="Ariranha comendo um peixe na beira do rio" loading="lazy"><figcaption>Ariranha comendo um peixe no rio Cuiabá, em Porto Jofre (MT). Foto: Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Giant_Otter_(Pteronura_brasiliensis)_eating_fish_..._(48390851682).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Quem pesca no Pantanal faz parte dessa história. O pesque-e-solte deixa o peixe grande no rio para
+    desovar de novo: em 2019, uma lei de Mato Grosso do Sul proibiu a captura e a venda do dourado e
+    deixou aberta só a modalidade pesque-e-solte. Respeitar a piracema e soltar o peixe com cuidado é o
+    que garante dourado, pacu e cachara na próxima pescaria.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>O Pantanal, a estrada e a gente</h3>
+    <ul>
+      <li>Agência FAPESP (27/09/2022). <a href="https://agencia.fapesp.br/crise-climatica-e-pressao-antropica-estao-levando-o-pantanal-ao-desequilibrio/39672">Crise climática e pressão antrópica estão levando o Pantanal ao desequilíbrio</a></li>
+      <li>Embrapa Pantanal. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/783742/1/FOL139.pdf">Caracterização do sistema de produção de bovinos de corte do Pantanal</a> (PDF)</li>
+      <li>Rosa, A. do N. e Melo, J. (1995). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/784396/1/COT14.pdf">Levantamento da situação atual da produção de touros para o Pantanal Mato-Grossense</a>. Embrapa (PDF)</li>
+      <li>Juliano, R. S. et al. (2007). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/792026/1/ADM117.pdf">Conservação do patrimônio genético, cultural e modelo pecuário</a>. Embrapa Pantanal (PDF)</li>
+      <li>Estado de Minas (23/07/2026). <a href="https://www.em.com.br/emfoco/2026/07/23/estrada-de-terra-atravessa-o-pantanal-sobre-dezenas-de-pontes-e-termina-numa-regiao-conhecida-pelos-encontros-com-oncas/">Estrada de terra atravessa o Pantanal sobre dezenas de pontes e termina numa região conhecida pelos encontros com onças</a></li>
+    </ul>
+
+    <h3>Os bichos</h3>
+    <ul>
+      <li>WikiAves. <a href="https://www.wikiaves.com.br/wiki/tuiuiu">Tuiuiú</a></li>
+      <li>Revista Pesquisa FAPESP (novembro de 2022). <a href="https://revistapesquisa.fapesp.br/wp-content/uploads/2022/10/047-049_arara-azul_321.pdf">Do ninho ao voo</a> (PDF), sobre a arara-azul e o Instituto Arara Azul</li>
+      <li>Campos, Z. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/812659/1/ADM055.pdf">Ecologia e comportamento das capivaras no Pantanal</a>. Embrapa Pantanal (PDF)</li>
+      <li>Biodiversidade Brasileira, ICMBio (2012). <a href="https://revistaeletronica.icmbio.gov.br/BioBR/article/download/233/154/905">Cervo-do-Pantanal, Blastocerus dichotomus: avaliação do estado de conservação</a> (PDF)</li>
+      <li>Coutinho, M. e Campos, Z. (2005). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/802584/1/COT48.pdf">Metodologia de avaliação do potencial reprodutivo de fêmeas e machos de jacaré-do-Pantanal</a>. Embrapa Pantanal (PDF)</li>
+      <li>National Geographic Brasil (outubro de 2018). <a href="https://www.nationalgeographicbrasil.com/portfolio/2018/10/conservacao-onca-pintada-pantanal-safari-turismo-caca-cacadores">Para salvar as onças do Pantanal, este projeto transformou caçadores em guias de ecoturismo</a></li>
+    </ul>
+
+    <h3>Os peixes e a lenda</h3>
+    <ul>
+      <li>FishBase. <a href="https://www.fishbase.se/summary/Brycon-hilarii.html">Brycon hilarii</a>, <a href="https://www.fishbase.se/summary/Mylossoma-duriventre.html">Mylossoma duriventre</a>, <a href="https://www.fishbase.se/summary/Pygocentrus-nattereri.html">Pygocentrus nattereri</a>, <a href="https://www.fishbase.se/summary/Hemisorubim-platyrhynchos.html">Hemisorubim platyrhynchos</a>, <a href="https://www.fishbase.se/summary/Megaleporinus-macrocephalus.html">Megaleporinus macrocephalus</a>, <a href="https://www.fishbase.se/summary/Pinirampus-pirinampu.html">Pinirampus pirinampu</a>, <a href="https://www.fishbase.se/summary/Piaractus-mesopotamicus.html">Piaractus mesopotamicus</a>, <a href="https://www.fishbase.se/summary/Sorubim-lima.html">Sorubim lima</a>, <a href="https://www.fishbase.se/summary/Pseudoplatystoma-reticulatum.html">Pseudoplatystoma reticulatum</a>, <a href="https://www.fishbase.se/summary/Salminus-brasiliensis.html">Salminus brasiliensis</a> e <a href="https://www.fishbase.se/summary/Zungaro-jahu.html">Zungaro jahu</a></li>
+      <li>Reys, P., Sabino, J. e Galetti, M. (2009). <a href="https://ib.rc.unesp.br/Home/Departamentos47/ecologia/reys_galetti_actaoecol2009.pdf">Frugivory by the fish Brycon hilarii (Characidae) in western Brazil</a>. Acta Oecologica (PDF)</li>
+      <li>Embrapa Pantanal (2003). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/811025/1/BP47.pdf">Sistema de Controle da Pesca de Mato Grosso do Sul, SCPESCA/MS 9, 2002</a> (PDF)</li>
+      <li>Catella, A. C., Marques, D. K. S. e Rotta, M. A. (2002). <a href="https://www.agrolink.com.br/colunistas/banco-de-semen-de-peixes-do-pantanal_383667.html">Banco de sêmen de peixes do Pantanal</a>. Embrapa Pantanal, no Agrolink</li>
+      <li>Campo Grande News (23/08/2011). <a href="https://www.campograndenews.com.br/lado-b/comportamento-23-08-2011-08/em-ms-lendas-regionais-ainda-sao-desconhecidas-por-muita-gente">Em MS, lendas regionais ainda são desconhecidas por muita gente</a></li>
+    </ul>
+
+    <h3>A água, a pesca e quem cuida</h3>
+    <ul>
+      <li>Oliveira, M. D. de, Calheiros, D. F. e Padovani, C. R. (2013). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/958791">Mapeamento e descrição das áreas de ocorrência dos eventos de decoada no Pantanal</a>. Embrapa Pantanal, Boletim de Pesquisa e Desenvolvimento 121</li>
+      <li>Campo Grande News (18/04/2017). <a href="https://www.campograndenews.com.br/meio-ambiente/fenomeno-natural-decoada-comeca-no-rio-paraguai-causando-morte-de-peixes">Fenômeno natural, decoada começa no rio Paraguai causando morte de peixes</a></li>
+      <li>Imasul. <a href="https://www.imasul.ms.gov.br/?p=2408">Piracema em Mato Grosso do Sul</a></li>
+      <li>Mato Grosso do Sul. <a href="https://www.legisweb.com.br/legislacao/?id=456250">Lei nº 5.321, de 10 de janeiro de 2019</a></li>
+      <li>IUCN Otter Specialist Group. <a href="https://www.otterspecialistgroup.org/2700-2">Projeto Ariranhas</a></li>
+      <li>Scott Dunn. <a href="https://www.scottdunn.com/us/brazil/things-to-do/oncafari-project-at-caiman-ecological-refuge">Onçafari Project at Caiman Ecological Refuge</a></li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Pezow, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Porto_Jofre.JPG">O rio Cuiabá visto de Porto Jofre (MT).</a></li>
+      <li>Kaliewhite, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Rio_Paraguai_Pantanal_Corumb%C3%A1.jpg">O rio Paraguai visto do porto de Corumbá (MS).</a></li>
+      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Jaguar_(Panthera_onca_palustris)_male_Three_Brothers_River_5.jpg">Onça-pintada no rio Três Irmãos, Parque Estadual Encontro das Águas (MT).</a></li>
+      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Jabirus_(Jabiru_mycteria)_on_nest.JPG">Casal de tuiuiús no ninho, no Pantanal.</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Hyacinth_Macaws_(Anodorhynchus_hyacinthinus),_Pocon%C3%A9,_Mato_Grosso.jpg">Araras-azuis-grandes na Transpantaneira, Poconé (MT).</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Capybara_(Hydrochoerus_hydrochaeris)_grazing.jpg">Capivara pastando na Transpantaneira, Poconé (MT).</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Marsh_Deer_(Blastocerus_dichotomus)_doe_on_the_road_..._(31560683471).jpg">Fêmea de cervo-do-pantanal na Transpantaneira, Poconé (MT).</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Yacare_Caiman_(Caiman_yacare)_(28742110492).jpg">Jacaré-do-pantanal na Transpantaneira, Poconé (MT).</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Red-bellied_Piranha_(Pygocentrus_nattereri)_(28469321432).jpg">Piranha-vermelha no rio Claro, Transpantaneira, Poconé (MT).</a></li>
+      <li>David Morimoto, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:MergulhoemBonito2.jpg">Pacus num rio de Bonito (MS).</a></li>
+      <li>Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Giant_otters_(Pteronura_brasiliensis).jpg">Ariranhas no rio Três Irmãos, perto de Porto Jofre (MT).</a></li>
+      <li>Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Giant_Otter_(Pteronura_brasiliensis)_eating_fish_..._(48390851682).jpg">Ariranha comendo um peixe no rio Cuiabá, Porto Jofre (MT).</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

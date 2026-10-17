@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rio S�o Francisco � � Deriva</title>
+<meta name="description" content="O Rio S�o Francisco de verdade: o sert�o, as carrancas, o Caboclo d'�gua, a ararinha-azul, os bichos do cen�rio e cada peixe do mapa no � Deriva.">
+<link rel="stylesheet" href="../estilo.css">
+<!-- A P�GINA DE UM LUGAR (mesmo molde do Araguaia, do Rio Negro e da Lagoa). � o "saiba mais" da janela que o
+     jogo abre ao chegar no mapa: conta o lugar e o bicho de verdade, e N�O traz n�mero de jogo
+     (chance, pre�o, tamanho em jogo). Todo fato daqui tem fonte na lista do fim; o que n�o teve
+     fonte saiu. O visual � o do site (estilo.css); o que est� abaixo � s� o que esta p�gina tem a mais. -->
+<style>
+  .lugar-intro { display: flex; flex-direction: column; gap: 0; }
+  .fichas { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 14px; }
+  .ficha {
+    background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 12px; padding: 1rem 1.15rem;
+  }
+  .ficha h3 { margin: 0 0 .15rem; color: var(--texto); }
+  .ficha p { color: var(--fraco); font-size: .95rem; margin: 0; line-height: 1.65; }
+  .ficha .cientifico {
+    display: block; margin: 0 0 .5rem; font-size: .8rem; letter-spacing: .02em;
+    color: var(--realce-2);
+  }
+  /* o peixe que o jogo inventou ganha o fundo de �gua funda e a etiqueta de lenda, pra ningu�m
+     sair daqui achando que existe uma pira�ba de cem anos catalogada */
+  .ficha.lenda {
+    background: linear-gradient(180deg, #DFF3F6 0%, #BFE6EC 100%);
+    border-color: color-mix(in srgb, var(--celestial) 35%, var(--linha));
+  }
+  .ficha.lenda p { color: var(--texto); }
+  .selo-lenda {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--celestial); background: var(--papel); border: 1px solid var(--linha);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle;
+  }
+  .grupo { margin: 1.6rem 0 .8rem; font-size: 1.05rem; }
+  .grupo:first-of-type { margin-top: .4rem; }
+  .fontes h3 { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+  .fontes ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; line-height: 1.6; color: var(--fraco); }
+  .fontes li { margin-bottom: .35rem; overflow-wrap: anywhere; }
+  .tela-lugar { max-width: none; }
+  .tela-lugar img, .foto-sozinha img { width: 100%; }
+  .foto { margin: 0; }
+  .foto img { display: block; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linha); }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .galeria .foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  /* foto muito larga (peixe comprido, panorama): aparece inteira, e a sobra vira a cor da borda dela */
+  .galeria .foto img.inteira { object-fit: contain; }
+  .foto figcaption { font-size: .78rem; line-height: 1.5; color: var(--fraco); margin-top: .35rem; overflow-wrap: anywhere; }
+  .galeria { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 16px; margin: 1rem 0 1.2rem; align-items: start; }
+  /* a grade fecha sempre a ultima linha cheia: --cols sai da contagem de itens de cada grupo */
+  @media (max-width: 720px) { .fichas, .galeria { grid-template-columns: 1fr; } }
+  .foto-sozinha { margin: 1rem 0 1.2rem; }
+  @media (max-width: 560px) {
+    body { padding: 0 16px 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="sitio">
+    <a class="casa" href="../">À Deriva</a>
+    <a href="../guia.html">Guia</a>
+    <a href="../ranking.html">Ranking</a>
+  </nav>
+
+  <header class="topo">
+    <div class="marca">Lugares · De Minas Gerais ao mar, entre Sergipe e Alagoas</div>
+    <h1>Rio <span>São Francisco</span></h1>
+    <p class="chamada">Um rio que nasce em Minas, atravessa o sertão e chega ao mar no Nordeste. Aqui está
+    o São Francisco de verdade: as carrancas na proa dos barcos, o Caboclo d'Água das histórias, a
+    ararinha-azul que voltou a voar e os peixes que só existem nessa bacia.</p>
+  </header>
+
+  <section class="lugar-intro">
+    <h2>O lugar</h2>
+    <p>O Rio São Francisco nasce na Serra da Canastra, em Minas Gerais, e corre cerca de 2.800
+    quilômetros, inteiro dentro do Brasil. Atravessa a Bahia rumo ao norte; ao chegar em Pernambuco,
+    vira para o sudeste, faz a divisa entre Alagoas e Sergipe e encontra o Atlântico entre Piaçabuçu,
+    em Alagoas, e Brejo Grande, em Sergipe. A bacia dele é a quarta maior da América do Sul.</p>
+    <p>O caminho atravessa o sertão. Na beira do rio ficam Pirapora, em Minas, as cidades vizinhas de
+    Juazeiro, na Bahia, e Petrolina, em Pernambuco, ligadas por uma ponte, o Xingó e, perto da foz,
+    Penedo, em Alagoas.</p>
+    <p>Muitos peixes do rio só existem nessa bacia: a curimatã-pioa, a curimatã-pacu, a matrinxã, o
+    pacamã, o dourado do São Francisco e o pirá, todos desta página. E o rio é também terra de
+    barqueiros, de pescadores e de artesãos que esculpem carrancas.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/sao-francisco/pirapora.jpg" alt="O Rio São Francisco largo em Pirapora" loading="lazy"><figcaption>O Rio São Francisco em Pirapora (MG), em março de 2014. Foto: Junio César Rodrigues Campos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Rio_Sao_Francisco_Pirapora.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/petrolina-juazeiro.jpg" alt="A ponte entre Juazeiro e Petrolina sobre o rio" loading="lazy"><figcaption>A Ponte Presidente Dutra, entre Juazeiro (BA) e Petrolina (PE), vista da orla de Petrolina. Foto: A. Júnior, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Ponte_Presidente_Dutra_e_Orla_I_-_Petrolina,_Pernambuco.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/xingo.jpg" alt="Água calma e uma ilha de mata no Xingó" loading="lazy"><figcaption>O Rio São Francisco no Xingó, em Sergipe, em maio de 2015. Foto: Sinatro, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Canion_de_Xingo.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/foz.jpg" alt="Coqueiros e areia na foz do rio" loading="lazy"><figcaption>A foz do Rio São Francisco, em Piaçabuçu (AL), em julho de 2019. Foto: Rafael Vianna Croffi, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Foz_do_Rio_S%C3%A3o_Francisco_(49790012318).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section id="carrancas">
+    <h2>As carrancas</h2>
+    <p>A carranca é uma figura entalhada em madeira, meio gente e meio bicho, de juba grande, olhos
+    humanos e cara de fera, muitas vezes pintada de vermelho e preto. Ela ia na proa dos barcos que
+    desciam o rio de Minas Gerais para o Nordeste, e os barqueiros acreditavam que ela trazia sorte e
+    afastava os maus espíritos, as tempestades, os bichos perigosos e o naufrágio. Há quem conte que a
+    carranca gemia alto quando o barco ia afundar.</p>
+    <p>A origem é discutida: há pesquisadores que ligam a tradição à África, outros aos povos
+    indígenas. Com o fim dos barcos a remo e a vapor, as carrancas saíram da proa e viraram arte.
+    Petrolina e Juazeiro são os grandes centros, e Santa Maria da Vitória, na Bahia, e Pirapora, em
+    Minas, também têm tradição forte. O mais famoso dos carranqueiros, Mestre Guarany, de Santa Maria
+    da Vitória, viveu 101 anos e teve obra exposta do MASP a Paris.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/sao-francisco/barco-carranca.jpg" alt="Barco de travessia com uma carranca na proa" loading="lazy"><figcaption>Um barco de travessia com a carranca na proa, em Juazeiro (BA), em janeiro de 2007. Foto: Glauco Umbelino, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Barco_Travessia_III_-_Ilha_do_Rodeador_(1375939553).jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/carranca-iguatama.jpg" alt="Uma carranca grande na beira da estrada" loading="lazy"><figcaption>Uma carranca em Iguatama (MG), no alto São Francisco, em fevereiro de 2016. Foto: José Donizetti Dias, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Carranca_do_rio_s%C3%A3o_Francisco,_o_velho_Chico_em_Minas_gerais._-_panoramio.jpg">Wikimedia Commons</a>. Recortada para a página.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>O que você vê no jogo</h2>
+    <p>O cenário do São Francisco é o do sertão: os cactos na margem, os bichos da Caatinga e a
+    carranca na proa.</p>
+    <div class="galeria" style="--cols:3">
+<figure class="foto"><img src="fotos/sao-francisco/carcara.jpg" alt="Carcará pousado" loading="lazy"><figcaption>Carcará (Caracara plancus) em Araci, no sertão da Bahia, em julho de 2020. Foto: GildasioOliveira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Ave_Carcar%C3%A1.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/mandacaru.jpg" alt="Fruto vermelho do mandacaru aberto" loading="lazy"><figcaption>O fruto do mandacaru (Cereus jamacaru) em Santa Bárbara, no sertão da Bahia, em junho de 2017. Foto: Sabrinafelicia, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Mandacaru_(Cereus_jamacaru)_02.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/xique-xique.jpg" alt="Fruto rosa do xique-xique entre os espinhos" loading="lazy"><figcaption>O fruto do xique-xique (Pilosocereus gounellei) na BR-242, em Cristópolis, no oeste da Bahia, em março de 2011. Foto: João Medeiros, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pilosocereus_gounellei_(21899943815).jpg">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+    <div class="fichas" style="--cols:2">
+      <div class="ficha">
+        <h3>Carcará</h3>
+        <span class="cientifico">Caracara plancus</span>
+        <p>Parente distante dos falcões, come quase tudo: carniça, lagarto, cobra, sapo, ovo, fruta e até resto de peixe nos acampamentos de pesca. Também rouba comida de outras aves. O nome vem do tupi e imita o grito dele, que ele dá com o pescoço dobrado para trás e a cabeça encostada nas costas.</p>
+      </div>
+      <div class="ficha">
+        <h3>Tatu-bola</h3>
+        <span class="cientifico">Tolypeutes tricinctus</span>
+        <p>Só existe no Brasil, na Caatinga do Nordeste. Quando se assusta, fecha a couraça numa bola de uns trinta centímetros. Foi o bicho do Fuleco, o mascote da Copa do Mundo de 2014, e está ameaçado de extinção: o ICMBio prepara um plano nacional para protegê-lo.</p>
+      </div>
+      <div class="ficha">
+        <h3>Mandacaru</h3>
+        <span class="cientifico">Cereus jamacaru</span>
+        <p>O cacto grande da Caatinga, que cresce nas partes mais secas do sertão, em solo raso e até em cima de pedra. Na seca, é um dos principais alimentos do rebanho: os agricultores cortam os ramos e queimam os espinhos para dar a cabras, ovelhas e bois.</p>
+      </div>
+      <div class="ficha">
+        <h3>Xique-xique</h3>
+        <span class="cientifico">Pilosocereus gounellei</span>
+        <p>Cacto cheio de espinhos fortes. Na seca braba, o fruto e o caule viram comida de gente e de bicho, mas é a última escolha, justamente por causa dos espinhos. Também serve de cerca viva, e os espinhos já foram usados como agulha de bordado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ararinha">
+    <h2>A ararinha-azul</h2>
+    <p>A ararinha-azul (Cyanopsitta spixii) é uma arara pequena da Caatinga da Bahia. Em 1986, a última
+    população conhecida na natureza tinha só três aves. O último macho selvagem, acompanhado de perto
+    pelos pesquisadores, sumiu em 2000, e a espécie passou a ser considerada extinta na natureza.
+    Sobraram as ararinhas dos criadouros.</p>
+    <p>Em 2012 o ICMBio lançou o plano para trazê-la de volta. Em 2018 nasceram a Área de Proteção
+    Ambiental e o Refúgio de Vida Silvestre da Ararinha-Azul, 120 mil hectares em Curaçá e Juazeiro,
+    na beira do São Francisco. Em 2020, 52 ararinhas chegaram de um criadouro na Alemanha e passaram
+    cerca de dois anos se adaptando num viveiro em Curaçá. E em 11 de junho de 2022 oito
+    ararinhas-azuis, cinco fêmeas e três machos, foram soltas na Caatinga, junto com araras-maracanã.</p>
+    <p>No jogo, a ararinha-azul é o bicho de estimação do São Francisco. De verdade, ela é uma das
+    histórias de volta mais bonitas da natureza brasileira.</p>
+  </section>
+
+  <section id="caboclo">
+    <h2>O Caboclo d'Água</h2>
+    <p>Quem vive na beira do São Francisco conta do Caboclo d'Água: um ser musculoso, troncudo e
+    baixo, de pele cor de bronze, com um olho só no meio da testa. Dizem que ele protege o rio, que
+    pode estar em vários lugares ao mesmo tempo e virar bicho, e que mora numa gruta funda cheia de
+    ouro. Quando se zanga, agarra o fundo das canoas e balança até virar o barco, e espanta os peixes
+    de quem pesca.</p>
+    <p>Para se defender, os barqueiros punham a carranca na proa, pintavam uma estrela branca no casco
+    e cravavam facas no fundo da canoa, porque o aço afastaria os seres encantados. E um pedaço de fumo
+    oferecido acalmaria o Caboclo por um tempo.</p>
+  </section>
+
+  <section>
+    <h2>Os peixes do mapa</h2>
+    <p>Os doze peixes do São Francisco no jogo, da curimatã-pioa ao Caboclo d'Água. Quando o nome popular
+    vale para mais de uma espécie, o cartão avisa.</p>
+    <div class="fichas" style="--cols:3">
+      <div class="ficha">
+        <h3>Curimatã-pioa</h3>
+        <span class="cientifico">Prochilodus costatus</span>
+        <p>Também chamada de curimba, só existe na bacia do São Francisco. Vive perto do fundo e é um peixe de migração: sobe e desce o rio dentro da água doce. Passa de meio metro e de quatro quilos.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piau-verdadeiro</h3>
+        <span class="cientifico">Megaleporinus obtusidens</span>
+        <p>Peixe que come de tudo, de rio médio e grande, e vive nas bacias do São Francisco, do Paraná, do Prata e do Parnaíba, entre outras. Faz longas migrações para comer e para se reproduzir, e os casais desovam no meio da vegetação densa. Chega a uns 76 centímetros.</p>
+      </div>
+      <div class="ficha">
+        <h3>Piranha</h3>
+        <span class="cientifico">Pygocentrus piraya, a piranha do São Francisco</span>
+        <p>Piranha é nome de várias espécies. A do mapa é a Pygocentrus piraya, conhecida só na bacia do São Francisco e tida como a maior de todas as piranhas: passa dos 38 centímetros e dos três quilos. É peixe de pesca esportiva, e a mordida machuca gente.</p>
+      </div>
+      <div class="ficha">
+        <h3>Curimatã-pacu</h3>
+        <span class="cientifico">Prochilodus argenteus</span>
+        <p>A curimatã grande do rio, também só da bacia do São Francisco, que passa de seis quilos. Com radiotransmissores, os pesquisadores viram que, na primeira subida das águas da estação chuvosa, metade dos peixes subiu o rio de 100 a 365 quilômetros, e a outra metade ficou onde estava.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirambeba</h3>
+        <span class="cientifico">Serrasalmus brandtii</span>
+        <p>Uma piranha menor, também chamada de piranha-branca, que chega a uns 29 centímetros e vive na bacia do São Francisco. Na região da represa de Três Marias, a desova dela é mais forte de novembro a fevereiro, quando a água está mais quente e chove mais.</p>
+      </div>
+      <div class="ficha">
+        <h3>Cascudo</h3>
+        <span class="cientifico">Hypostomus francisci, entre outros</span>
+        <p>Cascudo é nome de muitos bagres de couraça, da família dos loricariídeos. Um deles, o Hypostomus francisci, vive no alto São Francisco, sempre no fundo, e chega a uns 36 centímetros. Como os parentes do mesmo gênero, consegue respirar ar quando precisa.</p>
+      </div>
+      <div class="ficha">
+        <h3>Matrinxã</h3>
+        <span class="cientifico">Brycon orthotaenia</span>
+        <p>Só existe na bacia do São Francisco e passa dos quarenta centímetros. Tinha sumido da represa de Três Marias no fim dos anos 1970 e voltou a aparecer em meados dos anos 1990, depois que a Codevasf começou a soltar filhotes criados nos seus centros.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pacamã</h3>
+        <span class="cientifico">Lophiosilurus alexandri</span>
+        <p>Bagre achatado de boca enorme, que só existe na bacia do São Francisco. Prefere água parada e não sai viajando pelo rio. Os ovos grudam onde são postos, e é o macho que cuida da ninhada. Está na lista de espécies ameaçadas.</p>
+      </div>
+      <div class="ficha">
+        <h3>Dourado</h3>
+        <span class="cientifico">Salminus franciscanus</span>
+        <p>O dourado do São Francisco só ganhou nome científico próprio em 2007; antes era confundido com o dourado do Prata. Come peixe, migra para se reproduzir na estação das chuvas, e os filhotes crescem nas lagoas da margem. É dos peixes mais procurados pela pesca no médio São Francisco e passa de 90 centímetros.</p>
+      </div>
+      <div class="ficha">
+        <h3>Surubim</h3>
+        <span class="cientifico">Pseudoplatystoma corruscans</span>
+        <p>O surubim, ou pintado, é um bagre grande e pintado, das bacias do São Francisco e do Paraná, que come sobretudo peixe e passa de um metro e meio. É símbolo da pesca no Brasil. Em 2022 entrou na lista nacional de espécies ameaçadas, como vulnerável, e por isso a pesca dele ficou proibida.</p>
+      </div>
+      <div class="ficha">
+        <h3>Pirá</h3>
+        <span class="cientifico">Conorhynchos conirostris</span>
+        <p>Bagre que só existe no São Francisco, o terceiro maior peixe da bacia: chega a um metro e a treze quilos. É migrador, mas, ao contrário dos outros migradores do rio, não usa as lagoas da margem como berçário, e ninguém sabe ainda direito onde ele desova.</p>
+      </div>
+      <div class="ficha lenda">
+        <h3>Caboclo d'Água <span class="selo-lenda">lenda do jogo</span></h3>
+        <span class="cientifico">inspirado na lenda do Caboclo d'Água</span>
+        <p>Não é peixe: é o guardião do rio nas histórias da beira, de pele cor de bronze, que vira canoas e espanta os peixes. No jogo, ele é quem vigia de baixo d'água, enquanto a carranca vigia da proa. A lenda inteira está mais acima.</p>
+      </div>
+    </div>
+    <div class="foto-sozinha"><figure class="foto"><img src="fotos/sao-francisco/curimata-pioa.jpg" alt="Desenho de uma curimatã-pioa" loading="lazy"><figcaption>Curimatã-pioa (Prochilodus costatus), peixe que só existe na bacia do São Francisco, em desenho de André Koehne. <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Curimat%C3%A1-pioa_(Prochilodus_costatus)_by_Andr%C3%A9_Koehne.jpg">Wikimedia Commons</a>.</figcaption></figure></div>
+  </section>
+
+  <section id="piracema">
+    <h2>A piracema</h2>
+    <p>Com as primeiras chuvas, os peixes migradores sobem o rio para desovar: é a piracema. As
+    curimatãs sobem com a primeira cheia da estação, e os filhotes de muitos peixes, como o dourado,
+    vão crescer nas lagoas da margem. Por isso, na bacia do São Francisco, a pesca para no defeso, de
+    1º de novembro a 28 de fevereiro, e nas lagoas da margem a proibição vai até 30 de abril.</p>
+  </section>
+
+  <section id="repovoamento">
+    <h2>Peixe de volta ao rio</h2>
+    <p>Desde 1983, a Codevasf cria filhotes de peixes nativos e solta no rio, o que se chama
+    peixamento. Começou na represa de Três Marias, em Minas, e hoje são vários centros na bacia: Três
+    Marias e Gorutuba, em Minas, Xique-Xique, na Bahia, Bebedouro, em Pernambuco, Betume, em Sergipe, e
+    Itiúba, em Alagoas. Em média, passam de seis milhões e meio por ano os filhotes nativos soltos na
+    bacia: pirá, curimatã-pacu, curimatã-pioa, matrinxã, piau, pacamã, cascudo e piaba.</p>
+    <p>Os pais são capturados com licença e se reproduzem nos centros, e os filhotes crescem até o
+    tamanho de soltar. Muitas vezes a própria comunidade da beira solta os peixes, depois de uma conversa
+    sobre o rio. E dá resultado: depois do peixamento, a pesca das espécies soltas aumentou, e a matrinxã
+    voltou a Três Marias.</p>
+    <div class="galeria" style="--cols:2">
+<figure class="foto"><img src="fotos/sao-francisco/penedo.jpg" alt="A orla de Penedo e barcos no rio" loading="lazy"><figcaption>O Rio São Francisco em Penedo (AL), em maio de 2013. Foto: Codevasf, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Rio_S%C3%A3o_Francisco_em_Penedo,_AL.jpg">Wikimedia Commons</a>.</figcaption></figure>
+<figure class="foto"><img src="fotos/sao-francisco/cabana-pescador.jpg" alt="Cabanas de pescador de palha na margem" loading="lazy"><figcaption>Cabanas de pescador na margem alagoana do São Francisco, no caminho para o mar, em janeiro de 2014. Foto: Waltersmelo, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Cabana_de_pescador_as_margens_do_S%C3%A3o_Francisco.JPG">Wikimedia Commons</a>.</figcaption></figure>
+</div>
+  </section>
+
+  <section>
+    <h2>Pra cuidar</h2>
+    <p>Respeitar a piracema é o que garante a curimatã do ano que vem. E o surubim, que hoje não pode
+    ser pescado, só volta a encher o rio se ficar na água: quem fisgar um por acaso, solta.</p>
+  </section>
+
+  <section class="fontes">
+    <h2>Fontes</h2>
+
+    <h3>O rio, a piracema e o repovoamento</h3>
+    <ul>
+      <li>Godinho, A. L. e Godinho, H. P. (2018). <a href="https://scielo.br/j/ni/a/KCz8yXMn6MSxvMMvw7ffQcs/?lang=en">Status do pirá (Conorhynchos conirostris)</a>. Neotropical Ichthyology, sobre o comprimento do rio, a bacia e o pirá.</li>
+      <li>Toda Matéria. <a href="https://www.todamateria.com.br/rio-sao-francisco/">Rio São Francisco</a>, sobre a nascente, o percurso e a foz.</li>
+      <li>Ministério do Meio Ambiente. <a href="https://www.normasbrasil.com.br/norma/instrucao-normativa-48-2005_75639.html">Instrução Normativa MMA nº 48, de 27/10/2005</a>, sobre o defeso na bacia do São Francisco e as lagoas marginais.</li>
+      <li>Jornal Grande Bahia (2017). <a href="https://jornalgrandebahia.com.br/2017/06/dia-do-pescador-codevasf-incentiva-atividade-pesqueira-por-meio-de-peixamentos/">Dia do Pescador: Codevasf incentiva atividade pesqueira por meio de peixamentos</a>.</li>
+    </ul>
+
+    <h3>As carrancas e o Caboclo d'Água</h3>
+    <ul>
+      <li>360meridianos. <a href="https://www.360meridianos.com/carrancas-sao-francisco/">Carrancas do São Francisco</a>.</li>
+      <li>InfoEscola. <a href="https://www.infoescola.com/folclore/caboclo-dagua/">Caboclo d'Água</a>.</li>
+    </ul>
+
+    <h3>Os bichos e as plantas</h3>
+    <ul>
+      <li>WikiAves. <a href="https://www.wikiaves.com.br/wiki/carcara">Carcará</a>.</li>
+      <li>Acessa.com (2026). <a href="https://www.acessa.com/noticias/2026/06/331992-mascote-da-copa-de-2014-tatu-bola-deve-ganhar-novo-plano-de-protecao.html">Mascote da Copa de 2014, tatu-bola deve ganhar novo plano de proteção</a>.</li>
+      <li>Embrapa Agroindústria Tropical (2012). <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/951946/1/XIQUEXIQUE.pdf">Produção de mudas de xique-xique</a> (PDF).</li>
+      <li>Cavalcanti, N. B. e Resende, G. M. Revista Caatinga (UFERSA). <a href="https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/149935/1/Milanez.pdf">Efeito de diferentes substratos no desenvolvimento de mandacaru, facheiro, xiquexique e coroa-de-frade</a> (PDF).</li>
+      <li>CNN Brasil / Agência Brasil (11/06/2022). <a href="https://www.cnnbrasil.com.br/nacional/ararinhas-azuis-sao-soltas-na-natureza-20-anos-depois-de-extincao/">Ararinhas-azuis são soltas na natureza 20 anos depois de extinção</a>.</li>
+    </ul>
+
+    <h3>Os peixes</h3>
+    <ul>
+      <li>FishBase: <a href="https://www.fishbase.se/summary/Prochilodus-costatus.html">Prochilodus costatus</a>, <a href="https://www.fishbase.se/summary/Prochilodus-argenteus.html">Prochilodus argenteus</a>, <a href="https://www.fishbase.se/summary/Megaleporinus-obtusidens.html">Megaleporinus obtusidens</a>, <a href="https://www.fishbase.se/summary/Pygocentrus-piraya.html">Pygocentrus piraya</a>, <a href="https://www.fishbase.se/summary/Serrasalmus-brandtii.html">Serrasalmus brandtii</a>, <a href="https://www.fishbase.se/summary/Hypostomus-francisci.html">Hypostomus francisci</a>, <a href="https://www.fishbase.se/summary/Brycon-orthotaenia.html">Brycon orthotaenia</a>, <a href="https://www.fishbase.se/summary/Lophiosilurus-alexandri.html">Lophiosilurus alexandri</a>, <a href="https://www.fishbase.se/summary/Salminus-franciscanus.html">Salminus franciscanus</a>, <a href="https://www.fishbase.se/summary/Pseudoplatystoma-corruscans.html">Pseudoplatystoma corruscans</a> e <a href="https://www.fishbase.se/summary/Conorhynchos-conirostris.html">Conorhynchos conirostris</a>.</li>
+      <li>USGS. <a href="https://www.usgs.gov/publications/migration-and-spawning-radio-tagged-zulega-prochilodus-argenteus-a-dammed-brazilian">Migration and spawning of radio-tagged zulega Prochilodus argenteus in a dammed Brazilian river</a>.</li>
+      <li>Biota Neotropica. <a href="https://www.biotaneotropica.org.br/BN/article/view/1626">Reprodução da piranha-branca Serrasalmus brandtii na bacia do São Francisco</a>.</li>
+      <li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Lophiosilurus_alexandri">Lophiosilurus alexandri</a>.</li>
+      <li>Lima, F. C. T. e Britski, H. A. (2007). <a href="https://www.scielo.br/j/ni/a/WBLWpgxQN8x9fDJxbxZKNyM/">Salminus franciscanus, uma espécie nova de dourado do Rio São Francisco</a>. Neotropical Ichthyology.</li>
+      <li>O Presente Rural (2022). <a href="https://opresenterural.com.br/pintado-entra-na-lista-nacional-de-especies-ameacadas-de-extincao/">Pintado entra na lista nacional de espécies ameaçadas de extinção</a>, e IstoÉ Dinheiro (15/09/2022), <a href="https://istoedinheiro.com.br/governo-reavalia-lista-de-risco-que-proibia-a-pesca-do-pintado">Governo reavalia lista de risco que proibia a pesca do pintado</a>.</li>
+    </ul>
+
+    <h3>Fotos</h3>
+    <p style="font-size:.86rem;color:var(--fraco)">Todas do Wikimedia Commons, com licença que permite uso comercial. Foram reduzidas para a página.</p>
+    <ul>
+      <li>Junio César Rodrigues Campos, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Rio_Sao_Francisco_Pirapora.jpg">O Rio São Francisco em Pirapora (MG).</a></li>
+      <li>A. Júnior, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Ponte_Presidente_Dutra_e_Orla_I_-_Petrolina,_Pernambuco.jpg">A Ponte Presidente Dutra, entre Juazeiro (BA) e Petrolina (PE).</a></li>
+      <li>Sinatro, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Canion_de_Xingo.jpg">O Rio São Francisco no Xingó, em Sergipe.</a></li>
+      <li>Rafael Vianna Croffi, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Foz_do_Rio_S%C3%A3o_Francisco_(49790012318).jpg">A foz do Rio São Francisco, em Piaçabuçu (AL).</a></li>
+      <li>Glauco Umbelino, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Barco_Travessia_III_-_Ilha_do_Rodeador_(1375939553).jpg">Barco de travessia com carranca, em Juazeiro (BA).</a></li>
+      <li>José Donizetti Dias, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Carranca_do_rio_s%C3%A3o_Francisco,_o_velho_Chico_em_Minas_gerais._-_panoramio.jpg">Carranca em Iguatama (MG), recortada.</a></li>
+      <li>GildasioOliveira, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Ave_Carcar%C3%A1.jpg">Carcará em Araci (BA).</a></li>
+      <li>Sabrinafelicia, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Mandacaru_(Cereus_jamacaru)_02.jpg">Fruto do mandacaru em Santa Bárbara (BA).</a></li>
+      <li>João Medeiros, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Pilosocereus_gounellei_(21899943815).jpg">Fruto do xique-xique em Cristópolis (BA).</a></li>
+      <li>André Koehne, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Curimat%C3%A1-pioa_(Prochilodus_costatus)_by_Andr%C3%A9_Koehne.jpg">Desenho da curimatã-pioa.</a></li>
+      <li>Codevasf, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Rio_S%C3%A3o_Francisco_em_Penedo,_AL.jpg">O Rio São Francisco em Penedo (AL).</a></li>
+      <li>Waltersmelo, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Cabana_de_pescador_as_margens_do_S%C3%A3o_Francisco.JPG">Cabanas de pescador na margem alagoana do São Francisco.</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 G. Studios. Todos os direitos reservados. · <a href="mailto:aderivagame@outlook.com">aderivagame@outlook.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
