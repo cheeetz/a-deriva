@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-18T09:33:16Z",
+  "atualizado": "2026-10-18T13:58:53Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 61597,
+      "pontos": 64027,
       "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 54160,
+      "pontos": 60190,
       "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 20610,
+      "pontos": 21135,
       "avatar": "https://avatars.akamai.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -106,6 +106,39 @@
       }
     },
     {
+      "nome": "Father",
+      "pontos": 9445,
+      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 793.3,
+        "pontos": 2250
+      }
+    },
+    {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 9380,
+      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 141.0,
+        "pontos": 1720
+      }
+    },
+    {
+      "nome": "zYnSiDe",
+      "pontos": 9110,
+      "avatar": "https://avatars.akamai.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 749.5,
+        "pontos": 1500
+      }
+    },
+    {
       "nome": "滚键盘",
       "pontos": 8700,
       "avatar": "https://avatars.akamai.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
@@ -125,17 +158,6 @@
         "estrela": "prata",
         "cm": 372.4,
         "pontos": 900
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 5900,
-      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 644.0,
-        "pontos": 500
       }
     },
     {
@@ -161,17 +183,6 @@
       }
     },
     {
-      "nome": "Father",
-      "pontos": 4385,
-      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 341.3,
-        "pontos": 450
-      }
-    },
-    {
       "nome": "SlakeWare:",
       "pontos": 4319,
       "avatar": "https://avatars.akamai.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
@@ -180,6 +191,17 @@
         "estrela": "bronze",
         "cm": 305.0,
         "pontos": 300
+      }
+    },
+    {
+      "nome": "Sal",
+      "pontos": 2966,
+      "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 219.8,
+        "pontos": 360
       }
     },
     {
@@ -249,17 +271,6 @@
       }
     },
     {
-      "nome": "Sal",
-      "pontos": 1971,
-      "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "bronze",
-        "cm": 143.0,
-        "pontos": 120
-      }
-    },
-    {
       "nome": "Felipoggers",
       "pontos": 1723,
       "avatar": "https://avatars.akamai.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
@@ -300,17 +311,6 @@
         "raridade": "lendario",
         "estrela": "ouro",
         "cm": 211.1,
-        "pontos": 360
-      }
-    },
-    {
-      "nome": "zYnSiDe",
-      "pontos": 1420,
-      "avatar": "https://avatars.akamai.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 213.9,
         "pontos": 360
       }
     },
