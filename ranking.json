@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-18T17:20:14Z",
+  "atualizado": "2026-10-18T20:37:42Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 22240,
+      "pontos": 22690,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -117,6 +117,17 @@
       }
     },
     {
+      "nome": "zYnSiDe",
+      "pontos": 9560,
+      "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 749.5,
+        "pontos": 1500
+      }
+    },
+    {
       "nome": "Cyrus_The_ViruZ",
       "pontos": 9460,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
@@ -125,17 +136,6 @@
         "estrela": "prata",
         "cm": 141.0,
         "pontos": 1720
-      }
-    },
-    {
-      "nome": "zYnSiDe",
-      "pontos": 9260,
-      "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 749.5,
-        "pontos": 1500
       }
     },
     {
@@ -172,6 +172,17 @@
       }
     },
     {
+      "nome": "SlakeWare:",
+      "pontos": 4539,
+      "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 305.0,
+        "pontos": 300
+      }
+    },
+    {
       "nome": "Gordão Programas",
       "pontos": 4462,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
@@ -183,25 +194,14 @@
       }
     },
     {
-      "nome": "SlakeWare:",
-      "pontos": 4389,
-      "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 305.0,
-        "pontos": 300
-      }
-    },
-    {
       "nome": "Sal",
-      "pontos": 3226,
+      "pontos": 4346,
       "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
       "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 219.8,
-        "pontos": 360
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 419.6,
+        "pontos": 900
       }
     },
     {
@@ -315,6 +315,17 @@
       }
     },
     {
+      "nome": "odilardepaula",
+      "pontos": 1270,
+      "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 219.7,
+        "pontos": 360
+      }
+    },
+    {
       "nome": "Sigma",
       "pontos": 1150,
       "avatar": "https://avatars.fastly.steamstatic.com/7bc2e0e6ab49af66cf8260d44ef9faebb335c8d7_medium.jpg",
@@ -323,17 +334,6 @@
         "estrela": "prata",
         "cm": 178.4,
         "pontos": 240
-      }
-    },
-    {
-      "nome": "odilardepaula",
-      "pontos": 700,
-      "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
-      "melhor": {
-        "raridade": "epico",
-        "estrela": "ouro",
-        "cm": 138.5,
-        "pontos": 90
       }
     },
     {
@@ -432,6 +432,17 @@
         "estrela": "bronze",
         "cm": 65.1,
         "pontos": 10
+      }
+    },
+    {
+      "nome": "Raccoon",
+      "pontos": 4,
+      "avatar": "https://avatars.fastly.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
+      "melhor": {
+        "raridade": "incomum",
+        "estrela": "bronze",
+        "cm": 20.2,
+        "pontos": 4
       }
     }
   ]
