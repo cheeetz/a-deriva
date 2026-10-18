@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-18T00:03:13Z",
+  "atualizado": "2026-10-18T04:26:47Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 55756,
+      "pontos": 61417,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 50326,
+      "pontos": 53320,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -37,6 +37,17 @@
         "estrela": "ouro",
         "cm": 583.2,
         "pontos": 4500
+      }
+    },
+    {
+      "nome": "Lyn",
+      "pontos": 21320,
+      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 430.4,
+        "pontos": 3000
       }
     },
     {
@@ -58,17 +69,6 @@
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 452.5,
-        "pontos": 3000
-      }
-    },
-    {
-      "nome": "Lyn",
-      "pontos": 19176,
-      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 430.4,
         "pontos": 3000
       }
     },
@@ -96,7 +96,7 @@
     },
     {
       "nome": "hmr1",
-      "pontos": 9100,
+      "pontos": 10315,
       "avatar": "https://avatars.fastly.steamstatic.com/1893d7c151ac71f1182e4097df5072dbfd996d6c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -117,6 +117,17 @@
       }
     },
     {
+      "nome": "Cyberprince",
+      "pontos": 6545,
+      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 372.4,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "Cyrus_The_ViruZ",
       "pontos": 5900,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
@@ -128,19 +139,8 @@
       }
     },
     {
-      "nome": "Cyberprince",
-      "pontos": 5875,
-      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 372.4,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "A doormat With experience",
-      "pontos": 5654,
+      "pontos": 5711,
       "avatar": "https://avatars.fastly.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -151,7 +151,7 @@
     },
     {
       "nome": "Gordão Programas",
-      "pontos": 3872,
+      "pontos": 4402,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -161,25 +161,25 @@
       }
     },
     {
-      "nome": "Father",
-      "pontos": 3715,
-      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 341.3,
-        "pontos": 450
-      }
-    },
-    {
       "nome": "SlakeWare:",
-      "pontos": 2919,
+      "pontos": 4219,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 305.0,
         "pontos": 300
+      }
+    },
+    {
+      "nome": "Father",
+      "pontos": 4085,
+      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 341.3,
+        "pontos": 450
       }
     },
     {
@@ -249,6 +249,17 @@
       }
     },
     {
+      "nome": "Sal",
+      "pontos": 1971,
+      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "bronze",
+        "cm": 143.0,
+        "pontos": 120
+      }
+    },
+    {
       "nome": "Felipoggers",
       "pontos": 1723,
       "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
@@ -301,17 +312,6 @@
         "estrela": "ouro",
         "cm": 213.9,
         "pontos": 360
-      }
-    },
-    {
-      "nome": "Sal",
-      "pontos": 1258,
-      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "bronze",
-        "cm": 143.0,
-        "pontos": 120
       }
     },
     {
