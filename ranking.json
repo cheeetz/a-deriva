@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-17T22:15:37Z",
+  "atualizado": "2026-10-18T00:03:13Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 55447,
+      "pontos": 55756,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 50320,
+      "pontos": 50326,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 19170,
+      "pontos": 19176,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -140,7 +140,7 @@
     },
     {
       "nome": "A doormat With experience",
-      "pontos": 5609,
+      "pontos": 5654,
       "avatar": "https://avatars.fastly.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -169,6 +169,17 @@
         "estrela": "bronze",
         "cm": 341.3,
         "pontos": 450
+      }
+    },
+    {
+      "nome": "SlakeWare:",
+      "pontos": 2919,
+      "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 305.0,
+        "pontos": 300
       }
     },
     {
@@ -238,17 +249,6 @@
       }
     },
     {
-      "nome": "SlakeWare:",
-      "pontos": 2114,
-      "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 305.0,
-        "pontos": 300
-      }
-    },
-    {
       "nome": "Felipoggers",
       "pontos": 1723,
       "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
@@ -294,7 +294,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 1270,
+      "pontos": 1420,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "lendario",
