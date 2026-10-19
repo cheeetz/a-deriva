@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-18T23:08:37Z",
+  "atualizado": "2026-10-19T01:13:07Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 66667,
+      "pontos": 67387,
       "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 64570,
+      "pontos": 65140,
       "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 21830,
+      "pontos": 22230,
       "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -106,6 +106,17 @@
       }
     },
     {
+      "nome": "Father",
+      "pontos": 9865,
+      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 793.3,
+        "pontos": 2250
+      }
+    },
+    {
       "nome": "zYnSiDe",
       "pontos": 9820,
       "avatar": "https://avatars.akamai.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
@@ -128,17 +139,6 @@
       }
     },
     {
-      "nome": "Father",
-      "pontos": 9685,
-      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 793.3,
-        "pontos": 2250
-      }
-    },
-    {
       "nome": "滚键盘",
       "pontos": 8700,
       "avatar": "https://avatars.akamai.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
@@ -147,6 +147,17 @@
         "estrela": "bronze",
         "cm": 430.7,
         "pontos": 3000
+      }
+    },
+    {
+      "nome": "Sal",
+      "pontos": 6818,
+      "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 765.1,
+        "pontos": 1000
       }
     },
     {
@@ -161,19 +172,8 @@
       }
     },
     {
-      "nome": "Sal",
-      "pontos": 6066,
-      "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 765.1,
-        "pontos": 1000
-      }
-    },
-    {
       "nome": "A doormat With experience",
-      "pontos": 5711,
+      "pontos": 5713,
       "avatar": "https://avatars.akamai.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -184,13 +184,24 @@
     },
     {
       "nome": "SlakeWare:",
-      "pontos": 4679,
+      "pontos": 5299,
       "avatar": "https://avatars.akamai.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 305.0,
         "pontos": 300
+      }
+    },
+    {
+      "nome": "odilardepaula",
+      "pontos": 5060,
+      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 423.9,
+        "pontos": 900
       }
     },
     {
@@ -271,17 +282,6 @@
       }
     },
     {
-      "nome": "odilardepaula",
-      "pontos": 2020,
-      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 219.7,
-        "pontos": 360
-      }
-    },
-    {
       "nome": "Felipoggers",
       "pontos": 1723,
       "avatar": "https://avatars.akamai.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
@@ -338,7 +338,7 @@
     },
     {
       "nome": "Raccoon",
-      "pontos": 630,
+      "pontos": 1082,
       "avatar": "https://avatars.akamai.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
       "melhor": {
         "raridade": "lendario",
