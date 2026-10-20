@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-20T10:00:14Z",
+  "atualizado": "2026-10-20T15:01:52Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 152350,
+      "pontos": 156490,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -30,7 +30,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 46510,
+      "pontos": 46750,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "FIX ☕",
-      "pontos": 29270,
+      "pontos": 31960,
       "avatar": "https://avatars.fastly.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 22690,
+      "pontos": 22750,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -85,7 +85,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 14995,
+      "pontos": 15130,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -140,7 +140,7 @@
     },
     {
       "nome": "SlakeWare:",
-      "pontos": 9649,
+      "pontos": 9729,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -172,6 +172,17 @@
       }
     },
     {
+      "nome": "Gordão Programas",
+      "pontos": 7927,
+      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 443.6,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "Sal",
       "pontos": 7891,
       "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
@@ -184,23 +195,12 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 6660,
+      "pontos": 7535,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
         "cm": 423.9,
-        "pontos": 900
-      }
-    },
-    {
-      "nome": "Gordão Programas",
-      "pontos": 6432,
-      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 443.6,
         "pontos": 900
       }
     },
@@ -216,6 +216,17 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 3038,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 445.9,
+        "pontos": 1500
+      }
+    },
+    {
       "nome": "Maks",
       "pontos": 2820,
       "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
@@ -224,6 +235,17 @@
         "estrela": "bronze",
         "cm": 306.5,
         "pontos": 300
+      }
+    },
+    {
+      "nome": "Felipoggers",
+      "pontos": 2608,
+      "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "prata",
+        "cm": 202.7,
+        "pontos": 240
       }
     },
     {
@@ -282,17 +304,6 @@
       }
     },
     {
-      "nome": "Felipoggers",
-      "pontos": 1723,
-      "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 202.7,
-        "pontos": 240
-      }
-    },
-    {
       "nome": "Kolter",
       "pontos": 1645,
       "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
@@ -345,17 +356,6 @@
         "estrela": "prata",
         "cm": 192.0,
         "pontos": 160
-      }
-    },
-    {
-      "nome": "Knoll",
-      "pontos": 1048,
-      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "epico",
-        "estrela": "platina",
-        "cm": 149.2,
-        "pontos": 150
       }
     },
     {
