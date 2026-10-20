@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-20T15:01:52Z",
+  "atualizado": "2026-10-20T19:12:21Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 167197,
+      "pontos": 175797,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,13 +19,24 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 156490,
+      "pontos": 156970,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "prata",
         "cm": 552.0,
         "pontos": 9000
+      }
+    },
+    {
+      "nome": "Gordão Programas",
+      "pontos": 66842,
+      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 608.6,
+        "pontos": 13500
       }
     },
     {
@@ -41,7 +52,7 @@
     },
     {
       "nome": "FIX ☕",
-      "pontos": 31960,
+      "pontos": 36940,
       "avatar": "https://avatars.fastly.steamstatic.com/cc8ec1abf904f32e697f66089fab66e4c2c1d3b4_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -85,7 +96,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 15130,
+      "pontos": 16060,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -118,7 +129,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 11710,
+      "pontos": 12170,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -172,19 +183,8 @@
       }
     },
     {
-      "nome": "Gordão Programas",
-      "pontos": 7927,
-      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 443.6,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "Sal",
-      "pontos": 7891,
+      "pontos": 8521,
       "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -195,7 +195,7 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 7535,
+      "pontos": 7585,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -227,6 +227,17 @@
       }
     },
     {
+      "nome": "Felipoggers",
+      "pontos": 2878,
+      "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "prata",
+        "cm": 202.7,
+        "pontos": 240
+      }
+    },
+    {
       "nome": "Maks",
       "pontos": 2820,
       "avatar": "https://avatars.fastly.steamstatic.com/4ab3db0761bdfb0b02c32de00e0924e1270cf81a_medium.jpg",
@@ -235,17 +246,6 @@
         "estrela": "bronze",
         "cm": 306.5,
         "pontos": 300
-      }
-    },
-    {
-      "nome": "Felipoggers",
-      "pontos": 2608,
-      "avatar": "https://avatars.fastly.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 202.7,
-        "pontos": 240
       }
     },
     {
@@ -304,6 +304,17 @@
       }
     },
     {
+      "nome": "Pedrão",
+      "pontos": 1800,
+      "avatar": "https://avatars.fastly.steamstatic.com/8daa93c0c15571617858b7e67ba372afb69e4c3e_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 208.2,
+        "pontos": 360
+      }
+    },
+    {
       "nome": "Kolter",
       "pontos": 1645,
       "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
@@ -356,17 +367,6 @@
         "estrela": "prata",
         "cm": 192.0,
         "pontos": 160
-      }
-    },
-    {
-      "nome": "Pedrão",
-      "pontos": 848,
-      "avatar": "https://avatars.fastly.steamstatic.com/8daa93c0c15571617858b7e67ba372afb69e4c3e_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 208.2,
-        "pontos": 360
       }
     },
     {
@@ -433,6 +433,17 @@
         "estrela": "ouro",
         "cm": 138.7,
         "pontos": 90
+      }
+    },
+    {
+      "nome": "Seti",
+      "pontos": 111,
+      "avatar": "https://avatars.fastly.steamstatic.com/f27b262769e2889e61ebed35dc42e7029f29cfc8_medium.jpg",
+      "melhor": {
+        "raridade": "epico",
+        "estrela": "bronze",
+        "cm": 50.2,
+        "pontos": 30
       }
     },
     {
