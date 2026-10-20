@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-20T19:12:21Z",
+  "atualizado": "2026-10-20T22:16:17Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 175797,
+      "pontos": 180997,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -30,7 +30,7 @@
     },
     {
       "nome": "Gordão Programas",
-      "pontos": 66842,
+      "pontos": 72842,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -41,7 +41,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 46750,
+      "pontos": 46910,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -96,13 +96,13 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 16060,
+      "pontos": 18820,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "prata",
-        "cm": 749.5,
-        "pontos": 1500
+        "cm": 525.8,
+        "pontos": 3000
       }
     },
     {
@@ -113,6 +113,17 @@
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 466.1,
+        "pontos": 3000
+      }
+    },
+    {
+      "nome": "Sal",
+      "pontos": 13811,
+      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 498.2,
         "pontos": 3000
       }
     },
@@ -129,7 +140,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 12170,
+      "pontos": 12515,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -183,17 +194,6 @@
       }
     },
     {
-      "nome": "Sal",
-      "pontos": 8521,
-      "avatar": "https://avatars.fastly.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 765.1,
-        "pontos": 1000
-      }
-    },
-    {
       "nome": "odilardepaula",
       "pontos": 7585,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
@@ -216,8 +216,19 @@
       }
     },
     {
+      "nome": "Raccoon",
+      "pontos": 3722,
+      "avatar": "https://avatars.fastly.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 430.3,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "Knoll",
-      "pontos": 3038,
+      "pontos": 3128,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -326,6 +337,17 @@
       }
     },
     {
+      "nome": "Flavim Do Pneu",
+      "pontos": 1600,
+      "avatar": "https://avatars.fastly.steamstatic.com/9e55d8bdff405b675062070f3051dd19340f0a63_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 311.6,
+        "pontos": 300
+      }
+    },
+    {
       "nome": "NandinXD",
       "pontos": 1595,
       "avatar": "https://avatars.fastly.steamstatic.com/4e2dfd584f9a27ea777db5a08762691ec3f4f6e7_medium.jpg",
@@ -356,17 +378,6 @@
         "estrela": "prata",
         "cm": 178.4,
         "pontos": 240
-      }
-    },
-    {
-      "nome": "Raccoon",
-      "pontos": 1082,
-      "avatar": "https://avatars.fastly.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 192.0,
-        "pontos": 160
       }
     },
     {
@@ -433,6 +444,17 @@
         "estrela": "ouro",
         "cm": 138.7,
         "pontos": 90
+      }
+    },
+    {
+      "nome": "Catanach",
+      "pontos": 261,
+      "avatar": "https://avatars.fastly.steamstatic.com/b8a6f62b8b7bd48279016ddb5616f9a555b0cf5d_medium.jpg",
+      "melhor": {
+        "raridade": "epico",
+        "estrela": "bronze",
+        "cm": 71.3,
+        "pontos": 45
       }
     },
     {
