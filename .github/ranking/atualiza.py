@@ -143,12 +143,22 @@ def melhor_lance(d):
     }
 
 
-def entradas(appid, lbid):
-    url = "%s/stats/%s/leaderboards/%s/?xml=1&start=1&end=%d" % (COMUNIDADE, appid, lbid, QUANTOS)
+def entradas(appid, lbid, fora=()):
+    """As entradas do placar, sem as contas desclassificadas (campeonato.json, "desclassificados").
+
+    DESCLASSIFICADO SAI DA LISTA, por conta e nao por nome (21/10/2026): nome a pessoa troca
+    quando quer, a conta nao. O "conferir" de baixo continua sendo o primeiro aviso; a lista e a
+    decisao do Jean depois de olhar, e quem esta nela nao aparece mais no site.
+    O QUANTOS conta depois da peneira, pra lista publicada nao encolher por causa dela."""
+    url = "%s/stats/%s/leaderboards/%s/?xml=1&start=1&end=%d" % (COMUNIDADE, appid, lbid, QUANTOS + len(fora))
     raiz = ET.fromstring(baixa(url))
     lista = []
     for en in raiz.iter("entry"):
         steamid = en.findtext("steamid")
+        if steamid in fora:
+            continue
+        if len(lista) >= QUANTOS:
+            break
         nome, avatar = perfil(steamid)
         item = {"nome": nome or "Pescador", "pontos": int(en.findtext("score") or 0)}
         if avatar:
@@ -191,7 +201,8 @@ def main():
     nome = args.placar or "campeonato_" + ed["mes"].replace("-", "_")
     lbid = acha_placar(appid, nome)
     print("edição %s (%s): placar %s -> %s" % (ed.get("edicao"), ed["mes"], nome, lbid or "ainda não existe"))
-    lista = entradas(appid, lbid) if lbid else []
+    fora = set(str(s) for s in cfg.get("desclassificados", []))
+    lista = entradas(appid, lbid, fora) if lbid else []
     dias = dias_decorridos(ed["mes"], agora)
     for item in lista:
         motivo = conferir(item, dias)

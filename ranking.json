@@ -4,23 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-21T05:59:48Z",
+  "atualizado": "2026-10-21T10:58:03Z",
   "entradas": [
     {
-      "nome": "Taylor",
-      "pontos": 21445401,
-      "avatar": "https://avatars.akamai.steamstatic.com/345ea9dac42a7c74fb6663702f1c52aa8d883fd5_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 629.3,
-        "pontos": 22000
-      },
-      "conferir": "total acima do possivel em 21 dia(s)"
-    },
-    {
       "nome": "Habibi Yuri Martins",
-      "pontos": 208390,
+      "pontos": 208630,
       "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -53,7 +41,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 55370,
+      "pontos": 56130,
       "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -119,7 +107,7 @@
     },
     {
       "nome": "Sal",
-      "pontos": 14421,
+      "pontos": 14501,
       "avatar": "https://avatars.akamai.steamstatic.com/f24baa6657376c314e2985372b0d7580bbcde6f2_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -140,6 +128,17 @@
       }
     },
     {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 12794,
+      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 141.0,
+        "pontos": 1720
+      }
+    },
+    {
       "nome": "Cheetz",
       "pontos": 12639,
       "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
@@ -148,17 +147,6 @@
         "estrela": "platina",
         "cm": 448.6,
         "pontos": 1500
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 12520,
-      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 141.0,
-        "pontos": 1720
       }
     },
     {
@@ -174,13 +162,24 @@
     },
     {
       "nome": "SlakeWare:",
-      "pontos": 10229,
+      "pontos": 10699,
       "avatar": "https://avatars.akamai.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 415.0,
         "pontos": 1500
+      }
+    },
+    {
+      "nome": "odilardepaula",
+      "pontos": 9700,
+      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 423.9,
+        "pontos": 900
       }
     },
     {
@@ -217,19 +216,8 @@
       }
     },
     {
-      "nome": "odilardepaula",
-      "pontos": 7585,
-      "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 423.9,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "A doormat With experience",
-      "pontos": 5735,
+      "pontos": 5759,
       "avatar": "https://avatars.akamai.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
