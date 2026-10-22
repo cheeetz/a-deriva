@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-22T19:13:18Z",
+  "atualizado": "2026-10-22T22:18:39Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 268330,
+      "pontos": 288730,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 25440,
+      "pontos": 26200,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -96,7 +96,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 21565,
+      "pontos": 21655,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -117,6 +117,17 @@
       }
     },
     {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 16610,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 141.0,
+        "pontos": 1720
+      }
+    },
+    {
       "nome": "Cheetz",
       "pontos": 16299,
       "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
@@ -125,17 +136,6 @@
         "estrela": "bronze",
         "cm": 449.9,
         "pontos": 3000
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 15780,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 141.0,
-        "pontos": 1720
       }
     },
     {
@@ -293,6 +293,17 @@
       }
     },
     {
+      "nome": "NeedzMuzt",
+      "pontos": 2686,
+      "avatar": "https://avatars.fastly.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 228.1,
+        "pontos": 600
+      }
+    },
+    {
       "nome": "isa",
       "pontos": 2600,
       "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
@@ -334,17 +345,6 @@
         "estrela": "prata",
         "cm": 396.1,
         "pontos": 600
-      }
-    },
-    {
-      "nome": "NeedzMuzt",
-      "pontos": 1976,
-      "avatar": "https://avatars.fastly.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 223.3,
-        "pontos": 360
       }
     },
     {
@@ -393,7 +393,7 @@
     },
     {
       "nome": "Catanach",
-      "pontos": 1236,
+      "pontos": 1476,
       "avatar": "https://avatars.fastly.steamstatic.com/b8a6f62b8b7bd48279016ddb5616f9a555b0cf5d_medium.jpg",
       "melhor": {
         "raridade": "lendario",
