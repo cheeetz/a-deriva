@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-21T20:36:36Z",
+  "atualizado": "2026-10-21T23:59:21Z",
   "entradas": [
     {
       "nome": "Habibi Yuri Martins",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Codeplay",
-      "pontos": 183877,
+      "pontos": 240997,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 56770,
+      "pontos": 57070,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -117,8 +117,19 @@
       }
     },
     {
+      "nome": "Cheetz",
+      "pontos": 16299,
+      "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 449.9,
+        "pontos": 3000
+      }
+    },
+    {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 14840,
+      "pontos": 14920,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -150,19 +161,8 @@
       }
     },
     {
-      "nome": "Cheetz",
-      "pontos": 12639,
-      "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 448.6,
-        "pontos": 1500
-      }
-    },
-    {
       "nome": "SlakeWare:",
-      "pontos": 11039,
+      "pontos": 11139,
       "avatar": "https://avatars.fastly.steamstatic.com/998816727cc5d01895429867f6717d6ae2a3bc23_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -381,6 +381,17 @@
       }
     },
     {
+      "nome": "Manotaaz",
+      "pontos": 1035,
+      "avatar": "https://avatars.fastly.steamstatic.com/1ccd0d21c4d502bace8eaa21370758255e3df132_medium.jpg",
+      "melhor": {
+        "raridade": "epico",
+        "estrela": "ouro",
+        "cm": 137.2,
+        "pontos": 135
+      }
+    },
+    {
       "nome": "Sokol",
       "pontos": 713,
       "avatar": "https://avatars.fastly.steamstatic.com/72d3048e4405700eccb93c7c575def7fdc45c722_medium.jpg",
@@ -455,17 +466,6 @@
         "estrela": "bronze",
         "cm": 71.3,
         "pontos": 45
-      }
-    },
-    {
-      "nome": "Manotaaz",
-      "pontos": 169,
-      "avatar": "https://avatars.fastly.steamstatic.com/1ccd0d21c4d502bace8eaa21370758255e3df132_medium.jpg",
-      "melhor": {
-        "raridade": "epico",
-        "estrela": "prata",
-        "cm": 103.8,
-        "pontos": 90
       }
     },
     {
