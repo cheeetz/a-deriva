@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-23T07:27:07Z",
+  "atualizado": "2026-10-23T13:22:13Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 318397,
+      "pontos": 320997,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 306940,
+      "pontos": 307420,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 63870,
+      "pontos": 64090,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 27840,
+      "pontos": 31190,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -162,7 +162,7 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 11500,
+      "pontos": 12080,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -183,25 +183,25 @@
       }
     },
     {
-      "nome": "Cyberprince",
-      "pontos": 10960,
-      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 372.4,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "Father",
-      "pontos": 10810,
+      "pontos": 11072,
       "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
         "cm": 793.3,
         "pontos": 2250
+      }
+    },
+    {
+      "nome": "Cyberprince",
+      "pontos": 10998,
+      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 372.4,
+        "pontos": 900
       }
     },
     {
@@ -228,13 +228,24 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 5208,
+      "pontos": 5353,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "platina",
         "cm": 445.9,
         "pontos": 1500
+      }
+    },
+    {
+      "nome": "Raccoon",
+      "pontos": 5052,
+      "avatar": "https://avatars.fastly.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 430.3,
+        "pontos": 900
       }
     },
     {
@@ -260,19 +271,8 @@
       }
     },
     {
-      "nome": "Raccoon",
-      "pontos": 3722,
-      "avatar": "https://avatars.fastly.steamstatic.com/31343cea37102d9fdc28f729c156f9330bbb8ceb_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 430.3,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "NeedzMuzt",
-      "pontos": 3316,
+      "pontos": 3706,
       "avatar": "https://avatars.fastly.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -465,6 +465,17 @@
         "raridade": "epico",
         "estrela": "prata",
         "cm": 116.4,
+        "pontos": 90
+      }
+    },
+    {
+      "nome": "Gabirutz",
+      "pontos": 470,
+      "avatar": "https://avatars.fastly.steamstatic.com/9c26e2311016064c4e183610eaebca10e6c0acf1_medium.jpg",
+      "melhor": {
+        "raridade": "epico",
+        "estrela": "prata",
+        "cm": 113.9,
         "pontos": 90
       }
     },
