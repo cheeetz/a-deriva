@@ -4,22 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-23T01:27:57Z",
+  "atualizado": "2026-10-23T07:27:07Z",
   "entradas": [
     {
-      "nome": "Habibi Yuri Martins",
-      "pontos": 305860,
-      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 628.2,
-        "pontos": 22500
-      }
-    },
-    {
       "nome": "Codeplay",
-      "pontos": 303237,
+      "pontos": 318397,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -29,8 +18,19 @@
       }
     },
     {
+      "nome": "Habibi Yuri Martins",
+      "pontos": 306940,
+      "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 628.2,
+        "pontos": 22500
+      }
+    },
+    {
       "nome": "Gordão Programas",
-      "pontos": 80754,
+      "pontos": 85402,
       "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 63500,
+      "pontos": 63870,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 27700,
+      "pontos": 27840,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -228,7 +228,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 4826,
+      "pontos": 5208,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -272,7 +272,7 @@
     },
     {
       "nome": "NeedzMuzt",
-      "pontos": 3216,
+      "pontos": 3316,
       "avatar": "https://avatars.fastly.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
       "melhor": {
         "raridade": "lendario",
