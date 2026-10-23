@@ -4,8 +4,19 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-23T18:17:24Z",
+  "atualizado": "2026-10-23T22:06:43Z",
   "entradas": [
+    {
+      "nome": "Habibi Yuri Martins",
+      "pontos": 325420,
+      "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 628.2,
+        "pontos": 22500
+      }
+    },
     {
       "nome": "Codeplay",
       "pontos": 320997,
@@ -15,17 +26,6 @@
         "estrela": "platina",
         "cm": 627.7,
         "pontos": 15000
-      }
-    },
-    {
-      "nome": "Habibi Yuri Martins",
-      "pontos": 308140,
-      "avatar": "https://avatars.akamai.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 628.2,
-        "pontos": 22500
       }
     },
     {
@@ -85,7 +85,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 22635,
+      "pontos": 23055,
       "avatar": "https://avatars.akamai.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -162,13 +162,24 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 12780,
+      "pontos": 12800,
       "avatar": "https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
         "cm": 423.9,
         "pontos": 900
+      }
+    },
+    {
+      "nome": "Father",
+      "pontos": 11380,
+      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 793.3,
+        "pontos": 2250
       }
     },
     {
@@ -180,17 +191,6 @@
         "estrela": "bronze",
         "cm": 415.0,
         "pontos": 1500
-      }
-    },
-    {
-      "nome": "Father",
-      "pontos": 11072,
-      "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 793.3,
-        "pontos": 2250
       }
     },
     {
@@ -304,6 +304,17 @@
       }
     },
     {
+      "nome": "Kolter",
+      "pontos": 2740,
+      "avatar": "https://avatars.akamai.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 228.6,
+        "pontos": 400
+      }
+    },
+    {
       "nome": "isa",
       "pontos": 2600,
       "avatar": "https://avatars.akamai.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
@@ -356,17 +367,6 @@
         "estrela": "ouro",
         "cm": 208.2,
         "pontos": 360
-      }
-    },
-    {
-      "nome": "Kolter",
-      "pontos": 1645,
-      "avatar": "https://avatars.akamai.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 331.3,
-        "pontos": 300
       }
     },
     {
