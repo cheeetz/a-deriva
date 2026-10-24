@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-24T10:53:29Z",
+  "atualizado": "2026-10-24T14:29:23Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 363317,
+      "pontos": 363477,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -52,7 +52,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 65930,
+      "pontos": 66170,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -85,7 +85,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 24415,
+      "pontos": 24735,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -161,6 +161,17 @@
       }
     },
     {
+      "nome": "Cyberprince",
+      "pontos": 13022,
+      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 747.1,
+        "pontos": 1000
+      }
+    },
+    {
       "nome": "odilardepaula",
       "pontos": 12800,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
@@ -172,8 +183,19 @@
       }
     },
     {
+      "nome": "Father",
+      "pontos": 12350,
+      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 793.3,
+        "pontos": 2250
+      }
+    },
+    {
       "nome": "NeedzMuzt",
-      "pontos": 11736,
+      "pontos": 12126,
       "avatar": "https://avatars.fastly.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -194,28 +216,6 @@
       }
     },
     {
-      "nome": "Father",
-      "pontos": 11380,
-      "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 793.3,
-        "pontos": 2250
-      }
-    },
-    {
-      "nome": "Cyberprince",
-      "pontos": 10998,
-      "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 372.4,
-        "pontos": 900
-      }
-    },
-    {
       "nome": "滚键盘",
       "pontos": 8700,
       "avatar": "https://avatars.fastly.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
@@ -228,7 +228,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 6253,
+      "pontos": 7023,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -250,7 +250,7 @@
     },
     {
       "nome": "isa",
-      "pontos": 5299,
+      "pontos": 5324,
       "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -283,7 +283,7 @@
     },
     {
       "nome": "Kolter",
-      "pontos": 3980,
+      "pontos": 4140,
       "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
       "melhor": {
         "raridade": "lendario",
