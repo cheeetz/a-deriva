@@ -40,14 +40,20 @@ QUANTOS = 50
 # a ordem é a de Tipos.Raridade e MedidaPeixe no jogo — o número que viaja nos detalhes
 RARIDADES = ["comum", "incomum", "raro", "epico", "lendario", "celestial"]
 ESTRELAS = ["", "bronze", "prata", "ouro", "platina"]
-VERSAO_DETALHES = 1
+# A VERSAO 2 (25/10/2026) mantem os cinco primeiros no lugar e acrescenta: [5] 1 se o melhor lance
+# saiu no mapa do dia (em dobro), [6] a hora dele, [7] o dia dos lances de hoje, [8] quantos vem a
+# seguir e [9...] o segundo do dia de cada um. Os horarios NAO vao pro ranking.json: o site so
+# precisa do dobro, pra conferir o teto. A versao 1 continua valendo pra quem nao atualizou.
+VERSAO_DETALHES = (1, 2)
+VEZES_MAPA_DO_DIA = 2
 
 # A CONFERENCIA DE PLAUSIBILIDADE, e por que ela existe (teste de vulnerabilidade de 11/10/2026).
 # O placar da Steam e gravado pelo cliente: quem tem o jogo consegue mandar qualquer numero, com
 # um programa qualquer ou um jogo modificado. Sem servidor nosso nao ha como impedir -- mas a
 # regra do campeonato poe tetos que um numero inventado dificilmente respeita, e o robo confere:
 #
-#   1. o melhor lance nao passa do maximo da raridade e da estrela dele (no clique, x1,5);
+#   1. o melhor lance nao passa do maximo da raridade e da estrela dele (no clique, x1,5; no mapa
+#      do dia, x2 -- desde 25/10/2026);
 #   2. o total nao passa de DIAS x 10 x o melhor lance -- cada dia conta 10 peixes, e nenhum
 #      deles vale mais que o melhor do mes;
 #   3. o total nao e menor que o melhor lance, e quem tem pontos tem melhor lance.
@@ -79,6 +85,8 @@ def conferir(item, dias):
     if not m or not m.get("pontos"):
         return "sem o melhor lance"
     teto_lance = PONTOS_RARIDADE.get(m.get("raridade"), 0) * VEZES_ESTRELA.get(m.get("estrela"), 0) * 1.5
+    if m.get("dobro"):
+        teto_lance *= VEZES_MAPA_DO_DIA
     if m["pontos"] > teto_lance:
         return "melhor lance acima do maximo da raridade"
     if total < m["pontos"]:
@@ -131,16 +139,23 @@ def perfil(steamid):
 
 
 def melhor_lance(d):
-    # são exatamente 5, e não "pelo menos 5": no teste com outro jogo, 6 inteiros quaisquer
-    # começando por 1 viraram um lance de mentira
-    if len(d) != 5 or d[0] != VERSAO_DETALHES:
+    # o tamanho exato de cada versão, e não "pelo menos 5": no teste com outro jogo, 6 inteiros
+    # quaisquer começando por 1 viraram um lance de mentira
+    if not d or d[0] not in VERSAO_DETALHES:
         return None
-    return {
+    if d[0] == 1 and len(d) != 5:
+        return None
+    if d[0] == 2 and (len(d) < 9 or not 0 <= d[8] <= MELHORES_POR_DIA or len(d) != 9 + d[8]):
+        return None
+    lance = {
         "raridade": RARIDADES[d[1]] if 0 <= d[1] < len(RARIDADES) else "",
         "estrela": ESTRELAS[d[2]] if 0 <= d[2] < len(ESTRELAS) else "",
         "cm": d[3] / 10,
         "pontos": d[4],
     }
+    if d[0] == 2 and d[5] == 1:
+        lance["dobro"] = True
+    return lance
 
 
 def entradas(appid, lbid, fora=()):
