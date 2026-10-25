@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-25T11:20:02Z",
+  "atualizado": "2026-10-25T16:11:10Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Cheetz",
-      "pontos": 45829,
+      "pontos": 62229,
       "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 42470,
+      "pontos": 42630,
       "avatar": "https://avatars.akamai.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -107,7 +107,7 @@
     },
     {
       "nome": "NeedzMuzt",
-      "pontos": 23186,
+      "pontos": 23746,
       "avatar": "https://avatars.akamai.steamstatic.com/56f38b91a890f8456172fe7cb99d8f8dc72892a9_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -118,7 +118,7 @@
     },
     {
       "nome": "hmr1",
-      "pontos": 22925,
+      "pontos": 23215,
       "avatar": "https://avatars.akamai.steamstatic.com/1893d7c151ac71f1182e4097df5072dbfd996d6c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -227,6 +227,17 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 9493,
+      "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 445.9,
+        "pontos": 1500
+      }
+    },
+    {
       "nome": "滚键盘",
       "pontos": 8700,
       "avatar": "https://avatars.akamai.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
@@ -235,17 +246,6 @@
         "estrela": "bronze",
         "cm": 430.7,
         "pontos": 3000
-      }
-    },
-    {
-      "nome": "Knoll",
-      "pontos": 8493,
-      "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 445.9,
-        "pontos": 1500
       }
     },
     {
@@ -261,7 +261,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 8152,
+      "pontos": 8332,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -293,6 +293,17 @@
       }
     },
     {
+      "nome": "Opi.pM",
+      "pontos": 4590,
+      "avatar": "https://avatars.akamai.steamstatic.com/626bbb7465867eefb8c7c536c5b332fb9ca47af9_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 375.2,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "Manotaaz",
       "pontos": 3800,
       "avatar": "https://avatars.akamai.steamstatic.com/1ccd0d21c4d502bace8eaa21370758255e3df132_medium.jpg",
@@ -301,6 +312,17 @@
         "estrela": "platina",
         "cm": 288.5,
         "pontos": 400
+      }
+    },
+    {
+      "nome": "Catanach",
+      "pontos": 3656,
+      "avatar": "https://avatars.akamai.steamstatic.com/b8a6f62b8b7bd48279016ddb5616f9a555b0cf5d_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 215.7,
+        "pontos": 360
       }
     },
     {
@@ -403,17 +425,6 @@
       }
     },
     {
-      "nome": "Catanach",
-      "pontos": 1476,
-      "avatar": "https://avatars.akamai.steamstatic.com/b8a6f62b8b7bd48279016ddb5616f9a555b0cf5d_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 193.0,
-        "pontos": 240
-      }
-    },
-    {
       "nome": "Sigma",
       "pontos": 1150,
       "avatar": "https://avatars.akamai.steamstatic.com/7bc2e0e6ab49af66cf8260d44ef9faebb335c8d7_medium.jpg",
@@ -444,17 +455,6 @@
         "estrela": "ouro",
         "cm": 211.8,
         "pontos": 240
-      }
-    },
-    {
-      "nome": "Opi.pM",
-      "pontos": 620,
-      "avatar": "https://avatars.akamai.steamstatic.com/626bbb7465867eefb8c7c536c5b332fb9ca47af9_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "bronze",
-        "cm": 132.4,
-        "pontos": 120
       }
     },
     {
