@@ -77,6 +77,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .r-epico { color: var(--epico); } .r-lendario { color: var(--lendario); } .r-celestial { color: var(--celestial); }
 /* quatro regras em 2×2: na grade de três do estilo.css a quarta ficava sozinha numa linha */
 .cartoes.regras { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+/* a quinta (o mapa do dia, 25/10/2026) ocupa a linha inteira em vez de ficar sozinha pela metade */
+.cartoes.regras .largo { grid-column: 1 / -1; }
 
 .exemplos { display: flex; flex-direction: column; gap: .35rem; margin: 0; padding: 0; list-style: none; }
 .exemplos li { font-variant-numeric: tabular-nums; }
@@ -233,7 +235,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
       <li>O mesmo raro, fisgado no clique <span>· 10 × 1 × 1,5 =</span> 15</li>
       <li>Um lendário platina, pescado sozinho <span>· 80 × 5 =</span> 400</li>
       <li>O celestial do Araguaia, prata, no clique <span>· 300 × 2 × 1,5 =</span> 900</li>
-      <li>O celestial de Noronha, platina, no clique <span>· 3.000 × 5 × 1,5 =</span> 22.500, o maior lance que existe</li>
+      <li>O celestial de Noronha, platina, no clique <span>· 3.000 × 5 × 1,5 =</span> 22.500</li>
+      <li>Qualquer celestial do mapa do dia, platina, no clique <span>· 3.000 × 5 × 1,5 × 2 =</span> 45.000, o maior lance que existe</li>
     </ul>
   </section>
 
@@ -258,6 +261,12 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
         <h3>Um celestial por edição</h3>
         <p>Cada mês vale um dos dois celestiais — o Chapéu de bobo da corte ou o Boi-bumbá. A
         primeira edição vale o Bobo.</p>
+      </div>
+      <div class="cartao largo">
+        <h3>O mapa do dia vale em dobro</h3>
+        <p>Todo dia um mapa vale mais que todos os outros, igual pra todo mundo. Nele, o celestial
+        vale o de Noronha, o mais forte, e todo peixe conta em dobro. No dia seguinte a vez passa
+        pro próximo mapa. O jogo mostra qual é no Ranking e no Mapa.</p>
       </div>
     </div>
 
