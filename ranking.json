@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-26T19:15:07Z",
+  "atualizado": "2026-10-26T23:07:26Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -19,7 +19,7 @@
     },
     {
       "nome": "Habibi Yuri Martins",
-      "pontos": 360580,
+      "pontos": 360980,
       "avatar": "https://avatars.fastly.steamstatic.com/2c53ae086bb9642a04541f7f4f9bc9843347683e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -163,7 +163,7 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 15210,
+      "pontos": 15290,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
