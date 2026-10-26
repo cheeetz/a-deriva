@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-26T06:08:41Z",
+  "atualizado": "2026-10-26T12:54:25Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 471637,
+      "pontos": 471797,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 69830,
+      "pontos": 70110,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -184,7 +184,7 @@
     },
     {
       "nome": "Cyberprince",
-      "pontos": 13022,
+      "pontos": 13110,
       "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -206,13 +206,24 @@
     },
     {
       "nome": "Father",
-      "pontos": 12500,
+      "pontos": 12562,
       "avatar": "https://avatars.fastly.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
         "cm": 793.3,
         "pontos": 2250
+      }
+    },
+    {
+      "nome": "Knoll",
+      "pontos": 11453,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 445.9,
+        "pontos": 1500
       }
     },
     {
@@ -223,17 +234,6 @@
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 415.0,
-        "pontos": 1500
-      }
-    },
-    {
-      "nome": "Knoll",
-      "pontos": 10743,
-      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 445.9,
         "pontos": 1500
       }
     },
@@ -271,8 +271,19 @@
       }
     },
     {
+      "nome": "Opi.pM",
+      "pontos": 7880,
+      "avatar": "https://avatars.fastly.steamstatic.com/626bbb7465867eefb8c7c536c5b332fb9ca47af9_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 375.2,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "Kolter",
-      "pontos": 6675,
+      "pontos": 6965,
       "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -300,17 +311,6 @@
         "raridade": "celestial",
         "estrela": "ouro",
         "cm": 429.7,
-        "pontos": 900
-      }
-    },
-    {
-      "nome": "Opi.pM",
-      "pontos": 4590,
-      "avatar": "https://avatars.fastly.steamstatic.com/626bbb7465867eefb8c7c536c5b332fb9ca47af9_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 375.2,
         "pontos": 900
       }
     },
