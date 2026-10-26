@@ -90,7 +90,13 @@ def conferir(item, dias):
         return "sem o melhor lance"
     base = PONTOS_RARIDADE.get(m.get("raridade"), 0)
     if m.get("raridade") == "celestial":
-        base = CELESTIAL_POR_VERSAO.get(m.get("versao", 1), 3000)
+        # O MELHOR DE ANTES DA ATUALIZACAO (26/10/2026). Quem pescou o melhor do mes na 1.2 e
+        # atualizou no meio do mes manda os detalhes na versao 2, mas com o melhor lance da regra
+        # antiga -- e ele chega sem hora, porque a 1.2 nao gravava. Sem hora, vale o teto antigo.
+        versao = m.get("versao", 1)
+        if versao == 2 and not m.get("hora"):
+            versao = 1
+        base = CELESTIAL_POR_VERSAO.get(versao, 3000)
     teto_lance = base * VEZES_ESTRELA.get(m.get("estrela"), 0) * 1.5
     if m.get("dobro"):
         teto_lance *= VEZES_MAPA_DO_DIA
@@ -164,6 +170,8 @@ def melhor_lance(d):
         lance["versao"] = 2
         if d[5] == 1:
             lance["dobro"] = True
+        if d[6] > 0:
+            lance["hora"] = True   # so o fato: a hora mesmo nao vai pro ranking.json
     return lance
 
 
