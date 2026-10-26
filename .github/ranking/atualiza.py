@@ -64,6 +64,10 @@ VEZES_MAPA_DO_DIA = 2
 PONTOS_RARIDADE = {"comum": 2, "incomum": 4, "raro": 10, "epico": 30, "lendario": 80,
                    "celestial": 3000}   # o celestial varia por mapa; 3.000 e o de Noronha, o maior
 VEZES_ESTRELA = {"bronze": 1, "prata": 2, "ouro": 3, "platina": 5}
+# O TETO DO CELESTIAL POR VERSAO DOS DETALHES. Desde a 1.3 (25/10/2026) o celestial cresce pela
+# raiz da raridade e o maior e o do Sao Francisco, 1.340; quem ainda manda a versao 1 jogou pela
+# regra antiga, em que o de Noronha valia 3.000, e nao pode ser marcado por isso.
+CELESTIAL_POR_VERSAO = {1: 3000, 2: 1340}
 MELHORES_POR_DIA = 10
 
 
@@ -84,7 +88,10 @@ def conferir(item, dias):
         return None
     if not m or not m.get("pontos"):
         return "sem o melhor lance"
-    teto_lance = PONTOS_RARIDADE.get(m.get("raridade"), 0) * VEZES_ESTRELA.get(m.get("estrela"), 0) * 1.5
+    base = PONTOS_RARIDADE.get(m.get("raridade"), 0)
+    if m.get("raridade") == "celestial":
+        base = CELESTIAL_POR_VERSAO.get(m.get("versao", 1), 3000)
+    teto_lance = base * VEZES_ESTRELA.get(m.get("estrela"), 0) * 1.5
     if m.get("dobro"):
         teto_lance *= VEZES_MAPA_DO_DIA
     if m["pontos"] > teto_lance:
@@ -153,8 +160,10 @@ def melhor_lance(d):
         "cm": d[3] / 10,
         "pontos": d[4],
     }
-    if d[0] == 2 and d[5] == 1:
-        lance["dobro"] = True
+    if d[0] == 2:
+        lance["versao"] = 2
+        if d[5] == 1:
+            lance["dobro"] = True
     return lance
 
 
