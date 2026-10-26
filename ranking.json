@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-26T00:18:53Z",
+  "atualizado": "2026-10-26T06:08:41Z",
   "entradas": [
     {
       "nome": "Codeplay",
-      "pontos": 435637,
+      "pontos": 471637,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,7 +63,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 69010,
+      "pontos": 69830,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -74,7 +74,7 @@
     },
     {
       "nome": "Zoreia1",
-      "pontos": 54526,
+      "pontos": 55110,
       "avatar": "https://avatars.fastly.steamstatic.com/2da4242378b0528893a86b3aef1d2801833454af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -228,13 +228,24 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 9565,
+      "pontos": 10743,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "platina",
         "cm": 445.9,
         "pontos": 1500
+      }
+    },
+    {
+      "nome": "isa",
+      "pontos": 9668,
+      "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 139.4,
+        "pontos": 2580
       }
     },
     {
@@ -249,19 +260,8 @@
       }
     },
     {
-      "nome": "isa",
-      "pontos": 8424,
-      "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 139.4,
-        "pontos": 2580
-      }
-    },
-    {
       "nome": "Raccoony",
-      "pontos": 8402,
+      "pontos": 8634,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -272,7 +272,7 @@
     },
     {
       "nome": "Kolter",
-      "pontos": 5985,
+      "pontos": 6675,
       "avatar": "https://avatars.fastly.steamstatic.com/b8174a0d8fb1c1c2b1043aceb3af733e0b56f717_medium.jpg",
       "melhor": {
         "raridade": "celestial",
