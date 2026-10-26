@@ -109,6 +109,47 @@ def conferir(item, dias):
     return None
 
 
+# O RITMO DOS LANCES (26/10/2026, depois do laudo de seguranca do amigo do Jean). A versao 2 manda a
+# hora do melhor lance, o dia dos lances de hoje e o segundo de cada um. Sem servidor nao da pra
+# recontar os pontos, mas da pra pegar o que nenhum jogo honesto manda:
+#   - dia ou hora fora do mes da edicao, ou no futuro;
+#   - TRES lances em menos de 2 s. A mordida mais rapida do jogo, com tudo no maximo, leva perto de
+#     2,6 s; a fisgada dupla poe dois peixes no mesmo segundo, nunca tres.
+FOLGA_RELOGIO_S = 300
+TRES_LANCES_S = 2
+
+
+def ritmo(d):
+    """(hora do melhor, dia AAAAMMDD, segundos dos lances) da versao 2; None nas outras."""
+    if not d or d[0] != 2 or len(d) < 9:
+        return None
+    return d[6], d[7], sorted(d[9:9 + d[8]])
+
+
+def conferir_ritmo(r, mes, agora):
+    """O motivo da suspeita pelos horarios, ou None."""
+    if not r:
+        return None
+    hora, dia, segs = r
+    ini = datetime.datetime.strptime(mes + "-01", "%Y-%m-%d").replace(tzinfo=datetime.timezone.utc)
+    limite = agora.timestamp() + FOLGA_RELOGIO_S
+    if hora and not ini.timestamp() <= hora <= limite:
+        return "hora do melhor lance fora do mes"
+    if dia:
+        try:
+            d = datetime.datetime.strptime(str(dia), "%Y%m%d").replace(tzinfo=datetime.timezone.utc)
+        except ValueError:
+            return "dia dos lances invalido"
+        if d.strftime("%Y-%m") != mes or d.timestamp() > limite:
+            return "dia dos lances fora do mes"
+        if d.date() == agora.date() and segs and d.timestamp() + segs[-1] > limite:
+            return "lance no futuro"
+    for i in range(len(segs) - 2):
+        if segs[i + 2] - segs[i] < TRES_LANCES_S:
+            return "tres lances em menos de %d s" % TRES_LANCES_S
+    return None
+
+
 def baixa(url):
     # A COMUNIDADE GUARDA CACHE POR URL: em 14/10/2026 o placar já estava público e a mesma URL
     # ainda devolvia "No public global leaderboards" por um bom tempo. Um parâmetro que muda a
@@ -195,9 +236,11 @@ def entradas(appid, lbid, fora=()):
         item = {"nome": nome or "Pescador", "pontos": int(en.findtext("score") or 0)}
         if avatar:
             item["avatar"] = avatar
-        lance = melhor_lance(detalhes(en.findtext("details")))
+        d = detalhes(en.findtext("details"))
+        lance = melhor_lance(d)
         if lance:
             item["melhor"] = lance
+            item["_ritmo"] = ritmo(d)   # so pra conferir; sai antes de escrever o ranking.json
         lista.append(item)
         time.sleep(0.5)  # educação com o steamcommunity: são até 50 perfis por hora
     return lista
@@ -237,7 +280,7 @@ def main():
     lista = entradas(appid, lbid, fora) if lbid else []
     dias = dias_decorridos(ed["mes"], agora)
     for item in lista:
-        motivo = conferir(item, dias)
+        motivo = conferir(item, dias) or conferir_ritmo(item.pop("_ritmo", None), ed["mes"], agora)
         if motivo:
             item["conferir"] = motivo
             print("  EM CONFERENCIA: %s (%d pts) -- %s" % (item["nome"], item["pontos"], motivo))
