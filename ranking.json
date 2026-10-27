@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-27T07:47:09Z",
+  "atualizado": "2026-10-27T14:26:38Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -152,7 +152,7 @@
     },
     {
       "nome": "odilardepaula",
-      "pontos": 16210,
+      "pontos": 16580,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -195,6 +195,17 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 13463,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 445.9,
+        "pontos": 1500
+      }
+    },
+    {
       "nome": "Cyberprince",
       "pontos": 13124,
       "avatar": "https://avatars.fastly.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
@@ -214,17 +225,6 @@
         "estrela": "ouro",
         "cm": 793.3,
         "pontos": 2250
-      }
-    },
-    {
-      "nome": "Knoll",
-      "pontos": 11733,
-      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 445.9,
-        "pontos": 1500
       }
     },
     {
@@ -250,6 +250,17 @@
       }
     },
     {
+      "nome": "Raccoony",
+      "pontos": 8830,
+      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 430.3,
+        "pontos": 900
+      }
+    },
+    {
       "nome": "滚键盘",
       "pontos": 8700,
       "avatar": "https://avatars.fastly.steamstatic.com/66be1ff909197db805306c82e0dca89e0b2b20f7_medium.jpg",
@@ -258,17 +269,6 @@
         "estrela": "bronze",
         "cm": 430.7,
         "pontos": 3000
-      }
-    },
-    {
-      "nome": "Raccoony",
-      "pontos": 8634,
-      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 430.3,
-        "pontos": 900
       }
     },
     {
