@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-29T21:47:07Z",
+  "atualizado": "2026-10-30T01:56:05Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -30,6 +30,17 @@
       }
     },
     {
+      "nome": "Lyn",
+      "pontos": 88030,
+      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 567.6,
+        "pontos": 6000
+      }
+    },
+    {
       "nome": "Gordão Programas",
       "pontos": 86202,
       "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
@@ -38,17 +49,6 @@
         "estrela": "ouro",
         "cm": 608.6,
         "pontos": 13500
-      }
-    },
-    {
-      "nome": "Lyn",
-      "pontos": 84030,
-      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 567.6,
-        "pontos": 6000
       }
     },
     {
@@ -165,7 +165,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 15883,
+      "pontos": 16221,
       "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -187,7 +187,7 @@
     },
     {
       "nome": "Cyberprince",
-      "pontos": 14649,
+      "pontos": 15281,
       "avatar": "https://avatars.akamai.steamstatic.com/e12895237c4c23f17d987443440705585cf8933e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -221,7 +221,7 @@
     },
     {
       "nome": "Father",
-      "pontos": 12666,
+      "pontos": 13228,
       "avatar": "https://avatars.akamai.steamstatic.com/bdcfd2d8390d2ca482c9d9e85577f8e8e8600c7f_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -233,7 +233,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 12034,
+      "pontos": 12518,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -343,6 +343,17 @@
       }
     },
     {
+      "nome": "aDw",
+      "pontos": 3484,
+      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 227.3,
+        "pontos": 400
+      }
+    },
+    {
       "nome": "Felipoggers",
       "pontos": 2878,
       "avatar": "https://avatars.akamai.steamstatic.com/e48d71146e72173ed4444106d2aef5a6d180ce80_medium.jpg",
@@ -362,17 +373,6 @@
         "estrela": "bronze",
         "cm": 306.5,
         "pontos": 300
-      }
-    },
-    {
-      "nome": "aDw",
-      "pontos": 2544,
-      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 192.8,
-        "pontos": 160
       }
     },
     {
