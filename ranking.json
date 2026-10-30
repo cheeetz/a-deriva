@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-30T08:34:45Z",
+  "atualizado": "2026-10-30T15:53:39Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -31,7 +31,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 89110,
+      "pontos": 90790,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -142,7 +142,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 19002,
+      "pontos": 19642,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -165,7 +165,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 16773,
+      "pontos": 16953,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -233,7 +233,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 12694,
+      "pontos": 12944,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -299,13 +299,14 @@
     },
     {
       "nome": "A doormat With experience",
-      "pontos": 5905,
+      "pontos": 5950,
       "avatar": "https://avatars.fastly.steamstatic.com/18a83618826891dd83bdc2d6df899cddd72051be_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 579.8,
-        "pontos": 500
+        "pontos": 500,
+        "versao": 2
       }
     },
     {
@@ -332,6 +333,17 @@
       }
     },
     {
+      "nome": "aDw",
+      "pontos": 4104,
+      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "platina",
+        "cm": 227.3,
+        "pontos": 400
+      }
+    },
+    {
       "nome": "Manotaaz",
       "pontos": 3800,
       "avatar": "https://avatars.fastly.steamstatic.com/1ccd0d21c4d502bace8eaa21370758255e3df132_medium.jpg",
@@ -339,17 +351,6 @@
         "raridade": "lendario",
         "estrela": "platina",
         "cm": 288.5,
-        "pontos": 400
-      }
-    },
-    {
-      "nome": "aDw",
-      "pontos": 3654,
-      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "platina",
-        "cm": 227.3,
         "pontos": 400
       }
     },
