@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-30T15:53:39Z",
+  "atualizado": "2026-10-30T20:44:43Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -31,7 +31,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 90790,
+      "pontos": 91310,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -130,6 +130,18 @@
       }
     },
     {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 20292,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 141.0,
+        "pontos": 1720,
+        "versao": 2
+      }
+    },
+    {
       "nome": "Zocratto",
       "pontos": 19670,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
@@ -138,18 +150,6 @@
         "estrela": "bronze",
         "cm": 452.5,
         "pontos": 3000
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 19642,
-      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 141.0,
-        "pontos": 1720,
-        "versao": 2
       }
     },
     {
@@ -334,7 +334,7 @@
     },
     {
       "nome": "aDw",
-      "pontos": 4104,
+      "pontos": 4354,
       "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
       "melhor": {
         "raridade": "lendario",
