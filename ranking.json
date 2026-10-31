@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-10-01T00:00:00Z",
   "fim": "2026-11-01T00:00:00Z",
-  "atualizado": "2026-10-30T20:44:43Z",
+  "atualizado": "2026-10-31T00:44:32Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -31,7 +31,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 91310,
+      "pontos": 91950,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -153,6 +153,18 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 19018,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 445.9,
+        "pontos": 1500,
+        "versao": 2
+      }
+    },
+    {
       "nome": "odilardepaula",
       "pontos": 18360,
       "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
@@ -160,17 +172,6 @@
         "raridade": "celestial",
         "estrela": "bronze",
         "cm": 423.6,
-        "pontos": 1500
-      }
-    },
-    {
-      "nome": "Knoll",
-      "pontos": 16953,
-      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "platina",
-        "cm": 445.9,
         "pontos": 1500
       }
     },
@@ -233,7 +234,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 12944,
+      "pontos": 13242,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -334,7 +335,7 @@
     },
     {
       "nome": "aDw",
-      "pontos": 4354,
+      "pontos": 4588,
       "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
       "melhor": {
         "raridade": "lendario",
