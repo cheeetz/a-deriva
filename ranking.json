@@ -4,12 +4,25 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-01T09:11:48Z",
+  "atualizado": "2026-11-01T15:59:08Z",
   "entradas": [
     {
+      "nome": "Opi.pM",
+      "pontos": 4005,
+      "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 454.0,
+        "pontos": 1005,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
       "nome": "Lyn",
-      "pontos": 3450,
-      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "pontos": 3610,
+      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
@@ -22,7 +35,7 @@
     {
       "nome": "Cheetz",
       "pontos": 2580,
-      "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -36,7 +49,7 @@
     {
       "nome": "Codeplay",
       "pontos": 2180,
-      "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -48,13 +61,13 @@
       }
     },
     {
-      "nome": "Opi.pM",
-      "pontos": 1990,
-      "avatar": "https://avatars.akamai.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
+      "nome": "zYnSiDe",
+      "pontos": 1800,
+      "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
-        "cm": 239.7,
+        "cm": 281.2,
         "pontos": 360,
         "versao": 2,
         "hora": true
@@ -63,7 +76,7 @@
     {
       "nome": "isa",
       "pontos": 1390,
-      "avatar": "https://avatars.akamai.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/e80fe7a4a794c1c1e7af10706d9b664933f2de42_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "platina",
@@ -74,9 +87,22 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 1130,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 234.6,
+        "pontos": 240,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
       "nome": "aDw",
-      "pontos": 980,
-      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "pontos": 1070,
+      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
@@ -86,8 +112,8 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 710,
-      "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "pontos": 890,
+      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "prata",
@@ -96,22 +122,9 @@
       }
     },
     {
-      "nome": "Knoll",
-      "pontos": 540,
-      "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "bronze",
-        "cm": 189.8,
-        "pontos": 80,
-        "versao": 2,
-        "hora": true
-      }
-    },
-    {
       "nome": "Seti",
       "pontos": 40,
-      "avatar": "https://avatars.akamai.steamstatic.com/f27b262769e2889e61ebed35dc42e7029f29cfc8_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/f27b262769e2889e61ebed35dc42e7029f29cfc8_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "bronze",
@@ -124,7 +137,7 @@
     {
       "nome": "Gordão Programas",
       "pontos": 30,
-      "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "epico",
         "estrela": "bronze",
