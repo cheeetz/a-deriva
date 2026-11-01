@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-01T15:59:08Z",
+  "atualizado": "2026-11-01T20:28:12Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -62,7 +62,7 @@
     },
     {
       "nome": "zYnSiDe",
-      "pontos": 1800,
+      "pontos": 1880,
       "avatar": "https://avatars.fastly.steamstatic.com/815620bf2491be691e9cd2012741e1cba2f0fb06_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -88,7 +88,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 1130,
+      "pontos": 1370,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -97,6 +97,30 @@
         "pontos": 240,
         "versao": 2,
         "hora": true
+      }
+    },
+    {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 1180,
+      "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "prata",
+        "cm": 240.0,
+        "pontos": 160,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
+      "nome": "Raccoony",
+      "pontos": 1120,
+      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 216.9,
+        "pontos": 240
       }
     },
     {
@@ -111,25 +135,14 @@
       }
     },
     {
-      "nome": "Raccoony",
-      "pontos": 890,
-      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "nome": "Seti",
+      "pontos": 290,
+      "avatar": "https://avatars.fastly.steamstatic.com/f27b262769e2889e61ebed35dc42e7029f29cfc8_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "prata",
-        "cm": 200.1,
-        "pontos": 160
-      }
-    },
-    {
-      "nome": "Seti",
-      "pontos": 40,
-      "avatar": "https://avatars.fastly.steamstatic.com/f27b262769e2889e61ebed35dc42e7029f29cfc8_medium.jpg",
-      "melhor": {
-        "raridade": "epico",
-        "estrela": "bronze",
-        "cm": 73.8,
-        "pontos": 30,
+        "cm": 195.6,
+        "pontos": 160,
         "versao": 2,
         "hora": true
       }
