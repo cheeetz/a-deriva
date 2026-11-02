@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-02T07:38:34Z",
+  "atualizado": "2026-11-02T18:16:57Z",
   "entradas": [
     {
       "nome": "Codeplay",
@@ -22,13 +22,27 @@
     },
     {
       "nome": "Opi.pM",
-      "pontos": 7575,
+      "pontos": 14125,
       "avatar": "https://avatars.akamai.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
-        "cm": 454.0,
-        "pontos": 1005,
+        "cm": 106.1,
+        "pontos": 2680,
+        "versao": 2,
+        "dobro": true,
+        "hora": true
+      }
+    },
+    {
+      "nome": "Lyn",
+      "pontos": 6810,
+      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 118.0,
+        "pontos": 1130,
         "versao": 2,
         "hora": true
       }
@@ -47,21 +61,22 @@
       }
     },
     {
-      "nome": "Lyn",
-      "pontos": 6090,
-      "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "nome": "Gordão Programas",
+      "pontos": 5062,
+      "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "bronze",
-        "cm": 118.0,
-        "pontos": 1130,
+        "cm": 107.8,
+        "pontos": 2680,
         "versao": 2,
+        "dobro": true,
         "hora": true
       }
     },
     {
       "nome": "Knoll",
-      "pontos": 3220,
+      "pontos": 3520,
       "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -70,6 +85,31 @@
         "pontos": 400,
         "versao": 2,
         "hora": true
+      }
+    },
+    {
+      "nome": "Zocratto",
+      "pontos": 3269,
+      "avatar": "https://avatars.akamai.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 105.5,
+        "pontos": 2680,
+        "versao": 2,
+        "dobro": true,
+        "hora": true
+      }
+    },
+    {
+      "nome": "aDw",
+      "pontos": 2950,
+      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 105.7,
+        "pontos": 860
       }
     },
     {
@@ -88,27 +128,13 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 1830,
+      "pontos": 2040,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
         "cm": 216.9,
         "pontos": 240
-      }
-    },
-    {
-      "nome": "Gordão Programas",
-      "pontos": 1402,
-      "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
-      "melhor": {
-        "raridade": "epico",
-        "estrela": "platina",
-        "cm": 109.8,
-        "pontos": 300,
-        "versao": 2,
-        "dobro": true,
-        "hora": true
       }
     },
     {
@@ -122,17 +148,6 @@
         "pontos": 225,
         "versao": 2,
         "hora": true
-      }
-    },
-    {
-      "nome": "aDw",
-      "pontos": 1230,
-      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 271.9,
-        "pontos": 240
       }
     },
     {
