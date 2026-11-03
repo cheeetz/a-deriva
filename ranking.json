@@ -4,17 +4,17 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-03T07:53:41Z",
+  "atualizado": "2026-11-03T16:11:58Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 26195,
+      "pontos": 38845,
       "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 139.8,
-        "pontos": 5360,
+        "estrela": "ouro",
+        "cm": 619.6,
+        "pontos": 8040,
         "versao": 2,
         "dobro": true,
         "hora": true
@@ -22,7 +22,7 @@
     },
     {
       "nome": "Codeplay",
-      "pontos": 23060,
+      "pontos": 23300,
       "avatar": "https://avatars.fastly.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -36,7 +36,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 10940,
+      "pontos": 13310,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -76,7 +76,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 5050,
+      "pontos": 5220,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -89,7 +89,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 4639,
+      "pontos": 5179,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -99,6 +99,17 @@
         "versao": 2,
         "dobro": true,
         "hora": true
+      }
+    },
+    {
+      "nome": "aDw",
+      "pontos": 4560,
+      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 105.7,
+        "pontos": 860
       }
     },
     {
@@ -115,19 +126,8 @@
       }
     },
     {
-      "nome": "aDw",
-      "pontos": 4310,
-      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 105.7,
-        "pontos": 860
-      }
-    },
-    {
       "nome": "Raccoony",
-      "pontos": 2570,
+      "pontos": 2830,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
