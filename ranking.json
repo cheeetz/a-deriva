@@ -4,8 +4,22 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-02T18:16:57Z",
+  "atualizado": "2026-11-03T01:00:22Z",
   "entradas": [
+    {
+      "nome": "Opi.pM",
+      "pontos": 23725,
+      "avatar": "https://avatars.akamai.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 139.8,
+        "pontos": 5360,
+        "versao": 2,
+        "dobro": true,
+        "hora": true
+      }
+    },
     {
       "nome": "Codeplay",
       "pontos": 19220,
@@ -21,28 +35,14 @@
       }
     },
     {
-      "nome": "Opi.pM",
-      "pontos": 14125,
-      "avatar": "https://avatars.akamai.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 106.1,
-        "pontos": 2680,
-        "versao": 2,
-        "dobro": true,
-        "hora": true
-      }
-    },
-    {
       "nome": "Lyn",
-      "pontos": 6810,
+      "pontos": 10400,
       "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 118.0,
-        "pontos": 1130,
+        "estrela": "prata",
+        "cm": 1070.9,
+        "pontos": 2440,
         "versao": 2,
         "hora": true
       }
@@ -62,7 +62,7 @@
     },
     {
       "nome": "Gordão Programas",
-      "pontos": 5062,
+      "pontos": 5402,
       "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -76,7 +76,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 3520,
+      "pontos": 4830,
       "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -85,6 +85,30 @@
         "pontos": 400,
         "versao": 2,
         "hora": true
+      }
+    },
+    {
+      "nome": "Cheetz",
+      "pontos": 4360,
+      "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "platina",
+        "cm": 446.1,
+        "pontos": 1500,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
+      "nome": "aDw",
+      "pontos": 3476,
+      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 105.7,
+        "pontos": 860
       }
     },
     {
@@ -102,39 +126,28 @@
       }
     },
     {
-      "nome": "aDw",
-      "pontos": 2950,
-      "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 105.7,
-        "pontos": 860
-      }
-    },
-    {
-      "nome": "Cheetz",
-      "pontos": 2580,
-      "avatar": "https://avatars.akamai.steamstatic.com/85913603d94e4c9e52f1f05a36f0927fff1771e8_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 97.6,
-        "pontos": 480,
-        "versao": 2,
-        "dobro": true,
-        "hora": true
-      }
-    },
-    {
       "nome": "Raccoony",
-      "pontos": 2040,
+      "pontos": 2266,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
         "estrela": "ouro",
         "cm": 216.9,
         "pontos": 240
+      }
+    },
+    {
+      "nome": "Cyrus_The_ViruZ",
+      "pontos": 2210,
+      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "prata",
+        "cm": 136.6,
+        "pontos": 320,
+        "versao": 2,
+        "dobro": true,
+        "hora": true
       }
     },
     {
@@ -146,19 +159,6 @@
         "estrela": "platina",
         "cm": 147.7,
         "pontos": 225,
-        "versao": 2,
-        "hora": true
-      }
-    },
-    {
-      "nome": "Cyrus_The_ViruZ",
-      "pontos": 1180,
-      "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "prata",
-        "cm": 240.0,
-        "pontos": 160,
         "versao": 2,
         "hora": true
       }
