@@ -4,8 +4,22 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-03T21:44:42Z",
+  "atualizado": "2026-11-04T02:17:19Z",
   "entradas": [
+    {
+      "nome": "Codeplay",
+      "pontos": 39580,
+      "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 387.8,
+        "pontos": 5360,
+        "versao": 2,
+        "dobro": true,
+        "hora": true
+      }
+    },
     {
       "nome": "Opi.pM",
       "pontos": 38845,
@@ -21,22 +35,8 @@
       }
     },
     {
-      "nome": "Codeplay",
-      "pontos": 23300,
-      "avatar": "https://avatars.akamai.steamstatic.com/43a3f2d5f8c307d1744beb8af75c3b8f4afebcc1_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "bronze",
-        "cm": 75.0,
-        "pontos": 2680,
-        "versao": 2,
-        "dobro": true,
-        "hora": true
-      }
-    },
-    {
       "nome": "Lyn",
-      "pontos": 13310,
+      "pontos": 14910,
       "avatar": "https://avatars.akamai.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -49,7 +49,7 @@
     },
     {
       "nome": "aDw",
-      "pontos": 6980,
+      "pontos": 7740,
       "avatar": "https://avatars.akamai.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -60,7 +60,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 6499,
+      "pontos": 6659,
       "avatar": "https://avatars.akamai.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -127,7 +127,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 4050,
+      "pontos": 4130,
       "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "lendario",
@@ -141,7 +141,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 2920,
+      "pontos": 3230,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
