@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-05T16:26:18Z",
+  "atualizado": "2026-11-05T22:40:15Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 99265,
+      "pontos": 99545,
       "avatar": "https://avatars.akamai.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -50,7 +50,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 44709,
+      "pontos": 44949,
       "avatar": "https://avatars.akamai.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,21 +63,8 @@
       }
     },
     {
-      "nome": "Knoll",
-      "pontos": 12605,
-      "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 590.1,
-        "pontos": 3015,
-        "versao": 2,
-        "hora": true
-      }
-    },
-    {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 11690,
+      "pontos": 12780,
       "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -86,6 +73,19 @@
         "pontos": 5360,
         "versao": 2,
         "dobro": true,
+        "hora": true
+      }
+    },
+    {
+      "nome": "Knoll",
+      "pontos": 12675,
+      "avatar": "https://avatars.akamai.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 590.1,
+        "pontos": 3015,
+        "versao": 2,
         "hora": true
       }
     },
@@ -114,6 +114,17 @@
       }
     },
     {
+      "nome": "Raccoony",
+      "pontos": 5450,
+      "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "melhor": {
+        "raridade": "lendario",
+        "estrela": "ouro",
+        "cm": 216.9,
+        "pontos": 240
+      }
+    },
+    {
       "nome": "Gordão Programas",
       "pontos": 5402,
       "avatar": "https://avatars.akamai.steamstatic.com/5076cb4b31180b9fb9b6520693e7906f4c89b8ba_medium.jpg",
@@ -125,17 +136,6 @@
         "versao": 2,
         "dobro": true,
         "hora": true
-      }
-    },
-    {
-      "nome": "Raccoony",
-      "pontos": 5240,
-      "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
-      "melhor": {
-        "raridade": "lendario",
-        "estrela": "ouro",
-        "cm": 216.9,
-        "pontos": 240
       }
     },
     {
