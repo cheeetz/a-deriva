@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-06T12:03:10Z",
+  "atualizado": "2026-11-06T19:20:17Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 113985,
+      "pontos": 115665,
       "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -22,7 +22,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 74750,
+      "pontos": 79470,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -50,7 +50,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 50989,
+      "pontos": 59829,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -63,21 +63,8 @@
       }
     },
     {
-      "nome": "Knoll",
-      "pontos": 12975,
-      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 590.1,
-        "pontos": 3015,
-        "versao": 2,
-        "hora": true
-      }
-    },
-    {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 12780,
+      "pontos": 15360,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -90,8 +77,21 @@
       }
     },
     {
+      "nome": "Knoll",
+      "pontos": 14370,
+      "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "ouro",
+        "cm": 590.1,
+        "pontos": 3015,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
       "nome": "aDw",
-      "pontos": 11530,
+      "pontos": 12130,
       "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -102,7 +102,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 6560,
+      "pontos": 6890,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
