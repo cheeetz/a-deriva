@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-07T12:54:45Z",
+  "atualizado": "2026-11-07T18:00:32Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 129955,
+      "pontos": 135305,
       "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -22,7 +22,7 @@
     },
     {
       "nome": "Lyn",
-      "pontos": 86150,
+      "pontos": 88510,
       "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -50,7 +50,7 @@
     },
     {
       "nome": "Zocratto",
-      "pontos": 63829,
+      "pontos": 64149,
       "avatar": "https://avatars.fastly.steamstatic.com/767b5ce44a6e6f1d6d69effe545ddd20a7ba0047_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -64,7 +64,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 16220,
+      "pontos": 16460,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -102,7 +102,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 7900,
+      "pontos": 8040,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
