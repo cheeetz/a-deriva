@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-12T18:14:56Z",
+  "atualizado": "2026-11-12T23:38:56Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 257665,
+      "pontos": 259625,
       "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -64,7 +64,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 36960,
+      "pontos": 37280,
       "avatar": "https://avatars.fastly.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
