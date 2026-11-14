@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-14T16:37:20Z",
+  "atualizado": "2026-11-14T21:26:24Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -64,7 +64,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 37280,
+      "pontos": 37358,
       "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -91,7 +91,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 15970,
+      "pontos": 16070,
       "avatar": "https://avatars.akamai.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "lendario",
