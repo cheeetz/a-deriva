@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-17T22:17:19Z",
+  "atualizado": "2026-11-18T04:15:06Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -51,7 +51,7 @@
     {
       "nome": "Lyn",
       "pontos": 88510,
-      "avatar": "https://avatars.fastly.steamstatic.com/d3b38ebc836c488237e50f28c82542b0d3e7f60e_medium.jpg",
+      "avatar": "https://avatars.fastly.steamstatic.com/d45c4c5f514abddd4967e782f421ed606b20e649_medium.jpg",
       "melhor": {
         "raridade": "celestial",
         "estrela": "ouro",
@@ -91,7 +91,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 22020,
+      "pontos": 22462,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -121,6 +121,20 @@
         "cm": 437.5,
         "pontos": 1350,
         "versao": 2,
+        "hora": true
+      }
+    },
+    {
+      "nome": "Gabirutz",
+      "pontos": 8122,
+      "avatar": "https://avatars.fastly.steamstatic.com/9c26e2311016064c4e183610eaebca10e6c0acf1_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "bronze",
+        "cm": 125.6,
+        "pontos": 2680,
+        "versao": 2,
+        "dobro": true,
         "hora": true
       }
     },
@@ -160,19 +174,6 @@
         "estrela": "platina",
         "cm": 446.1,
         "pontos": 1500,
-        "versao": 2,
-        "hora": true
-      }
-    },
-    {
-      "nome": "Gabirutz",
-      "pontos": 3330,
-      "avatar": "https://avatars.fastly.steamstatic.com/9c26e2311016064c4e183610eaebca10e6c0acf1_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "ouro",
-        "cm": 427.7,
-        "pontos": 900,
         "versao": 2,
         "hora": true
       }
