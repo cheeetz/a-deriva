@@ -4,11 +4,11 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-20T20:08:00Z",
+  "atualizado": "2026-11-21T01:28:24Z",
   "entradas": [
     {
       "nome": "Opi.pM",
-      "pontos": 338335,
+      "pontos": 338995,
       "avatar": "https://avatars.fastly.steamstatic.com/5ebd313a38bf19931e4d81b4cde0a72ea2347e73_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -78,7 +78,7 @@
     },
     {
       "nome": "Raccoony",
-      "pontos": 24670,
+      "pontos": 24690,
       "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -102,7 +102,7 @@
     },
     {
       "nome": "Gabirutz",
-      "pontos": 16127,
+      "pontos": 19647,
       "avatar": "https://avatars.fastly.steamstatic.com/9c26e2311016064c4e183610eaebca10e6c0acf1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
