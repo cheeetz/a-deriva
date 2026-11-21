@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-21T01:28:24Z",
+  "atualizado": "2026-11-21T09:43:43Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -77,19 +77,8 @@
       }
     },
     {
-      "nome": "Raccoony",
-      "pontos": 24690,
-      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 134.8,
-        "pontos": 1720
-      }
-    },
-    {
       "nome": "Knoll",
-      "pontos": 23980,
+      "pontos": 24715,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -101,8 +90,19 @@
       }
     },
     {
+      "nome": "Raccoony",
+      "pontos": 24690,
+      "avatar": "https://avatars.fastly.steamstatic.com/ae70d380eb08d0a0bcd3fd028b9a7536cef8785c_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 134.8,
+        "pontos": 1720
+      }
+    },
+    {
       "nome": "Gabirutz",
-      "pontos": 19647,
+      "pontos": 19787,
       "avatar": "https://avatars.fastly.steamstatic.com/9c26e2311016064c4e183610eaebca10e6c0acf1_medium.jpg",
       "melhor": {
         "raridade": "celestial",
