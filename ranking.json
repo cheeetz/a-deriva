@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-22T03:06:22Z",
+  "atualizado": "2026-11-22T11:14:10Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -78,7 +78,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 26920,
+      "pontos": 27540,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -115,19 +115,8 @@
       }
     },
     {
-      "nome": "aDw",
-      "pontos": 13420,
-      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
-      "melhor": {
-        "raridade": "celestial",
-        "estrela": "prata",
-        "cm": 144.6,
-        "pontos": 1720
-      }
-    },
-    {
       "nome": "哈基糕",
-      "pontos": 12960,
+      "pontos": 13655,
       "avatar": "https://avatars.fastly.steamstatic.com/d45a409abf01d640c5880129d6de35c9e6481ce0_medium.jpg",
       "melhor": {
         "raridade": "celestial",
@@ -136,6 +125,17 @@
         "pontos": 1350,
         "versao": 2,
         "hora": true
+      }
+    },
+    {
+      "nome": "aDw",
+      "pontos": 13420,
+      "avatar": "https://avatars.fastly.steamstatic.com/e4c5e2ab869df41657cb2108f0d01723d0ba7ba7_medium.jpg",
+      "melhor": {
+        "raridade": "celestial",
+        "estrela": "prata",
+        "cm": 144.6,
+        "pontos": 1720
       }
     },
     {
