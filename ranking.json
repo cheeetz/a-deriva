@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-23T00:16:13Z",
+  "atualizado": "2026-11-23T07:42:07Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -78,7 +78,7 @@
     },
     {
       "nome": "Knoll",
-      "pontos": 28144,
+      "pontos": 28960,
       "avatar": "https://avatars.fastly.steamstatic.com/fb8ebed00de747d52994671150a6783d62bcda42_medium.jpg",
       "melhor": {
         "raridade": "celestial",
