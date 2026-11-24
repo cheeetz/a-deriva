@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-23T20:08:33Z",
+  "atualizado": "2026-11-24T04:44:56Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -64,7 +64,7 @@
     },
     {
       "nome": "Cyrus_The_ViruZ",
-      "pontos": 37388,
+      "pontos": 37594,
       "avatar": "https://avatars.akamai.steamstatic.com/6a099467291deca218bc75c9e8bb0cf7a9eaa3af_medium.jpg",
       "melhor": {
         "raridade": "celestial",
