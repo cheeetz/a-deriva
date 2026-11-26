@@ -4,7 +4,7 @@
   "celestial": "bobo",
   "inicio": "2026-11-01T00:00:00Z",
   "fim": "2026-12-01T00:00:00Z",
-  "atualizado": "2026-11-25T19:55:03Z",
+  "atualizado": "2026-11-26T02:48:52Z",
   "entradas": [
     {
       "nome": "Opi.pM",
@@ -253,6 +253,19 @@
         "estrela": "bronze",
         "cm": 126.5,
         "pontos": 80,
+        "versao": 2,
+        "hora": true
+      }
+    },
+    {
+      "nome": "andreluiz.1995",
+      "pontos": 106,
+      "avatar": "https://avatars.akamai.steamstatic.com/3155595c9d1ecc54ea6378cc32f60be4160b9498_medium.jpg",
+      "melhor": {
+        "raridade": "incomum",
+        "estrela": "ouro",
+        "cm": 41.0,
+        "pontos": 12,
         "versao": 2,
         "hora": true
       }
